@@ -14,7 +14,7 @@ class GsController extends Controller
      */
     public function index()
     {
-        return "is GS";
+        return view ('secretary.home');
     }
 
     /**

@@ -7,10 +7,10 @@
     <!-- Begin page -->
     <div id="wrapper">
 
-     @include('layouts.users.header')
+     @include('layouts.secretary.header')
 
         <!-- ========== Left Sidebar Start ========== -->
-        @include('layouts.users.sidebar')
+        @include('layouts.secretary.sidebar')
         <!-- Left Sidebar End -->
 
 
@@ -31,7 +31,7 @@
                                         <li class="breadcrumb-item active">Dashboard 2</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Dashboard 2</h4>
+                                <h4 class="page-title text-success">Welcome back secretary</h4>
                             </div>
                         </div>
                     </div>

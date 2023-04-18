@@ -14,7 +14,7 @@ class HrController extends Controller
      */
     public function index()
     {
-        return "is HR";
+        return view('hr.home');
     }
 
     /**
