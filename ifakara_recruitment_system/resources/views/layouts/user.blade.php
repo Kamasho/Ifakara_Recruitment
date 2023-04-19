@@ -1,34 +1,93 @@
-@include("layouts.include.users.head")
-<body>
-    <div id="app">
-        <div class="wrapper">
-            @include("layouts.include.users.navbar")
+<!DOCTYPE html>
+<html lang="en">
+@include('layouts.include.users.head')
+<body class="active">
+   
+    <div class="wrapper">
+        <div class="section">
+            <div class="top_navbar">
 
-            <div class="section">
-                <div class="top_navbar">
-                    <div class="hamburger">
-                        <a href="#">
-                            <i class="fas fa-bars"></i>
-                        </a>
+            </div>
+            <div class="top_navbar_hamburger">
+                <div class="hamburger">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="main">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Content Here</h1>
+                        </div>
                     </div>
                 </div>
-    
             </div>
-            <div class="sidebar">
-                <!--profile image & text-->
-                <div class="profile">
-                    <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg" alt="profile_picture">
-                </div>
-                 <!--menu item-->
-             </div>
-        <main class="py-4">
-            @yield('content')
-        </main>
+             
         </div>
-        
+        <div class="sidebar">
+            <div class="profile">
+                <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg" alt="profile_picture">
+                <h3>{{ Auth::user()->name }}</h3>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">My Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">People</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">Perfomance</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Development</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-user-shield"></i></span>
+                        <span class="item">Admin</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="item">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>   
     </div>
-     <!-- Scripts -->
-     <script src="{{ asset('style/admin/js/bootstrap.bundle.min.js') }}" defer></script>
-     <script src="{{ asset('style/admin/js/custom.js') }}" defer></script>
+  <script>
+       var hamburger = document.querySelector(".hamburger");
+	hamburger.addEventListener("click", function(){
+		document.querySelector("body").classList.toggle("active");
+	})
+  </script>
 </body>
 </html>
