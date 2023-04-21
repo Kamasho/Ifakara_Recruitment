@@ -32,7 +32,7 @@
                 
             </div>
             <div class="main">
-                <div class="container-fluid" style="border-style:ridge; margin-right: 15px; padding: 15px">
+                <div class="container-fluid" style="border-style:ridge; margin-right: 15px; padding: 15px; width: 100%;">
                     @yield('content')
                 </div>
             </div>

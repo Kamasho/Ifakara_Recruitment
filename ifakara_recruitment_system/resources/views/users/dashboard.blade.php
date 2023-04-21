@@ -8,7 +8,7 @@
         <p style="margin-bottom: 3px;"><strong>Step 1: </strong>Complete your Profile.</p>
         <p style="margin-bottom: 10px;">Please complete ALL of the required fields of the forms found in the left-hand menu of this page.</p>
         <p style="margin-bottom: 3px;"><strong>Step 2: </strong>Apply to a vacancy online</p>
-        <ul style="margin-bottom: 10px; list-style-type:circle;">
+        <ul style="margin-bottom: 10px; list-style-type:circle; margin-left: 40px;">
             <li>Click on the <strong>vacancies tab </strong> at the top of the page.</li>
             <li>Select a vacancy of interest.</li>
             <li>Read the job requirements thoroughly.</li>
