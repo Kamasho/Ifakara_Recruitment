@@ -21,13 +21,20 @@
                     <a href="" class="button">My Applications</a>
                     <a href="" class="button">Register To Job Alerts</a>
                     <a href="" class="button">Change Password</a>
-                    <a href="" class="button">Logout</a>
+                    <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();" class="button">Logout</a>
                     <a href="" class="button">Feedback</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
                 
             </div>
             <div class="main">
-                @include('layouts.include.users.main')
+                <div class="container-fluid" style="border-style:ridge; margin-right: 15px; padding: 15px">
+                    @yield('content')
+                </div>
             </div>
              
         </div>

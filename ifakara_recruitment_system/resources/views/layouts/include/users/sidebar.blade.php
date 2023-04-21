@@ -5,7 +5,13 @@
     </div>
     <ul>
         <li>
-            <a href="#">
+            <a href="{{ route('dashboard') }}">
+                <span class="icon"><i class="fas fa-desktop"></i></span>
+                <span class="item">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('personaldetails') }}">
                 <span class="icon"><i class="fas fa-home"></i></span>
                 <span class="item">Personal Details</span>
             </a>
