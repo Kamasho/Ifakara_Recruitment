@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GS\GsController;
 use App\Http\Controllers\HR\HrController;
+use App\Http\Controllers\User\PersonalDetailsController;
 use App\Http\Controllers\User\UserController;
 
 
@@ -38,5 +39,8 @@ Route::middleware(['auth','isGs'])->group(function(){
 
  //Users middleware
 Route::middleware(['auth','isUser'])->group(function(){
-    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
+    //Personal Details
+    Route::get('/personaldetails', [PersonalDetailsController::class, 'index'])->name('personaldetails');
  });
