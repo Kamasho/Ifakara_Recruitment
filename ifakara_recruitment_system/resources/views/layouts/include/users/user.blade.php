@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 @include('layouts.include.users.head')
 <body class="active">
@@ -38,9 +38,9 @@
             </div>
              
         </div>
-        {{-- sidebar --}}
+       
         @include('layouts.include.users.sidebar')
-        {{-- end sidebar --}}  
+        
     </div>
   <script>
        var hamburger = document.querySelector(".hamburger");
@@ -49,4 +49,58 @@
 	})
   </script>
 </body>
-</html>
+</html> --}}
+
+
+@include('assets.css')
+<!-- body start -->
+
+<body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+       @include('layouts.include.users.head')
+
+        <!-- ========== Left Sidebar Start ========== -->
+        @include('layouts.include.users.sidebar')
+        <!-- Left Sidebar End -->
+
+
+        <div class="content-page">
+            <div class="content">
+
+                @yield('content')
+
+            </div>
+            <!-- content -->
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> &copy;  <a href="">Ifakara Catholica Diocese</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-end footer-links d-none d-sm-block">
+                                <a href="javascript:void(0);">About Us</a>
+                                <a href="javascript:void(0);">Help</a>
+                                <a href="javascript:void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+
+    </div>
+    <!-- END wrapper -->
+
+
+@include('assets.js')
