@@ -23,7 +23,7 @@
                     <a href="" class="button">Change Password</a>
                     <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();" class="button">Logout</a>
+                          document.getElementById('logout-form').submit();" class="button">Logout</a>
                     <a href="" class="button">Feedback</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf

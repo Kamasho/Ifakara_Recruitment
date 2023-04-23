@@ -21,5 +21,7 @@
 
     <!-- icons -->
     <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <!-- Jquery Toast css -->
+    <link href="{{asset('assets/libs/jquery-toast-plugin/jquery.toast.min.css')}}" rel="stylesheet" type="text/css" />
 
 </head>
