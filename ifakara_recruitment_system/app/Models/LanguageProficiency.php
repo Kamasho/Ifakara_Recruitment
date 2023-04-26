@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class LanguageProficiency extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'language',
+        'status',
+        'created_at',
+        'updated_at',
+    ];
 }
