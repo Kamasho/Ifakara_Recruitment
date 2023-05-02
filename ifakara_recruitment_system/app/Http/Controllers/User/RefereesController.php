@@ -15,7 +15,7 @@ class RefereesController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.referees');
     }
 
     /**

@@ -15,7 +15,7 @@ class PersonalDetailsController extends Controller
      */
     public function index()
     {
-        return view('users.personaldetails');
+        return view('user.personaldetails');
     }
 
     /**

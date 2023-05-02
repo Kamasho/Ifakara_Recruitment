@@ -16,7 +16,7 @@ class ProfessionalQualificationController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.professionalqualification');
     }
 
     /**

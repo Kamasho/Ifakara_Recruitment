@@ -15,7 +15,7 @@ class WorkingExperienceController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.workingexperience');
     }
 
     /**

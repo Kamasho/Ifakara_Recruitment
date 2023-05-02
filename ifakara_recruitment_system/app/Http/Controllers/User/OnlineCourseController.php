@@ -16,7 +16,7 @@ class OnlineCourseController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.onlinecourse');
     }
 
     /**

@@ -16,7 +16,7 @@ class AcademicQualificationController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.academicqualification');
     }
 
     /**

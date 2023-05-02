@@ -16,7 +16,7 @@ class OtherAttachimentController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.otherattachiment');
     }
 
     /**

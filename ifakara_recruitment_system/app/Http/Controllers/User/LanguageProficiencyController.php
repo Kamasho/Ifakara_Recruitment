@@ -16,7 +16,7 @@ class LanguageProficiencyController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.languageproficiency');
     }
 
     /**

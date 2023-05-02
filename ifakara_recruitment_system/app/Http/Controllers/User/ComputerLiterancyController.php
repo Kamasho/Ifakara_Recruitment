@@ -16,7 +16,7 @@ class ComputerLiterancyController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.computerliterancy');
     }
 
     /**
