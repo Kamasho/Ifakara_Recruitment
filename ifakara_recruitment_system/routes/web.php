@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GS\GsController;
 use App\Http\Controllers\HR\HrController;
 use App\Http\Controllers\User\AcademicQualificationController;
@@ -33,7 +34,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/generalinformation', [HomeController::class, 'generalinformation'])->name('generalinformation');
 
 //HR middleware
 Route::middleware(['auth','isHr'])->group(function(){

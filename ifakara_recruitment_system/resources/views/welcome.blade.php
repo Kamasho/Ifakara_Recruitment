@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html >
     <head>
-        <link rel="stylesheet" href="style/admin/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="style/admin/css/style.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        @include('user.include.head')
     </head>
     <body>
         <div class="container my-3">
@@ -24,7 +20,7 @@
                               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="nav navbar-nav ml-auto">
                                   <li class="nav-item">
-                                      <a class="nav-link" href="#">Home</a>
+                                      <a class="nav-link" href="/">Home</a>
                                   </li>
                                   <li class="nav-item">
                                       <a class="nav-link" href="#">Vacancies</a>
@@ -33,7 +29,7 @@
                                       <a class="nav-link" href="{{ route('login') }}">Login</a>
                                   </li>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="#">Register</a>
+                                      <a class="nav-link" href="{{ route('register') }}">Register</a>
                                   </li>
                                   <li class="nav-item">
                                     <a class="nav-link" href="#">Feedback</a>
@@ -72,15 +68,15 @@
                             </div>
                         </div>
                       </div>
-                      <hr>
+                      <hr class="hr hr-blurry">
 
                       <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12 mt-4">
                         <!-- Tabs navs -->
 <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
     <li class="nav-item active" role="presentation">
       <a style="text-decoration: none; color: black;"
-        class="nav-link"
+        class="nav-link active"
         id="ex2-tab-1"
         data-mdb-toggle="tab"
         href="#ex2-tabs-1"
@@ -125,7 +121,12 @@
       role="tabpanel"
       aria-labelledby="ex2-tab-1"
     >
-      Tab 1 content
+    <ul>
+        <li><a href="#">Apply for Jobs</a></li>
+        <li><a href="#">Subscribe to Job Alerts</a></li>
+        <li><a href="#">Write a good CV</a></li>
+        <li><a href="#">Write a Cover letter</a></li>
+      </ul>
     </div>
     <div
       class="tab-pane fade"
@@ -146,8 +147,7 @@
   </div>
   <!-- Tabs content -->
                         </div>    
-                        
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-8 col-md-8 col-sm-12 mt-4">
                             <!-- Tabs navs -->
 <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
     <li class="nav-item" role="presentation">
@@ -174,9 +174,10 @@
       aria-labelledby="ex2-tab-1"
     >
       <ul>
-        <li>All applicants must be Citizens of Tanzania</li>
-        <li>Applicants must attach their detailed relevant certified copies of Academic certificates</li>
-        <a href="#">Read More</a>
+        <li>All applicants must be Citizens of Tanzania.</li>
+        <li>Applicants must attach their detailed relevant certified copies of Academic certificates.</li>
+        <li>Applicants should apply on the strength of the information given in the advertisement.</li>
+        <a href="{{ route('generalinformation') }}">Read More</a>
       </ul>
     </div>
   </div>
@@ -185,6 +186,8 @@
                       </div>
                    
                 </div>
+                <hr class="hr hr-blurry">
+                <div class="footer"><p class="text-center">Hatimiliki © 2023 ifakara dioceses catholic church Haki zote Zimehifadhiwa</p></div>
                 </div>
  
                                           
@@ -193,6 +196,5 @@
     <script src="style/admin/js/popper.js"></script>
     <script src="style/admin/js/bootstrap.min.js"></script>
     <script src="style/admin/js/main.js"></script>
-    
     </body>
 </html>
