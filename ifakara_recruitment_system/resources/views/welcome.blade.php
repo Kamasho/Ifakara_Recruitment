@@ -8,11 +8,11 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div class="container mt-3">
+        <div class="container my-3">
             <div class="card" style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;">
-                        <img src="{{ asset('style/admin/images/ifakarachurch.jpg') }}" style="height: 100px" class="card-img-top" alt="...">
+                        <img src="{{ asset('style/admin/images/ifakarachurch.jpg') }}" style="height: 100px; opacity: 0.8" class="card-img-top" alt="...">
                         <div class="card-img-overlay">
-                            <h2 class="card-title text-center"  style="font-family: 'Times New Roman', Times, serif">Ifakara Recruitment System</h2>
+                            <h2 class="card-title text-center"  style="font-family: 'Times New Roman', Times, serif">Mfumo wa Ajira Jimbo La Ifakara</h2>
                           </div>
                           <div class="card-title mb-0"> 
                             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,7 +30,7 @@
                                       <a class="nav-link" href="#">Vacancies</a>
                                   </li>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="#">Login</a>
+                                      <a class="nav-link" href="{{ route('login') }}">Login</a>
                                   </li>
                                   <li class="nav-item">
                                       <a class="nav-link" href="#">Register</a>
@@ -63,7 +63,7 @@
 
                       <div class="row justify-content-center mt-2">
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="card style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;"">
+                            <div class="card" style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;">
                                 <div class="card-header text-center"><h2 style="font-family: 'Times New Roman', Times, serif">Job Posts By Categories</h2></div>
                       
                                 <div class="card-body">
