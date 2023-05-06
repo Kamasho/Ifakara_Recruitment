@@ -48,7 +48,6 @@ Route::middleware(['auth','isGs'])->group(function(){
 
 
 
- Route::get('/auth',[LoginController::class, 'index'])->name('login');
  //Users middleware
 Route::middleware(['auth','isUser'])->group(function(){
     //Dashboard
