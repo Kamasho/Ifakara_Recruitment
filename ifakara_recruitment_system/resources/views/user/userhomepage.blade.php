@@ -34,6 +34,7 @@
     <script src="style/admin/js/popper.js"></script>
     <script src="style/admin/js/bootstrap.min.js"></script>
     <script src="style/admin/js/main.js"></script>
+    <script src="{{asset('style/admin/js/bootstrap-editable.min.js')}}"></script>
 </body>
 
 </html>
