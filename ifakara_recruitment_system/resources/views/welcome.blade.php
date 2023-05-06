@@ -9,16 +9,18 @@
 <body>
     <div class="container my-3">
         <div class="card" style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;">
+          
             @include('layouts.welcome.header')
 
             <div class="card-body">
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    Waombaji wa fursa za Ajira mnatakiwa kuhuisha <b>Update</b> taarifa zenu kwa kutumia namba ya
+                  <p style="text-align:justify"> Waombaji wa fursa za Ajira mnatakiwa kuhuisha <b>Update</b> taarifa zenu kwa kutumia namba ya
                     utambulisho wa Taifa <b>NIN</b>, kwenye eneo ya <b>Personal Details</b>, aidha mnatakiwa kuhuisha
                     taarifa kwenye eneo la <b>Academic Qualification</b> kwa kuweka kozi yako kwenye Category husika.
                     Ili kuona <b>STATUS</b> ya maombi yako ya kazi, ingia sehemu ya <b>MY APPLICATION</b> baada ya
                     ku-<b>login</b> katika akaunti yako. Sehemu hii itakuwezesha kuona namba ya usaili kwa wale
-                    waliofanikiwa na sababu ya kutokuitwa kwa wale ambao hawajafanikiwa.
+                    waliofanikiwa na sababu ya kutokuitwa kwa wale ambao hawajafanikiwa.</p>
+               
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -53,9 +55,9 @@
                 <hr class="hr hr-blurry">
 
                 <div class="row mt-4">
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 col-md-7 col-sm-7">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                               <div class="card">
                                 <div class="card-header text-center text-black fw-bold">
                                   How Do I
@@ -70,7 +72,7 @@
                                 </div>
                               </div> 
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                               <div class="card">
                                 <div class="card-header text-center text-black fw-bold">
                                   Tips
@@ -78,7 +80,7 @@
                               </div>
                                 
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                               <div class="card">
                                 <div class="card-header text-center text-black fw-bold">
                                   Resources
@@ -88,7 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 col-md-5 col-sm-5 mt-4">
                       <div class="card">
                         <div class="card-header text-center text-black fw-bold">
                           Application

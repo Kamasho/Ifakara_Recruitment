@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -31,10 +32,9 @@ use App\Http\Controllers\User\WorkingExperienceController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
-
 Route::get('/generalinformation', [HomeController::class, 'generalinformation'])->name('generalinformation');
+ Auth::routes();
+
 
 //HR middleware
 Route::middleware(['auth','isHr'])->group(function(){
@@ -46,6 +46,9 @@ Route::middleware(['auth','isGs'])->group(function(){
     Route::get('/gsdashboard', [GsController::class, 'index']);
  });
 
+
+
+ Route::get('/auth',[LoginController::class, 'index'])->name('login');
  //Users middleware
 Route::middleware(['auth','isUser'])->group(function(){
     //Dashboard

@@ -22,6 +22,7 @@
                                     <a class="nav-link fw-bold text-black" href="#">Vacancies</a>
                                 </li>
                                 <li class="nav-item">
+                                    
                                     <a class="nav-link fw-bold text-black" href="{{ route('login') }}">Login</a>
                                 </li>
                                 <li class="nav-item">
