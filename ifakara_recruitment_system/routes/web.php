@@ -63,7 +63,8 @@ Route::middleware(['auth','isUser'])->group(function(){
 
     //Academic Qualifications
     Route::get('/academicqualifications', [AcademicQualificationController::class, 'index'])->name('academicqualifications');
-    Route::post('/academicqualifications/add_academicqualifications',[AcademicQualificationController::class, 'store'])->name('add_academicqualifications');
+    Route::get('/academicqualifications/add_academicqualifications',[AcademicQualificationController::class, 'create'])->name('add_academicqualifications');
+    Route::post('/academicqualifications/store_academicqualifications',[AcademicQualificationController::class, 'store'])->name('store_academicqualifications');
     Route::get('/academicqualifications/delete_academicqualifications/{id}', [AcademicQualificationController::class, 'destroy'])->name('delete_academicqualifications');
     Route::put('/academicqualifications/update_academicqualifications/{id}', [AcademicQualificationController::class, 'update'])->name('update_academicqualifications');
 

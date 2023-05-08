@@ -6,7 +6,7 @@
         <div class="card shadow">
             <div class="card-header">
               <h2 style="float:left ; font-family: 'Times New Roman', Times, serif">Saved Academic Qualifications</h2>
-              <button style="float: right; margin-top: 5px; border:none; font-size:25px; color:black;"><i class="bi bi-plus-circle"></i></button>
+              <a style="float: right; margin-top: 5px; border:none; font-size:25px; color:black;" href="{{ route('add_academicqualifications') }}"><i class="bi bi-plus-circle"></i></a>
             </div>
             <div class="card-body">
                 <table class="table table-striped">
