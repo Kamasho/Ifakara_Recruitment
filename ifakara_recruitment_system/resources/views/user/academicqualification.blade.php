@@ -5,7 +5,8 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="card shadow">
             <div class="card-header">
-              <h2 style="font-family: 'Times New Roman', Times, serif">Saved Academic Qualifications</h2>
+              <h2 style="float:left ; font-family: 'Times New Roman', Times, serif">Saved Academic Qualifications</h2>
+              <button style="float: right; margin-top: 5px; border:none; font-size:25px; color:black;"><i class="bi bi-plus-circle"></i></button>
             </div>
             <div class="card-body">
                 <table class="table table-striped">
