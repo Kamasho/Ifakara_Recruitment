@@ -1,7 +1,7 @@
 <img src="{{ asset('web/img/cover_img.png') }}" style="height: 200px; opacity: 1" class="card-img-top"
                 alt="...">
             <div class="card-img-overlay">
-                <h2 class="card-title text-center mt-3 text-white fw-bold" style="font-family: 'Times New Roman', Times, serif">Mfumo wa
+                <h2 class="card-title text-center mt-3 text-white fw-bold" style="font-family: 'Times New Roman', Times, serif">Mfumo Wa
                     Ajira Jimbo La Ifakara</h2>
             </div>
             <div class="card-title mb-0">
@@ -14,7 +14,7 @@
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="nav navbar-nav ml-auto">
+                            <ul class="nav navbar-nav ml-auto" style="font-family: 'Times New Roman', Times, serif; font-size: large;">
                                 <li class="nav-item">
                                     <a class="nav-link fw-bold text-black" href="/">Home</a>
                                 </li>

@@ -1,9 +1,9 @@
-<div class="container-fluid p-4" style="background-image: url({{ asset('web/img/cover_img.png') }})">
+<div class="container-fluid p-4 mt-3" style="background-image: url({{ asset('web/img/cover_img.png') }}); border-radius: 5px;">
     <div class="row justify-content-center">
         <div class="col-10 m-2">
             <span>
                 <h1 class="text-center"style="font-family: 'Times New Roman', Times, serif; padding-right: 5px; color:white;">
-               Ifakara Recruitment System  
+                    Mfumo Wa Ajira Jimbo La Ifakara  
                 </h1>
             </span>
         </div>

@@ -55,48 +55,56 @@
                 <hr class="hr hr-blurry">
 
                 <div class="row mt-4">
-                    <div class="col-lg-7 col-md-7 col-sm-7">
-                        <div class="row">
-                            <div class="col-md-4 mt-4">
-                              <div class="card">
-                                <div class="card-header text-center text-black fw-bold">
-                                  How Do I
-                                </div>
-                                <div class="card-body">
-                                  <ul style="list-style: lower-roman">
-                                    <li><a href="#">Apply for Jobs</a></li>
-                                    <li><a href="#">Subscribe to Job Alerts</a></li>
-                                    <li><a href="#">Write a good CV</a></li>
-                                    <li><a href="#">Write a Cover letter</a></li>
-                                </ul>
-                                </div>
-                              </div> 
-                            </div>
-                            <div class="col-md-4 mt-4">
-                              <div class="card">
-                                <div class="card-header text-center text-black fw-bold">
-                                  Tips
-                                </div>
-                              </div>
-                                
-                            </div>
-                            <div class="col-md-4 mt-4">
-                              <div class="card">
-                                <div class="card-header text-center text-black fw-bold">
-                                  Resources
-
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-5 col-sm-5 mt-4">
-                      <div class="card">
-                        <div class="card-header text-center text-black fw-bold">
-                          Application
-                          General Condition
-                        </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 mt-3">
+                      <div class="card" style="height: 245px;">
                         <div class="card-body">
+                          <div id="exTab2">	
+                            <ul class="nav nav-tabs nav-fill">
+                                  <li class="nav-item">
+                                    <a class="nav-link active" href="#1" aria-current="page" data-toggle="tab">How Do I</a>
+                                  </li>
+                                  <li class="nav-item"><a class="nav-link" href="#2" data-toggle="tab">Tips</a>
+                                  </li>
+                                  <li class="nav-item"><a class="nav-link" href="#3" data-toggle="tab">Resources</a>
+                                  </li>
+                                </ul>
+                            
+                                  <div class="tab-content ">
+                                    <div class="tab-pane active" id="1">
+                                      <ul style="list-style: lower-roman; font-family:'Times New Roman', Times, serif; font-size:medium;">
+                                        <li><a href="{{ route('howtoapplyjob') }}">Apply for Jobs</a></li>
+                                        <li><a href="{{ route('howtoapplyjob') }}">Subscribe to Job Alerts</a></li>
+                                        <li><a href="{{ route('howtoapplyjob') }}">Write a good CV</a></li>
+                                        <li><a href="{{ route('howtoapplyjob') }}">Write a Cover letter</a></li>
+                                    </ul>
+                                    </div>
+                                    <div class="tab-pane" id="2">
+                                      <ul style="font-family:'Times New Roman', Times, serif; font-size:medium;">
+                                        <li><a href="{{ route('interview') }}">Get prepared for the Interview</a></li>
+                                        <li><a href="#">How to take the stress out of job interview</a></li>
+                                        <li><a href="#">Practice your answers</a></li>
+                                        <li><a href="#">Look the part</a></li>
+                                        <li><a href="#">Interview Attire</a></li>
+                                    </ul>
+                                    </div>
+                                    <div class="tab-pane" id="3">
+                                      <ul style="font-family:'Times New Roman', Times, serif; font-size:medium;">
+                                        <li><a href="#">Download: User Manual</a></li>
+                                    </ul>
+                                    </div>
+                                  </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5 mt-3">
+                      <div class="card">
+                        
+                        <div class="card-body">
+                          <div class="card-header text-center text-black fw-bold">
+                            Application
+                            General Condition
+                          </div>
                           <ul>
                             <li>All applicants must be Citizens of Tanzania.</li>
                             <li>Applicants must attach their detailed relevant certified copies of Academic

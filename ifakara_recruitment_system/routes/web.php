@@ -32,7 +32,9 @@ use App\Http\Controllers\User\WorkingExperienceController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/generalinformation', [HomeController::class, 'generalinformation'])->name('generalinformation');
+Route::get('/general-information', [HomeController::class, 'generalinformation'])->name('generalinformation');
+Route::get('/how-to-applyjob', [HomeController::class, 'howtoapplyjob'])->name('howtoapplyjob');
+Route::get('/how-to-prepare-for-interview', [HomeController::class, 'interview'])->name('interview');
  Auth::routes();
 
 

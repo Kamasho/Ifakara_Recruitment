@@ -27,6 +27,14 @@ class HomeController extends Controller
     }
 
     public function generalinformation(){
-        return view('generalInformation');
+        return view('user.userdeskhelp.generalInformation');
+    }
+
+    public function howtoapplyjob(){
+        return view('user.userdeskhelp.howtoapply');
+    }
+
+    public function interview(){
+        return view('user.userdeskhelp.interview');
     }
 }
