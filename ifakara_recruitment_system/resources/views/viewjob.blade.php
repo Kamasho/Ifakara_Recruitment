@@ -71,7 +71,7 @@
                                                         </td>
                                                         <td>
                                                             <p>23-04-2023</p><br>
-                                                            <a href="#">Login To Apply</a>
+                                                            <a href="#"><i class="fa-regular fa-lock-keyhole"></i>Login To Apply</a>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -83,7 +83,7 @@
                                                         </td>
                                                         <td>
                                                             <p>11-08-2023</p><br>
-                                                            <a href="#">Login To Apply</a>
+                                                            <a href="#"><i class="fa-regular fa-lock-keyhole"></i>Login To Apply</a>
                                                         </td>
                                                     </tr>
                                                 </tbody>
