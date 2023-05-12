@@ -37,4 +37,14 @@ class HomeController extends Controller
     public function interview(){
         return view('user.userdeskhelp.interview');
     }
+    public function viewjob()
+    {
+        return view('viewjob');
+    }
+    public function postdeatail()
+    {
+        return view('postdetails');
+    }
+    
+    
 }

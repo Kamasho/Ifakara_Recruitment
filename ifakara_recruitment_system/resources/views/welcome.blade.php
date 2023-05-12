@@ -45,6 +45,83 @@
                             </div>
 
                             <div class="card-body">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-between">
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Accounting and Auditing (5)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">IT and Telecoms (5)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Taxation and Social Protection (0)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Tourism and Travel (0)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Legal (0)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Banking, Economics and Financial Services (4)</a></li>
+                                            </ul>
+                                           
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Physical & Natural Sciences (0)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Linguistics (0)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Trades and Services (3)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Water, Mining and Natural Resources (2)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">Healthcare and Pharmaceutical (3)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <ul>
+                                                <li><a href="#">HR & Administration (7)</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
 
                             </div>
                         </div>

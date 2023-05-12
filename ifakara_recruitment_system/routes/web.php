@@ -37,6 +37,8 @@ Route::get('/', function () {
 Route::get('/general-information', [HomeController::class, 'generalinformation'])->name('generalinformation');
 Route::get('/how-to-applyjob', [HomeController::class, 'howtoapplyjob'])->name('howtoapplyjob');
 Route::get('/how-to-prepare-for-interview', [HomeController::class, 'interview'])->name('interview');
+Route::get('/view-job', [HomeController::class, 'viewjob'])->name('viewjob');
+Route::get('/post-details', [HomeController::class, 'postdeatail'])->name('postdeatail');
  Auth::routes();
 
 
