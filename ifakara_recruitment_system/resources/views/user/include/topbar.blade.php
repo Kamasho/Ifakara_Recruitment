@@ -3,7 +3,7 @@
         <div class="col-10 m-2">
             <span>
                 <h1 class="text-center"style="font-family: 'Times New Roman', Times, serif; padding-right: 5px; color:white;">
-                    Mfumo Wa Ajira Jimbo La Ifakara  
+                    ICAD Employee Management System  
                 </h1>
             </span>
         </div>

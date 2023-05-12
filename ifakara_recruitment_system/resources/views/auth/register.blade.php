@@ -78,7 +78,7 @@
  --}}
 
 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -88,7 +88,7 @@
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
     <!-- App css -->
     <link href="{{ asset('assets/css/config/default/bootstrap.min.css') }}" rel="stylesheet" type="text/css"
@@ -119,20 +119,20 @@
                             <div class="text-center w-75 m-auto">
                                 <div class="auth-logo">
                                     <a href="index.html" class="logo logo-dark text-center">
-                                        <span class="logo-lg">
-                                                {{-- <img src="../assets/images/logo-dark.png" alt="" height="22"> --}}
+                                        <span class="logo-lg"> --}}
+                                                <img src="../assets/images/logo-dark.png" alt="" height="22">
                                                 <H3 class="text-black">PORTAL | SIGN UP</H3>
                                             </span>
                                     </a>
 
                                     <a href="index.html" class="logo logo-light text-center">
                                         <span class="logo-lg">
-                                                {{-- <img src="../assets/images/logo-light.png" alt="" height="22"> --}}
-                                                <H3 class="text-black">PORTAL | SIGN UP</H3>
+                                                <img src="../assets/images/logo-light.png" alt="" height="22">
+                                               <H3 class="text-black">PORTAL | SIGN UP</H3>
                                             </span>
                                     </a>
                                 </div>
-                                {{-- <p class="text-muted mb-4 mt-3">Don't have an account? Create your account, it takes less than a minute</p> --}}
+                                <p class="text-muted mb-4 mt-3">Don't have an account? Create your account, it takes less than a minute</p>
                             </div>
 
                             <form method="POST" action="{{ route('register') }}">
@@ -147,7 +147,7 @@
                                     </span>
                                 @enderror
                                 </div>
-                              
+
                                 <div class="mb-3">
                                     <label for="emailaddress" class="form-label text-black">{{ __('Email Address') }}</label>
                                     <input class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" type="email" id="emailaddress" required placeholder="Enter your email">
@@ -193,7 +193,7 @@
 
                             </form>
 
-                      
+
                         </div>
                         <div class="row mt-3">
                             <div class="col-12 text-center">
@@ -205,7 +205,7 @@
                     </div>
                     <!-- end card -->
 
-                 
+
                     <!-- end row -->
 
                 </div>
@@ -218,7 +218,7 @@
     <!-- end page -->
 
     <footer class="footer footer-alt">
-        
+
         <script>
             document.write(new Date().getFullYear())
         </script> &copy;  <a href="" class="text-black-50">Ifakara Catholic Diocese</a>

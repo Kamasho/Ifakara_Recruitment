@@ -2,7 +2,7 @@
                 alt="...">
             <div class="card-img-overlay">
                 <h2 class="card-title text-center mt-3 text-white fw-bold" style="font-family: 'Times New Roman', Times, serif">Mfumo Wa
-                    Ajira Jimbo La Ifakara</h2>
+                    ICAD Employee Management System</h2>
             </div>
             <div class="card-title mb-0">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
