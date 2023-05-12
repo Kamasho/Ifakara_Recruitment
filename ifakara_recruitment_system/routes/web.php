@@ -17,6 +17,8 @@ use App\Http\Controllers\User\RefereesController;
 use App\Http\Controllers\User\TrainingAndWorkshopController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\WorkingExperienceController;
+use App\Http\Controllers\AcademicQualificationDropdownController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -67,7 +69,10 @@ Route::middleware(['auth','isUser'])->group(function(){
     Route::post('/academicqualifications/store_academicqualifications',[AcademicQualificationController::class, 'store'])->name('store_academicqualifications');
     Route::get('/academicqualifications/delete_academicqualifications/{id}', [AcademicQualificationController::class, 'destroy'])->name('delete_academicqualifications');
     Route::put('/academicqualifications/update_academicqualifications/{id}', [AcademicQualificationController::class, 'update'])->name('update_academicqualifications');
-
+    //Route::get('dropdown', [AcademicQualificationDropdownController::class, 'index']);
+    Route::post('/fetcheducationcategory', [AcademicQualificationController::class, 'fetch_education_category']);
+    Route::post('/fetcheducationname', [AcademicQualificationController::class, 'fetch_education_name']);
+    
     //Computer Literancy
     Route::get('/computerliterancy', [ComputerLiterancyController::class, 'index'])->name('computerliterancy');
     Route::post('/computerliterancy/add_computerliterancy',[ComputerLiterancyController::class, 'store'])->name('add_computerliterancy');
