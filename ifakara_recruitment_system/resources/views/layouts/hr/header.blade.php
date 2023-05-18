@@ -4,9 +4,6 @@
    <div class="navbar-custom">
     <div class="container-fluid">
         <ul class="list-unstyled topnav-menu float-end mb-0">
-
-         
-
             <li class="dropdown notification-list topbar-dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-bell noti-icon"></i>
@@ -25,7 +22,7 @@
                         </h5>
                     </div>
 
-                    <div class="noti-scroll" data-simplebar>
+                    {{-- <div class="noti-scroll" data-simplebar>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item active">
@@ -87,12 +84,12 @@
                                 <small class="text-muted">13 days ago</small>
                             </p>
                         </a>
-                    </div>
+                    </div> --}}
 
                     <!-- All-->
-                    <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
+                    {{-- <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
                 View all
-                <i class="fe-arrow-right"></i>
+                <i class="fe-arrow-right"></i> --}}
             </a>
 
                 </div>
@@ -107,9 +104,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                     <!-- item-->
-                    <div class="dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">Welcome !</h6>
-                    </div>
+                    
 
                     <!-- item-->
                     <a href="#" class="dropdown-item notify-item">

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GS\GsController;
 use App\Http\Controllers\HR\HrController;
+use App\Http\Controllers\HR\StaffController;
 use App\Http\Controllers\User\AcademicQualificationController;
 use App\Http\Controllers\User\ComputerLiterancyController;
 use App\Http\Controllers\User\LanguageProficiencyController;
@@ -18,7 +19,9 @@ use App\Http\Controllers\User\TrainingAndWorkshopController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\WorkingExperienceController;
 use App\Http\Controllers\AcademicQualificationDropdownController;
-
+use App\Http\Controllers\HR\JobsController;
+use App\Http\Controllers\HR\UploadController;
+use GuzzleHttp\Psr7\UploadedFile;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +47,12 @@ Route::get('/post-details', [HomeController::class, 'postdeatail'])->name('postd
 
 //HR middleware
 Route::middleware(['auth','isHr'])->group(function(){
-    Route::get('/hrdashboard', [HrController::class, 'index']);
+    Route::get('/hrdashboard', [HrController::class, 'index'])->name('hrdashboard');
+    Route::get('/hr/staff',[StaffController::class, 'index'])->name('staff');
+    Route::get('/hr/jobs',[JobsController::class,'index'])->name('jobs');
+    Route::get('/hr/uploads',[UploadController::class,'index'])->name('uploads');
+    Route::get('/hr/job/received',[JobsController::class,'receivedquery'])->name('received');
+
  });
 
  //GS middleware
