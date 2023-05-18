@@ -19,6 +19,7 @@ use App\Http\Controllers\User\TrainingAndWorkshopController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\WorkingExperienceController;
 use App\Http\Controllers\AcademicQualificationDropdownController;
+use App\Http\Controllers\GS\StaffGSController;
 use App\Http\Controllers\HR\JobsController;
 use App\Http\Controllers\HR\UploadController;
 use GuzzleHttp\Psr7\UploadedFile;
@@ -57,7 +58,8 @@ Route::middleware(['auth','isHr'])->group(function(){
 
  //GS middleware
 Route::middleware(['auth','isGs'])->group(function(){
-    Route::get('/gsdashboard', [GsController::class, 'index']);
+    Route::get('/gsdashboard', [GsController::class, 'index'])->name('dashboard');
+    Route::get('/gs/staffs',[StaffGSController::class, 'index'])->name('staffs');
  });
 
 
