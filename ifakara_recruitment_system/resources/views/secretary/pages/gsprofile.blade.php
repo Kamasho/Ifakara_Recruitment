@@ -66,12 +66,12 @@
                                                     <div class="col-md-6">
                                                         <label for="name" class="label">name</label>
                                                         <input type="text" class="form-control" name="name"
-                                                            value="general secretary">
+                                                            value="{{ Auth::user()->name }}">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label for="name" class="label">Eamil</label>
                                                         <input type="email" class="form-control" name="name"
-                                                            value="gs@gmail.com">
+                                                            value="{{ Auth::user()->email}}">
                                                     </div>
 
 

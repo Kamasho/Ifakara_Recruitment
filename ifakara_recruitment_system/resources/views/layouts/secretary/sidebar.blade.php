@@ -120,30 +120,32 @@
 
                 <li class="menu-title mt-2">Apps</li>
 
+               
+
                 <li>
                     <a href="{{route('staffs')}}">
-                        <i data-feather="calendar"></i>
+                        <i data-feather="users"></i>
                         <span> Staff </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="apps-chat.html">
+                    <a href="{{route('job_position')}}">
                         <i data-feather="message-square"></i>
                         <span>Jobs </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
-                        <i data-feather="shopping-cart"></i>
-                        <span> Users </span>
+                    <a href="{{route('jobs_applications')}}">
+                        <i data-feather="users"></i>
+                        <span> Applicants </span>
                     </a>
                    
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{route('job_requitment')}}">
                         <i data-feather="users"></i>
                         <span> Requitiment </span>
                     </a>

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GS\GsController;
+use App\Http\Controllers\GS\PositionController;
+use App\Http\Controllers\GS\ApplicantsController;   
 use App\Http\Controllers\HR\HrController;
 use App\Http\Controllers\HR\StaffController;
 use App\Http\Controllers\User\AcademicQualificationController;
@@ -22,6 +24,7 @@ use App\Http\Controllers\AcademicQualificationDropdownController;
 use App\Http\Controllers\GS\StaffGSController;
 use App\Http\Controllers\HR\JobsController;
 use App\Http\Controllers\HR\UploadController;
+
 use GuzzleHttp\Psr7\UploadedFile;
 
 /*
@@ -63,6 +66,10 @@ Route::middleware(['auth','isGs'])->group(function(){
     Route::get('/gsdashboard', [GsController::class, 'index'])->name('gsdashboard');
     Route::get('/gs/staffs',[StaffGSController::class, 'index'])->name('staffs');
     Route::get('/gs/profile',[GsController::class,'GSprofile'])->name('profile_gs');
+    Route::get('/gs/position',[PositionController::class,'index'])->name('job_position');
+    Route::get('/gs/applications',[ApplicantsController::class,'index'])->name('jobs_applications');
+    Route::get('/gs/requitment',[ApplicantsController::class, 'Requitment'])->name('job_requitment');
+
  });
 
 
