@@ -903,15 +903,21 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Add New Job</h4>
+                    <h4 class="modal-title" id="myCenterModalLabel">Publish a Job</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="field-1" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="field-1" placeholder="job name">
+                                <label for="example-select" class="form-label">Job name</label>
+                                <select class="form-select" id="example-select">
+                                    <option>Human  Resource</option>
+                                    <option>SECRETARY</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -927,28 +933,30 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Job Description</label>
-                                <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="field-4" class="form-label">Job Location</label>
                                 <input type="text" class="form-control" id="field-4" placeholder="Boston">
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="field-5" class="form-label">More Job Descrition</label>
                                 <input type="file" class="form-control" id="field-5" placeholder="United States">
                             </div>
                         </div>
-                        <div class="col-md-4">
+                   
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="field-6" class="form-label">Application StartDate:</label>
+                                <input type="date" class="form-control" id="field-6" placeholder="123456">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="field-6" class="form-label">Application Deadline:</label>
                                 <input type="date" class="form-control" id="field-6" placeholder="123456">
@@ -958,8 +966,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="">
-                                <label for="field-7" class="form-label">Responsibliity </label>
-                                <textarea class="form-control" id="field-7" placeholder="Write something about yourself"></textarea>
+                                <label for="field-7" class="form-label">Description </label>
+                                <textarea name="job_description" id="" cols="10" rows="10" class="form-control"></textarea>
+                            
                             </div>
                         </div>
                     </div>

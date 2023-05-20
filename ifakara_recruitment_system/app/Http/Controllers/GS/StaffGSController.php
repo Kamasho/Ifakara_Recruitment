@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\GS;
-
+use App\Models\Staffs;
 use App\Http\Controllers\Controller;
+use App\Models\File_Uploads;
 use Illuminate\Http\Request;
 
 class StaffGSController extends Controller
@@ -35,7 +36,38 @@ class StaffGSController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|email',
+            'contacts' => 'required',
+            'location' => 'required',
+            'staff_contract' => 'required',
+            'job_name' => 'required|exists:jobs,job_id',
+        ]);
+
+        $staff = Staffs::create($validatedData);
+    dd($staff);
+        return response()->json([
+            'message' => 'Staff created successfully',
+            'staff' => $staff
+        ], 201);
+    }
+
+    public function FileUpload(Request $request)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'file' => 'required|file',
+        ]);
+
+        $upload = File_Uploads::create($validatedData);
+
+        return response()->json([
+            'message' => 'Upload created successfully',
+            'upload' => $upload
+        ], 201);
     }
 
     /**

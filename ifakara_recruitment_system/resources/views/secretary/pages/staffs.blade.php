@@ -35,7 +35,7 @@
                                                     data-bs-toggle="pill" href="#v-pills-home" role="tab"
                                                     aria-controls="v-pills-home" aria-selected="true">
 
-                                                    <span> Position </span></a>
+                                                    <span>Job Registration </span></a>
                                                 <a class="nav-link mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
                                                     href="#v-pills-profile" role="tab"
                                                     aria-controls="v-pills-profile" aria-selected="false">
@@ -882,8 +882,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="field-1" class="form-label">Job Title</label>
-                                <input type="text" class="form-control" id="field-1" placeholder="job title">
+                                <label for="example-select" class="form-label">Job title</label>
+                                <select class="form-select" id="example-select">
+                                    <option>Human  Resource</option>
+                                    <option>SECRETARY</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -893,15 +899,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Job Description</label>
-                                <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

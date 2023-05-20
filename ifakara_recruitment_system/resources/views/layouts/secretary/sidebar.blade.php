@@ -132,7 +132,7 @@
                 <li>
                     <a href="{{route('job_position')}}">
                         <i data-feather="message-square"></i>
-                        <span>Jobs </span>
+                        <span>Posts </span>
                     </a>
                 </li>
 
