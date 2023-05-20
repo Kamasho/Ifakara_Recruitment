@@ -27,6 +27,11 @@ class GsController extends Controller
         //
     }
 
+
+    public function GSprofile(){
+        return view('secretary.pages.gsprofile');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -111,7 +111,7 @@
                 <li class="menu-title">Navigation</li>
 
                 <li>
-                    <a href="{{route('dashboard')}}">
+                    <a href="{{route('gsdashboard')}}">
                         <i data-feather="airplay"></i>
                         <span> Dashboards </span>
                     </a>

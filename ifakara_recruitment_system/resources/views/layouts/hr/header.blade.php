@@ -104,20 +104,18 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                     <!-- item-->
-                    
-
+                             <!-- item-->
+                             <div class="dropdown-header noti-title">
+                                <h6 class="text-overflow m-0 text-muted">Manage Profile </h6>
+                            </div>
                     <!-- item-->
-                    <a href="#" class="dropdown-item notify-item">
+                    <a href="{{route('profile_hr')}}" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
                         <span>My Profile</span>
                     </a>
 
                     <!-- item-->
-                    <a href="#" class="dropdown-item notify-item">
-                        <i class="fe-settings"></i>
-                        <span>Settings</span>
-                    </a>
-
+                  
                     <!-- item-->
                   
 

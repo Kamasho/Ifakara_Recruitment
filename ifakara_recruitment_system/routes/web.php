@@ -53,13 +53,16 @@ Route::middleware(['auth','isHr'])->group(function(){
     Route::get('/hr/jobs',[JobsController::class,'index'])->name('jobs');
     Route::get('/hr/uploads',[UploadController::class,'index'])->name('uploads');
     Route::get('/hr/job/received',[JobsController::class,'receivedquery'])->name('received');
+    Route::get('/hr/profile',[HrController::class,'HRprofile'])->name('profile_hr');
 
  });
 
  //GS middleware
 Route::middleware(['auth','isGs'])->group(function(){
-    Route::get('/gsdashboard', [GsController::class, 'index'])->name('dashboard');
+
+    Route::get('/gsdashboard', [GsController::class, 'index'])->name('gsdashboard');
     Route::get('/gs/staffs',[StaffGSController::class, 'index'])->name('staffs');
+    Route::get('/gs/profile',[GsController::class,'GSprofile'])->name('profile_gs');
  });
 
 
