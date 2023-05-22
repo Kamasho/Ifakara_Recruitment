@@ -41,7 +41,7 @@ Route::get('/sironga', function () {
     return \App\Models\Posts::with('job')->get();
 });
 
-Route::get('/', function () {   
+Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/general-information', [HomeController::class, 'generalinformation'])->name('generalinformation');
