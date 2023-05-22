@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Models;
-use  App\Modes\Jobs;
+use  App\Modes\Job;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Staffs extends Model
+class Staff extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -22,6 +22,6 @@ class Staffs extends Model
 
     public function job()
     {
-        return $this->belongsTo(Jobs::class, 'job_name', 'job_id');
+        return $this->belongsTo(Job::class, 'job_name', 'job_id');
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\GS;
 
 use App\Http\Controllers\Controller;
-use App\Models\Posts;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PositionController extends Controller
@@ -47,7 +47,7 @@ class PositionController extends Controller
             'job_location' => 'required|exists:jobs,job_id',
         ]);
 
-        $post = Posts::create($validatedData);
+        $post = Post::create($validatedData);
 
         return response()->json([
             'message' => 'Post created successfully',

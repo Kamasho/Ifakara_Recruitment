@@ -765,62 +765,74 @@
                     </div>
 
                     <h4>JOB INFORMATION</h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-1" class="form-label">Job Title</label>
-                                <input type="text" class="form-control" id="field-1" placeholder="job title">
+                    <form action="{{route('job_registrations')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Job Title</label>
+                                    <input type="text" class="form-control" id="field-1" name="job_name" placeholder="job title">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-2" class="form-label">Location</label>
+                                    <input type="text" class="form-control" name="job_location" id="field-2" placeholder="singida">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-2" class="form-label">Location</label>
-                                <input type="text" class="form-control" id="field-2" placeholder="singida">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Job Description</label>
+                                    <textarea class="form-control" id="field-7" name="job_description" placeholder="Write something about job"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                <label for="field-3" class="form-label">More Discription Document</label>
+                                <input type="file" class="form-control" name="job_file" id="field-2">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Job Description</label>
-                                <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea>
+                        <h4>JOB POSITION</h4>
+                         <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-12">
+                                        <div class="col-12">
+                                        <div class="mb-3">
+                                            <label for="field-4" class="form-label">Position Name</label>
+                                            <input type="text" class="form-control" name="position_name" id="field-4" placeholder="first name">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label for="field-6" class="form-label">More Description Document</label>
+                                            <input type="file" class="form-control" id="field-6" name="position_file" placeholder="email">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                            <label for="field-3" class="form-label">More Discription Document</label>
-                            <input type="file" class="form-control" id="field-2" placeholder="singida">
+                           
+                             <div class="col-md-6">
+                                 <div class="mb-3">
+                                     <label for="field-5" class="form-label">Position Discription</label>
+                                     <textarea name="position_description" id="" cols="15" rows="5" class="form-control"></textarea>
+                                 </div>
+                             </div>
+                           
+                         </div>
+
+                         <div class="row">
+                            <div class="col-md-3">
+                                <button class="btn btn-primary btn-block" type="submit">Register</button>
 
                             </div>
-                        </div>
-                    </div>
-                    <h4>JOB POSITION</h4>
-                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="col-12">
-                                    <div class="col-12">
-                                    <div class="mb-3">
-                                        <label for="field-4" class="form-label">Position Name</label>
-                                        <input type="text" class="form-control" id="field-4" placeholder="first name">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="mb-3">
-                                        <label for="field-6" class="form-label">More Description Document</label>
-                                        <input type="file" class="form-control" id="field-6" placeholder="email">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-                         <div class="col-md-6">
-                             <div class="mb-3">
-                                 <label for="field-5" class="form-label">Position Discription</label>
-                                 <textarea name="position_descriptio " id="" cols="15" rows="5" class="form-control"></textarea>
-                             </div>
                          </div>
-                       
-                     </div>
+
+
+                    </form>
+                    
                    
      
      

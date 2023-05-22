@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Models;
-use  App\Modes\Jobs;
+use  App\Modes\Job;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Posts extends Model
+class Post extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -23,16 +23,16 @@ class Posts extends Model
 
     public function job()
     {
-        return $this->belongsTo(Jobs::class, 'job_name', 'job_id');
+        return $this->belongsTo(Job::class, 'job_name', 'job_id');
     }
 
     public function position()
     {
-        return $this->belongsTo(Jobs::class, 'position_name', 'position_id');
+        return $this->belongsTo(Job::class, 'position_name', 'position_id');
     }
 
     public function location()
     {
-        return $this->belongsTo(Jobs::class, 'job_location', 'location_id');
+        return $this->belongsTo(Job::class, 'job_location', 'location_id');
     }
 }

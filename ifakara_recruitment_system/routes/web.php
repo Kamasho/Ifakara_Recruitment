@@ -37,8 +37,11 @@ use GuzzleHttp\Psr7\UploadedFile;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/sironga', function () {
+    return \App\Models\Posts::with('job')->get();
+});
 
-Route::get('/', function () {
+Route::get('/', function () {   
     return view('welcome');
 });
 Route::get('/general-information', [HomeController::class, 'generalinformation'])->name('generalinformation');
@@ -58,7 +61,7 @@ Route::middleware(['auth', 'isHr'])->group(function () {
 
     Route::get('/hr/jobs', [JobsController::class, 'index'])->name('jobs');
     Route::get('/hr/job/received', [JobsController::class, 'receivedquery'])->name('received');
-    Route::post('/register_job', [JobController::class, 'RegisterJob'])->name('job_registrations');
+    // Route::post('/register_job', [JobsController::class, 'RegisterJob'])->name('job_registrations');
 
 
     Route::get('/hr/uploads', [UploadController::class, 'index'])->name('uploads');
@@ -72,6 +75,8 @@ Route::middleware(['auth', 'isGs'])->group(function () {
 
     //staffs controllers
     Route::get('/gs/staffs', [StaffGSController::class, 'index'])->name('staffs');
+    Route::post('/register_job', [StaffGSController::class, 'RegisterJob'])->name('job_registrations');
+
     Route::post('/register_staffs', [StaffController::class, 'store'])->name('staff_registrations');
 
     //Uploads
