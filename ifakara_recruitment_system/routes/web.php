@@ -38,7 +38,7 @@ use GuzzleHttp\Psr7\UploadedFile;
 |
 */
 Route::get('/sironga', function () {
-    return \App\Models\Posts::with('job')->get();
+    return \App\Models\Post::with('job')->get();
 });
 
 Route::get('/', function () {
@@ -68,6 +68,9 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');
 });
 
+
+
+
 //GS middleware
 Route::middleware(['auth', 'isGs'])->group(function () {
 
@@ -77,7 +80,7 @@ Route::middleware(['auth', 'isGs'])->group(function () {
     Route::get('/gs/staffs', [StaffGSController::class, 'index'])->name('staffs');
     Route::post('/register_job', [StaffGSController::class, 'RegisterJob'])->name('job_registrations');
 
-    Route::post('/register_staffs', [StaffController::class, 'store'])->name('staff_registrations');
+    Route::post('/register_staffs', [StaffGSController::class, 'StaffRegistration'])->name('staff_registrations');
 
     //Uploads
    Route::post('/file_Uploads', [StaffGSController::class, 'FileUpload'])->name('file-uploads');

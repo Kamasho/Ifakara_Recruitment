@@ -89,24 +89,18 @@
                                                                     class="table table-centered table-nowrap table-hover mb-0">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th>Basic Info</th>
-                                                                            <th>Phone</th>
-                                                                            <th>Email</th>
-                                                                            <th>Company</th>
-                                                                            <th>Created Date</th>
+                                                                            <th>Job Name</th>
+                                                                            <th>Job Category</th>
+                                                                            <th>Job Location</th>
+                                                                            <th>Application Date</th>
+                                                                            <th>Deadline Date</th>
+                                                                            <th>Status</th>
                                                                             <th style="width: 82px;">Action</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td class="table-user">
-                                                                                <img src="../assets/images/users/user-4.jpg"
-                                                                                    alt="table-user"
-                                                                                    class="me-2 rounded-circle">
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="text-body fw-semibold">Paul
-                                                                                    J. Friend</a>
-                                                                            </td>
+                                                                    
                                                                             <td>
                                                                                 937-330-1634
                                                                             </td>
@@ -117,7 +111,13 @@
                                                                                 Vine Corporation
                                                                             </td>
                                                                             <td>
-                                                                                07/07/2018
+                                                                                Vine Corporation
+                                                                            </td>
+                                                                            <td>
+                                                                                Vine Corporation
+                                                                            </td>
+                                                                            <td>
+                                                                                <span class="btn btn-success width-xs btn-sm">active</span>
                                                                             </td>
                                                                             <td>
                                                                                 <a href="javascript:void(0);"
@@ -129,129 +129,9 @@
                                                                             </td>
                                                                         </tr>
 
-                                                                        <tr>
-                                                                            <td class="table-user">
-                                                                                <img src="../assets/images/users/user-3.jpg"
-                                                                                    alt="table-user"
-                                                                                    class="me-2 rounded-circle">
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="text-body fw-semibold">Bryan
-                                                                                    J. Luellen</a>
-                                                                            </td>
-                                                                            <td>
-                                                                                215-302-3376
-                                                                            </td>
-                                                                            <td>
-                                                                                bryuellen@dayrep.com
-                                                                            </td>
-                                                                            <td>
-                                                                                Blue Motors
-                                                                            </td>
-                                                                            <td>
-                                                                                09/12/2018
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
-                                                                            </td>
-                                                                        </tr>
-
-                                                                        <tr>
-                                                                            <td class="table-user">
-                                                                                <img src="../assets/images/users/user-3.jpg"
-                                                                                    alt="table-user"
-                                                                                    class="me-2 rounded-circle">
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="text-body fw-semibold">Kathryn
-                                                                                    S. Collier</a>
-                                                                            </td>
-                                                                            <td>
-                                                                                828-216-2190
-                                                                            </td>
-                                                                            <td>
-                                                                                collier@jourrapide.com
-                                                                            </td>
-                                                                            <td>
-                                                                                Arcanetworks
-                                                                            </td>
-                                                                            <td>
-                                                                                06/30/2018
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
-                                                                            </td>
-                                                                        </tr>
-
-                                                                        <tr>
-                                                                            <td class="table-user">
-                                                                                <img src="../assets/images/users/user-1.jpg"
-                                                                                    alt="table-user"
-                                                                                    class="me-2 rounded-circle">
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="text-body fw-semibold">Timothy
-                                                                                    Kauper</a>
-                                                                            </td>
-                                                                            <td>
-                                                                                (216) 75 612 706
-                                                                            </td>
-                                                                            <td>
-                                                                                thykauper@rhyta.com
-                                                                            </td>
-                                                                            <td>
-                                                                                Boar Records
-                                                                            </td>
-                                                                            <td>
-                                                                                09/08/2018
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
-                                                                            </td>
-                                                                        </tr>
-
-                                                                        <tr>
-                                                                            <td class="table-user">
-                                                                                <img src="../assets/images/users/user-5.jpg"
-                                                                                    alt="table-user"
-                                                                                    class="me-2 rounded-circle">
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="text-body fw-semibold">Zara
-                                                                                    Raws</a>
-                                                                            </td>
-                                                                            <td>
-                                                                                (02) 75 150 655
-                                                                            </td>
-                                                                            <td>
-                                                                                austin@dayrep.com
-                                                                            </td>
-                                                                            <td>
-                                                                                Bearings
-                                                                            </td>
-                                                                            <td>
-                                                                                07/15/2018
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
-                                                                            </td>
-                                                                        </tr>
+                                                                     
+                                                                            
+                                                    
 
 
                                                                     </tbody>
@@ -907,76 +787,80 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="example-select" class="form-label">Job name</label>
-                                <select class="form-select" id="example-select">
-                                    <option>Human  Resource</option>
-                                    <option>SECRETARY</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                    <form action="" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label">Job name</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+                                        @foreach ($jobs as$job )
+                                        <option value="{{$job->job_id}}">{{$job->job_name}}</option>
+                                      
+                                        @endforeach
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label">Job Category</label>
+                                    <select class="form-select" id="example-select" name="job_position">
+                                        @foreach ($jobs as $job )
+                                        <option value="{{$job->job_id}}">{{$job->position_name}}</option>
+                                    
+                                        @endforeach
+                                        
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="example-select" class="form-label">Job Category</label>
-                                <select class="form-select" id="example-select">
-                                    <option>Human  Resource</option>
-                                    <option>SECRETARY</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-4" class="form-label">Job Location</label>
+                                    <input type="text" class="form-control" id="field-4" placeholder="Boston" name="job_location">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-5" class="form-label">More Job Descrition</label>
+                                    <input type="file" class="form-control" id="field-5" name="job_description" placeholder="United States">
+                                </div>
+                            </div>
+                       
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-6" class="form-label">Application StartDate:</label>
+                                    <input type="date" class="form-control" id="field-6" placeholder="123456" name="application_date">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-6" class="form-label">Application Deadline:</label>
+                                    <input type="date" class="form-control" id="field-6" placeholder="123456" name="deadline_date">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="">
+                                    <label for="field-7" class="form-label">Description </label>
+                                    <textarea name="post_description" id="" cols="10" rows="10" class="form-control"></textarea>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            <button type="submit" class="btn btn-primary">publish a post</button>
+
+                        </div>
+                    </form>
                     
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-4" class="form-label">Job Location</label>
-                                <input type="text" class="form-control" id="field-4" placeholder="Boston">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-5" class="form-label">More Job Descrition</label>
-                                <input type="file" class="form-control" id="field-5" placeholder="United States">
-                            </div>
-                        </div>
-                   
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-6" class="form-label">Application StartDate:</label>
-                                <input type="date" class="form-control" id="field-6" placeholder="123456">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-6" class="form-label">Application Deadline:</label>
-                                <input type="date" class="form-control" id="field-6" placeholder="123456">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="">
-                                <label for="field-7" class="form-label">Description </label>
-                                <textarea name="job_description" id="" cols="10" rows="10" class="form-control"></textarea>
-                            
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+              
             </div>
             <!-- /.modal-content -->
         </div>

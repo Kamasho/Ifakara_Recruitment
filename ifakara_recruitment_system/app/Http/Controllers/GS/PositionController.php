@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\GS;
 
 use App\Http\Controllers\Controller;
+use App\Models\Job;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class PositionController extends Controller
      */
     public function index()
     {
-        return view('secretary.pages.position');
+        $jobs = Job::get();
+        return view('secretary.pages.position',compact('jobs'));
     }
 
     /**

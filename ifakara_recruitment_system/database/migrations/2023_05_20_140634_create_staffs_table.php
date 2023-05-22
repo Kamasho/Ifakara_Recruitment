@@ -21,7 +21,7 @@ class CreateStaffsTable extends Migration
             $table->string('contacts');
             $table->string('location');
             $table->string('staff_contract');
-            $table->foreignId('job_id')->constrained('jobs')->onDelete('cascade')->onUpdate('cascade')->nullable();
+            $table->foreignId('job_id')->constrained('jobs')->onDelete('cascade')->onUpdate('cascade')->nullable()->default('1');;
             $table->timestamps();
         });
     }
