@@ -67,7 +67,7 @@
                                                                     POST</a></p><br>
                                                             <p style="margin: 0px;"><strong>Employer: </strong>The University of Dodoma (UDOM)
                                                             </p><br>
-                                                            <a href="#" style="margin: 0px;">More Details</a>
+                                                            <a href="{{ route('postdeatail') }}" style="margin: 0px;">More Details</a>
                                                         </td>
                                                         <td>
                                                             <p>23-04-2023</p><br>
@@ -79,7 +79,7 @@
                                                             <p style="margin: 0px;"><strong>POST: </strong><a href="#">DIRECTOR OF E- BUSINESS, FINANCIAL AND AGENCY(RE-ADVERTISED) - 1 POST</a></p><br>
                                                             <p style="margin: 0px;"><strong>Employer: </strong>Shirika la Posta Tanzania (TPC)
                                                             </p><br>
-                                                            <a href="#" style="margin: 0px;">More Details</a>
+                                                            <a href="{{ route('postdeatail') }}" style="margin: 0px;">More Details</a>
                                                         </td>
                                                         <td>
                                                             <p>11-08-2023</p><br>
