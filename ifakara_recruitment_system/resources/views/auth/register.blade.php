@@ -78,66 +78,43 @@
  --}}
 
 
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-    <meta charset="utf-8" />
-    <title>Register | Portal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="Coderthemes" name="author" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- App favicon -->
-   <link rel="shortcut icon" href="../assets/images/favicon.ico">
-
-    <!-- App css -->
-    <link href="{{ asset('assets/css/config/default/bootstrap.min.css') }}" rel="stylesheet" type="text/css"
-        id="bs-default-stylesheet" />
-    <link href="{{ asset('assets/css/config/default/app.min.css') }}" rel="stylesheet" type="text/css"
-        id="app-default-stylesheet" />
-
-    <link href="{{ asset('assets/css/config/default/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css"
-        id="bs-dark-stylesheet" />
-    <link href="{{ asset('assets/css/config/default/app-dark.min.css') }}" rel="stylesheet" type="text/css"
-        id="app-dark-stylesheet" />
-
-    <!-- icons -->
-    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    @include('user.include.head')
 
 </head>
 
-<body class="loading authentication-bg-pattern">
-
-    <div class="account-pages mt-5 mb-5">
-        <div class="container">
+<body>
+    <div class="container my-3" id="container">
+        <div class="card">
+            @include('layouts.welcome.header')
             <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-4">
-                    <div class="card bg-pattern" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
-
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                    <div class="card bg-pattern"
+                        style="box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;">
                         <div class="card-body p-4">
 
                             <div class="text-center w-75 m-auto">
                                 <div class="auth-logo">
-                                    <a href="index.html" class="logo logo-dark text-center">
-                                        <span class="logo-lg"> --}}
-                                                <img src="../assets/images/logo-dark.png" alt="" height="22">
-                                                <H3 class="text-black">PORTAL | SIGN UP</H3>
-                                            </span>
-                                    </a>
 
-                                    <a href="index.html" class="logo logo-light text-center">
+
+                                    <a href="/" class="logo logo-light text-center">
                                         <span class="logo-lg">
-                                                <img src="../assets/images/logo-light.png" alt="" height="22">
-                                               <H3 class="text-black">PORTAL | SIGN UP</H3>
-                                            </span>
+                                            <img src="{{ asset('assets/images/login.jpeg') }}" alt=""
+                                                height="40%" width="35%" style="border-radius:50%">
+                                            <H3 class="text-black mt-3">PORTAL | SIGN UP</H3>
+                                        </span>
                                     </a>
                                 </div>
-                                <p class="text-muted mb-4 mt-3">Don't have an account? Create your account, it takes less than a minute</p>
+                                <p class="text-muted mb-4 mt-3">To create an account and application of a job it take a minute.</p>
                             </div>
+
 
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
-
+                
                                 <div class="mb-3">
                                     <label for="Firstname" class="form-label text-black">{{ __('Name') }}</label>
                                     <input class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"type="text" id="fullname" placeholder="Enter your name" required>
@@ -147,8 +124,8 @@
                                     </span>
                                 @enderror
                                 </div>
-
-                                <div class="mb-3">
+                
+                                <div class="mb-3 mt-3">
                                     <label for="emailaddress" class="form-label text-black">{{ __('Email Address') }}</label>
                                     <input class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" type="email" id="emailaddress" required placeholder="Enter your email">
                                     @error('email')
@@ -163,7 +140,7 @@
                                         <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password"placeholder="Enter your password">
                                         <div class="input-group-text" data-password="false">
                                             <span class="password-eye"></span>
-
+                
                                         </div>
                                         @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -190,46 +167,31 @@
                                 <div class="text-center d-grid">
                                     <button class="btn btn-primary" type="submit"> {{ __('Register') }}</button>
                                 </div>
-
+                
                             </form>
 
 
                         </div>
                         <div class="row mt-3">
-                            <div class="col-12 text-center">
-                                <p class="text-black-50">Already have account? <a href="{{ route('login') }}" class="text-black ms-1"><b>{{ __('Login') }}</b></a></p>
+                            
+                            <div class="col-md-12 col-sm-12  text-center">
+                                <p> Do you have account please <a href="{{ route('login') }}"
+                                        class="text-primary fw-bold"> Login</a>
+
+                                </p>
                             </div>
                             <!-- end col -->
                         </div>
+
                         <!-- end card-body -->
                     </div>
                     <!-- end card -->
-
 
                     <!-- end row -->
 
                 </div>
                 <!-- end col -->
             </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </div>
-    <!-- end page -->
 
-    <footer class="footer footer-alt">
 
-        <script>
-            document.write(new Date().getFullYear())
-        </script> &copy;  <a href="" class="text-black-50">Ifakara Catholic Diocese</a>
-    </footer>
-
-    <!-- Vendor js -->
-    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-
-    <!-- App js -->
-    <script src="{{ asset('assets/js/app.min.js') }}"></script>
-
-</body>
-
-</html>
+            @include('layouts.welcome.footer')
