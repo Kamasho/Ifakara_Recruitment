@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\GS;
+
 use App\Models\Staff;
 use App\Models\Job;
 use App\Http\Controllers\Controller;
 use App\Models\File_Uploads;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-
+use Laravel\Ui\Presets\React;
 
 class StaffGSController extends Controller
 {
@@ -17,8 +19,12 @@ class StaffGSController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        return view('secretary.pages.staffs');
+        $jobs = Job::get();
+        $staffs = Staff::get();
+        // dd($jobs->all());
+        return view('secretary.pages.staffs', compact('jobs', 'staffs','id'));
     }
 
     /**
@@ -37,29 +43,36 @@ class StaffGSController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function StaffRegistration(Request $request)
     {
-        $validatedData = $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|email',
-            'contacts' => 'required',
-            'location' => 'required',
-            'staff_contract' => 'required',
-            'job_name' => 'required|exists:jobs,job_id',
-        ]);
+        //dd($request->all());
+        $validatedData = new Staff();
+        $validatedData->first_name = $request->input('first_name');
+        $validatedData->last_name = $request->input('last_name');
+        $validatedData->email = $request->input('email');
+        $validatedData->contacts = $request->input('contacts');
+        $validatedData->location = $request->input('location');
+        if ($request->hasFile('staff_contract')) {
+            $file = $request->file('staff_contract');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            // dd($filename);
+            $filePath = $file->storeAs('public/documents', $filename);
+            $validatedData->staff_contract = $filePath;
 
-        $staff = Staff::create($validatedData);
-    dd($staff);
-        return response()->json([
-            'message' => 'Staff created successfully',
-            'staff' => $staff
-        ], 201);
+            $validatedData->save();
+        }
+        $validatedData->job_id = $request->input('job_id');
+
+        // dd($validatedData->all());
+        if ($validatedData->save()) {
+            $jobs = Job::get();
+            return view('secretary.pages.staffs', compact('jobs'))->with('status', 'succesfull');
+        }
     }
 
     public function FileUpload(Request $request)
     {
-        $validatedData =new File_Uploads();
+        $validatedData = new File_Uploads();
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -76,16 +89,16 @@ class StaffGSController extends Controller
 
     public function RegisterJob(Request $request)
     {
-    // dd($request->hasFile('job_file'));
+        // dd($request->hasFile('job_file'));
         $validatedData = new Job();
-        $validatedData->job_name =$request->input('job_name');
-        $validatedData->job_location =$request->input('job_location');
-        $validatedData->job_description =$request->input('job_description');
-        $validatedData->position_name =$request->input('position_name');
-        $validatedData->position_description =$request->input('position_description');
-        if($request->hasFile('job_file')){
+        $validatedData->job_name = $request->input('job_name');
+        $validatedData->job_location = $request->input('job_location');
+        $validatedData->job_description = $request->input('job_description');
+        $validatedData->position_name = $request->input('position_name');
+        $validatedData->position_description = $request->input('position_description');
+        if ($request->hasFile('job_file')) {
             $file = $request->file('job_file');
-            $filename = time().'_'.$file->getClientOriginalName();
+            $filename = time() . '_' . $file->getClientOriginalName();
             // dd($filename);
             $filePath = $file->storeAs('public/documents', $filename);
             $validatedData->job_file = $filePath;
@@ -93,9 +106,9 @@ class StaffGSController extends Controller
 
             $validatedData->save();
         }
-        if($request->hasFile('position_file')){
+        if ($request->hasFile('position_file')) {
             $file = $request->file('position_file');
-            $filename = time().'_'.$file->getClientOriginalName();
+            $filename = time() . '_' . $file->getClientOriginalName();
             // dd($filename);
             $filePath = $file->storeAs('public/documents', $filename);
             $validatedData->position_file = $filePath;
@@ -104,12 +117,78 @@ class StaffGSController extends Controller
         }
         // $validatedData->position_file =$request->input('position_file');
 
-        
-        if($validatedData->save()){
-            return view('secretary.pages.staffs')->with('status','succesfull');
+
+        if ($validatedData->save()) {
+            $jobs = Job::get();
+            $staffs = Staff::get();
+            return view('secretary.pages.staffs', compact('jobs', 'staffs'))->with('status', 'succesfull');
         }
-     
-   
+    }
+
+
+
+    public function jobUpdates(Request $request, $id)
+    {
+        $validatedData = Job::find($id);
+        $validatedData->job_name = $request->input('job_name');
+        $validatedData->job_location = $request->input('job_location');
+        $validatedData->job_description = $request->input('job_description');
+        $validatedData->position_name = $request->input('position_name');
+        $validatedData->position_description = $request->input('position_description');
+
+        if ($request->hasFile('job_file')) {
+            $path = 'public/documents' . $validatedData->job_file;
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+            $file = $request->file('job_file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('public/documents', $filename);
+            $validatedData->job_file = $filePath;
+
+            $validatedData->update();
+        }
+        if ($request->hasFile('position_file')) {
+            $path = 'public/documents' . $validatedData->job_file;
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+            $file = $request->file('position_file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('public/documents', $filename);
+            $validatedData->position_file = $filePath;
+
+            $validatedData->update();
+        }
+
+        $validatedData->update();
+        return redirect('secretary.pages.staffs');
+    }
+
+
+
+
+
+    public function JobDelete($id)
+    {
+        $validatedData = Job::find($id);
+        if ($validatedData->job_file) {
+            $path = 'public/documents' . $validatedData->job_file;
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+        }
+        if ($validatedData->position_file) {
+            $path = 'public/documents' . $validatedData->position_file;
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+        }
+
+
+
+        $validatedData->delete();
+        return redirect('secretary.pages.staffs')->with('status', 'deleted Successfully');
     }
 
     /**

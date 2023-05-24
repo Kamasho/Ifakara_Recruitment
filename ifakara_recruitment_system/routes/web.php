@@ -38,7 +38,7 @@ use GuzzleHttp\Psr7\UploadedFile;
 |
 */
 Route::get('/sironga', function () {
-    return \App\Models\Posts::with('job')->get();
+    return \App\Models\Post::with('job')->get();
 });
 
 Route::get('/', function () {
@@ -67,6 +67,9 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');
 });
 
+
+
+
 //GS middleware
 Route::middleware(['auth', 'isGs'])->group(function () {
 
@@ -75,8 +78,10 @@ Route::middleware(['auth', 'isGs'])->group(function () {
     //staffs controllers
     Route::get('/gs/staffs', [StaffGSController::class, 'index'])->name('staffs');
     Route::post('/register_job', [StaffGSController::class, 'RegisterJob'])->name('job_registrations');
+    Route::put('/update_job/{id}', [StaffGSController::class, 'jobUpdates'])->name('job_update');
+    Route::delete('/delete_job/{id}', [StaffGSController::class, 'JobDelete'])->name('delete_job');
 
-    Route::post('/register_staffs', [StaffController::class, 'store'])->name('staff_registrations');
+    Route::post('/register_staffs', [StaffGSController::class, 'StaffRegistration'])->name('staff_registrations');
 
     //Uploads
    Route::post('/file_Uploads', [StaffGSController::class, 'FileUpload'])->name('file-uploads');
@@ -85,7 +90,7 @@ Route::middleware(['auth', 'isGs'])->group(function () {
     //jobs posts routes
     Route::get('/gs/position', [PositionController::class, 'index'])->name('job_position');
     Route::post('/post_job', [PostController::class, 'store'])->name('post_job');
-
+    
 
     Route::get('/gs/applications', [ApplicantsController::class, 'index'])->name('jobs_applications');
     Route::get('/gs/requitment', [ApplicantsController::class, 'Requitment'])->name('job_requitment');

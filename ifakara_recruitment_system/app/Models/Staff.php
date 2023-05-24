@@ -15,13 +15,13 @@ class Staff extends Model
         'contacts',
         'location',
         'staff_contract',
-        'job_name',
+        'job_id',
         'created_at',
         'updated_at',
     ];
 
     public function job()
     {
-        return $this->belongsTo(Job::class, 'job_name', 'job_id');
+        return $this->belongsTo(Job::class,'job_id');
     }
 }
