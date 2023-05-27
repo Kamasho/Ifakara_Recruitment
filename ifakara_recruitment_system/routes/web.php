@@ -90,7 +90,7 @@ Route::middleware(['auth', 'isGs'])->group(function () {
     Route::get('/gs/profile', [GsController::class, 'GSprofile'])->name('profile_gs');
     //jobs posts routes
     Route::get('/gs/position', [PositionController::class, 'index'])->name('job_position');
-    Route::post('/post_job', [PostController::class, 'store'])->name('post_job');
+    Route::post('/post_job', [PositionController::class, 'store'])->name('post_job');
     
 
     Route::get('/gs/applications', [ApplicantsController::class, 'index'])->name('jobs_applications');

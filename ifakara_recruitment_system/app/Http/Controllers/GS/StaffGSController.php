@@ -24,7 +24,7 @@ class StaffGSController extends Controller
         $jobs = Job::get();
         $staffs = Staff::get();
         // dd($jobs->all());
-        return view('secretary.pages.staffs', compact('jobs', 'staffs','id'));
+        return view('secretary.pages.staffs', compact('jobs', 'staffs'));
     }
 
     /**
@@ -45,13 +45,14 @@ class StaffGSController extends Controller
      */
     public function StaffRegistration(Request $request)
     {
-        //dd($request->all());
+       // dd($request->all());
         $validatedData = new Staff();
         $validatedData->first_name = $request->input('first_name');
         $validatedData->last_name = $request->input('last_name');
         $validatedData->email = $request->input('email');
         $validatedData->contacts = $request->input('contacts');
         $validatedData->location = $request->input('location');
+        $validatedData->job_id = $request->input('job_id');
         if ($request->hasFile('staff_contract')) {
             $file = $request->file('staff_contract');
             $filename = time() . '_' . $file->getClientOriginalName();
@@ -61,12 +62,12 @@ class StaffGSController extends Controller
 
             $validatedData->save();
         }
-        $validatedData->job_id = $request->input('job_id');
 
         // dd($validatedData->all());
         if ($validatedData->save()) {
             $jobs = Job::get();
-            return view('secretary.pages.staffs', compact('jobs'))->with('status', 'succesfull');
+            $staffs = Staff::get();
+            return view('secretary.pages.staffs', compact('jobs','staffs'))->with('status', 'succesfull');
         }
     }
 
@@ -162,7 +163,7 @@ class StaffGSController extends Controller
         }
 
         $validatedData->update();
-        return redirect('secretary.pages.staffs');
+        return redirect('secretary.pages.staffs',compact('id'));
     }
 
 

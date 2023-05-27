@@ -200,10 +200,10 @@
                                                                             <td>{{$job->job_name}}</td>
                                                                             <td>{{$staff->created_at}}</td>
                                                                             <td>
-                                                                                <a href="{{route('job_update')}}"
+                                                                                <a href="#"
                                                                                     class="action-icon"> <i
                                                                                         class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="{{route('delete_job')}}"
+                                                                                <a href="#"
                                                                                     class="action-icon"> <i
                                                                                         class="mdi mdi-delete"></i></a>
                                                                             </td>

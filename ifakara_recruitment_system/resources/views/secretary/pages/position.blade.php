@@ -99,6 +99,7 @@
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
+                                                                        @foreach ($posts as $post)
                                                                         <tr>
                                                                     
                                                                             <td>
@@ -108,13 +109,13 @@
                                                                                 pauljfrnd@jourrapide.com
                                                                             </td>
                                                                             <td>
-                                                                                Vine Corporation
+                                                                                {{$post->job_location}}
                                                                             </td>
                                                                             <td>
-                                                                                Vine Corporation
+                                                                                {{$post->application_date}}
                                                                             </td>
                                                                             <td>
-                                                                                Vine Corporation
+                                                                                {{$post->deadline_date}}
                                                                             </td>
                                                                             <td>
                                                                                 <span class="btn btn-success width-xs btn-sm">active</span>
@@ -128,6 +129,8 @@
                                                                                         class="mdi mdi-delete"></i></a>
                                                                             </td>
                                                                         </tr>
+                                                                        @endforeach
+                                                                        
 
                                                                      
                                                                             
@@ -787,17 +790,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form action="" method="post">
+                    <form action="{{route('post_job')}}" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Job name</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as$job )
-                                        <option value="{{$job->job_id}}">{{$job->job_name}}</option>
-                                      
+                                        @foreach ($jobs as $job )
+                                        <option value="{{$job->id}}">{{$job->job_name}}</option>
                                         @endforeach
-                                        
                                     </select>
                                 </div>
                             </div>
@@ -806,7 +808,7 @@
                                     <label for="example-select" class="form-label">Job Category</label>
                                     <select class="form-select" id="example-select" name="job_position">
                                         @foreach ($jobs as $job )
-                                        <option value="{{$job->job_id}}">{{$job->position_name}}</option>
+                                        <option value="{{$job->id}}">{{$job->position_name}}</option>
                                     
                                         @endforeach
                                         
@@ -957,7 +959,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form action="" method="post">
+                    <form action="" method="post" >
                         <div class="row">
                             <div class="mb-3">
                                 <label for="field-4" class="form-label">Title</label>
