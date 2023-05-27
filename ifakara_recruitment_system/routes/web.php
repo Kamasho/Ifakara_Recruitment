@@ -51,7 +51,6 @@ Route::get('/view-job', [HomeController::class, 'viewjob'])->name('viewjob');
 Route::get('/post-details', [HomeController::class, 'postdeatail'])->name('postdeatail');
 Auth::routes();
 
-
 //HR middleware
 Route::middleware(['auth', 'isHr'])->group(function () {
     Route::get('/hrdashboard', [HrController::class, 'index'])->name('hrdashboard');

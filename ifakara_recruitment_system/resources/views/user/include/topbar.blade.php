@@ -3,7 +3,7 @@
         <div class="col-10 m-2">
             <span>
                 <h1 class="text-center"style="font-family: 'Times New Roman', Times, serif; padding-right: 5px; color:white;">
-                    ICAD Employee Management System 
+                    ICAD Employee Management System
                 </h1>
             </span>
         </div>
@@ -36,7 +36,7 @@
                     <a class="nav-link" href="#">My Applications</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Change Passwor</a>
+                    <a class="nav-link" href="#">Change Password</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Feedback</a>

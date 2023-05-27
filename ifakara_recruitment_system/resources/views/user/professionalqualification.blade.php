@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h3 style="float:left ; font-family: 'Times New Roman', Times, serif">Professional Qualifications</h3>
                     <a style="float: right; margin-top: 5px; border:none; font-size:25px; color:black;" data-toggle="modal"
-                        data-target=".bd-qualification-modal-lg"><i class="bi bi-plus-circle"></i></a>
+                        data-target=".bd-profesional-modal-lg"><i class="bi bi-plus-circle"></i></a>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped">
