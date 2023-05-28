@@ -22,6 +22,7 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\WorkingExperienceController;
 use App\Http\Controllers\AcademicQualificationDropdownController;
 use App\Http\Controllers\GS\StaffGSController;
+use App\Http\Controllers\HR\EducationController;
 use App\Http\Controllers\HR\JobsController;
 use App\Http\Controllers\HR\UploadController;
 
@@ -59,12 +60,16 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     // jobs controllers
 
     Route::get('/hr/jobs', [JobsController::class, 'index'])->name('jobs');
+    Route::post('/publish_job', [JobsController::class, 'store'])->name('publish_job');
+
     Route::get('/hr/job/received', [JobsController::class, 'receivedquery'])->name('received');
     // Route::post('/register_job', [JobsController::class, 'RegisterJob'])->name('job_registrations');
 
 
     Route::get('/hr/uploads', [UploadController::class, 'index'])->name('uploads');
     Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');
+
+    Route::get('/hr/education_level',[EducationController::class,'index'])->name('education_level');
 });
 
 

@@ -22,7 +22,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title mb-4">Jobs</h4>
+                                    <h4 class="header-title mb-4">Education Level</h4>
 
                                     <div class="row">
                                         <div class="col-sm-3">
@@ -31,19 +31,15 @@
                                                 <a class="nav-link active show mb-1" id="v-pills-home-tab"
                                                     data-bs-toggle="pill" href="#v-pills-home" role="tab"
                                                     aria-controls="v-pills-home" aria-selected="true">
-                                                    <span> All Jobs </span>
+                                                    <span> All Education level </span>
                                                 </a>
                                                 
                                                 <a class="nav-link mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
                                                     href="#v-pills-messages" role="tab"
                                                     aria-controls="v-pills-messages" aria-selected="false">
-                                                    Applicants
+                                                    Categoried
                                                 </a>
-                                                <a class="nav-link mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
-                                                    href="#v-pills-settings" role="tab"
-                                                    aria-controls="v-pills-settings" aria-selected="false">
-                                                    Received CV
-                                                </a>
+                                                
                                             </div>
                                         </div>
                                         <!-- end col-->
@@ -70,8 +66,8 @@
                                                                         <button type="button"
                                                                             class="btn btn-primary waves-effect waves-light mb-2"
                                                                             data-bs-toggle="modal"
-                                                                            data-bs-target="#position-modal">Add New
-                                                                            Job</button>
+                                                                            data-bs-target="#position-modal">Add New Education level
+                                                                            </button>
                                                                     </div>
                                                                 </div>
 
@@ -82,16 +78,13 @@
                                                                     class="table table-centered table-nowrap table-hover mb-0">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th>Job Name</th>
-                                                                            <th>Job Category</th>
-                                                                            <th>Job Location</th>
-                                                                            <th>Application Date</th>
-                                                                            <th>Deadline Date</th>
-                                                                            <th>Status</th>
-                                                                            <th style="width: 82px;">Action</th>
+                                                                            <th>Education level </th>
+                                                                            <th>Education Name</th>
+                                                                            <th>Education Category</th>
+                                                                                        <th style="width: 82px;">Action</th>
                                                                         </tr>
                                                                     </thead>
-                                                                    <tbody>
+                                                                    {{-- <tbody>
                                                                         @if (!empty($posts))
                                                                             @foreach ($posts as $post)
                                                                             <tr>
@@ -128,7 +121,7 @@
                                                                                 <td colspan="7">No posts found.</td>
                                                                             </tr>
                                                                         @endif
-                                                                    </tbody>
+                                                                    </tbody> --}}
                                         
                                                                 </table>
                                                             </div>
@@ -778,7 +771,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Publish a Job</h4>
+                    <h4 class="modal-title" id="myCenterModalLabel">Add Education Level</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
@@ -787,24 +780,16 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="example-select" class="form-label">Job name</label>
-                                    <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job )
-                                        <option value="{{$job->id}}">{{$job->job_name}}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="example-select" class="form-label">Level name</label>
+                                    <input type="text" class="form-control" id="field-4" placeholder="Education level name" name="Education Level name">
+
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="example-select" class="form-label">Job Category</label>
-                                    <select class="form-select" id="example-select" name="job_position">
-                                        @foreach ($jobs as $job )
-                                        <option value="{{$job->id}}">{{$job->position_name}}</option>
-                                    
-                                        @endforeach
-                                        
-                                    </select>
+                                    <label for="example-select" class="form-label"> Education name</label>
+                                    <input type="text" class="form-control" id="field-4" placeholder="Education name" name="category">
+
                                 </div>
                             </div>
                         </div>
@@ -812,32 +797,15 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-4" class="form-label">Job Location</label>
-                                    <input type="text" class="form-control" id="field-4" placeholder="Boston" name="job_location">
+                                    <label for="field-4" class="form-label">Education Category</label>
+                                    <input type="text" class="form-control" id="field-4" placeholder="category" name="job_location">
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-5" class="form-label">More Job Descrition</label>
-                                    <input type="file" class="form-control" id="field-5" name="job_description" placeholder="United States">
-                                </div>
-                            </div>
+                           
                        
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-6" class="form-label">Application StartDate:</label>
-                                    <input type="date" class="form-control" id="field-6" placeholder="123456" name="application_date">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-6" class="form-label">Application Deadline:</label>
-                                    <input type="date" class="form-control" id="field-6" placeholder="123456" name="deadline_date">
-                                </div>
-                            </div>
-                        </div>
+                        
+                        
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="">
@@ -861,138 +829,7 @@
     </div>
     <!-- /.modal -->
 
-    <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Add New Staff </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-
-                    <div class="row">
-
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="field-4" class="form-label">First name</label>
-                                <input type="text" class="form-control" id="field-4" placeholder="first name">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="field-5" class="form-label">Last name</label>
-                                <input type="text" class="form-control" id="field-5" placeholder="last name">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="field-6" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="field-6" placeholder="email">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-1" class="form-label">Contanct</label>
-                                <input type="text" class="form-control" id="field-1"
-                                    placeholder="phone number">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-2" class="form-label">Staff location</label>
-                                <input type="text" class="form-control" id="field-2" placeholder="location">
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4>Job Information</h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-1" class="form-label">Job Title</label>
-                                <input type="text" class="form-control" id="field-1" placeholder="job title">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-2" class="form-label">Contract</label>
-                                <input type="file" class="form-control" id="field-2" placeholder="file">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Job Description</label>
-                                <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="uploads-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Uploads </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <form action="" method="post" >
-                        <div class="row">
-                            <div class="mb-3">
-                                <label for="field-4" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="field-4"
-                                    placeholder="position name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="field-5" class="form-label">Document</label>
-                                <input type="file" class="form-control" id="field-5"
-                                    placeholder="positon name">
-                            </div>
-
-
-
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Description</label>
-                                <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                            <div class="col-md-3"></div>
-                            <div class="col-md-3 justify-content-end">
-                                <button type="button" class="btn btn-secondary"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-
-                    </form>
-
-
-                </div>
-
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
+  
 
 
     @include('assets.js')

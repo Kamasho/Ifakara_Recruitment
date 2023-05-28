@@ -19,7 +19,8 @@ class PositionController extends Controller
     {
         $jobs = Job::get();
         $posts =Post::get();
-        return view('secretary.pages.position',compact('jobs','posts'));
+        $staffs = Staff::get();
+        return view('secretary.pages.position',compact('jobs','posts','staffs'));
     }
 
     /**
