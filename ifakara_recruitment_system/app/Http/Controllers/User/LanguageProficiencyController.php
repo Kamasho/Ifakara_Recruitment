@@ -91,7 +91,7 @@ class LanguageProficiencyController extends Controller
             }
             $file = $request->file('certificate');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;    
+            $filename = time().'.'.$ext;
             $file->move('assets/users/pdf/LanguageProficiency',$filename);
             $data->certificate = $filename;
         }
@@ -117,6 +117,6 @@ class LanguageProficiencyController extends Controller
             }
         }
         $data->delete();
-        return redirect('/')->with('status', 'Language Proficiency deleted Successfully');
+        return redirect('/')->with('statusDelete', 'Language Proficiency deleted Successfully');
     }
 }

@@ -98,6 +98,6 @@ class TrainingAndWorkshopController extends Controller
     {
         $data = TrainingAndWorkshop::find($id);
         $data->delete();
-        return redirect('/')->with('status', 'Training And Workshop deleted Successfully');
+        return redirect('/')->with('statusDelete', 'Training And Workshop deleted Successfully');
     }
 }

@@ -112,6 +112,6 @@ class PersonalDetailsController extends Controller
     {
         $data = PersonalDetail::find($id);
         $data->delete();
-        return redirect('/')->with('status', 'Personal Detail deleted Successfully');
+        return redirect('/')->with('statusDelete', 'Personal Detail deleted Successfully');
     }
 }

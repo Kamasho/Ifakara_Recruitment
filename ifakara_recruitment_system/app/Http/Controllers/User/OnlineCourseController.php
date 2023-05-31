@@ -95,7 +95,7 @@ class OnlineCourseController extends Controller
             }
             $file = $request->file('certificate');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;    
+            $filename = time().'.'.$ext;
             $file->move('assets/users/pdf/OnlineCourse',$filename);
             $data->certificate = $filename;
         }
@@ -125,6 +125,6 @@ class OnlineCourseController extends Controller
             }
         }
         $data->delete();
-        return redirect('/')->with('status', 'Online Course deleted Successfully');
+        return redirect('/')->with('statusDelete', 'Online Course deleted Successfully');
     }
 }

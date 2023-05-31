@@ -90,7 +90,7 @@ class OtherAttachimentController extends Controller
             }
             $file = $request->file('certificate');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;    
+            $filename = time().'.'.$ext;
             $file->move('assets/users/pdf/OtherAttachiment',$filename);
             $data->certificate = $filename;
         }
@@ -115,6 +115,6 @@ class OtherAttachimentController extends Controller
             }
         }
         $data->delete();
-        return redirect('/')->with('status', 'Other Attachiment deleted Successfully');
+        return redirect('/')->with('statusDelete', 'Other Attachiment deleted Successfully');
     }
 }

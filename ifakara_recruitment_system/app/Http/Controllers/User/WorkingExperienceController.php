@@ -15,7 +15,8 @@ class WorkingExperienceController extends Controller
      */
     public function index()
     {
-        return view('user.workingexperience');
+        $workingexperience = WorkingExperience::all();
+        return view('user.workingexperience', compact('workingexperience'));
     }
 
     /**
@@ -46,8 +47,8 @@ class WorkingExperienceController extends Controller
         $data->duties_responsibility = $request->input('duties_responsibility');
         $data->start_date = $request->input('start_date');
         $data->end_date = $request->input('end_date');
-        if($data->save()){
-            return redirect('/')->with('status', 'Working Experience Added SuccessFully!');
+        if ($data->save()) {
+            return redirect('/workingexperience')->with('status', 'Working Experience Added SuccessFully!');
         }
     }
 
@@ -106,6 +107,6 @@ class WorkingExperienceController extends Controller
     {
         $data = WorkingExperience::find($id);
         $data->delete();
-        return redirect('/')->with('status', 'Working Experience deleted Successfully');
+        return redirect('/workingexperience')->with('statusDelete', 'Working Experience deleted Successfully');
     }
 }

@@ -128,7 +128,7 @@ class AcademicQualificationController extends Controller
             }
             $file = $request->file('certificate');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;    
+            $filename = time().'.'.$ext;
             $file->move('assets/users/pdf/AcademicQualification',$filename);
             $data->certificate = $filename;
         }
@@ -162,6 +162,6 @@ class AcademicQualificationController extends Controller
             }
         }
         $data->delete();
-        return redirect('/')->with('status', 'Academic Qualification deleted Successfully');
+        return redirect('/')->with('statusDelete', 'Academic Qualification deleted Successfully');
     }
 }

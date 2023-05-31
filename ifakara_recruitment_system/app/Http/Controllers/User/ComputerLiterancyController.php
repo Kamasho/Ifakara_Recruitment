@@ -91,7 +91,7 @@ class ComputerLiterancyController extends Controller
             }
             $file = $request->file('certificate');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;    
+            $filename = time().'.'.$ext;
             $file->move('assets/users/pdf/ComputerLiterancy',$filename);
             $data->certificate = $filename;
         }
@@ -117,6 +117,6 @@ class ComputerLiterancyController extends Controller
             }
         }
         $data->delete();
-        return redirect('/')->with('status', 'Computer Literancy deleted Successfully');
+        return redirect('/')->with('statusDelete', 'Computer Literancy deleted Successfully');
     }
 }

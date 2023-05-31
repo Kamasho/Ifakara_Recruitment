@@ -100,6 +100,6 @@ class RefereesController extends Controller
     {
         $data = Referees::find($id);
         $data->delete();
-        return redirect('/')->with('status', 'Referees deleted Successfully');
+        return redirect('/')->with('statusDelete', 'Referees deleted Successfully');
     }
 }

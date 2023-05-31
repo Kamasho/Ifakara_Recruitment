@@ -94,7 +94,7 @@ class ProfessionalQualificationController extends Controller
             }
             $file = $request->file('certificate');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;    
+            $filename = time().'.'.$ext;
             $file->move('assets/users/pdf/ProfessionalQualification',$filename);
             $data->certificate = $filename;
         }
@@ -123,6 +123,6 @@ class ProfessionalQualificationController extends Controller
             }
         }
         $data->delete();
-        return redirect('/')->with('status', 'Professional Qualification deleted Successfully');
+        return redirect('/')->with('statusDelete', 'Professional Qualification deleted Successfully');
     }
 }
