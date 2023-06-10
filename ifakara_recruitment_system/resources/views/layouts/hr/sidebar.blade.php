@@ -83,14 +83,21 @@
                 <li class="menu-title mt-2">Apps</li>
                 <li>
                     <a href="{{route('organization')}}">
-                        <i data-feather="fe-codeopen"></i>
+                        <i data-feather="codeopen"></i>
                         <span> Institutions </span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('education_level')}}">
                         <i data-feather="users"></i>
-                        <span> Education Levels </span>
+                        <span> Accademic  </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="{{route('jobs')}}">
+                        <i data-feather="briefcase"></i>
+                        <span> Vacants </span>
                     </a>
                 </li>
                 <li>
@@ -102,12 +109,6 @@
                
 
 
-                <li>
-                    <a href="{{route('jobs')}}">
-                        <i data-feather="briefcase"></i>
-                        <span> Jobs </span>
-                    </a>
-                </li>
                 <li>
                     <a href="#">
                         <i data-feather="briefcase"></i>

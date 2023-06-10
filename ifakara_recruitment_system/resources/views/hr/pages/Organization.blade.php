@@ -126,6 +126,37 @@
 
 
                                                                 </table>
+                                                                <ul
+                                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="javascript: void(0);"
+                                                                        aria-label="Previous">
+                                                                        <span aria-hidden="true">«</span>
+                                                                        <span class="visually-hidden">Previous</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="page-item active"><a class="page-link"
+                                                                        href="javascript: void(0);">1</a></li>
+                                                                <li class="page-item"><a class="page-link"
+                                                                        href="javascript: void(0);">2</a>
+                                                                </li>
+                                                                <li class="page-item"><a class="page-link"
+                                                                        href="javascript: void(0);">3</a>
+                                                                </li>
+                                                                <li class="page-item"><a class="page-link"
+                                                                        href="javascript: void(0);">4</a>
+                                                                </li>
+                                                                <li class="page-item"><a class="page-link"
+                                                                        href="javascript: void(0);">5</a>
+                                                                </li>
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="javascript: void(0);"
+                                                                        aria-label="Next">
+                                                                        <span aria-hidden="true">»</span>
+                                                                        <span class="visually-hidden">Next</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
                                                             </div>
 
 
@@ -174,6 +205,7 @@
                                                                         <tr>
                                                                             <th>S/N</th>
                                                                             <th>First name</th>
+                                                                            <th>Middle name</th>
                                                                             <th>Last name</th>
                                                                             <th>Email</th>
                                                                             <th>Contact </th>
@@ -503,6 +535,14 @@
                                         placeholder="first name" name="first_name">
                                 </div>
                             </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Middle name</label>
+                                    <input type="text" class="form-control" id="field-1" name="contacts"
+                                        placeholder="middle name">
+                                </div>
+                            </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Last name</label>
@@ -510,6 +550,10 @@
                                         placeholder="last name" name="last_name">
                                 </div>
                             </div>
+                           
+                          
+                        </div>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-6" class="form-label">Email</label>
@@ -517,16 +561,14 @@
                                         placeholder="email">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Contanct</label>
                                     <input type="interger" class="form-control" id="field-1" name="contacts"
                                         placeholder="phone number">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Instituions Name</label>
                                     <select class="form-select" id="example-select" name="job_id">
