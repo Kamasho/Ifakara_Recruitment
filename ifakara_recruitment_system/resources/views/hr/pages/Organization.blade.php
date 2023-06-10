@@ -27,7 +27,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title mb-4">Organization or Institutions</h4>
+                                    <h4 class="header-title mb-4">Institutions</h4>
 
                                     <div class="row">
                                         <div class="col-sm-3">
@@ -37,19 +37,16 @@
                                                     data-bs-toggle="pill" href="#v-pills-home" role="tab"
                                                     aria-controls="v-pills-home" aria-selected="true">
 
-                                                    <span>Registration </span></a>
+                                                    <span>All Instituions </span></a>
                                                 <a class="nav-link mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
                                                     href="#v-pills-profile" role="tab"
                                                     aria-controls="v-pills-profile" aria-selected="false">
-                                                 Head of Institutions</a>
+                                                    Head of Institutions</a>
                                                 <a class="nav-link mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
                                                     href="#v-pills-messages" role="tab"
                                                     aria-controls="v-pills-messages" aria-selected="false">
                                                     Uploads</a>
-                                                <a class="nav-link mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
-                                                    href="#v-pills-settings" role="tab"
-                                                    aria-controls="v-pills-settings" aria-selected="false">
-                                                    Settings</a>
+
                                             </div>
                                         </div>
                                         <!-- end col-->
@@ -76,8 +73,9 @@
                                                                         <button type="button"
                                                                             class="btn btn-primary waves-effect waves-light mb-2"
                                                                             data-bs-toggle="modal"
-                                                                            data-bs-target="#position-modal"> Register Institutions
-                                                                            
+                                                                            data-bs-target="#position-modal"> Add
+                                                                            Institutions
+
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -129,12 +127,12 @@
 
                                                                 </table>
                                                             </div>
-                                                            
+
 
                                                             {{-- {{ $jobs->onEachSide(3)->links() }} --}}
 
-                                                            
-                                                          
+
+
 
                                                         </div>
                                                         <!-- end card-body-->
@@ -161,7 +159,8 @@
                                                                         <button type="button"
                                                                             class="btn btn-primary waves-effect waves-light mb-2"
                                                                             data-bs-toggle="modal"
-                                                                            data-bs-target="#custom-modal">Assign Institution head
+                                                                            data-bs-target="#custom-modal">Assign
+                                                                            Institution head
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -211,7 +210,7 @@
                                                                         </tr>
 
                                                                         @endforeach --}}
-                                                                                                                             
+
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -377,7 +376,7 @@
                             </div>
                             <!-- end card-->
                         </div>
-                       
+
                         <!-- end col -->
 
 
@@ -404,86 +403,65 @@
     </div>
     <!-- END wrapper -->
 
-   
+
     <!-- Modal -->
     <div class="modal fade" id="position-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Create Job </h4>
+                    <h4 class="modal-title" id="myCenterModalLabel">Information Instituions </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <button type="button" class="btn-close" data-bs-dismiss="alert"
                             aria-label="Close"></button>
-                        <span class="fw-bold text-danger">Please consider this:</span> Registration of a Institution and its
-                        corresponding position now will save time when you need to publish a similar job again. This
-                        way, it will be stored in the database of the system, reducing the time required for future job
+                        <span class="fw-bold text-danger">Please consider this:</span> Registration of a Institution
+                        and its
+                        corresponding position now will save time when you need to refer or to assign staff. This
+                        way, it will be stored in the database of the system, reducing the time required for future
                         postings
                     </div>
 
-                    <h4>JOB INFORMATION</h4>
-                    <form action="{{ route('job_registrations') }}" method="POST" enctype="multipart/form-data">
+                    <h4>INSTITUIONS INFORMATION</h4>
+                    <form action="#" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-1" class="form-label">Job Title</label>
-                                    <input type="text" class="form-control" id="field-1" name="job_name"
-                                        placeholder="job title">
+                                    <label for="field-1" class="form-label">Instituions Name</label>
+                                    <input type="text" class="form-control" id="field-1" name=""
+                                        placeholder="Malecela Secondary School">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">Location</label>
-                                    <input type="text" class="form-control" name="job_location" id="field-2"
-                                        placeholder="singida">
+                                    <input type="text" class="form-control" name="" id="field-2"
+                                        placeholder="Ifakara Morogoro">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-3" class="form-label">Job Description</label>
-                                    <textarea class="form-control" id="field-7" name="job_description" placeholder="Write something about job"></textarea>
+                                    <label for="field-3" class="form-label">Institution Email</label>
+                                    <input type="email" class="form-control" name="" id="field-2"
+                                        placeholder="malecela.school@ifakaracatholic">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-3" class="form-label">More Discription Document</label>
-                                    <input type="file" class="form-control" name="job_file" id="field-2">
-                                </div>
-                            </div>
-                        </div>
-                        <h4>JOB POSITION</h4>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="col-12">
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="field-4" class="form-label">Position Name</label>
-                                            <input type="text" class="form-control" name="position_name"
-                                                id="field-4" placeholder="first name">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="field-6" class="form-label">More Description Document</label>
-                                            <input type="file" class="form-control" id="field-6"
-                                                name="position_file" placeholder="email">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    <label for="example-select" class="form-label">Instituions Category</label>
+                                    <select class="form-select" id="example-select" name="job_id">
 
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-5" class="form-label">Position Discription</label>
-                                    <textarea name="position_description" id="" cols="15" rows="5" class="form-control"></textarea>
+                                        <option value="1">School</option>
+                                        <option value="2">Health Institions</option>
+                                        <option value="3">Parish</option>
+
+                                    </select>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="row">
@@ -492,8 +470,6 @@
 
                             </div>
                         </div>
-
-
                     </form>
 
 
@@ -511,31 +487,34 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Add New Staff </h4>
+                    <h4 class="modal-title" id="myCenterModalLabel">Assign Head of Institions </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
                     <h4>Person Information</h4>
-                    <form action="{{route('staff_registrations')}}" method="post"  enctype="multipart/form-data"> 
+                    <form action="{{ route('staff_registrations') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-4" class="form-label">First name</label>
-                                    <input type="text" class="form-control" id="field-4" placeholder="first name" name="first_name">
+                                    <input type="text" class="form-control" id="field-4"
+                                        placeholder="first name" name="first_name">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Last name</label>
-                                    <input type="text" class="form-control" id="field-5" placeholder="last name" name="last_name">
+                                    <input type="text" class="form-control" id="field-5"
+                                        placeholder="last name" name="last_name">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-6" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="field-6" name="email"  placeholder="email">
+                                    <input type="email" class="form-control" id="field-6" name="email"
+                                        placeholder="email">
                                 </div>
                             </div>
                         </div>
@@ -549,36 +528,22 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-2" class="form-label">Staff location</label>
-                                    <input type="text" class="form-control" id="field-2" placeholder="location" name="location">
-                                </div>
-                            </div>
-                        </div>
-    
-                        <h4>Job Information</h4>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="example-select" class="form-label">Job title</label>
+                                    <label for="example-select" class="form-label">Instituions Name</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        {{-- @foreach ($jobs as $job )
-                                        <option value="{{$job->id}}">{{$job->job_name}}</option>
-                                        @endforeach
-                                         --}}
+
+                                        <option value="1">Malecela Secondary School</option>
+                                        <option value="2">Benigins Secondary School</option>
+
                                     </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-2" class="form-label">Contract</label>
-                                    <input type="file" class="form-control" id="field-2" placeholder="file" name="staff_contract">
                                 </div>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Register Staff</button>
+                    
+
+                        <button type="submit" class="btn btn-primary btn-block">Assign</button>
                     </form>
-                   
+
 
                 </div>
                 {{-- <div class="modal-footer">

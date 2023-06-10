@@ -88,17 +88,18 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('staff')}}">
-                        <i data-feather="users"></i>
-                        <span> Staff </span>
-                    </a>
-                </li>
-                <li>
                     <a href="{{route('education_level')}}">
                         <i data-feather="users"></i>
                         <span> Education Levels </span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('staff')}}">
+                        <i data-feather="users"></i>
+                        <span> Staff </span>
+                    </a>
+                </li>
+               
 
 
                 <li>
