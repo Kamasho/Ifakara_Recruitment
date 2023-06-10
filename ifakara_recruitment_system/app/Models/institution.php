@@ -14,4 +14,9 @@ class institution extends Model
         'email',
         'category'
     ];
+
+    public function institution()
+    {
+        return $this->hasMany(HeadInstitute::class, 'name');
+    }
 }
