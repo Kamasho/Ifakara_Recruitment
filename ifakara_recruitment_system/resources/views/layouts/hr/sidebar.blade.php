@@ -81,7 +81,12 @@
                 </li>
 
                 <li class="menu-title mt-2">Apps</li>
-
+                <li>
+                    <a href="{{route('organization')}}">
+                        <i data-feather="fe-codeopen"></i>
+                        <span> Institutions </span>
+                    </a>
+                </li>
                 <li>
                     <a href="{{route('staff')}}">
                         <i data-feather="users"></i>

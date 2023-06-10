@@ -2,7 +2,7 @@
     <div class="p-4 pt-1">
 <p class="text-center text-black fw-bold" style="font-size: 25px; font-family:'Times New Roman', Times, serif;">{{ Auth::user()->name }}</p>
 <hr>
-      <a href="#" class="img logo rounded-circle mb-3" style="background-image: url(style/admin/images/logo.jpg);"></a>
+      {{-- <a href="#" class="img logo rounded-circle mb-3" style="background-image: url(style/admin/images/logo.jpg);"></a> --}}
 <ul class="list-unstyled components mb-5">
   <li>
       <a href="{{ route('dashboard') }}">
