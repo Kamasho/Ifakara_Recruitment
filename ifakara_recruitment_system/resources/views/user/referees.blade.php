@@ -41,31 +41,32 @@
                 <h3 class="text-center" style="font-family: 'Times New Roman', Times, serif">Referees</h3>
                 <hr>
                 <div class="container">
-                    <form>
+                    <form action="{{ url('/referees/add_referees') }}" method="POST">
+                    @csrf
                         <div class="row">
                             <div class="col-6 my-3">
                                 <label for="">Referee Full Name</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="full_name">
                             </div>
                             <div class="col-6 my-3">
                                 <label for="">Title</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="title">
                             </div>
                             <div class="col-6 my-3">
                                 <label for="">Institution/Organization</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="place">
                             </div>
                             <div class="col-6 my-3">
                                 <label for="">Email Address</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="email">
                             </div>
                             <div class="col-6 my-3">
                                 <label for="">Telephone Number</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="phone">
                             </div>
                             <div class="col-6 my-3">
                                 <label for="">Address</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="addres">
                             </div>
 
 
@@ -74,7 +75,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-info">Submit</button>
+                    <button type="submit" class="btn btn-info">Submit</button>
                 </div>
             </div>
         </div>

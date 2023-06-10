@@ -40,33 +40,34 @@
                 <h3 class="text-center" style="font-family: 'Times New Roman', Times, serif">Add Training & Workshop Attended</h3>
                 <hr>
                 <div class="container">
-                    <form>
+                    <form action="{{ url('/trainingandworkshop/add_trainingandworkshop') }}" method="POST">
+                          @csrf  
                         <div class="row">
                             <div class="col-6 my-3">
                                 <label for="">Training Name</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="training_name">
                             </div>
                             <div class="col-6 my-3">
                                 <label for="">Institution</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="institute_name">
                             </div>
                             <div class="col-6 my-3">
                                 <label for="">Training Description</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="training_discription">
                             </div>
                             <div class="col-6 my-3">
                                 <label for="">Attach your certificate (optional)</label>
-                                <input type="File" class="form-control">
+                                <input type="File" class="form-control" name="">
                             </div>
                             
                             <div class="col-6 my-3">
                                 <label for="">Start Date</label>
-                                <input type="date" class="form-control">
+                                <input type="date" class="form-control" name="start_date">
                             </div>
                             
                             <div class="col-6 my-3">
                                 <label for="">End Date</label>
-                                <input type="date" class="form-control">
+                                <input type="date" class="form-control" name="end_date">
                             </div>
                             
                         </div>

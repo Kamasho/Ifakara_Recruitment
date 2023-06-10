@@ -25,6 +25,7 @@ use App\Http\Controllers\GS\StaffGSController;
 use App\Http\Controllers\HR\EducationController;
 use App\Http\Controllers\HR\JobsController;
 use App\Http\Controllers\HR\UploadController;
+use App\Http\Controllers\HR\institutionController;
 
 use GuzzleHttp\Psr7\UploadedFile;
 
@@ -70,6 +71,12 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');
     Route::get('/hr/organinzation',[HrController::class,'Organization'])->name('organization');
     Route::get('/hr/education_level',[EducationController::class,'index'])->name('education_level');
+
+    //institute
+    Route::get('/institute', [institutionController::class, 'index'])->name('institute');
+    Route::post('/institute/add_institute', [institutionController::class, 'store'])->name('add_institute');
+    Route::get('/institute/delete_institute/{id}', [institutionController::class, 'destroy'])->name('delete_institute');
+    Route::put('/institute/update_institute/{id}', [institutionController::class, 'update'])->name('update_institute');
 });
 
 
