@@ -22,163 +22,69 @@
                 <!-- Start Content-->
                 <div class="container-fluid">
                     <div class="row mt-4">
-                        <div class="col-xl-12">
+                        <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title mb-4">Applicants</h4>
-
-                                    <div class="">
-                                        <div class="">
-                                            <div class="row justify-content-between mb-2">
-                                                <div class="col-auto">
-                                                    <form>
-                                                        <div class="mb-2">
-                                                            <label for="inputPassword2"
-                                                                class="visually-hidden">Search</label>
-                                                            <input type="search" class="form-control"
-                                                                id="inputPassword2" placeholder="Search...">
-                                                        </div>
-                                                    </form>
-                                                </div>
-
-
+                                    <div class="row">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="header-title">Applicants</h4>
                                             </div>
-
-                                            <div class="table-responsive">
-                                                <table class="table table-centered table-nowrap table-hover mb-0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Name </th>
-                                                            <th>Email</th>
-                                                            <th>Job Title</th>
-                                                            <th>Position</th>
-                                                            <th>Documents</th>
-                                                            <th>Application Date</th>
-                                                            <th style="width: 82px;">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="table-user">
-
-                                                                <a href="javascript:void(0);"
-                                                                    class="text-body fw-semibold">Paul
-                                                                    J. Friend</a>
-                                                            </td>
-                                                            <td>
-                                                                937-330-1634
-                                                            </td>
-                                                            <td>
-                                                                pauljfrnd@jourrapide.com
-                                                            </td>
-                                                            <td>
-                                                                Vine Corporation
-                                                            </td>
-                                                            <td>
-                                                                Vine Corporation
-                                                            </td>
-                                                            <td>
-                                                                07/07/2018
-                                                            </td>
-                                                            <td>
-                                                                {{-- <button type="button"
-                                                                class="btn btn-primary waves-effect waves-light mb-2"
-                                                                data-bs-toggle="modal"
-                                                                data-bs-target="#position-modal">Add New
-                                                                Job</button> --}}
-                                                                <a href="javascript:void(0);" class="action-icon"
-                                                                    data-bs-toggle="modal"
-                                                                    data-bs-target="#position-modal"> <i
-                                                                        class="mdi-eye"></i>
-                                                                </a>
-                                                                <a href="javascript:void(0);" class="action-icon"> <i
-                                                                        class="mdi mdi-delete"></i></a>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td class="table-user">
-
-                                                                <a href="javascript:void(0);"
-                                                                    class="text-body fw-semibold">Bryan
-                                                                    J. Luellen</a>
-                                                            </td>
-                                                            <td>
-                                                                215-302-3376
-                                                            </td>
-                                                            <td>
-                                                                bryuellen@dayrep.com
-                                                            </td>
-                                                            <td>
-                                                                Blue Motors
-                                                            </td>
-                                                            <td>
-                                                                Blue Motors
-                                                            </td>
-                                                            <td>
-                                                                09/12/2018
-                                                            </td>
-                                                            <td>
-                                                                {{-- <button type="button"
-                                                                class="btn btn-primary waves-effect waves-light mb-2"
-                                                                data-bs-toggle="modal"
-                                                                data-bs-target="#position-modal">Add New
-                                                                Job</button> --}}
-                                                                <a href="javascript:void(0);" class="action-icon"
-                                                                    data-bs-toggle="modal"
-                                                                    data-bs-target="#position-modal"> <i
-                                                                        class="mdi-eye"></i>
-                                                                </a>
-                                                                <a href="javascript:void(0);" class="action-icon"> <i
-                                                                        class="mdi mdi-delete"></i></a>
-                                                            </td>
-                                                        </tr>
-
-
-
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                            <ul class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="javascript: void(0);"
-                                                        aria-label="Previous">
-                                                        <span aria-hidden="true">«</span>
-                                                        <span class="visually-hidden">Previous</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item active"><a class="page-link"
-                                                        href="javascript: void(0);">1</a></li>
-                                                <li class="page-item"><a class="page-link"
-                                                        href="javascript: void(0);">2</a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link"
-                                                        href="javascript: void(0);">3</a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link"
-                                                        href="javascript: void(0);">4</a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link"
-                                                        href="javascript: void(0);">5</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="javascript: void(0);" aria-label="Next">
-                                                        <span aria-hidden="true">»</span>
-                                                        <span class="visually-hidden">Next</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-
                                         </div>
-                                        <!-- end card-body-->
                                     </div>
-                                    <!-- end row-->
-                                </div>
-                            </div>
-                            <!-- end card-->
-                        </div>
+
+
+                                    <table id="datatable-buttons"
+                                        class="table table-striped dt-responsive nowrap w-100 mt-4">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th>Age</th>
+                                                <th>Start date</th>
+                                                <th>Salary</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+
+                                            <tr>
+                                                <td>Unity Butler</td>
+                                                <td>Marketing Designer</td>
+                                                <td>San Francisco</td>
+                                                <td>47</td>
+                                                <td>2009/12/09</td>
+                                                <td>$85,675</td>
+                                                <td> <a href="#position-modal" class="action-icon"
+                                                        data-bs-toggle="modal" data-bs-target="#position-modal"><i class="fa fa-eye" aria-hidden="true"></i>
+
+                                                    </a></td>
+                                            </tr>
+
+
+
+                                            <tr>
+                                                <td>Cara Stevens</td>
+                                                <td>Sales Assistant</td>
+                                                <td>New York</td>
+                                                <td>46</td>
+                                                <td>2011/12/06</td>
+                                                <td>$145,600</td>
+                                                <td> <a href="#position-modal" class="action-icon"
+                                                    data-bs-toggle="modal" data-bs-target="#position-modal"><i class="fa fa-eye" aria-hidden="true"></i>
+
+                                                </a></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
                     </div>
 
 
@@ -424,6 +330,101 @@
 
                 </div>
 
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="position-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Applicants Previews </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h4>Person Details</h4>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="field-4" class="form-label text-info">First name</label>
+                                {{-- <input type="text" class="form-control" id="field-4" placeholder="first name"> --}}
+                                <h5 class="text-small">MAJALIWA</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="field-5" class="form-label text-info">Last name</label>
+                                {{-- <input type="text" class="form-control" id="field-5" placeholder="last name"> --}}
+                                <h5>MAJALIWA</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="field-6" class="form-label text-info">Email</label>
+                                {{-- <input type="email" class="form-control" id="field-6" placeholder="email"> --}}
+                                <h5>majaiwe@gmail.com</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="field-1" class="form-label text-info">Contanct</label>
+                                {{-- <input type="text" class="form-control" id="field-1"placeholder="phonenumber"> --}}
+                                <h5>03973453093</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="field-2" class="form-label text-info">CV</label>
+                                <h5>MAJALIWA MAJLIWA CV <a href="http://"> <i class="fa fa-download"
+                                            aria-hidden="true"></i>
+                                    </a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="text-warning">
+                    <h4>Job Appliced</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="field-1" class="form-label text-blue">Job Title</label>
+                                {{-- <input type="text" class="form-control" id="field-1" placeholder="job title"> --}}
+                                <h5>Teacher</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="field-2" class="form-label text-blue">Job Categoris</label>
+                                {{-- <input type="file" class="form-control" id="field-2" placeholder="file"> --}}
+                                <h5>Accademic Teacher</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="field-3" class="form-label text-blue">Job Description</label>
+                                {{-- <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea> --}}
+
+                                <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Accusantium voluptatibus suscipit commodi officia corrupti odio doloribus quos
+                                    voluptatum iusto modi, laborum maiores in praesentium aliquid rem quae sed aperiam
+                                    nihil!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Requitment</button>
+                </div>
             </div>
             <!-- /.modal-content -->
         </div>
