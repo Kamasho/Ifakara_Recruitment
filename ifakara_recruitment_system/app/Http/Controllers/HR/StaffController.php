@@ -12,6 +12,6 @@ class StaffController extends Controller
     public function index(){
         $jobs = Job::get();
         $staffs = Staff::get();
-        return view('hr.pages.staffs',compact('jobs', 'staffs'));
+        return view('hr.pages.staffs');
     }
 }

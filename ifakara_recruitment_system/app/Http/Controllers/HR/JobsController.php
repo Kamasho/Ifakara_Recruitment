@@ -13,7 +13,7 @@ class JobsController extends Controller
     public  function index(){
         $jobs = Job::get();
         $posts = Post::get();
-        return view('hr.pages.jobs',compact('jobs','posts'));
+        return view('hr.pages.jobs');
     }
 
     public function receivedquery(){

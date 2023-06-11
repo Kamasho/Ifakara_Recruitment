@@ -33,37 +33,31 @@
                                         <div class="col-sm-3">
                                             <div class="nav flex-column nav-pills nav-pills-tab" id="v-pills-tab"
                                                 role="tablist" aria-orientation="vertical">
-                                
-                                                <a class="nav-link active show mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
-                                                    href="#v-pills-profile" role="tab"
+
+                                                <a class="nav-link active show mb-1" id="v-pills-profile-tab"
+                                                    data-bs-toggle="pill" href="#v-pills-profile" role="tab"
                                                     aria-controls="v-pills-profile" aria-selected="true">
                                                     All Staff</a>
                                                 <a class="nav-link mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
                                                     href="#v-pills-messages" role="tab"
                                                     aria-controls="v-pills-messages" aria-selected="false">
                                                     Uploads</a>
-                                               
+
                                             </div>
                                         </div>
                                         <!-- end col-->
                                         <div class="col-sm-9">
                                             <div class="tab-content pt-0">
-                                               
-                                                <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel"
-                                                    aria-labelledby="v-pills-profile-tab">
+
+                                                <div class="tab-pane fade active show" id="v-pills-profile"
+                                                    role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                                     <div class="card">
                                                         <div class="card-body">
                                                             <div class="row justify-content-between mb-2">
-                                                                <div class="col-auto">
-                                                                    <form>
-                                                                        <div class="mb-2">
-                                                                            <label for="inputPassword2"
-                                                                                class="visually-hidden">Search</label>
-                                                                            <input type="search" class="form-control"
-                                                                                id="inputPassword2"
-                                                                                placeholder="Search...">
-                                                                        </div>
-                                                                    </form>
+                                                                <div
+                                                                    class="col-sm-6">
+
+
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
@@ -78,88 +72,138 @@
                                                             </div>
 
                                                             <div class="table-responsive">
-                                                                <table
-                                                                    class="table table-centered table-nowrap table-hover mb-0">
+                                                                <table id="basic-datatable"
+                                                                    class="table dt-responsive nowrap w-100">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th>S/N</th>
-                                                                            <th>First name</th>
-                                                                            <th>Middle name</th>
-                                                                            <th>Last name</th>
+                                                                            <th>First Name</th>
+                                                                            <th>Middle Name</th>
+                                                                            <th>Last Name</th>
                                                                             <th>Email</th>
-                                                                            <th>Contact </th>
+                                                                            <th>Contact</th>
                                                                             <th>Instition</th>
-                                                                            <th>Job Title</th>
-                                                                            <th>Allowance</th>
-                                                                            <th>Basic</th>
-                                                                            <th>Total Gross</th>
-                                                                            <th style="width: 82px;">Action</th>
+                                                                            <th>Basic Salary</th>
+                                                                            <th>Allowance Salary</th>
+                                                                            <th>Action</th>
                                                                         </tr>
                                                                     </thead>
+
+
                                                                     <tbody>
-                                                                        @foreach ($staffs as $staff)
                                                                         <tr>
-                                                                            <td> {{$staff->id}}</td>
+                                                                            <td>Tiger Nixon</td>
+                                                                            <td>System Architect</td>
+                                                                            <td>Edinburgh</td>
+                                                                            <td>stat@gmail.com</td>
+                                                                            <td>Benigns Secondary School</td>
+                                                                            <td>61</td>
+                                                                            <td>2011/04/25</td>
+                                                                            <td>$320,800</td>
                                                                             <td>
-                                                                                {{$staff->first_name}}
+                                                                                <a href="#position-modal"
+                                                                                    class="action-icon"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#position-modal"><i
+                                                                                        class="fa fa-eye"
+                                                                                        aria-hidden="true"></i>
+
+                                                                                </a>
+                                                                                <a href="#position-modal"
+                                                                                    class="action-icon"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#position-modal"><i
+                                                                                        class="fa fa-pen"
+                                                                                        aria-hidden="true"></i>
+
+                                                                                </a>
+                                                                                <a href="#position-modal"
+                                                                                    class="action-icon"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#position-modal"><i
+                                                                                        class="fa fa-trash"
+                                                                                        aria-hidden="true"></i>
+
+                                                                                </a>
                                                                             </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Garrett Winters</td>
+                                                                            <td>Accountant</td>
+                                                                            <td>Tokyo</td>
+                                                                            <td>stat@gmail.com</td>
+                                                                            <td>Benigns Secondary School</td>
+                                                                            <td>63</td>
+                                                                            <td>2011/07/25</td>
+                                                                            <td>$170,750</td>
                                                                             <td>
-                                                                                {{$staff->last_name}}
+                                                                                <a href="#position-modal"
+                                                                                    class="action-icon"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#position-modal"><i
+                                                                                        class="fa fa-eye"
+                                                                                        aria-hidden="true"></i>
+
+                                                                                </a>
+                                                                                <a href="#position-modal"
+                                                                                    class="action-icon"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#position-modal"><i
+                                                                                        class="fa fa-pen"
+                                                                                        aria-hidden="true"></i>
+
+                                                                                </a>
+                                                                                <a href="#position-modal"
+                                                                                    class="action-icon"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#position-modal"><i
+                                                                                        class="fa fa-trash"
+                                                                                        aria-hidden="true"></i>
+
+                                                                                </a>
                                                                             </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Ashton Cox</td>
+                                                                            <td>Junior Technical Author</td>
+                                                                            <td>San Francisco</td>
+                                                                            <td>stat@gmail.com</td>
+                                                                            <td>Benigns Secondary School</td>
+                                                                            <td>66</td>
+                                                                            <td>2009/01/12</td>
+                                                                            <td>$86,000</td>
                                                                             <td>
-                                                                                {{$staff->email}}
-                                                                            </td>
-                                                                            <td>{{$staff->contacts}}</td>
-                                                                            <td>{{$staff->location}}</td>
-                                                                            {{-- <td>{{$job->job_name}}</td> --}}
-                                                                            <td>{{$staff->created_at}}</td>
-                                                                            <td>
-                                                                                <a href="#"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="#"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
+                                                                                <a href="#position-modal"
+                                                                                    class="action-icon"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#position-modal"><i
+                                                                                        class="fa fa-eye"
+                                                                                        aria-hidden="true"></i>
+
+                                                                                </a>
+                                                                                <a href="#position-modal"
+                                                                                    class="action-icon"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#position-modal"><i
+                                                                                        class="fa fa-pen"
+                                                                                        aria-hidden="true"></i>
+
+                                                                                </a>
+                                                                                <a href="#position-modal"
+                                                                                    class="action-icon"
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#position-modal"><i
+                                                                                        class="fa fa-trash"
+                                                                                        aria-hidden="true"></i>
+
+                                                                                </a>
                                                                             </td>
                                                                         </tr>
 
-                                                                        @endforeach
-                                                                                                                             
                                                                     </tbody>
                                                                 </table>
                                                             </div>
 
-                                                            <ul
-                                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Previous">
-                                                                        <span aria-hidden="true">«</span>
-                                                                        <span class="visually-hidden">Previous</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="page-item active"><a class="page-link"
-                                                                        href="javascript: void(0);">1</a></li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">2</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">3</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">4</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">5</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Next">
-                                                                        <span aria-hidden="true">»</span>
-                                                                        <span class="visually-hidden">Next</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
+
 
                                                         </div>
                                                         <!-- end card-body-->
@@ -271,7 +315,7 @@
                                                         <!-- end card-body-->
                                                     </div>
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                         <!-- end col-->
@@ -281,7 +325,7 @@
                             </div>
                             <!-- end card-->
                         </div>
-                       
+
                         <!-- end col -->
 
 
@@ -308,7 +352,7 @@
     </div>
     <!-- END wrapper -->
 
-   
+
     <!-- Modal -->
     <div class="modal fade" id="position-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -420,35 +464,39 @@
                 </div>
                 <div class="modal-body p-4">
                     <h4>Person Information</h4>
-                    <form action="{{route('staff_registrations')}}" method="post"  enctype="multipart/form-data"> 
+                    <form action="{{ route('staff_registrations') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-4" class="form-label">First name</label>
-                                    <input type="text" class="form-control" id="field-4" placeholder="first name" name="first_name">
+                                    <input type="text" class="form-control" id="field-4"
+                                        placeholder="first name" name="first_name">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-4" class="form-label">Middle name</label>
-                                    <input type="text" class="form-control" id="field-4" placeholder="middle  name" name="">
+                                    <input type="text" class="form-control" id="field-4"
+                                        placeholder="middle  name" name="">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Last name</label>
-                                    <input type="text" class="form-control" id="field-5" placeholder="last name" name="last_name">
+                                    <input type="text" class="form-control" id="field-5"
+                                        placeholder="last name" name="last_name">
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-6" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="field-6" name="email"  placeholder="email">
+                                    <input type="email" class="form-control" id="field-6" name="email"
+                                        placeholder="email">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -462,38 +510,40 @@
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Institions</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job )
-                                        <option value="{{$job->id}}">{{$job->job_name}}</option>
-                                        @endforeach
-                                        
+
+                                        <option value="1">Malecelera</option>
+
+
                                     </select>
                                 </div>
                             </div>
                         </div>
-    
+
                         <h4>Job Information</h4>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Job title</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job )
-                                        <option value="{{$job->id}}">{{$job->job_name}}</option>
-                                        @endforeach
-                                        
+
+                                        <option value="1">Human Resouces</option>
+
+
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">Contract</label>
-                                    <input type="file" class="form-control" id="field-2" placeholder="file" name="staff_contract">
+                                    <input type="file" class="form-control" id="field-2" placeholder="file"
+                                        name="staff_contract">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">End of Contract</label>
-                                    <input type="date" class="form-control" id="field-2" placeholder="file" name="staff_contract">
+                                    <input type="date" class="form-control" id="field-2" placeholder="file"
+                                        name="staff_contract">
                                 </div>
                             </div>
                         </div>
@@ -502,17 +552,19 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Basic </label>
-                                    <input type="number" class="form-control" id="field-2" placeholder="20000 Tsh/=" name="staff_contract">
+                                    <input type="number" class="form-control" id="field-2"
+                                        placeholder="20000 Tsh/=" name="staff_contract">
 
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">Allaonce</label>
-                                    <input type="number" class="form-control" id="field-2" placeholder="300000" name="staff_contract">
+                                    <input type="number" class="form-control" id="field-2" placeholder="300000"
+                                        name="staff_contract">
                                 </div>
                             </div>
-                           
+
                         </div>
                         <div class="row">
                             <div class="col-md-4"></div>
@@ -523,7 +575,7 @@
                             <div class="col-md-4"></div>
                         </div>
                     </form>
-                   
+
 
                 </div>
                 {{-- <div class="modal-footer">
