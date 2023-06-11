@@ -38,6 +38,11 @@ class LoginController extends Controller
        {
            return redirect('gsdashboard')->with('status','Welcome to your dashboard');
        }
+       elseif(Auth::user()->roles_as == '3') //2 = auditor login
+       {
+           return redirect('auditordashboard')->with('status','Welcome to your dashboard');
+       }
+
        elseif(Auth::user()->roles_as == '0') // Normal or Default User Login
        {
            return redirect('/dashboard')->with('status','Logged in successfully');

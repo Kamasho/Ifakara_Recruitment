@@ -860,9 +860,9 @@
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Vacant Title</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job)
-                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                        @endforeach
+                                        
+                                            <option value="1">Human Resource</option>
+                                  
 
                                     </select>
                                 </div>
@@ -871,9 +871,9 @@
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Vacant Category</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job)
-                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                        @endforeach
+                                        
+                                            <option value="1">IT</option>
+                                     
 
                                     </select>
                                 </div>
@@ -882,9 +882,9 @@
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Institions</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job)
-                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                        @endforeach
+                                      
+                                            <option value="1">Malecela</option>
+                                        
 
                                     </select>
                                 </div>
@@ -911,9 +911,9 @@
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Education Level</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job)
-                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                        @endforeach
+                                       
+                                            <option value="1">PHD</option>
+                                       
 
                                     </select>
                                 </div>
@@ -923,9 +923,9 @@
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Education Category</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job)
-                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                        @endforeach
+                                      
+                                            <option value="1">IT</option>
+                                       
 
                                     </select>
                                 </div>
@@ -935,9 +935,9 @@
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Education Program</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job)
-                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                        @endforeach
+                                    
+                                            <option value="1">Telecom</option>
+                                      
 
                                     </select>
                                 </div>

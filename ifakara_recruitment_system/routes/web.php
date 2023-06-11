@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AUDITOR\AuditorController;
 use App\Http\Controllers\GS\GsController;
 use App\Http\Controllers\GS\PositionController;
 use App\Http\Controllers\GS\ApplicantsController;
@@ -112,6 +113,19 @@ Route::middleware(['auth', 'isGs'])->group(function () {
     Route::get('/gs/requitment', [ApplicantsController::class, 'Requitment'])->name('job_requitment');
 });
 
+
+//Auditor middleware
+Route::middleware(['auth','isAuditor'])->group(function(){
+
+    Route::get('/auditordashboard', [AuditorController::class, 'index'])->name('auditordashboard');
+
+   Route::get('/auditors/staffs', [AuditorController::class, 'Staffs_details'])->name('auditors_staffs');
+
+
+
+
+
+});
 
 
 //Users middleware

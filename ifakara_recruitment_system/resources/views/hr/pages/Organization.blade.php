@@ -57,17 +57,7 @@
                                                     <div class="">
                                                         <div class="">
                                                             <div class="row justify-content-between mb-2">
-                                                                <div class="col-auto">
-                                                                    <form>
-                                                                        <div class="mb-2">
-                                                                            <label for="inputPassword2"
-                                                                                class="visually-hidden">Search</label>
-                                                                            <input type="search" class="form-control"
-                                                                                id="inputPassword2"
-                                                                                placeholder="Search...">
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
+                                                               <div class="col-sm-6"></div>
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
                                                                         <button type="button"
@@ -82,82 +72,159 @@
 
                                                             </div>
 
-                                                            <div class="table-responsive">
-                                                                <table
-                                                                    class="table table-centered table-nowrap table-hover mb-0">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>SN</th>
-                                                                            <th>Name of Institution</th>
-                                                                            <th>Locatiions</th>
-                                                                            <th>Email of Institutions</th>
-                                                                            <th>Category</th>
-                                                                            <th style="width: 82px;">Action</th>
-                                                                        </tr>
-                                                                    </thead>
+                                                            <div class="container-fluid">
+                                                                <div class="row mt-2">
+                                                                    <div class="col-12">
+                                                                        <div class="card">
+                                                                            <div class="card-body">
+                                                                              
 
-                                                                    <tbody>
-                                                                        {{-- @foreach ($jobs as $job)
-                                                                            <tr>
-                                                                                <td>
-                                                                                    {{ $job->id }}
-                                                                                </td>
+                                                                                {{-- <p class="text-muted font-13 mb-4">
+                                                                                    DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction
+                                                                                    function:
+                                                                                    <code>$().DataTable();</code>.
+                                                                                </p> --}}
 
-                                                                                <td>
-                                                                                    {{ $job->job_name }}
-                                                                                </td>
-                                                                                <td>{{ $job->job_location }}</td>
-                                                                                <td>
-                                                                                    {{ $job->position_name }}
-                                                                                </td>
-                                                                                <td>{{ $job->created_at }}</td>
+                                                                                <table id="basic-datatable"
+                                                                                    class="table dt-responsive nowrap w-100">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th>Instition Name</th>
+                                                                                            <th>Instition Location
+                                                                                            </th>
+                                                                                            <th>Instition Email</th>
+                                                                                            <th>Instition Contact
+                                                                                            </th>
+                                                                                            <th>Instition Category
+                                                                                            </th>
 
-                                                                                <td>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-square-edit-outline"></i></a>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-delete"></i></a>
-                                                                                </td>
-                                                                            </tr>
-                                                                        @endforeach --}}
-                                                                    </tbody>
+                                                                                            <th>Action</th>
+                                                                                        </tr>
+                                                                                    </thead>
 
 
-                                                                </table>
-                                                                <ul
-                                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Previous">
-                                                                        <span aria-hidden="true">«</span>
-                                                                        <span class="visually-hidden">Previous</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="page-item active"><a class="page-link"
-                                                                        href="javascript: void(0);">1</a></li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">2</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">3</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">4</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">5</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Next">
-                                                                        <span aria-hidden="true">»</span>
-                                                                        <span class="visually-hidden">Next</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td>Tiger Nixon</td>
+                                                                                            <td>System Architect
+                                                                                            </td>
+                                                                                            <td>Edinburgh</td>
+                                                                                            <td>stat@gmail.com</td>
+                                                                                            <td>Benigns Secondary
+                                                                                                School</td>
+                                                                                       
+                                                                                            <td>
+                                                                                                <a href="#position-modal"
+                                                                                                    class="action-icon"
+                                                                                                    data-bs-toggle="modal"
+                                                                                                    data-bs-target="#position-modal"><i
+                                                                                                        class="fa fa-eye"
+                                                                                                        aria-hidden="true"></i>
+
+                                                                                                </a>
+                                                                                                <a href="#position-modal"
+                                                                                                    class="action-icon"
+                                                                                                    data-bs-toggle="modal"
+                                                                                                    data-bs-target="#position-modal"><i
+                                                                                                        class="fa fa-pen"
+                                                                                                        aria-hidden="true"></i>
+
+                                                                                                </a>
+                                                                                                <a href="#position-modal"
+                                                                                                    class="action-icon"
+                                                                                                    data-bs-toggle="modal"
+                                                                                                    data-bs-target="#position-modal"><i
+                                                                                                        class="fa fa-trash"
+                                                                                                        aria-hidden="true"></i>
+
+                                                                                                </a>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>Garrett Winters</td>
+                                                                                            <td>Accountant</td>
+                                                                                            <td>Tokyo</td>
+                                                                                            <td>stat@gmail.com</td>
+                                                                                            <td>Benigns Secondary
+                                                                                                School</td>
+                                                                                            
+                                                                                            <td>
+                                                                                                <a href="#position-modal"
+                                                                                                    class="action-icon"
+                                                                                                    data-bs-toggle="modal"
+                                                                                                    data-bs-target="#position-modal"><i
+                                                                                                        class="fa fa-eye"
+                                                                                                        aria-hidden="true"></i>
+
+                                                                                                </a>
+                                                                                                <a href="#position-modal"
+                                                                                                    class="action-icon"
+                                                                                                    data-bs-toggle="modal"
+                                                                                                    data-bs-target="#position-modal"><i
+                                                                                                        class="fa fa-pen"
+                                                                                                        aria-hidden="true"></i>
+
+                                                                                                </a>
+                                                                                                <a href="#position-modal"
+                                                                                                    class="action-icon"
+                                                                                                    data-bs-toggle="modal"
+                                                                                                    data-bs-target="#position-modal"><i
+                                                                                                        class="fa fa-trash"
+                                                                                                        aria-hidden="true"></i>
+
+                                                                                                </a>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>Ashton Cox</td>
+                                                                                            <td>Junior Technical
+                                                                                                Author</td>
+                                                                                            <td>San Francisco</td>
+                                                                                            <td>stat@gmail.com</td>
+                                                                                            <td>Benigns Secondary
+                                                                                                School</td>
+                                                                                            
+                                                                                            <td>
+                                                                                                <a href="#position-modal"
+                                                                                                    class="action-icon"
+                                                                                                    data-bs-toggle="modal"
+                                                                                                    data-bs-target="#position-modal"><i
+                                                                                                        class="fa fa-eye"
+                                                                                                        aria-hidden="true"></i>
+
+                                                                                                </a>
+                                                                                                <a href="#position-modal"
+                                                                                                    class="action-icon"
+                                                                                                    data-bs-toggle="modal"
+                                                                                                    data-bs-target="#position-modal"><i
+                                                                                                        class="fa fa-pen"
+                                                                                                        aria-hidden="true"></i>
+
+                                                                                                </a>
+                                                                                                <a href="#position-modal"
+                                                                                                    class="action-icon"
+                                                                                                    data-bs-toggle="modal"
+                                                                                                    data-bs-target="#position-modal"><i
+                                                                                                        class="fa fa-trash"
+                                                                                                        aria-hidden="true"></i>
+
+                                                                                                </a>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                    </tbody>
+                                                                                </table>
+
+                                                                            </div> <!-- end card body-->
+                                                                        </div> <!-- end card -->
+                                                                    </div><!-- end col-->
+                                                                </div>
+
+
+                                                                <!-- end row -->
+
                                                             </div>
+                                                          
 
 
                                                             {{-- {{ $jobs->onEachSide(3)->links() }} --}}
@@ -389,16 +456,7 @@
                                                         <!-- end card-body-->
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                                                    aria-labelledby="v-pills-settings-tab">
-                                                    <p>Eu dolore ea ullamco dolore Lorem id cupidatat excepteur
-                                                        reprehenderit consectetur elit id dolor proident in cupidatat
-                                                        officia. Voluptate excepteur commodo labore nisi cillum duis
-                                                        aliqua do. Aliqua amet
-                                                        qui mollit consectetur nulla mollit velit aliqua veniam nisi id
-                                                        do Lorem deserunt amet. Culpa ullamco sit adipisicing labore
-                                                        officia magna elit nisi in aute tempor commodo eiusmod.</p>
-                                                </div>
+
                                             </div>
                                         </div>
                                         <!-- end col-->
@@ -550,8 +608,8 @@
                                         placeholder="last name" name="last_name">
                                 </div>
                             </div>
-                           
-                          
+
+
                         </div>
                         <div class="row">
                             <div class="col-md-4">
@@ -581,7 +639,7 @@
                             </div>
                         </div>
 
-                    
+
 
                         <button type="submit" class="btn btn-primary btn-block">Assign</button>
                     </form>
