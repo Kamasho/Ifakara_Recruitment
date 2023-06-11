@@ -4,6 +4,8 @@ namespace App\Http\Controllers\HR;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\HeadInstitute;
+use App\Models\institution;
 
 class HrController extends Controller
 {
@@ -18,15 +20,22 @@ class HrController extends Controller
     }
 
 
-    public function HRprofile(){
+    public function HRprofile()
+    {
         return view('hr.pages.hrprofile');
     }
 
-    public function Organization(){
-        return view('hr.pages.organization');
+    public function Organization()
+    {
+        $headinstitutions = HeadInstitute::get();
+        $institutions = institution::get();
+
+
+        return view('hr.pages.organization',compact('headinstitutions','institutions'));
     }
 
-    public function Applicants(){
+    public function Applicants()
+    {
         return view('hr.pages.Applicants');
     }
     /**

@@ -57,7 +57,7 @@
                                                     <div class="">
                                                         <div class="">
                                                             <div class="row justify-content-between mb-2">
-                                                               <div class="col-sm-6"></div>
+                                                                <div class="col-sm-6"></div>
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
                                                                         <button type="button"
@@ -77,10 +77,10 @@
                                                                     <div class="col-12">
                                                                         <div class="card">
                                                                             <div class="card-body">
-                                                                              
+
 
                                                                                 {{-- <p class="text-muted font-13 mb-4">
-                                                                                    DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction
+                                                                                    DataTables has most  features enabled by default, so all you need to do to use it with your own tables is to call the construction
                                                                                     function:
                                                                                     <code>$().DataTable();</code>.
                                                                                 </p> --}}
@@ -90,11 +90,10 @@
                                                                                     <thead>
                                                                                         <tr>
                                                                                             <th>Instition Name</th>
+                                                                                            <th>Instition Email</th>
                                                                                             <th>Instition Location
                                                                                             </th>
-                                                                                            <th>Instition Email</th>
-                                                                                            <th>Instition Contact
-                                                                                            </th>
+
                                                                                             <th>Instition Category
                                                                                             </th>
 
@@ -104,113 +103,47 @@
 
 
                                                                                     <tbody>
-                                                                                        <tr>
-                                                                                            <td>Tiger Nixon</td>
-                                                                                            <td>System Architect
-                                                                                            </td>
-                                                                                            <td>Edinburgh</td>
-                                                                                            <td>stat@gmail.com</td>
-                                                                                            <td>Benigns Secondary
-                                                                                                School</td>
-                                                                                       
-                                                                                            <td>
-                                                                                                <a href="#position-modal"
-                                                                                                    class="action-icon"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#position-modal"><i
-                                                                                                        class="fa fa-eye"
-                                                                                                        aria-hidden="true"></i>
+                                                                                        @foreach ($institutions as $institutions)
+                                                                                            <tr>
+                                                                                                {{-- <td>{{$institutions->id}}</td> --}}
+                                                                                                <td>{{ $institutions->name }}
+                                                                                                </td>
+                                                                                                <td>{{ $institutions->email }}
+                                                                                                </td>
+                                                                                                <td>{{ $institutions->location }}
+                                                                                                </td>
+                                                                                                <td>{{ $institutions->category }}
+                                                                                                </td>
 
-                                                                                                </a>
-                                                                                                <a href="#position-modal"
-                                                                                                    class="action-icon"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#position-modal"><i
-                                                                                                        class="fa fa-pen"
-                                                                                                        aria-hidden="true"></i>
+                                                                                                <td class="text-sm">
+                                                                                                    <a href="#position-modal"
+                                                                                                        class="action-icon"
+                                                                                                        data-bs-toggle="modal"
+                                                                                                        data-bs-target="#position-modal"><i
+                                                                                                            class="fa fa-eye text-sm"
+                                                                                                            aria-hidden="true"></i>
 
-                                                                                                </a>
-                                                                                                <a href="#position-modal"
-                                                                                                    class="action-icon"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#position-modal"><i
-                                                                                                        class="fa fa-trash"
-                                                                                                        aria-hidden="true"></i>
+                                                                                                    </a>
+                                                                                                    <a href="#position-modal"
+                                                                                                        class="action-icon"
+                                                                                                        data-bs-toggle="modal"
+                                                                                                        data-bs-target="#position-modal"><i
+                                                                                                            class="fa fa-pen text-sm"
+                                                                                                            aria-hidden="true"></i>
 
-                                                                                                </a>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>Garrett Winters</td>
-                                                                                            <td>Accountant</td>
-                                                                                            <td>Tokyo</td>
-                                                                                            <td>stat@gmail.com</td>
-                                                                                            <td>Benigns Secondary
-                                                                                                School</td>
-                                                                                            
-                                                                                            <td>
-                                                                                                <a href="#position-modal"
-                                                                                                    class="action-icon"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#position-modal"><i
-                                                                                                        class="fa fa-eye"
-                                                                                                        aria-hidden="true"></i>
+                                                                                                    </a>
+                                                                                                    <a href="#position-modal"
+                                                                                                        class="action-icon"
+                                                                                                        data-bs-toggle="modal"
+                                                                                                        data-bs-target="#position-modal"><i
+                                                                                                            class="fa fa-trash text-sm"
+                                                                                                            aria-hidden="true"></i>
 
-                                                                                                </a>
-                                                                                                <a href="#position-modal"
-                                                                                                    class="action-icon"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#position-modal"><i
-                                                                                                        class="fa fa-pen"
-                                                                                                        aria-hidden="true"></i>
+                                                                                                    </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        @endforeach
 
-                                                                                                </a>
-                                                                                                <a href="#position-modal"
-                                                                                                    class="action-icon"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#position-modal"><i
-                                                                                                        class="fa fa-trash"
-                                                                                                        aria-hidden="true"></i>
-
-                                                                                                </a>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>Ashton Cox</td>
-                                                                                            <td>Junior Technical
-                                                                                                Author</td>
-                                                                                            <td>San Francisco</td>
-                                                                                            <td>stat@gmail.com</td>
-                                                                                            <td>Benigns Secondary
-                                                                                                School</td>
-                                                                                            
-                                                                                            <td>
-                                                                                                <a href="#position-modal"
-                                                                                                    class="action-icon"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#position-modal"><i
-                                                                                                        class="fa fa-eye"
-                                                                                                        aria-hidden="true"></i>
-
-                                                                                                </a>
-                                                                                                <a href="#position-modal"
-                                                                                                    class="action-icon"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#position-modal"><i
-                                                                                                        class="fa fa-pen"
-                                                                                                        aria-hidden="true"></i>
-
-                                                                                                </a>
-                                                                                                <a href="#position-modal"
-                                                                                                    class="action-icon"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#position-modal"><i
-                                                                                                        class="fa fa-trash"
-                                                                                                        aria-hidden="true"></i>
-
-                                                                                                </a>
-                                                                                            </td>
-                                                                                        </tr>
 
                                                                                     </tbody>
                                                                                 </table>
@@ -224,7 +157,7 @@
                                                                 <!-- end row -->
 
                                                             </div>
-                                                          
+
 
 
                                                             {{-- {{ $jobs->onEachSide(3)->links() }} --}}
@@ -266,8 +199,8 @@
                                                             </div>
 
                                                             <div class="table-responsive">
-                                                                <table
-                                                                    class="table table-centered table-nowrap table-hover mb-0">
+                                                                <table id="basic-datatable"
+                                                                    class="table dt-responsive nowrap w-100">
                                                                     <thead>
                                                                         <tr>
                                                                             <th>S/N</th>
@@ -277,74 +210,57 @@
                                                                             <th>Email</th>
                                                                             <th>Contact </th>
                                                                             <th>Location</th>
-                                                                            <th>Institution</th>
                                                                             <th style="width: 82px;">Action</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        {{-- @foreach ($staffs as $staff)
-                                                                        <tr>
-                                                                            <td> {{$staff->id}}</td>
-                                                                            <td>
-                                                                                {{$staff->first_name}}
-                                                                            </td>
-                                                                            <td>
-                                                                                {{$staff->last_name}}
-                                                                            </td>
-                                                                            <td>
-                                                                                {{$staff->email}}
-                                                                            </td>
-                                                                            <td>{{$staff->contacts}}</td>
-                                                                            <td>{{$staff->location}}</td>
-                                                                            <td>{{$job->job_name}}</td>
-                                                                            <td>{{$staff->created_at}}</td>
-                                                                            <td>
-                                                                                <a href="#"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="#"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
-                                                                            </td>
-                                                                        </tr>
+                                                                        @foreach ($headinstitutions as $headinstitutions)
+                                                                            <tr>
+                                                                                {{-- <td>{{$institutions->id}}</td> --}}
+                                                                                <td>{{ $headinstitutions->fname }}
+                                                                                </td>
+                                                                                <td>{{ $headinstitutions->mname }}</td>
+                                                                                <td>{{ $headinstitutions->lname }}</td>
+                                                                                <td>{{ $headinstitutions->contct }}</td>
+                                                                                <td>{{ $headinstitutions->insitute_id }}
+                                                                                </td>
 
-                                                                        @endforeach --}}
+
+                                                                                <td class="text-sm">
+                                                                                    <a href="#position-modal"
+                                                                                        class="action-icon"
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#position-modal"><i
+                                                                                            class="fa fa-eye text-sm"
+                                                                                            aria-hidden="true"></i>
+
+                                                                                    </a>
+                                                                                    <a href="#position-modal"
+                                                                                        class="action-icon"
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#position-modal"><i
+                                                                                            class="fa fa-pen text-sm"
+                                                                                            aria-hidden="true"></i>
+
+                                                                                    </a>
+                                                                                    <a href="#position-modal"
+                                                                                        class="action-icon"
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#position-modal"><i
+                                                                                            class="fa fa-trash text-sm"
+                                                                                            aria-hidden="true"></i>
+
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        @endforeach
+
 
                                                                     </tbody>
                                                                 </table>
                                                             </div>
 
-                                                            <ul
-                                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Previous">
-                                                                        <span aria-hidden="true">«</span>
-                                                                        <span class="visually-hidden">Previous</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="page-item active"><a class="page-link"
-                                                                        href="javascript: void(0);">1</a></li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">2</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">3</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">4</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">5</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Next">
-                                                                        <span aria-hidden="true">»</span>
-                                                                        <span class="visually-hidden">Next</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
+
 
                                                         </div>
                                                         <!-- end card-body-->
@@ -514,20 +430,20 @@
                     </div>
 
                     <h4>INSTITUIONS INFORMATION</h4>
-                    <form action="#" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('add_institute') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Instituions Name</label>
-                                    <input type="text" class="form-control" id="field-1" name=""
+                                    <input type="text" class="form-control" id="field-1" name="name"
                                         placeholder="Malecela Secondary School">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">Location</label>
-                                    <input type="text" class="form-control" name="" id="field-2"
+                                    <input type="text" class="form-control" name="location" id="field-2"
                                         placeholder="Ifakara Morogoro">
                                 </div>
                             </div>
@@ -536,18 +452,17 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Institution Email</label>
-                                    <input type="email" class="form-control" name="" id="field-2"
+                                    <input type="email" class="form-control" name="email" id="field-2"
                                         placeholder="malecela.school@ifakaracatholic">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Instituions Category</label>
-                                    <select class="form-select" id="example-select" name="job_id">
-
-                                        <option value="1">School</option>
-                                        <option value="2">Health Institions</option>
-                                        <option value="3">Parish</option>
+                                    <select class="form-select" id="example-select" name="category">
+                                        <option value="school">School</option>
+                                        <option value="health">Health Institions</option>
+                                        <option value="parish">Parish</option>
 
                                     </select>
                                 </div>
@@ -582,7 +497,7 @@
                 </div>
                 <div class="modal-body p-4">
                     <h4>Person Information</h4>
-                    <form action="{{ route('staff_registrations') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('add_head_institute') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
 
@@ -590,14 +505,14 @@
                                 <div class="mb-3">
                                     <label for="field-4" class="form-label">First name</label>
                                     <input type="text" class="form-control" id="field-4"
-                                        placeholder="first name" name="first_name">
+                                        placeholder="first name" name="fname">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Middle name</label>
-                                    <input type="text" class="form-control" id="field-1" name="contacts"
+                                    <input type="text" class="form-control" id="field-1" name="mname"
                                         placeholder="middle name">
                                 </div>
                             </div>
@@ -605,34 +520,40 @@
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Last name</label>
                                     <input type="text" class="form-control" id="field-5"
-                                        placeholder="last name" name="last_name">
+                                        placeholder="last name" name="lname">
                                 </div>
                             </div>
 
 
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            {{-- <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-6" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="field-6" name="email"
                                         placeholder="email">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Contanct</label>
-                                    <input type="interger" class="form-control" id="field-1" name="contacts"
+                                    <input type="interger" class="form-control" id="field-1" name="contact"
                                         placeholder="phone number">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Instituions Name</label>
-                                    <select class="form-select" id="example-select" name="job_id">
+                                    <select class="form-select" id="example-select" name="institute_id">
 
-                                        <option value="1">Malecela Secondary School</option>
-                                        <option value="2">Benigins Secondary School</option>
+                                        @if ($institutions instanceof \Illuminate\Support\Collection && $institutions->count() > 0)
+                                        @foreach ($institutions as $institutions)
+                                            <option value="{{ $institutions->id }}">{{ $institutions->name }}</option>
+                                        @endforeach
+                                    @else
+                                        <option value="">No institutions available</option>
+                                    @endif
+                                    
 
                                     </select>
                                 </div>

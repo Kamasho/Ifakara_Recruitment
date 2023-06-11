@@ -124,6 +124,13 @@
                     
                 </li>
 
+                <li>
+                    <a href="#" >
+                        <i data-feather="clipboard"></i>
+                        <span> Performance</span>
+                    </a>
+                    
+                </li>
 
 
             </ul>

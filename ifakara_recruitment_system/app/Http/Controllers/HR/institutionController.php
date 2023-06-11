@@ -15,8 +15,8 @@ class institutionController extends Controller
      */
     public function index()
     {
-        $institution = institution::all();
-        return view('hr.pages.Organization', compact('institution'));
+        $institutions = institution::all();
+        return view('hr.pages.Organization', compact('institutions'));
     }
 
     /**
