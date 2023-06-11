@@ -10,6 +10,10 @@
 
        <!-- toastr init js-->
        <script src="{{asset('assets/js/pages/toastr.init.js')}}"></script>
+       <script src="{{asset('assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js')}}"></script>
+
+       <!-- Init js-->
+       <script src="{{asset('assets/js/pages/form-wizard.init.js')}}"></script>
 
 </body>
 

@@ -33,114 +33,23 @@
                                         <div class="col-sm-3">
                                             <div class="nav flex-column nav-pills nav-pills-tab" id="v-pills-tab"
                                                 role="tablist" aria-orientation="vertical">
-                                                <a class="nav-link active show mb-1" id="v-pills-home-tab"
-                                                    data-bs-toggle="pill" href="#v-pills-home" role="tab"
-                                                    aria-controls="v-pills-home" aria-selected="true">
-
-                                                    <span>Job Registration </span></a>
-                                                <a class="nav-link mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
+                                
+                                                <a class="nav-link active show mb-1" id="v-pills-profile-tab" data-bs-toggle="pill"
                                                     href="#v-pills-profile" role="tab"
-                                                    aria-controls="v-pills-profile" aria-selected="false">
+                                                    aria-controls="v-pills-profile" aria-selected="true">
                                                     All Staff</a>
                                                 <a class="nav-link mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
                                                     href="#v-pills-messages" role="tab"
                                                     aria-controls="v-pills-messages" aria-selected="false">
                                                     Uploads</a>
-                                                <a class="nav-link mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
-                                                    href="#v-pills-settings" role="tab"
-                                                    aria-controls="v-pills-settings" aria-selected="false">
-                                                    Settings</a>
+                                               
                                             </div>
                                         </div>
                                         <!-- end col-->
                                         <div class="col-sm-9">
                                             <div class="tab-content pt-0">
-                                                <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel"
-                                                    aria-labelledby="v-pills-home-tab">
-                                                    <div class="">
-                                                        <div class="">
-                                                            <div class="row justify-content-between mb-2">
-                                                                <div class="col-auto">
-                                                                    <form>
-                                                                        <div class="mb-2">
-                                                                            <label for="inputPassword2"
-                                                                                class="visually-hidden">Search</label>
-                                                                            <input type="search" class="form-control"
-                                                                                id="inputPassword2"
-                                                                                placeholder="Search...">
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="text-sm-end">
-                                                                        <button type="button"
-                                                                            class="btn btn-primary waves-effect waves-light mb-2"
-                                                                            data-bs-toggle="modal"
-                                                                            data-bs-target="#position-modal"> Create new
-                                                                            Job
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-
-                                                            <div class="table-responsive">
-                                                                <table
-                                                                    class="table table-centered table-nowrap table-hover mb-0">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>SN</th>
-                                                                            <th>Job Title</th>
-                                                                            <th>Job Location</th>
-                                                                            <th>Position</th>
-                                                                            <th>Created Date</th>
-                                                                            <th style="width: 82px;">Action</th>
-                                                                        </tr>
-                                                                    </thead>
-
-                                                                    <tbody>
-                                                                        @foreach ($jobs as $job)
-                                                                            <tr>
-                                                                                <td>
-                                                                                    {{ $job->id }}
-                                                                                </td>
-
-                                                                                <td>
-                                                                                    {{ $job->job_name }}
-                                                                                </td>
-                                                                                <td>{{ $job->job_location }}</td>
-                                                                                <td>
-                                                                                    {{ $job->position_name }}
-                                                                                </td>
-                                                                                <td>{{ $job->created_at }}</td>
-
-                                                                                <td>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-square-edit-outline"></i></a>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-delete"></i></a>
-                                                                                </td>
-                                                                            </tr>
-                                                                        @endforeach
-                                                                    </tbody>
-
-
-                                                                </table>
-                                                            </div>
-                                                            
-
-                                                            {{-- {{ $jobs->onEachSide(3)->links() }} --}}
-
-                                                            
-                                                          
-
-                                                        </div>
-                                                        <!-- end card-body-->
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                               
+                                                <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel"
                                                     aria-labelledby="v-pills-profile-tab">
                                                     <div class="card">
                                                         <div class="card-body">
@@ -175,12 +84,15 @@
                                                                         <tr>
                                                                             <th>S/N</th>
                                                                             <th>First name</th>
+                                                                            <th>Middle name</th>
                                                                             <th>Last name</th>
                                                                             <th>Email</th>
                                                                             <th>Contact </th>
-                                                                            <th>Location</th>
+                                                                            <th>Instition</th>
                                                                             <th>Job Title</th>
-                                                                            <th>Created Date</th>
+                                                                            <th>Allowance</th>
+                                                                            <th>Basic</th>
+                                                                            <th>Total Gross</th>
                                                                             <th style="width: 82px;">Action</th>
                                                                         </tr>
                                                                     </thead>
@@ -199,7 +111,7 @@
                                                                             </td>
                                                                             <td>{{$staff->contacts}}</td>
                                                                             <td>{{$staff->location}}</td>
-                                                                            <td>{{$job->job_name}}</td>
+                                                                            {{-- <td>{{$job->job_name}}</td> --}}
                                                                             <td>{{$staff->created_at}}</td>
                                                                             <td>
                                                                                 <a href="#"
@@ -359,16 +271,7 @@
                                                         <!-- end card-body-->
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                                                    aria-labelledby="v-pills-settings-tab">
-                                                    <p>Eu dolore ea ullamco dolore Lorem id cupidatat excepteur
-                                                        reprehenderit consectetur elit id dolor proident in cupidatat
-                                                        officia. Voluptate excepteur commodo labore nisi cillum duis
-                                                        aliqua do. Aliqua amet
-                                                        qui mollit consectetur nulla mollit velit aliqua veniam nisi id
-                                                        do Lorem deserunt amet. Culpa ullamco sit adipisicing labore
-                                                        officia magna elit nisi in aute tempor commodo eiusmod.</p>
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                         <!-- end col-->
@@ -529,36 +432,48 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
+                                    <label for="field-4" class="form-label">Middle name</label>
+                                    <input type="text" class="form-control" id="field-4" placeholder="middle  name" name="">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
                                     <label for="field-5" class="form-label">Last name</label>
                                     <input type="text" class="form-control" id="field-5" placeholder="last name" name="last_name">
                                 </div>
                             </div>
+                            
+                        </div>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-6" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="field-6" name="email"  placeholder="email">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Contanct</label>
                                     <input type="interger" class="form-control" id="field-1" name="contacts"
                                         placeholder="phone number">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label for="field-2" class="form-label">Staff location</label>
-                                    <input type="text" class="form-control" id="field-2" placeholder="location" name="location">
+                                    <label for="example-select" class="form-label"> Institions</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+                                        @foreach ($jobs as $job )
+                                        <option value="{{$job->id}}">{{$job->job_name}}</option>
+                                        @endforeach
+                                        
+                                    </select>
                                 </div>
                             </div>
                         </div>
     
                         <h4>Job Information</h4>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Job title</label>
                                     <select class="form-select" id="example-select" name="job_id">
@@ -569,15 +484,44 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">Contract</label>
                                     <input type="file" class="form-control" id="field-2" placeholder="file" name="staff_contract">
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-2" class="form-label">End of Contract</label>
+                                    <input type="date" class="form-control" id="field-2" placeholder="file" name="staff_contract">
+                                </div>
+                            </div>
                         </div>
+                        <h4>Gross Salaries</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label">Basic </label>
+                                    <input type="number" class="form-control" id="field-2" placeholder="20000 Tsh/=" name="staff_contract">
 
-                        <button type="submit" class="btn btn-primary">Register Staff</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-2" class="form-label">Allaonce</label>
+                                    <input type="number" class="form-control" id="field-2" placeholder="300000" name="staff_contract">
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 d-grid">
+                                <button type="submit" class="btn btn-primary">Register Staff</button>
+
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
                     </form>
                    
 

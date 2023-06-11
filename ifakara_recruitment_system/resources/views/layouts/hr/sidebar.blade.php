@@ -87,12 +87,12 @@
                         <span> Institutions </span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{route('education_level')}}">
                         <i data-feather="users"></i>
                         <span> Accademic  </span>
                     </a>
-                </li>
+                </li> --}}
                 
                 <li>
                     <a href="{{route('jobs')}}">

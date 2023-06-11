@@ -775,52 +775,110 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form action="{{route('publish_job')}}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="example-select" class="form-label">Level name</label>
-                                    <input type="text" class="form-control" id="field-4" placeholder="Education level name" name="Education Level name">
-
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="example-select" class="form-label"> Education name</label>
-                                    <input type="text" class="form-control" id="field-4" placeholder="Education name" name="category">
-
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card-body">
                         
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-4" class="form-label">Education Category</label>
-                                    <input type="text" class="form-control" id="field-4" placeholder="category" name="job_location">
-                                </div>
-                            </div>
-                           
-                       
-                        </div>
-                        
-                        
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="">
-                                    <label for="field-7" class="form-label">Description </label>
-                                    <textarea name="post_description" id="" cols="10" rows="10" class="form-control"></textarea>
-                                
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mt-3">
-                            <button type="submit" class="btn btn-primary">publish a post</button>
+                            <div id="progressbarwizard">
 
-                        </div>
-                    </form>
-                    
+                                <ul class="nav nav-pills bg-light nav-justified form-wizard-header mb-3">
+                                    <li class="nav-item">
+                                        <a href="#account-2" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                            <i class="mdi mdi-account-circle me-1"></i>
+                                            <span class="d-none d-sm-inline">Education Level</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#profile-tab-2" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                            <i class="mdi mdi-face-profile me-1"></i>
+                                            <span class="d-none d-sm-inline">Education Category</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#finish-2" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                                            <i class="mdi mdi-checkbox-marked-circle-outline me-1"></i>
+                                            <span class="d-none d-sm-inline">Education Program</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            
+                                <div class="tab-content b-0 mb-0 pt-0">
+                            
+                                    <div id="bar" class="progress mb-3" style="height: 7px;">
+                                        <div class="bar progress-bar progress-bar-striped progress-bar-animated bg-success"></div>
+                                    </div>
+                            
+                                    <div class="tab-pane" id="account-2">
+                                        <form action="">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="row mb-3">
+                                                        {{-- <label class="col-md-3 col-form-label" for="userName1">Education Level</label> --}}
+                                                        <div class="col-md-12">
+                                                            <input type="text" class="form-control" id="userName1" name="userName1" placeholder="PHD">
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end col -->
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                </div>
+                                                <div class="col-md-4 d-grid">
+                                                    <button class="btn btn-primary btn-block">Next</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                      <!-- end row -->
+                                    </div>
+
+                                    <div class="tab-pane" id="profile-tab-2">
+                                        <form action="" method="post">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="row mb-12">
+                                                        <div class="col-md-9">
+                                                            <input type="text" id="name1" name="name1" class="form-control" placeholder="IT">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div> <!-- end col -->
+                                            </div> 
+                                        </form>
+                                       <!-- end row -->
+                                    </div>
+
+                                    <div class="tab-pane" id="finish-2">
+                                        <form action="" method="post">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="row mb-3">
+                                                        <div class="col-md-12">
+                                                            <input type="text" id="name1" name="name1" placeholder="Bsc of Human Resources " class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div> <!-- end col -->
+                                            </div>
+                                        </form>
+                                     
+                                    </div>
+                                </div> 
+                                <ul class="list-inline mb-0 wizard">
+                                    <li class="previous list-inline-item">
+                                        <a href="javascript: void(0);" class="btn btn-secondary">Previous</a>
+                                    </li>
+                                    <li class="next list-inline-item float-end">
+                                        <a href="javascript: void(0);" class="btn btn-secondary">Next</a>
+                                    </li>
+                                </ul>
+
+                                <!-- tab-content -->
+                            </div> <!-- end #progressbarwizard-->
+                        
+
+                        
+                    </div> 
+
+
                 </div>
             </div>
             <!-- /.modal-content -->
