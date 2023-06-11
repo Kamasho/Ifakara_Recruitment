@@ -25,6 +25,10 @@ class HrController extends Controller
     public function Organization(){
         return view('hr.pages.organization');
     }
+
+    public function Applicants(){
+        return view('hr.pages.Applicants');
+    }
     /**
      * Show the form for creating a new resource.
      *

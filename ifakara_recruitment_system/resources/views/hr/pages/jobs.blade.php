@@ -40,11 +40,7 @@
                                                     Posts
                                                 </a>
 
-                                                <a class="nav-link mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
-                                                    href="#v-pills-messages" role="tab"
-                                                    aria-controls="v-pills-messages" aria-selected="false">
-                                                    Applicants
-                                                </a>
+                                               
                                                 <a class="nav-link mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
                                                     href="#v-pills-settings" role="tab"
                                                     aria-controls="v-pills-settings" aria-selected="false">
@@ -76,7 +72,7 @@
                                                                         <button type="button"
                                                                             class="btn btn-primary waves-effect waves-light mb-2"
                                                                             data-bs-toggle="modal"
-                                                                            data-bs-target="#position-modal">Register
+                                                                            data-bs-target="#register-vacant-modal">Register
                                                                             Vacant
                                                                         </button>
                                                                     </div>
@@ -89,11 +85,10 @@
                                                                     class="table table-centered table-nowrap table-hover mb-0">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th>Job Name</th>
-                                                                            <th>Job Category</th>
-                                                                            <th>Job Location</th>
-                                                                            <th>Application Date</th>
-                                                                            <th>Deadline Date</th>
+                                                                            <th>Vacant Name</th>
+                                                                            <th>Vacant Category</th>
+                                                                            <th>Vacant Location</th>
+                                                                          
                                                                             <th>Status</th>
                                                                             <th style="width: 82px;">Action</th>
                                                                         </tr>
@@ -199,8 +194,9 @@
                                                                         <button type="button"
                                                                             class="btn btn-primary waves-effect waves-light mb-2"
                                                                             data-bs-toggle="modal"
-                                                                            data-bs-target="#position-modal">Publish Vacants
-                                                                            
+                                                                            data-bs-target="#post-vacant-modal">Publish
+                                                                            Vacants
+
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -847,11 +843,196 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="position-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="post-vacant-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Create Job </h4>
+                    <h4 class="modal-title" id="myCenterModalLabel">Publish a vacant to applicants </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+
+                    <h4>VACANTS INFORMATION</h4>
+                    <form action="{{ route('job_registrations') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Vacant Title</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+                                        @foreach ($jobs as $job)
+                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Vacant Category</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+                                        @foreach ($jobs as $job)
+                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Institions</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+                                        @foreach ($jobs as $job)
+                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Application Date</label>
+                                    <input type="date" class="form-control" name="job_file" id="field-2">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Enddate Application</label>
+                                    <input type="date" class="form-control" name="job_file" id="field-2">
+                                </div>
+                            </div>
+                        </div>
+                        <h4>ACCADEMIC QUALIFICATION</h4>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Education Level</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+                                        @foreach ($jobs as $job)
+                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Education Category</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+                                        @foreach ($jobs as $job)
+                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label">Education Program</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+                                        @foreach ($jobs as $job)
+                                            <option value="{{ $job->id }}">{{ $job->job_name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <h4>OTHER QUALIFICATION</h4>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Applicant Age</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+
+                                        <option value="1">18</option>
+                                        <option value="2">20 - 30</option>
+                                        <option value="3">30 - 40</option>
+                                        <option value="4">40 - 50</option>
+                                        <option value="5">50 above</option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Applicant Experience</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+
+                                        <option value="1">None</option>
+                                        <option value="2">1 year</option>
+                                        <option value="3">2 years</option>
+                                        <option value="4">3 years</option>
+                                        <option value="5">4 years</option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Applicant Gender</label>
+                                    <select class="form-select" id="example-select" name="job_id">
+
+                                        <option value="1">None</option>
+                                        <option value="2">Male</option>
+                                        <option value="3">Female</option>
+                                        <option value="4">Both</option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-8">
+                                <div class="mb-3">
+                                    <label for="field-5" class="form-label">Summary Over view</label>
+                                    <textarea name="position_description" id="" cols="15" rows="5" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 d-grid">
+                                <button class="btn btn-primary" type="submit">Post Vacant</button>
+
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+
+
+                    </form>
+
+
+
+
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div class="modal fade" id="register-vacant-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Registration for Job Information </h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
@@ -863,9 +1044,8 @@
                         way, it will be stored in the database of the system, reducing the time required for future job
                         postings
                     </div>
-
                     <h4>JOB INFORMATION</h4>
-                    <form action="{{ route('job_registrations') }}" method="POST" enctype="multipart/form-data">
+                    <form action="#" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -887,7 +1067,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Job Description</label>
-                                    <textarea class="form-control" id="field-7" name="job_description" placeholder="Write something about job"></textarea>
+                                    <textarea name="job_description" id="" cols="15" rows="5" class="form-control"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -928,101 +1108,18 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-3">
-                                <button class="btn btn-primary btn-block" type="submit">Register</button>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 d-grid">
+                                <button class="btn btn-primary btn-block" type="submit">Register Vacant</button>
 
                             </div>
+                            <div class="col-md-4"></div>
                         </div>
 
 
                     </form>
-
-
-
-
                 </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-
-    <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Add New Staff </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-
-                    <div class="row">
-
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="field-4" class="form-label">First name</label>
-                                <input type="text" class="form-control" id="field-4" placeholder="first name">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="field-5" class="form-label">Last name</label>
-                                <input type="text" class="form-control" id="field-5" placeholder="last name">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="field-6" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="field-6" placeholder="email">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-1" class="form-label">Contanct</label>
-                                <input type="text" class="form-control" id="field-1"
-                                    placeholder="phone number">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-2" class="form-label">Staff location</label>
-                                <input type="text" class="form-control" id="field-2" placeholder="location">
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4>Job Information</h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-1" class="form-label">Job Title</label>
-                                <input type="text" class="form-control" id="field-1" placeholder="job title">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-2" class="form-label">Contract</label>
-                                <input type="file" class="form-control" id="field-2" placeholder="file">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Job Description</label>
-                                <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                
             </div>
             <!-- /.modal-content -->
         </div>

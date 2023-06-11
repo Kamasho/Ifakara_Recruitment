@@ -87,12 +87,7 @@
                         <span> Institutions </span>
                     </a>
                 </li>
-                {{-- <li>
-                    <a href="{{route('education_level')}}">
-                        <i data-feather="users"></i>
-                        <span> Accademic  </span>
-                    </a>
-                </li> --}}
+             
                 
                 <li>
                     <a href="{{route('jobs')}}">
@@ -107,7 +102,12 @@
                     </a>
                 </li>
                
-
+                <li>
+                    <a href="{{route('applicants')}}">
+                        <i data-feather="briefcase"></i>
+                        <span> Applicants</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="#">

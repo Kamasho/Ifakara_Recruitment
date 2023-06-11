@@ -72,7 +72,7 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');
     Route::get('/hr/organinzation',[HrController::class,'Organization'])->name('organization');
     Route::get('/hr/education_level',[EducationController::class,'index'])->name('education_level');
-
+    Route::get('hr/applicants',[HrController::class,'Applicants'])->name('applicants');
     //institute
     Route::get('/institute', [institutionController::class, 'index'])->name('institute');
     Route::post('/institute/add_institute', [institutionController::class, 'store'])->name('add_institute');
