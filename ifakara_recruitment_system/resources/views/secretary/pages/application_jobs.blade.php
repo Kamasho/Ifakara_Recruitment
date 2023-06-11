@@ -36,18 +36,16 @@
                                                             <label for="inputPassword2"
                                                                 class="visually-hidden">Search</label>
                                                             <input type="search" class="form-control"
-                                                                id="inputPassword2"
-                                                                placeholder="Search...">
+                                                                id="inputPassword2" placeholder="Search...">
                                                         </div>
                                                     </form>
                                                 </div>
-                                              
+
 
                                             </div>
 
                                             <div class="table-responsive">
-                                                <table
-                                                    class="table table-centered table-nowrap table-hover mb-0">
+                                                <table class="table table-centered table-nowrap table-hover mb-0">
                                                     <thead>
                                                         <tr>
                                                             <th>Name </th>
@@ -62,7 +60,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td class="table-user">
-                                                        
+
                                                                 <a href="javascript:void(0);"
                                                                     class="text-body fw-semibold">Paul
                                                                     J. Friend</a>
@@ -88,19 +86,19 @@
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#position-modal">Add New
                                                                 Job</button> --}}
-                                                                <a href="javascript:void(0);"
-                                                                class="action-icon"  data-bs-toggle="modal"
-                                                                data-bs-target="#position-modal"> <i class="mdi-eye"></i>
-                                                            </a>
-                                                                <a href="javascript:void(0);"
-                                                                    class="action-icon"> <i
+                                                                <a href="javascript:void(0);" class="action-icon"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#position-modal"> <i
+                                                                        class="mdi-eye"></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" class="action-icon"> <i
                                                                         class="mdi mdi-delete"></i></a>
                                                             </td>
                                                         </tr>
 
                                                         <tr>
                                                             <td class="table-user">
-                                                               
+
                                                                 <a href="javascript:void(0);"
                                                                     class="text-body fw-semibold">Bryan
                                                                     J. Luellen</a>
@@ -126,25 +124,24 @@
                                                                 data-bs-toggle="modal"
                                                                 data-bs-target="#position-modal">Add New
                                                                 Job</button> --}}
-                                                                <a href="javascript:void(0);"
-                                                                class="action-icon"  data-bs-toggle="modal"
-                                                                data-bs-target="#position-modal"> <i class="mdi-eye"></i>
-                                                            </a>
-                                                                <a href="javascript:void(0);"
-                                                                    class="action-icon"> <i
+                                                                <a href="javascript:void(0);" class="action-icon"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#position-modal"> <i
+                                                                        class="mdi-eye"></i>
+                                                                </a>
+                                                                <a href="javascript:void(0);" class="action-icon"> <i
                                                                         class="mdi mdi-delete"></i></a>
                                                             </td>
                                                         </tr>
 
-                                                        
+
 
 
                                                     </tbody>
                                                 </table>
                                             </div>
 
-                                            <ul
-                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
+                                            <ul class="pagination pagination-rounded justify-content-end mb-0 mt-2">
                                                 <li class="page-item">
                                                     <a class="page-link" href="javascript: void(0);"
                                                         aria-label="Previous">
@@ -167,8 +164,7 @@
                                                         href="javascript: void(0);">5</a>
                                                 </li>
                                                 <li class="page-item">
-                                                    <a class="page-link" href="javascript: void(0);"
-                                                        aria-label="Next">
+                                                    <a class="page-link" href="javascript: void(0);" aria-label="Next">
                                                         <span aria-hidden="true">»</span>
                                                         <span class="visually-hidden">Next</span>
                                                     </a>
@@ -207,7 +203,7 @@
     <!-- END wrapper -->
 
 
-   
+
     <!-- Modal -->
     <div class="modal fade" id="position-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -253,12 +249,13 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="field-2" class="form-label text-info">CV</label>
-                             <h5>MAJALIWA MAJLIWA CV <a href="http://"> <i class="fa fa-download" aria-hidden="true"></i>
-                                 </a></h5>
+                                <h5>MAJALIWA MAJLIWA CV <a href="http://"> <i class="fa fa-download"
+                                            aria-hidden="true"></i>
+                                    </a></h5>
                             </div>
                         </div>
                     </div>
-<hr class="text-warning">
+                    <hr class="text-warning">
                     <h4>Job Appliced</h4>
                     <div class="row">
                         <div class="col-md-6">
@@ -282,7 +279,10 @@
                                 <label for="field-3" class="form-label text-blue">Job Description</label>
                                 {{-- <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea> --}}
 
-                                <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptatibus suscipit commodi officia corrupti odio doloribus quos voluptatum iusto modi, laborum maiores in praesentium aliquid rem quae sed aperiam nihil!</p>
+                                <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Accusantium voluptatibus suscipit commodi officia corrupti odio doloribus quos
+                                    voluptatum iusto modi, laborum maiores in praesentium aliquid rem quae sed aperiam
+                                    nihil!</p>
                             </div>
                         </div>
                     </div>
