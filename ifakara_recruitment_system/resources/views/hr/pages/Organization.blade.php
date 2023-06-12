@@ -103,43 +103,24 @@
 
 
                                                                                     <tbody>
-                                                                                        @foreach ($institutions as $institutions)
+                                                                                        @foreach ($institutions as $institution)
                                                                                             <tr>
                                                                                                 {{-- <td>{{$institutions->id}}</td> --}}
-                                                                                                <td>{{ $institutions->name }}
+                                                                                                <td>{{ $institution->name }}
                                                                                                 </td>
-                                                                                                <td>{{ $institutions->email }}
+                                                                                                <td>{{ $institution->email }}
                                                                                                 </td>
-                                                                                                <td>{{ $institutions->location }}
+                                                                                                <td>{{ $institution->location }}
                                                                                                 </td>
-                                                                                                <td>{{ $institutions->category }}
+                                                                                                <td>{{ $institution->category }}
                                                                                                 </td>
 
                                                                                                 <td class="text-sm">
-                                                                                                    <a href="#position-modal"
-                                                                                                        class="action-icon"
-                                                                                                        data-bs-toggle="modal"
-                                                                                                        data-bs-target="#position-modal"><i
-                                                                                                            class="fa fa-eye text-sm"
-                                                                                                            aria-hidden="true"></i>
-
-                                                                                                    </a>
-                                                                                                    <a href="#position-modal"
-                                                                                                        class="action-icon"
-                                                                                                        data-bs-toggle="modal"
-                                                                                                        data-bs-target="#position-modal"><i
-                                                                                                            class="fa fa-pen text-sm"
-                                                                                                            aria-hidden="true"></i>
-
-                                                                                                    </a>
-                                                                                                    <a href="#position-modal"
-                                                                                                        class="action-icon"
-                                                                                                        data-bs-toggle="modal"
-                                                                                                        data-bs-target="#position-modal"><i
-                                                                                                            class="fa fa-trash text-sm"
-                                                                                                            aria-hidden="true"></i>
-
-                                                                                                    </a>
+                                                                                                    <a href="javascript:void(0);" class="action-icon"> <i
+                                                                                                        class="mdi mdi-square-edit-outline"></i></a>
+                                                                                                <a href="javascript:void(0);" class="action-icon"> <i
+                                                                                                        class="mdi mdi-delete"></i></a>
+                                                                                          
                                                                                                 </td>
                                                                                             </tr>
                                                                                         @endforeach
@@ -200,57 +181,38 @@
 
                                                             <div class="table-responsive">
                                                                 <table id="basic-datatable"
-                                                                    class="table dt-responsive nowrap w-100">
+                                                                class="table dt-responsive nowrap w-100">
                                                                     <thead>
                                                                         <tr>
                                                                             <th>S/N</th>
                                                                             <th>First name</th>
                                                                             <th>Middle name</th>
                                                                             <th>Last name</th>
-                                                                            <th>Email</th>
+                                                                           
                                                                             <th>Contact </th>
-                                                                            <th>Location</th>
-                                                                            <th style="width: 82px;">Action</th>
+                                                                            <th>Institions</th>
+                                                                            <th>Action</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        @foreach ($headinstitutions as $headinstitutions)
+                                                                        @foreach ($headinstitutions as $headinstitution)
                                                                             <tr>
-                                                                                {{-- <td>{{$institutions->id}}</td> --}}
-                                                                                <td>{{ $headinstitutions->fname }}
+                                                                                <td>{{$headinstitution->id}}</td>
+                                                                                <td>{{ $headinstitution->fname }}
                                                                                 </td>
-                                                                                <td>{{ $headinstitutions->mname }}</td>
-                                                                                <td>{{ $headinstitutions->lname }}</td>
-                                                                                <td>{{ $headinstitutions->contct }}</td>
-                                                                                <td>{{ $headinstitutions->insitute_id }}
+                                                                                <td>{{ $headinstitution->mname }}</td>
+                                                                                <td>{{ $headinstitution->lname }}</td>
+                                                                                <td>{{ $headinstitution->contact }}</td>
+                                                                                <td>{{ $headinstitution->name}}
                                                                                 </td>
 
 
                                                                                 <td class="text-sm">
-                                                                                    <a href="#position-modal"
-                                                                                        class="action-icon"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#position-modal"><i
-                                                                                            class="fa fa-eye text-sm"
-                                                                                            aria-hidden="true"></i>
-
-                                                                                    </a>
-                                                                                    <a href="#position-modal"
-                                                                                        class="action-icon"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#position-modal"><i
-                                                                                            class="fa fa-pen text-sm"
-                                                                                            aria-hidden="true"></i>
-
-                                                                                    </a>
-                                                                                    <a href="#position-modal"
-                                                                                        class="action-icon"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#position-modal"><i
-                                                                                            class="fa fa-trash text-sm"
-                                                                                            aria-hidden="true"></i>
-
-                                                                                    </a>
+                                                                                    
+                                                                                    <a href="javascript:void(0);" class="action-icon"> <i
+                                                                                        class="mdi mdi-square-edit-outline"></i></a>
+                                                                                <a href="javascript:void(0);" class="action-icon"> <i
+                                                                                        class="mdi mdi-delete"></i></a>
                                                                                 </td>
                                                                             </tr>
                                                                         @endforeach
@@ -324,14 +286,7 @@
                                                                                         class="mdi mdi-delete"></i></a>
                                                                             </td>
                                                                         </tr>
-
-
-
-
-
-
                                                                     </tbody>
-
 
                                                                 </table>
                                                             </div>
@@ -542,17 +497,15 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
+                                
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Instituions Name</label>
+                                    {{-- {{$institutions}} --}}
                                     <select class="form-select" id="example-select" name="institute_id">
-
-                                        @if ($institutions instanceof \Illuminate\Support\Collection && $institutions->count() > 0)
-                                        @foreach ($institutions as $institutions)
-                                            <option value="{{ $institutions->id }}">{{ $institutions->name }}</option>
+                                        @foreach ($institutions as $institution)
+                                            <option value="{{ $institution->id }}">{{ $institution->name }}</option>
                                         @endforeach
-                                    @else
-                                        <option value="">No institutions available</option>
-                                    @endif
+                                   
                                     
 
                                     </select>
@@ -562,7 +515,8 @@
 
 
 
-                        <button type="submit" class="btn btn-primary btn-block">Assign</button>
+                        <button type="submit"
+                                        class="btn btn-primary btn-block">Assign</button>
                     </form>
 
 

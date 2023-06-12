@@ -48,7 +48,12 @@
                                                     <td>47</td>
                                                     <td>2009/12/09</td>
                                                     <td>$85,675</td>
-                                                    <td> <a href="#position-modal" class="action-icon"
+                                                    <td> 
+                                                        <a href="javascript:void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                        <a href="#position-modal" class="action-icon"
                                                             data-bs-toggle="modal" data-bs-target="#position-modal"><i class="fa fa-eye" aria-hidden="true"></i>
 
                                                         </a></td>
@@ -63,7 +68,12 @@
                                                     <td>46</td>
                                                     <td>2011/12/06</td>
                                                     <td>$145,600</td>
-                                                    <td> <a href="#position-modal" class="action-icon"
+                                                    <td>
+                                                        <a href="javascript:void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                        <a href="#position-modal" class="action-icon"
                                                         data-bs-toggle="modal" data-bs-target="#position-modal"><i class="fa fa-eye" aria-hidden="true"></i>
 
                                                     </a></td>

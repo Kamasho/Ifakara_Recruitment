@@ -5,6 +5,7 @@ namespace App\Http\Controllers\HR;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\institution;
+use App\Models\HeadInstitute;
 
 class institutionController extends Controller
 {
@@ -15,9 +16,12 @@ class institutionController extends Controller
      */
     public function index()
     {
-        $institutions = institution::all();
-        return view('hr.pages.Organization', compact('institutions'));
-    }
+        $institutions = institution::get();
+        $headinstitutions = HeadInstitute::get();
+        return view('hr.pages.organization',[
+            'headinstitutions'=>$headinstitutions,
+           'institutions'=>$institutions
+        ]);    }
 
     /**
      * Show the form for creating a new resource.

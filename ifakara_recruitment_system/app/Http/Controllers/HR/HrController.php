@@ -29,9 +29,13 @@ class HrController extends Controller
     {
         $headinstitutions = HeadInstitute::get();
         $institutions = institution::get();
+//dd($institutions);
+        // return view('hr.pages.organization',compact('headinstitutions','institutions'));
+        return view('hr.pages.organization',[
+            'headinstitutions'=>$headinstitutions,
+           'institutions'=>$institutions
+        ]);
 
-
-        return view('hr.pages.organization',compact('headinstitutions','institutions'));
     }
 
     public function Applicants()

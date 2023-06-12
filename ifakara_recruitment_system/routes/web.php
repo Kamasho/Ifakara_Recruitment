@@ -25,6 +25,7 @@ use App\Http\Controllers\HR\EducationController;
 use App\Http\Controllers\HR\UploadController;
 use App\Http\Controllers\HR\institutionController;
 use App\Http\Controllers\HR\HeadInstituteController;
+use App\Http\Controllers\HR\StaffController;
 
 use GuzzleHttp\Psr7\UploadedFile;
 
@@ -38,9 +39,7 @@ use GuzzleHttp\Psr7\UploadedFile;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/sironga', function () {
-    return \App\Models\Post::with('job')->get();
-});
+
 
 Route::get('/', function () {
     return view('welcome');

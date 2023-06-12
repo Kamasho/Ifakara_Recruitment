@@ -100,30 +100,11 @@
                                                                             <td>2011/04/25</td>
                                                                             <td>$320,800</td>
                                                                             <td>
-                                                                                <a href="#position-modal"
-                                                                                    class="action-icon"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#position-modal"><i
-                                                                                        class="fa fa-eye"
-                                                                                        aria-hidden="true"></i>
-
-                                                                                </a>
-                                                                                <a href="#position-modal"
-                                                                                    class="action-icon"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#position-modal"><i
-                                                                                        class="fa fa-pen"
-                                                                                        aria-hidden="true"></i>
-
-                                                                                </a>
-                                                                                <a href="#position-modal"
-                                                                                    class="action-icon"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#position-modal"><i
-                                                                                        class="fa fa-trash"
-                                                                                        aria-hidden="true"></i>
-
-                                                                                </a>
+                                                                                <a href="javascript:void(0);" class="action-icon"> <i
+                                                                                    class="mdi mdi-square-edit-outline"></i></a>
+                                                                            <a href="javascript:void(0);" class="action-icon"> <i
+                                                                                    class="mdi mdi-delete"></i></a>
+                                                                                
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -136,30 +117,11 @@
                                                                             <td>2011/07/25</td>
                                                                             <td>$170,750</td>
                                                                             <td>
-                                                                                <a href="#position-modal"
-                                                                                    class="action-icon"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#position-modal"><i
-                                                                                        class="fa fa-eye"
-                                                                                        aria-hidden="true"></i>
-
-                                                                                </a>
-                                                                                <a href="#position-modal"
-                                                                                    class="action-icon"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#position-modal"><i
-                                                                                        class="fa fa-pen"
-                                                                                        aria-hidden="true"></i>
-
-                                                                                </a>
-                                                                                <a href="#position-modal"
-                                                                                    class="action-icon"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#position-modal"><i
-                                                                                        class="fa fa-trash"
-                                                                                        aria-hidden="true"></i>
-
-                                                                                </a>
+                                                                                <a href="javascript:void(0);" class="action-icon"> <i
+                                                                                    class="mdi mdi-square-edit-outline"></i></a>
+                                                                            <a href="javascript:void(0);" class="action-icon"> <i
+                                                                                    class="mdi mdi-delete"></i></a>                                                           
+                               
                                                                             </td>
                                                                         </tr>
                                                                         <tr>

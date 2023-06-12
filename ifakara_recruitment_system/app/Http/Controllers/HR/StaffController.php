@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class StaffController extends Controller
 {
     public function index(){
-        $jobs = Job::get();
-        $staffs = Staff::get();
+        // $jobs = Job::get();
+        // $staffs = Staff::get();
         return view('hr.pages.staffs');
     }
 }
