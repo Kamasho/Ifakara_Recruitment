@@ -227,9 +227,9 @@
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Job title</label>
                                     <select class="form-select" id="example-select" name="job_id">
-                                        @foreach ($jobs as $job)
+                                        {{-- @foreach ($jobs as $job)
                                             <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                        @endforeach
+                                        @endforeach --}}
 
                                     </select>
                                 </div>

@@ -172,23 +172,23 @@
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        @foreach ($posts as $post)
+                                                                        
                                                                         <tr>
                                                                     
                                                                             <td>
                                                                                 937-330-1634
                                                                             </td>
                                                                             <td>
-                                                                                pauljfrnd@jourrapide.com
+                                                                              
                                                                             </td>
                                                                             <td>
-                                                                                {{$post->job_location}}
+                                                                                
                                                                             </td>
                                                                             <td>
-                                                                                {{$post->application_date}}
+                                                                               
                                                                             </td>
                                                                             <td>
-                                                                                {{$post->deadline_date}}
+                                                                              
                                                                             </td>
                                                                             <td>
                                                                                 <span class="btn btn-success width-xs btn-sm">active</span>
@@ -202,7 +202,7 @@
                                                                                         class="mdi mdi-delete"></i></a>
                                                                             </td>
                                                                         </tr>
-                                                                        @endforeach
+                                                                     
                                                                         
 
                                                                      
@@ -742,9 +742,9 @@
                             <div class="mb-3">
                                 <label for="example-select" class="form-label"> Vacant Title</label>
                                 <select class="form-select" id="example-select" name="job_id">
-                                    @foreach ($jobs as $job)
+                                    {{-- @foreach ($jobs as $job)
                                         <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                    @endforeach
+                                    @endforeach --}}
 
                                 </select>
                             </div>
@@ -753,9 +753,9 @@
                             <div class="mb-3">
                                 <label for="example-select" class="form-label"> Vacant Category</label>
                                 <select class="form-select" id="example-select" name="job_id">
-                                    @foreach ($jobs as $job)
+                                    {{-- @foreach ($jobs as $job)
                                         <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                    @endforeach
+                                    @endforeach --}}
 
                                 </select>
                             </div>
@@ -764,9 +764,9 @@
                             <div class="mb-3">
                                 <label for="example-select" class="form-label"> Institions</label>
                                 <select class="form-select" id="example-select" name="job_id">
-                                    @foreach ($jobs as $job)
+                                    {{-- @foreach ($jobs as $job)
                                         <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                    @endforeach
+                                    @endforeach --}}
 
                                 </select>
                             </div>
@@ -793,9 +793,9 @@
                             <div class="mb-3">
                                 <label for="example-select" class="form-label"> Education Level</label>
                                 <select class="form-select" id="example-select" name="job_id">
-                                    @foreach ($jobs as $job)
+                                    {{-- @foreach ($jobs as $job)
                                         <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                    @endforeach
+                                    @endforeach --}}
 
                                 </select>
                             </div>
@@ -805,9 +805,9 @@
                             <div class="mb-3">
                                 <label for="example-select" class="form-label"> Education Category</label>
                                 <select class="form-select" id="example-select" name="job_id">
-                                    @foreach ($jobs as $job)
+                                    {{-- @foreach ($jobs as $job)
                                         <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                    @endforeach
+                                    @endforeach --}}
 
                                 </select>
                             </div>
@@ -817,9 +817,9 @@
                             <div class="mb-3">
                                 <label for="example-select" class="form-label">Education Program</label>
                                 <select class="form-select" id="example-select" name="job_id">
-                                    @foreach ($jobs as $job)
+                                    {{-- @foreach ($jobs as $job)
                                         <option value="{{ $job->id }}">{{ $job->job_name }}</option>
-                                    @endforeach
+                                    @endforeach --}}
 
                                 </select>
                             </div>

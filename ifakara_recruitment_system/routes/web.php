@@ -26,6 +26,7 @@ use App\Http\Controllers\HR\UploadController;
 use App\Http\Controllers\HR\institutionController;
 use App\Http\Controllers\HR\HeadInstituteController;
 use App\Http\Controllers\HR\StaffController;
+use App\Http\Controllers\GS\StaffGSController;
 
 use GuzzleHttp\Psr7\UploadedFile;
 
