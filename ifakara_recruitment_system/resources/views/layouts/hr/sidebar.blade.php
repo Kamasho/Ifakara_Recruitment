@@ -94,7 +94,12 @@
                         <span> Education Levels </span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="#">
+                        <i data-feather="users"></i>
+                        <span> Organization </span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="{{route('jobs')}}">

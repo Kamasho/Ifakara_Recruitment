@@ -14,13 +14,20 @@
 
             <div class="card-body">
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <p style="text-align:justify"> Applicants for Employment Opportunities are required to <b>update</b> your
+
+                <p class="text-align:justify">Applicants for employment opportunities are required to update their information using their National Identity Number<b>(NIN) </b> in 
+                the Personal Details section. Additionally, it is necessary to update the information regarding your <b> academic qualifications</b> by indicating
+                 your course in the appropriate category. To check the <b>STATUS</b> of your job application, <b>Login</b> to your account and visit the <b> MY APPLICATION </b> section.
+                  This section will provide you with information about the 
+                number of interviews you have attended if you were successful, and it will also provide reasons for not being
+                 selected for those who were not successful</p>
+                    {{-- <p style="text-align:justify"> Applicants for Employment Opportunities are required to <b>update</b> your
                         information using the number The National Identity of <b>NIN</b>, in the <b>Personal Details</b> area, you
                         also need to update information on the area of <b>Academic Qualification</b> by placing your course in
                         the relevant category. To see the <b>STATUS</b> of your job application, enter the <b>MY APPLICATION</b>
                         section after <b>Login</b> to your account. This section will allow you to see the number of
                         interviews for those They were successful and the reason for not being called for by those who
-                        have not succeeded.</p>
+                        have not succeeded.</p> --}}
 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
