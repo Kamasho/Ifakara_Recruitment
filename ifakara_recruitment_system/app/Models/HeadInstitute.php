@@ -19,6 +19,6 @@ class HeadInstitute extends Model
 
     public function institution()
     {
-        return $this->belongsTo(institution::class, 'name', 'institute_id');
+        return $this->belongsTo(institution::class);
     }
 }

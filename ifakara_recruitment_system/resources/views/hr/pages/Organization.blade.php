@@ -58,7 +58,7 @@
                                                         <div class="">
                                                             <div class="row justify-content-between mb-2">
                                                                 <div class="col-sm-6"></div>
-                                                                <div class="col-sm-6">
+                                                                <div class="col-sm-6"> 
                                                                     <div class="text-sm-end">
                                                                         <button type="button"
                                                                             class="btn btn-primary waves-effect waves-light mb-2"
@@ -89,12 +89,12 @@
                                                                                     class="table dt-responsive nowrap w-100">
                                                                                     <thead>
                                                                                         <tr>
-                                                                                            <th>Instition Name</th>
-                                                                                            <th>Instition Email</th>
-                                                                                            <th>Instition Location
+                                                                                            <th>Institution Name</th>
+                                                                                            <th>Institution Email</th>
+                                                                                            <th>Institution Location
                                                                                             </th>
 
-                                                                                            <th>Instition Category
+                                                                                            <th>Institution Category
                                                                                             </th>
 
                                                                                             <th>Action</th>
@@ -190,7 +190,7 @@
                                                                             <th>Last name</th>
                                                                            
                                                                             <th>Contact </th>
-                                                                            <th>Institions</th>
+                                                                            <th>Institutions</th>
                                                                             <th>Action</th>
                                                                         </tr>
                                                                     </thead>
@@ -384,13 +384,13 @@
                         postings
                     </div>
 
-                    <h4>INSTITUIONS INFORMATION</h4>
+                    <h4>INSTITUTIONS INFORMATION</h4>
                     <form action="{{ route('add_institute') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-1" class="form-label">Instituions Name</label>
+                                    <label for="field-1" class="form-label">Institutions Name</label>
                                     <input type="text" class="form-control" id="field-1" name="name"
                                         placeholder="Malecela Secondary School">
                                 </div>
@@ -413,7 +413,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="example-select" class="form-label">Instituions Category</label>
+                                    <label for="example-select" class="form-label">Institutions Category</label>
                                     <select class="form-select" id="example-select" name="category">
                                         <option value="school">School</option>
                                         <option value="health">Health Institions</option>
@@ -499,7 +499,7 @@
                             <div class="col-md-4">
                                 
                                 <div class="mb-3">
-                                    <label for="example-select" class="form-label">Instituions Name</label>
+                                    <label for="example-select" class="form-label">Institutions Name</label>
                                     {{-- {{$institutions}} --}}
                                     <select class="form-select" id="example-select" name="institute_id">
                                         @foreach ($institutions as $institution)

@@ -17,6 +17,6 @@ class institution extends Model
 
     public function institution()
     {
-        return $this->hasMany(HeadInstitute::class, 'name');
+        return $this->hasOne(HeadInstitute::class);
     }
 }

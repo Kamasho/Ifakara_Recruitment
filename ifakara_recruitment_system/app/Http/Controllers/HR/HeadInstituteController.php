@@ -15,7 +15,7 @@ class HeadInstituteController extends Controller
      */
     public function index()
     {
-        $headinstitutions = HeadInstitute::all();
+        $headinstitutions = HeadInstitute::with('institution')->get();
         return view('hr.pages.Organization', compact('headinstitutions'));
     }
 
