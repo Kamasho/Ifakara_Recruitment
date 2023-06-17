@@ -25,18 +25,18 @@ class HrController extends Controller
         return view('hr.pages.hrprofile');
     }
 
-    public function Organization()
+   public function Organization()
     {
-        $headinstitutions = HeadInstitute::get();
-        $institutions = institution::get();
-//dd($institutions);
-        // return view('hr.pages.organization',compact('headinstitutions','institutions'));
-        return view('hr.pages.organization',[
-            'headinstitutions'=>$headinstitutions,
-           'institutions'=>$institutions
-        ]);
+       $headinstitutions = HeadInstitute::get();
+       $institutions = institution::get();
+       // dd($institutions);
+        return view('hr.pages.organization',compact('headinstitutions','institutions'));
+       return view('hr.pages.organization',[
+           'headinstitutions'=>$headinstitutions,
+          'institutions'=>$institutions
+       ]);
 
-    }
+   }
 
     public function Applicants()
     {

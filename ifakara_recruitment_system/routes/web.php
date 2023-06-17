@@ -57,15 +57,18 @@ Auth::routes();
 Route::middleware(['auth', 'isHr'])->group(function () {
     Route::get('/hrdashboard', [HrController::class, 'index'])->name('hrdashboard');
     Route::get('/hr/staff', [StaffController::class, 'index'])->name('staff');
-
-    // jobs controllers
+    Route::post('/hr/staff', [StaffController::class, 'store'])->name('staff_registration');
+    Route::delete('/hr/staff/{id}', [StaffController::class, 'delete'])->name('staff_delete');
+    Route::get('/hr/staff/{id}/edit',[StaffController::class,'edit'])->name('staff_edit');
+    Route::put('/hr/staff/{id}', [StaffController::class,'update'])->name('staff_update');
+    // jobs contrhollers
 
     Route::get('/hr/jobs', [JobsController::class, 'index'])->name('jobs');
     Route::post('/publish_job', [JobsController::class, 'store'])->name('publish_job');
 
     Route::get('/hr/job/received', [JobsController::class, 'receivedquery'])->name('received');
-    // Route::post('/register_job', [JobsController::class, 'RegisterJob'])->name('job_registrations');
-
+    Route::post('/hr/jobs', [JobsController::class, 'vacant_registration'])->name('vacant_registration');
+    Route::post('/hr/jobs/vacants',[JobsController::class, 'publish_vacant'])->name('publish_vacant');
 
     Route::get('/hr/uploads', [UploadController::class, 'index'])->name('uploads');
     Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');

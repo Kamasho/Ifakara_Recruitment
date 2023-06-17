@@ -40,7 +40,7 @@
                                                     Posts
                                                 </a>
 
-                                               
+
                                                 <a class="nav-link mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
                                                     href="#v-pills-settings" role="tab"
                                                     aria-controls="v-pills-settings" aria-selected="false">
@@ -57,15 +57,7 @@
                                                         <div class="">
                                                             <div class="row justify-content-between mb-2">
                                                                 <div class="col-auto">
-                                                                    <form>
-                                                                        <div class="mb-2">
-                                                                            <label for="inputPassword2"
-                                                                                class="visually-hidden">Search</label>
-                                                                            <input type="search" class="form-control"
-                                                                                id="inputPassword2"
-                                                                                placeholder="Search...">
-                                                                        </div>
-                                                                    </form>
+
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     <div class="text-sm-end">
@@ -80,95 +72,71 @@
 
                                                             </div>
 
-                                                            <div class="table-responsive">
-                                                                <table
-                                                                    class="table table-centered table-nowrap table-hover mb-0">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Vacant Name</th>
-                                                                            <th>Vacant Category</th>
-                                                                            <th>Vacant Location</th>
-                                                                          
-                                                                            <th>Status</th>
-                                                                            <th style="width: 82px;">Action</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        @if (!empty($posts))
-                                                                            @foreach ($posts as $post)
-                                                                                <tr>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+                                                                        <div class="card-body">
 
-                                                                                    <td>
-                                                                                        937-330-1634
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        pauljfrnd@jourrapide.com
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        {{ $post->job_location }}
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        {{ $post->application_date }}
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        {{ $post->deadline_date }}
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <span
-                                                                                            class="btn btn-success width-xs btn-sm">active</span>
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a href="javascript:void(0);"
-                                                                                            class="action-icon"> <i
-                                                                                                class="mdi mdi-square-edit-outline"></i></a>
-                                                                                        <a href="javascript:void(0);"
-                                                                                            class="action-icon"> <i
-                                                                                                class="mdi mdi-delete"></i></a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            @endforeach
-                                                                        @else
-                                                                            <tr>
-                                                                                <td colspan="7">No posts found.</td>
-                                                                            </tr>
-                                                                        @endif
-                                                                    </tbody>
 
-                                                                </table>
+
+                                                                            <table id="basic-datatable"
+                                                                                class="table dt-responsive nowrap w-100">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>Vacant Name</th>
+                                                                                        <th>Vacant Location</th>
+                                                                                        <th>Vacant Positon</th>
+                                                                                        <th>Created</th>
+                                                                                        <th>Action</th>
+
+                                                                                    </tr>
+                                                                                </thead>
+
+
+                                                                                <tbody>
+                                                                                    @if (!empty($vacants))
+                                                                                        @foreach ($vacants as $vacant)
+                                                                                            <tr>
+                                                                                                <td>{{ $vacant->name }}
+                                                                                                </td>
+                                                                                                <td>{{ $vacant->location }}
+                                                                                                </td>
+                                                                                                <td>{{ $vacant->position_name }}
+                                                                                                </td>
+                                                                                                <td>{{ $vacant->created_at }}
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <a href="javascript:void(0);"
+                                                                                                        class="action-icon">
+                                                                                                        <i
+                                                                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                                                                    <a href="javascript:void(0);"
+                                                                                                        class="action-icon">
+                                                                                                        <i
+                                                                                                            class="mdi mdi-delete"></i></a>
+                                                                                                </td>
+
+                                                                                            </tr>
+                                                                                        @endforeach
+                                                                                    @else
+                                                                                        <tr>
+                                                                                            <td colspan="7">No posts
+                                                                                                found.</td>
+                                                                                        </tr>
+                                                                                    @endif
+
+
+
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                        </div> <!-- end card body-->
+                                                                    </div> <!-- end card -->
+                                                                </div><!-- end col-->
                                                             </div>
 
-                                                            <ul
-                                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Previous">
-                                                                        <span aria-hidden="true">«</span>
-                                                                        <span class="visually-hidden">Previous</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="page-item active"><a class="page-link"
-                                                                        href="javascript: void(0);">1</a></li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">2</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">3</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">4</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">5</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Next">
-                                                                        <span aria-hidden="true">»</span>
-                                                                        <span class="visually-hidden">Next</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
 
+                                                            <!-- end row-->
                                                         </div>
                                                         <!-- end card-body-->
                                                     </div>
@@ -202,96 +170,75 @@
                                                                 </div>
 
                                                             </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+                                                                        <div class="card-body">
 
-                                                            <div class="table-responsive">
-                                                                <table
-                                                                    class="table table-centered table-nowrap table-hover mb-0">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Job Name</th>
-                                                                            <th>Job Category</th>
-                                                                            <th>Job Location</th>
-                                                                            <th>Application Date</th>
-                                                                            <th>Deadline Date</th>
-                                                                            <th>Status</th>
-                                                                            <th style="width: 82px;">Action</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        @if (!empty($posts))
-                                                                            @foreach ($posts as $post)
-                                                                                <tr>
+                                                                            <table id="basic-datatable"
+                                                                                class="table dt-responsive nowrap w-100">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>Post Name</th>
+                                                                                        <th>Post category</th>
+                                                                                        <th>Location</th>
+                                                                                        <th>Application Date</th>
+                                                                                        <th>Education Level</th>
+                                                                                        <th>Education Program</th>
+                                                                                        <th>Others</th>
+                                                                                        <th>status</th>
+                                                                                        <th>Action</th>
+                                                                                    </tr>
+                                                                                </thead>
 
-                                                                                    <td>
-                                                                                        937-330-1634
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        pauljfrnd@jourrapide.com
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        {{ $post->job_location }}
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        {{ $post->application_date }}
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        {{ $post->deadline_date }}
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <span
-                                                                                            class="btn btn-success width-xs btn-sm">active</span>
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a href="javascript:void(0);"
-                                                                                            class="action-icon"> <i
-                                                                                                class="mdi mdi-square-edit-outline"></i></a>
-                                                                                        <a href="javascript:void(0);"
-                                                                                            class="action-icon"> <i
-                                                                                                class="mdi mdi-delete"></i></a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            @endforeach
-                                                                        @else
-                                                                            <tr>
-                                                                                <td colspan="7">No posts found.</td>
-                                                                            </tr>
-                                                                        @endif
-                                                                    </tbody>
 
-                                                                </table>
+                                                                                <tbody>
+                                                                                    @foreach ($posts as $post )
+                                                                                    <tr>
+                                                                                        <td>{{$post->vacant->name}}</td>
+                                                                                        <td>{{$post->vacant_category}}</td>
+                                                                                        <td>{{$post->vacant->location}}</td>
+                                                                                        <td>{{$post->end_date}}</td>
+                                                                                        <td>Phd</td>
+                                                                                        <td>econnomics</td>
+                                                                                        {{-- <td>{{$post->Education_level->name}}</td> --}}
+                                                                                        {{-- <td>{{$post->education_name->name}}</td> --}}
+                                                                                        {{-- <td>{{$post->education_category->name}}</td> --}}
+                                                                                        <td>
+                                                                                           <span><b>Gender:</b>{{$post->gender}} </span>
+                                                                                           <span><b>Experience:</b>{{$post->year_experience}} </span>
+                                                                                           <span><b>Age:</b>{{$post->age_range}}</span>
+                                                                                         
+                                                                                        </td>
+                                                                                   <td><span class="text-success">Active</span></td>
+
+                                                                                        <td>
+                                                                                            <a href="javascript:void(0);"
+                                                                                                class="action-icon">
+                                                                                                <i
+                                                                                                    class="mdi mdi-square-edit-outline"></i></a>
+                                                                                            <a href="javascript:void(0);"
+                                                                                                class="action-icon">
+                                                                                                <i
+                                                                                                    class="mdi mdi-delete"></i></a>
+                                                                                        </td>
+                                                                                   
+                                                                                    </tr>
+   
+                                                                                    @endforeach
+                              
+
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                        </div> <!-- end card body-->
+                                                                    </div> <!-- end card -->
+                                                                </div><!-- end col-->
                                                             </div>
+                                                            <!-- end row-->
 
-                                                            <ul
-                                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Previous">
-                                                                        <span aria-hidden="true">«</span>
-                                                                        <span class="visually-hidden">Previous</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="page-item active"><a class="page-link"
-                                                                        href="javascript: void(0);">1</a></li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">2</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">3</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">4</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">5</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Next">
-                                                                        <span aria-hidden="true">»</span>
-                                                                        <span class="visually-hidden">Next</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
+
+
 
                                                         </div>
                                                         <!-- end card-body-->
@@ -853,38 +800,37 @@
                 <div class="modal-body p-4">
 
                     <h4>VACANTS INFORMATION</h4>
-                    <form action="{{ route('job_registrations') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('publish_vacant') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Vacant Title</label>
-                                    <select class="form-select" id="example-select" name="job_id">
-                                        
-                                            <option value="1">Human Resource</option>
-                                  
-
+                                    <select class="form-select" id="example-select" name="vacant_id">
+                                        @foreach ($vacants as $vacant)
+                                            <option value="{{ $vacant->id }}">{{ $vacant->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Vacant Category</label>
-                                    <select class="form-select" id="example-select" name="job_id">
-                                        
-                                            <option value="1">IT</option>
-                                     
-
+                                    <select class="form-select" id="example-select" name="vacant_category">
+                                        <option value="IT">IT</option>
+                                        <option value="economics">Economics</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label for="example-select" class="form-label"> Institions</label>
-                                    <select class="form-select" id="example-select" name="job_id">
-                                      
-                                            <option value="1">Malecela</option>
-                                        
+                                    <label for="example-select" class="form-label"> Institutions</label>
+                                    <select class="form-select" id="example-select" name="institution_id">
+                                        @foreach ($institutions as $institution)
+                                            <option value="{{ $institution->id }}">{{ $institution->name }}</option>
+                                        @endforeach
+
+
 
                                     </select>
                                 </div>
@@ -894,13 +840,14 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Application Date</label>
-                                    <input type="date" class="form-control" name="job_file" id="field-2">
+                                    <input type="date" class="form-control" name="application_date"
+                                        id="field-2">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Enddate Application</label>
-                                    <input type="date" class="form-control" name="job_file" id="field-2">
+                                    <input type="date" class="form-control" name="end_date" id="field-2">
                                 </div>
                             </div>
                         </div>
@@ -910,11 +857,11 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Education Level</label>
-                                    <select class="form-select" id="example-select" name="job_id">
-                                       
-                                            <option value="1">PHD</option>
-                                       
-
+                                    <select class="form-select" id="example-select" name="education_level_id">
+                                        @foreach ($education_levels as $education_level)
+                                            <option value="{{ $education_level->id }}">{{ $education_level->name }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -922,10 +869,11 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Education Category</label>
-                                    <select class="form-select" id="example-select" name="job_id">
-                                      
-                                            <option value="1">IT</option>
-                                       
+                                    <select class="form-select" id="example-select" name="education_category_id">
+                                        @foreach ($education_categories as $education_category)
+                                            <option value="{{ $education_category->id }}">
+                                                {{ $education_category->name }}</option>
+                                        @endforeach
 
                                     </select>
                                 </div>
@@ -934,10 +882,12 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Education Program</label>
-                                    <select class="form-select" id="example-select" name="job_id">
-                                    
-                                            <option value="1">Telecom</option>
-                                      
+                                    <select class="form-select" id="example-select" name="education_name_id">
+                                        @foreach ($education_names as $education_name)
+                                            <option value="{{ $education_name->id }}">{{ $education_name->name }}
+                                            </option>
+                                        @endforeach
+
 
                                     </select>
                                 </div>
@@ -949,13 +899,13 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Applicant Age</label>
-                                    <select class="form-select" id="example-select" name="job_id">
+                                    <select class="form-select" id="example-select" name="age_range">
 
-                                        <option value="1">18</option>
-                                        <option value="2">20 - 30</option>
-                                        <option value="3">30 - 40</option>
-                                        <option value="4">40 - 50</option>
-                                        <option value="5">50 above</option>
+                                        <option value="18">18</option>
+                                        <option value="20 - 30">20 - 30</option>
+                                        <option value="30 - 40">30 - 40</option>
+                                        <option value="40 - 50">40 - 50</option>
+                                        <option value="50>">50 above</option>
 
 
                                     </select>
@@ -965,13 +915,13 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Applicant Experience</label>
-                                    <select class="form-select" id="example-select" name="job_id">
+                                    <select class="form-select" id="example-select" name="year_experience">
 
                                         <option value="1">None</option>
-                                        <option value="2">1 year</option>
-                                        <option value="3">2 years</option>
-                                        <option value="4">3 years</option>
-                                        <option value="5">4 years</option>
+                                        <option value="1 year">1 year</option>
+                                        <option value="2 years">2 years</option>
+                                        <option value="3 years">3 years</option>
+                                        <option value="4 years">4 years</option>
 
 
                                     </select>
@@ -981,12 +931,12 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Applicant Gender</label>
-                                    <select class="form-select" id="example-select" name="job_id">
+                                    <select class="form-select" id="example-select" name="gender">
 
-                                        <option value="1">None</option>
-                                        <option value="2">Male</option>
-                                        <option value="3">Female</option>
-                                        <option value="4">Both</option>
+                                        <option value="None">None</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Both">Both</option>
 
 
                                     </select>
@@ -998,7 +948,7 @@
                             <div class="col-md-8">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Summary Over view</label>
-                                    <textarea name="position_description" id="" cols="15" rows="5" class="form-control"></textarea>
+                                    <textarea name="summary" id="" cols="15" rows="5" class="form-control"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-2"></div>
@@ -1045,20 +995,20 @@
                         postings
                     </div>
                     <h4>JOB INFORMATION</h4>
-                    <form action="#" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('vacant_registration') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Job Title</label>
-                                    <input type="text" class="form-control" id="field-1" name="job_name"
+                                    <input type="text" class="form-control" id="field-1" name="name"
                                         placeholder="job title">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">Location</label>
-                                    <input type="text" class="form-control" name="job_location" id="field-2"
+                                    <input type="text" class="form-control" name="location" id="field-2"
                                         placeholder="singida">
                                 </div>
                             </div>
@@ -1067,7 +1017,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Job Description</label>
-                                    <textarea name="job_description" id="" cols="15" rows="5" class="form-control"></textarea>
+                                    <textarea name="description" id="" cols="15" rows="5" class="form-control"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -1092,7 +1042,7 @@
                                         <div class="mb-3">
                                             <label for="field-6" class="form-label">More Description Document</label>
                                             <input type="file" class="form-control" id="field-6"
-                                                name="position_file" placeholder="email">
+                                                name="position_file">
                                         </div>
                                     </div>
                                 </div>
@@ -1119,7 +1069,7 @@
 
                     </form>
                 </div>
-                
+
             </div>
             <!-- /.modal-content -->
         </div>

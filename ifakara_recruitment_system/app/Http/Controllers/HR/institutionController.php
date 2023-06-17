@@ -18,10 +18,11 @@ class institutionController extends Controller
     {
         $institutions = institution::get();
         $headinstitutions = HeadInstitute::get();
-        return view('hr.pages.organization',[
-            'headinstitutions'=>$headinstitutions,
-           'institutions'=>$institutions
-        ]);    }
+        return view('hr.pages.organization', [
+            'headinstitutions' => $headinstitutions,
+            'institutions' => $institutions
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -30,7 +31,6 @@ class institutionController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
