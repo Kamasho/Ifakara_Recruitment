@@ -36,16 +36,14 @@
                                             <div class="text-sm-end">
                                                 <button type="button"
                                                     class="btn btn-primary waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#custom-modal">Add New
+                                                    data-bs-toggle="modal" data-bs-target="#custom-modal">Add New
                                                     Staff</button>
                                             </div>
                                         </div>
 
                                     </div>
                                     <div class="table-responsive">
-                                        <table id="basic-datatable"
-                                            class="table dt-responsive nowrap w-100">
+                                        <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                             <thead>
                                                 <tr>
                                                     <th>First Name</th>
@@ -65,37 +63,43 @@
 
 
                                             <tbody>
-                                                @foreach ($staffs as $staff )
-                                                <tr>
-                                                    <td>{{$staff->fname}}</td>
-                                                    <td> {{$staff->lname}}</td>
-                                                    <td>{{$staff->mname}}</td>
-                                                    <td>{{$staff->email}}</td>
-                                                    <td>{{$staff->phone}}</td>
-                                                    <td>{{$staff->vacant->name}}</td>
-                                                    <td>{{$staff->institution->name}}</td>
-                                                    <td>{{$staff->basic_salary}}</td>
-                                                    <td>{{$staff->allounce_salary}}</td>
-                                                    <td><span><b>Total :</b></span> {{ $staff->basic_salary + $staff->allounce_salary }}</td>
-                                                    <td class="text-success">{{$staff->end_date}}</td>
-                                                    <td>
-                                                       
-                                                       
-                                                            <button class="btn btn-info btn-xs" data-bs-toggle="modal" data-bs-target="#editModal" data-id="{{$staff->id}}">Edit</button>
+                                                @foreach ($staffs as $staff)
+                                                    <tr>
+                                                        <td>{{ $staff->fname }}</td>
+                                                        <td> {{ $staff->lname }}</td>
+                                                        <td>{{ $staff->mname }}</td>
+                                                        <td>{{ $staff->email }}</td>
+                                                        <td>{{ $staff->phone }}</td>
+                                                        <td>{{ $staff->vacant->name }}</td>
+                                                        <td>{{ $staff->institution->name }}</td>
+                                                        <td>{{ $staff->basic_salary }}</td>
+                                                        <td>{{ $staff->allounce_salary }}</td>
+                                                        <td><span><b>Total :</b></span>
+                                                            {{ $staff->basic_salary + $staff->allounce_salary }}</td>
+                                                        <td class="text-success">{{ $staff->end_date }}</td>
+                                                        <td>
+
+
+                                                            <button class="btn btn-info btn-xs" data-bs-toggle="modal"
+                                                                data-bs-target="#editModal"
+                                                                data-id="{{ $staff->id }}">Edit</button>
                                                             <!-- ... -->
-                                                        
-                                                        {{-- <a href="{{route('staff_delete')}}"
+
+                                                            {{-- <a href="{{route('staff_delete')}}"
                                                             class="action-icon"> <i
                                                                 class="mdi mdi-delete"></i></a> --}}
-                                                                <form action="{{ route('staff_delete', ['id' => $staff->id]) }}" method="POST">
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="submit" class="btn btn-danger btn-xs">Delete</button>
-                                                                </form>
-                                                                
+                                                            <form
+                                                                action="{{ route('staff_delete', ['id' => $staff->id]) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit"
+                                                                    class="btn btn-danger btn-xs">Delete</button>
+                                                            </form>
 
-                                                    </td>
-                                                </tr>   
+
+                                                        </td>
+                                                    </tr>
                                                 @endforeach
 
                                             </tbody>
@@ -105,8 +109,15 @@
 
 
                                 </div>
+
                                 <!-- end card-body-->
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <canvas id="salaryChart"></canvas>
+
                         </div>
                     </div>
                     <!-- end row -->
@@ -120,7 +131,7 @@
             <!-- Footer Start -->
             @include('layouts.hr.footer')
             <!-- end Footer -->
-           
+
 
         </div>
 
@@ -130,17 +141,18 @@
 
 
     </div>
-    <!-- END wrapper -->
+  
+
     <script>
         $(document).ready(function() {
             $('#editModal').on('show.bs.modal', function(event) {
                 var button = $(event.relatedTarget); // Button that triggered the modal
                 var staffId = button.data('id'); // Extract staff ID from data-id attribute
                 var modal = $(this);
-    
+
                 // Set the form action attribute to the staff update route with the ID
                 modal.find('#editForm').attr('action', '/hr/staff/' + staffId);
-    
+
                 // Use an AJAX request to fetch the staff data and populate the input fields in the modal
                 $.ajax({
                     url: '/hr/staff/' + staffId + '/edit',
@@ -158,38 +170,38 @@
             });
         });
     </script>
- <div class="modal" id="editModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form id="editForm" method="POST" action="">
-                @csrf
-                @method('PUT')
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Staff{{$staff->fname}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Input fields for staff attributes -->
-                    <!-- Example: -->
-                    <div class="form-group">
-                        <label for="fname">First Name</label>
-                        <input type="text" class="form-control" id="fname" name="fname">
+    <div class="modal" id="editModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="editForm" action="{{ route('staff_update', ['id' => $staff->id]) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Staff</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <!-- Repeat for other attributes -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                </div>
-            </form>
+                    <div class="modal-body">
+                        <!-- Input fields for staff attributes -->
+                        <!-- Example: -->
+                        <div class="form-group">
+                            <label for="fname">First Name</label>
+                            <input type="text" class="form-control" id="fname" name="fname">
+                        </div>
+                        <!-- Repeat for other attributes -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
-    
-    
+
+
 
     <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -207,15 +219,15 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-4" class="form-label">First name</label>
-                                    <input type="text" class="form-control" id="field-4"
-                                        placeholder="first name" name="fname">
+                                    <input type="text" class="form-control" id="field-4" placeholder="first name"
+                                        name="fname">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-4" class="form-label">Middle name</label>
-                                    <input type="text" class="form-control" id="field-4"
-                                        placeholder="middle  name" name="mname">
+                                    <input type="text" class="form-control" id="field-4" placeholder="middle  name"
+                                        name="mname">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -387,5 +399,3 @@
 
 
     @include('assets.js')
-
-  

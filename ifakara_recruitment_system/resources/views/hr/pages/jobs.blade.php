@@ -193,40 +193,37 @@
 
 
                                                                                 <tbody>
-                                                                                    @foreach ($posts as $post )
+                                                                                    @forelse ($posts as $post)
                                                                                     <tr>
-                                                                                        <td>{{$post->vacant->name}}</td>
-                                                                                        <td>{{$post->vacant_category}}</td>
-                                                                                        <td>{{$post->vacant->location}}</td>
-                                                                                        <td>{{$post->end_date}}</td>
+                                                                                        <td>{{ $post->vacant->name }}</td>
+                                                                                        <td>{{ $post->vacant_category }}</td>
+                                                                                        <td>{{ $post->vacant->location }}</td>
+                                                                                        <td>{{ $post->end_date }}</td>
                                                                                         <td>Phd</td>
-                                                                                        <td>econnomics</td>
-                                                                                        {{-- <td>{{$post->Education_level->name}}</td> --}}
-                                                                                        {{-- <td>{{$post->education_name->name}}</td> --}}
-                                                                                        {{-- <td>{{$post->education_category->name}}</td> --}}
+                                                                                        <td>economics</td>
                                                                                         <td>
-                                                                                           <span><b>Gender:</b>{{$post->gender}} </span>
-                                                                                           <span><b>Experience:</b>{{$post->year_experience}} </span>
-                                                                                           <span><b>Age:</b>{{$post->age_range}}</span>
-                                                                                         
+                                                                                            <span><b>Gender:</b>{{ $post->gender }}</span>
+                                                                                            <span><b>Experience:</b>{{ $post->year_experience }}</span>
+                                                                                            <span><b>Age:</b>{{ $post->age_range }}</span>
                                                                                         </td>
-                                                                                   <td><span class="text-success">Active</span></td>
-
                                                                                         <td>
-                                                                                            <a href="javascript:void(0);"
-                                                                                                class="action-icon">
-                                                                                                <i
-                                                                                                    class="mdi mdi-square-edit-outline"></i></a>
-                                                                                            <a href="javascript:void(0);"
-                                                                                                class="action-icon">
-                                                                                                <i
-                                                                                                    class="mdi mdi-delete"></i></a>
+                                                                                            <span class="btn btn-success btn-xs text-white">Active</span>
                                                                                         </td>
-                                                                                   
+                                                                                        <td>
+                                                                                            <a href="javascript:void(0);" class="action-icon">
+                                                                                                <i class="mdi mdi-square-edit-outline"></i>
+                                                                                            </a>
+                                                                                            <a href="javascript:void(0);" class="action-icon">
+                                                                                                <i class="mdi mdi-delete"></i>
+                                                                                            </a>
+                                                                                        </td>
                                                                                     </tr>
-   
-                                                                                    @endforeach
-                              
+                                                                                @empty
+                                                                                    <tr>
+                                                                                        <td colspan="9">No data available</td>
+                                                                                    </tr>
+                                                                                @endforelse
+                                                                                
 
                                                                                 </tbody>
                                                                             </table>

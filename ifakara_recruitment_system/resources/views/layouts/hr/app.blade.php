@@ -36,7 +36,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="text-end">
-                                                <h3 class="text-dark my-1"><span data-plugin="counterup">12,145</span></h3>
+                                                <h3 class="text-dark my-1"><span data-plugin="counterup">{{ $totalStaffs }}</span></h3>
                                                 <p class="text-muted mb-1 text-truncate">Total Staff</p>
                                             </div>
                                         </div>
@@ -59,7 +59,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="text-end">
-                                                <h3 class="text-dark my-1"><span data-plugin="counterup">1576</span></h3>
+                                                <h3 class="text-dark my-1"><span data-plugin="counterup">{{$totalPosts}}</span></h3>
                                                 <p class="text-muted mb-1 text-truncate">Job posts</p>
                                             </div>
                                         </div>
@@ -137,59 +137,28 @@
                                                     <tr>
                                                         <th>Job Title </th>
                                                         <th>Category</th>
-                                                        <th>Position</th>
+                                                        <th>Location</th>
                                                         <th>Application End Date</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @if ($posts->count() > 0)
+                                                    @foreach ($posts as $post)
+                                                        <tr>
+                                                            <td>{{ $post->vacant->name }}</td>
+                                                            <td>{{ $post->vacant_category }}</td>
+                                                            <td>{{ $post->vacant->location }}</td>
+                                                            <td class="text-danger">{{ $post->end_date }}</td>
+                                                        </tr>
+                                                    @endforeach
+                                                @else
                                                     <tr>
-                                                        <td>ASOS Ridley High Waist</td>
-                                                        <td>$79.49</td>
-                                                        <td>82</td>
-                                                        <td>$6,518.18</td>
+                                                        <td colspan="4" class="text-bold text-primary">No data available.</td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>Marco Lightweight Shirt</td>
-                                                        <td>$128.50</td>
-                                                        <td>37</td>
-                                                        <td>$4,754.50</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Half Sleeve Shirt</td>
-                                                        <td>$39.99</td>
-                                                        <td>64</td>
-                                                        <td>$2,559.36</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Lightweight Jacket</td>
-                                                        <td>$20.00</td>
-                                                        <td>184</td>
-                                                        <td>$3,680.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Marco Shoes</td>
-                                                        <td>$28.49</td>
-                                                        <td>69</td>
-                                                        <td>$1,965.81</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ASOS Ridley High Waist</td>
-                                                        <td>$79.49</td>
-                                                        <td>82</td>
-                                                        <td>$6,518.18</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Half Sleeve Shirt</td>
-                                                        <td>$39.99</td>
-                                                        <td>64</td>
-                                                        <td>$2,559.36</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Lightweight Jacket</td>
-                                                        <td>$20.00</td>
-                                                        <td>184</td>
-                                                        <td>$3,680.00</td>
-                                                    </tr>
+                                                @endif
+                                                
+                                                   
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -214,68 +183,8 @@
                                     <h4 class="header-title mb-0">Staff and Employee</h4>
 
                                     <div id="cardCollpase4" class="collapse pt-3 show">
-                                        <div class="table-responsive">
-                                            <table class="table table-hover table-centered mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Staff Name</th>
-                                                        <th>Email</th>
-                                                        <th>Posstion</th>
-                                                        <th>Location</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>ASOS Ridley High Waist</td>
-                                                        <td>$79.49</td>
-                                                        <td>82</td>
-                                                        <td>$6,518.18</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Marco Lightweight Shirt</td>
-                                                        <td>$128.50</td>
-                                                        <td>37</td>
-                                                        <td>$4,754.50</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Half Sleeve Shirt</td>
-                                                        <td>$39.99</td>
-                                                        <td>64</td>
-                                                        <td>$2,559.36</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Lightweight Jacket</td>
-                                                        <td>$20.00</td>
-                                                        <td>184</td>
-                                                        <td>$3,680.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Marco Shoes</td>
-                                                        <td>$28.49</td>
-                                                        <td>69</td>
-                                                        <td>$1,965.81</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ASOS Ridley High Waist</td>
-                                                        <td>$79.49</td>
-                                                        <td>82</td>
-                                                        <td>$6,518.18</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Half Sleeve Shirt</td>
-                                                        <td>$39.99</td>
-                                                        <td>64</td>
-                                                        <td>$2,559.36</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Lightweight Jacket</td>
-                                                        <td>$20.00</td>
-                                                        <td>184</td>
-                                                        <td>$3,680.00</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                        <canvas id="salaryChart"></canvas>
+
                                         <!-- end table responsive-->
                                     </div>
                                     <!-- collapsed end -->
@@ -308,3 +217,112 @@
 
 
 @include('assets.js')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var staffData = [
+        @foreach ($staffs as $staff)
+        {
+          name: "{{ $staff->fname }} {{ $staff->lname }}",
+          allowance: {{ $staff->allounce_salary }},
+          basic: {{ $staff->basic_salary }},
+          total: {{ $staff->basic_salary + $staff->allounce_salary }}
+        },
+        @endforeach
+      ];
+  
+      // Check if data is available
+      if (staffData.length === 0) {
+        var ctx = document.getElementById('salaryChart').getContext('2d');
+        ctx.font = "20px Arial";
+        ctx.fillText("No data available", 10, 50);
+        return;
+      }
+  
+      var labels = staffData.map(function(staff) {
+        return staff.name;
+      });
+  
+      var allowances = staffData.map(function(staff) {
+        return staff.allowance;
+      });
+  
+      var basics = staffData.map(function(staff) {
+        return staff.basic;
+      });
+  
+      var totals = staffData.map(function(staff) {
+        return staff.total;
+      });
+  
+      var ctx = document.getElementById('salaryChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+              label: 'Allowance',
+              data: allowances,
+              backgroundColor: 'rgba(75, 192, 192, 0.8)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Basic Salary',
+              data: basics,
+              backgroundColor: 'rgba(255, 99, 132, 0.8)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Total Salary',
+              data: totals,
+              backgroundColor: 'rgba(54, 162, 235, 0.8)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          scales: {
+            x: {
+              grid: {
+                display: false
+              }
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                precision: 0
+              },
+              title: {
+                display: true,
+                text: 'Salary'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 12
+              }
+            },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + context.formattedValue;
+                }
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+  
+
+
+<!-- END wrapper -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

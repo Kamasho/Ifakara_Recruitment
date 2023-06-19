@@ -95,8 +95,21 @@ class JobsController extends Controller
         }
 
         if ($validatedData->save()) {
+            $institutions = institution::get();
             $vacants = Vacant::get();
-            return view('hr.pages.jobs', compact('vacants'))->with('jobs', 'successful');
+            $education_levels = Education_level::get();
+            $education_categories = Education_category::get();
+            $education_names = Education_name::get();
+            $posts = Post::get();
+            return view('hr.pages.jobs', [
+                'vacants'=>$vacants,
+                'institutions'=>$institutions,
+                'education_levels'=>$education_levels,
+                'education_categories'=>$education_categories,
+                'education_names'=>$education_names,
+                'posts'=>$posts
+                
+            ])->with('jobs', 'successful');
         }
 
         return back()->with('error', 'Failed to save vacant position.');
@@ -109,7 +122,7 @@ class JobsController extends Controller
         $validatedData->application_date = $request->input('application_date');
         $validatedData->end_date = $request->input('end_date');
         $validatedData->summary = $request->input('summary');
-        $validatedData->vacant_category =$request->input('vacant_category');
+        $validatedData->vacant_category = $request->input('vacant_category');
         $validatedData->age_range = $request->input('age_range');
         $validatedData->gender = $request->input('gender');
         $validatedData->year_experience = $request->input('year_experience');

@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HeadInstitute;
 use App\Models\institution;
+use App\Models\Post;
+use App\Models\Staff;
+use App\Models\Vacant;
 
 class HrController extends Controller
 {
@@ -15,8 +18,20 @@ class HrController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('hr.home');
+    {  $staffs = Staff::get();
+        $vacants = Vacant::get();
+        $totalStaffs = Staff::count();
+        $totalPosts = Post::count();
+        $posts = Post::latest()->take(5)->get();
+        $institutions = institution::get();
+        return view('hr.home',[
+            'staffs'=>$staffs,
+            'vacants'=>$vacants,
+            'institutions'=>$institutions,
+            'totalStaffs'=>$totalStaffs,
+            'totalPosts'=>$totalPosts,
+            'posts'=>$posts
+        ]);
     }
 
 
@@ -29,9 +44,9 @@ class HrController extends Controller
     {
        $headinstitutions = HeadInstitute::get();
        $institutions = institution::get();
-       // dd($institutions);
-        return view('hr.pages.organization',compact('headinstitutions','institutions'));
-       return view('hr.pages.organization',[
+       //dd($institutions);
+       // return view('hr.pages.organization',compact('headinstitutions','institutions'));
+       return view('hr.pages.Organization',[
            'headinstitutions'=>$headinstitutions,
           'institutions'=>$institutions
        ]);
