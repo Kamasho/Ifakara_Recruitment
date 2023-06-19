@@ -32,7 +32,9 @@
 
         <!-- Datatables init -->
         <script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>
-        
+        <script src="{{asset('assets/js/pages/form-validation.init.js')}}"></script>
+        <script src="{{asset('assets/libs/parsleyjs/parsley.min.js')}}"></script>
+
 
 </body>
 

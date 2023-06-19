@@ -71,6 +71,26 @@ class JobsController extends Controller
     }
     public function vacant_registration(Request $request)
     {
+        $messages = [
+            'name.required' => 'The job title field is required.',
+            'location.required' => 'The location field is required.',
+            'description.required' => 'The job description field is required.',
+            'job_file.required' => 'Please upload a job file.',
+            'position_name.required' => 'The position name field is required.',
+            'position_file.required' => 'Please upload a position file.',
+            'position_description.required' => 'The position description field is required.',
+        ];
+    
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'job_file' => 'required|file|max:2048',
+            'position_name' => 'required',
+            'position_file' => 'required|file|max:2048',
+            'position_description' => 'required',
+        ], $messages);
+
         $validatedData = new Vacant();
         $validatedData->name = $request->input('name');
         $validatedData->location = $request->input('location');
@@ -108,7 +128,7 @@ class JobsController extends Controller
                 'education_categories'=>$education_categories,
                 'education_names'=>$education_names,
                 'posts'=>$posts
-                
+
             ])->with('jobs', 'successful');
         }
 
@@ -117,6 +137,37 @@ class JobsController extends Controller
 
     public function publish_vacant(Request $request)
     {
+        $messages = [
+            'vacant_id.required' => 'Please select a vacant title.',
+            'vacant_category.required' => 'Please select a vacant category.',
+            'institution_id.required' => 'Please select an institution.',
+            'application_date.required' => 'Please enter the application date.',
+            'end_date.required' => 'Please enter the end date for applications.',
+            'education_level_id.required' => 'Please choose an education level.',
+            'education_category_id.required' => 'Please choose an education category.',
+            'education_name_id.required' => 'Please choose an education program.',
+            'age_range.required' => 'Please choose an age range.',
+            'year_experience.required' => 'Please choose the applicant experience.',
+            'gender.required' => 'Please choose the applicant gender.',
+            'summary.required' => 'Please provide a summary overview.',
+        ];
+    
+        // Validate the form data with custom error messages
+        $validatedData = $request->validate([
+            'vacant_id' => 'required',
+            'vacant_category' => 'required',
+            'institution_id' => 'required',
+            'application_date' => 'required|date',
+            'end_date' => 'required|date',
+            'education_level_id' => 'required',
+            'education_category_id' => 'required',
+            'education_name_id' => 'required',
+            'age_range' => 'required',
+            'year_experience' => 'required',
+            'gender' => 'required',
+            'summary' => 'required',
+        ], $messages);
+
         //dd($request->all());
         $validatedData = new Post();
         $validatedData->application_date = $request->input('application_date');

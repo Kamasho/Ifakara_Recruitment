@@ -173,7 +173,7 @@
     <div class="modal" id="editModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="editForm" action="{{ route('staff_update', ['id' => $staff->id]) }}" method="POST">
+                <form id="editForm" action="#" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="modal-header">
@@ -212,29 +212,38 @@
                 </div>
                 <div class="modal-body p-4">
                     <h4>Person Information</h4>
-                    <form action="{{ route('staff_registration') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('staff_registration') }}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                         @csrf
                         <div class="row">
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-4" class="form-label">First name</label>
-                                    <input type="text" class="form-control" id="field-4" placeholder="first name"
+                                    <input type="text" class="form-control" id="field-4" placeholder="first name" required
                                         name="fname">
+                                        <div class="invalid-feedback">
+                                            Please enter your first name.
+                                        </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-4" class="form-label">Middle name</label>
                                     <input type="text" class="form-control" id="field-4" placeholder="middle  name"
-                                        name="mname">
+                                      required  name="mname">
+                                      <div class="invalid-feedback">
+                                        Please enter your middile name.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Last name</label>
                                     <input type="text" class="form-control" id="field-5"
-                                        placeholder="last name" name="lname">
+                                       required placeholder="last name" name="lname">
+                                       <div class="invalid-feedback">
+                                        Please enter your last name.
+                                    </div>
                                 </div>
                             </div>
 
@@ -244,14 +253,20 @@
                                 <div class="mb-3">
                                     <label for="field-6" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="field-6" name="email"
-                                        placeholder="email">
+                                        required placeholder="email">
+                                        <div class="invalid-feedback">
+                                            Please enter your email
+                                        </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Contanct</label>
-                                    <input type="interger" class="form-control" id="field-1" name="phone"
-                                        placeholder="phone number">
+                                    <input type="number" class="form-control" id="field-1" name="phone"
+                                       required placeholder="phone number">
+                                        <div class="invalid-feedback">
+                                            Please enter your phone number.
+                                        </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -268,10 +283,13 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Staff Gender</label>
-                                    <select class="form-select" id="example-select" name="gender">
+                                    <select class="form-select" id="example-select" name="gender" required>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please choose your gender.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -292,15 +310,21 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">Contract</label>
-                                    <input type="file" class="form-control" id="field-2" placeholder="file"
+                                    <input type="file" class="form-control" id="field-2" placeholder="file" required
                                         name="staff_contract">
+                                        <div class="invalid-feedback">
+                                            Please enter a staff contract.
+                                        </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label for="field-2" class="form-label">End of Contract</label>
-                                    <input type="date" class="form-control" id="field-2" placeholder="file"
+                                    <label for="field-2" class="form-label">End of Contract <span>*</span></label>
+                                    <input type="date" class="form-control" id="field-2" placeholder="file" required
                                         name="end_date">
+                                        <div class="invalid-feedback">
+                                            Please enter endtime.
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -309,16 +333,21 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Basic </label>
-                                    <input type="number" class="form-control" id="field-2"
+                                    <input type="number" class="form-control" id="field-2" required
                                         placeholder="20000 Tsh/=" name="basic_salary">
-
+                                        <div class="invalid-feedback">
+                                            Please fill staff basic Salary.
+                                        </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">Allaonce</label>
-                                    <input type="number" class="form-control" id="field-2" placeholder="300000"
+                                    <input type="number" class="form-control" id="field-2" placeholder="300000" required
                                         name="allounce_salary">
+                                        <div class="invalid-feedback">
+                                            Please fill staff allounce Salary.
+                                        </div>
                                 </div>
                             </div>
 

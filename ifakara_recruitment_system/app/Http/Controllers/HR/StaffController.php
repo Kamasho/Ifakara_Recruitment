@@ -25,6 +25,21 @@ class StaffController extends Controller
     }
 
     public function store(Request $request){
+        // $validatedData = $request->validate([
+        //     'fname' => 'required|string',
+        //     'mname' => 'required|string',
+        //     'lname' => 'required|string',
+        //     'email' => 'required|email',
+        //     'phone' => 'required|string',
+        //     'institution_id' => 'required|numeric',
+        //     'gender' => 'required|in:male,female',
+        //     'vacant_id' => 'required|numeric',
+        //     'staff_contract' => 'required|file',
+        //     'end_date' => 'required|date',
+        //     'basic_salary' => 'required|numeric',
+        //     'allowance_salary' => 'required|numeric',
+        // ]);
+    
         //dd($request->all());
         $validatedData = new Staff();
         $validatedData->fname = $request->input('fname');
@@ -45,16 +60,6 @@ class StaffController extends Controller
             $filePath = $file->storeAs('public/documents', $filename);
             $validatedData->staff_contract = $filePath;
         }
-
-        // if ($request->hasFile('job_file')) {
-        //     $file = $request->file('job_file');
-        //     $filename = time() . '_' . $file->getClientOriginalName();
-        //     $filePath = $file->storeAs('public/documents', $filename);
-        //     $validatedData->job_file = $filePath;
-        // } else {
-        //     $validatedData->job_file = ''; // Assign default value
-        // }
-
         if ($validatedData->save()) {
             $staffs = Staff::get();
             $vacants = Vacant::get();

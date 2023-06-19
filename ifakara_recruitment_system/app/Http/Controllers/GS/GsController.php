@@ -4,6 +4,11 @@ namespace App\Http\Controllers\GS;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Staff;
+use App\Models\Post;
+use App\Models\Vacant;
+use App\Models\institution;
+
 
 class GsController extends Controller
 {
@@ -14,7 +19,22 @@ class GsController extends Controller
      */
     public function index()
     {
-        return view ('secretary.home');
+        $staffs = Staff::get();
+        $vacants = Vacant::get();
+        $totalStaffs = Staff::count();
+        $totalPosts = Post::count();
+        $posts = Post::latest()->take(5)->get();
+        $institutions = institution::get();
+        $totalStaffs = Staff::count();
+        $totalPosts = Post::count();
+        return view ('secretary.home',[
+            'staffs' => $staffs,
+            'vacants' => $vacants,
+            'posts' => $posts,
+            'institutions' => $institutions,
+            'totalStaffs' => $totalStaffs,
+            'totalPosts' => $totalPosts
+        ]);
     }
 
     /**

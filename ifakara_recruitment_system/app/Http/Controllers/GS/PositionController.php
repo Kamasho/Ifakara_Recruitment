@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\GS;
 
 use App\Http\Controllers\Controller;
-use App\Models\Job;
 use App\Models\Post;
-use App\Models\Staff;
+use App\Models\Education_category;
+use App\Models\Education_level;
+use App\Models\Education_name;
+use App\Models\Institution;
+use App\Models\Vacant;
 use Illuminate\Http\Request;
 
 class PositionController extends Controller
@@ -17,11 +20,20 @@ class PositionController extends Controller
      */
     public function index()
     {
-        // $jobs = Job::get();
-        // $posts =Post::get();
-        // $staffs = Staff::get();
-        // return view('secretary.pages.position',compact('jobs','posts','staffs'));
-        return view('secretary.pages.position');
+        $institutions = institution::get();
+        $vacants = Vacant::get();
+        $education_levels = Education_level::get();
+        $education_categories = Education_category::get();
+        $education_names = Education_name::get();
+        $posts = Post::get();
+        return view('secretary.pages.position',[
+            'institutions' => $institutions,
+            'vacants' => $vacants,
+            'education_levels' => $education_levels,
+            'education_categories' => $education_categories,
+            'education_names' => $education_names,
+            'posts' => $posts,
+        ]);
 
     }
 

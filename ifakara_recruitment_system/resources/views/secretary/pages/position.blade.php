@@ -75,50 +75,46 @@
                                                                 <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th>Vacant Title</th>
-                                                                            <th>Vacant Category</th>
-                                                                            <th>Locations</th>
-                                                                            
-                                                                           
+                                                                            <th>Vacant Name</th>
+                                                                            <th>Vacant Location</th>
+                                                                            <th>Vacant Positon</th>
+                                                                            <th>Created</th>
                                                                             <th>Action</th>
                                                                         </tr>
                                                                     </thead>
                                                                 
                                                                 
                                                                     <tbody>
+                                                                        @if (!empty($vacants))
+                                                                        @foreach ($vacants as $vacant)
+                                                                            <tr>
+                                                                                <td>{{ $vacant->name }}
+                                                                                </td>
+                                                                                <td>{{ $vacant->location }}
+                                                                                </td>
+                                                                                <td>{{ $vacant->position_name }}
+                                                                                </td>
+                                                                                <td>{{ $vacant->created_at }}
+                                                                                </td>
+                                                                                <td>
+                                                                                    <a href="javascript:void(0);"
+                                                                                        class="action-icon">
+                                                                                        <i
+                                                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                                                    <a href="javascript:void(0);"
+                                                                                        class="action-icon">
+                                                                                        <i
+                                                                                            class="mdi mdi-delete"></i></a>
+                                                                                </td>
+
+                                                                            </tr>
+                                                                        @endforeach
+                                                                    @else
                                                                         <tr>
-                                                                            <td>Tiger Nixon</td>
-                                                                            <td>System Architect</td>
-                                                                            <td>Edinburgh</td>
-                                                                            
-                                                                     
-                                                                            <td> <a href="#position-modal" class="action-icon"
-                                                                                data-bs-toggle="modal" data-bs-target="#position-modal"><i class="fa fa-eye" aria-hidden="true"></i>
-                            
-                                                                            </a></td>
+                                                                            <td colspan="7">No posts
+                                                                                found.</td>
                                                                         </tr>
-                                                                        <tr>
-                                                                            <td>Garrett Winters</td>
-                                                                            <td>Accountant</td>
-                                                                            <td>Tokyo</td>
-                                                                           
-                                                                            <td> <a href="#position-modal" class="action-icon"
-                                                                                data-bs-toggle="modal" data-bs-target="#position-modal"><i class="fa fa-eye" aria-hidden="true"></i>
-                            
-                                                                            </a></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>Ashton Cox</td>
-                                                                            <td>Junior Technical Author</td>
-                                                                            <td>San Francisco</td>
-                                                                            
-                                                                           
-                                                                            <td> <a href="#position-modal" class="action-icon"
-                                                                                data-bs-toggle="modal" data-bs-target="#position-modal"><i class="fa fa-eye" aria-hidden="true"></i>
-                            
-                                                                            </a></td>
-                                                                        </tr>
-                                                                       
+                                                                    @endif
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -162,48 +158,49 @@
                                                                     class="table table-centered table-nowrap table-hover mb-0">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th>Job Name</th>
-                                                                            <th>Job Category</th>
-                                                                            <th>Job Location</th>
+                                                                            <th>Post Name</th>
+                                                                            <th>Post category</th>
+                                                                            <th>Location</th>
                                                                             <th>Application Date</th>
-                                                                            <th>Deadline Date</th>
-                                                                            <th>Status</th>
-                                                                            <th style="width: 82px;">Action</th>
+                                                                            <th>Education Level</th>
+                                                                            <th>Education Program</th>
+                                                                            <th>Others</th>
+                                                                            <th>status</th>
+                                                                            <th>Action</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
                                                                         
+                                                                        @forelse ($posts as $post)
                                                                         <tr>
-                                                                    
+                                                                            <td>{{ $post->vacant->name }}</td>
+                                                                            <td>{{ $post->vacant_category }}</td>
+                                                                            <td>{{ $post->vacant->location }}</td>
+                                                                            <td>{{ $post->end_date }}</td>
+                                                                            <td>Phd</td>
+                                                                            <td>economics</td>
                                                                             <td>
-                                                                                937-330-1634
+                                                                                <span><b>Gender:</b>{{ $post->gender }}</span>
+                                                                                <span><b>Experience:</b>{{ $post->year_experience }}</span>
+                                                                                <span><b>Age:</b>{{ $post->age_range }}</span>
                                                                             </td>
                                                                             <td>
-                                                                              
+                                                                                <span class="btn btn-success btn-xs text-white">Active</span>
                                                                             </td>
                                                                             <td>
-                                                                                
-                                                                            </td>
-                                                                            <td>
-                                                                               
-                                                                            </td>
-                                                                            <td>
-                                                                              
-                                                                            </td>
-                                                                            <td>
-                                                                                <span class="btn btn-success width-xs btn-sm">active</span>
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
+                                                                                <a href="javascript:void(0);" class="action-icon">
+                                                                                    <i class="mdi mdi-square-edit-outline"></i>
+                                                                                </a>
+                                                                                <a href="javascript:void(0);" class="action-icon">
+                                                                                    <i class="mdi mdi-delete"></i>
+                                                                                </a>
                                                                             </td>
                                                                         </tr>
-                                                                     
-                                                                        
+                                                                    @empty
+                                                                        <tr>
+                                                                            <td colspan="9">No data available</td>
+                                                                        </tr>
+                                                                    @endforelse
 
                                                                      
                                                                             

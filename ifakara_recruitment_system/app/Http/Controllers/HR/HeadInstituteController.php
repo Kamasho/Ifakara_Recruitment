@@ -5,6 +5,7 @@ namespace App\Http\Controllers\HR;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HeadInstitute;
+use Illuminate\Validation\Rule;
 
 class HeadInstituteController extends Controller
 {
@@ -37,6 +38,23 @@ class HeadInstituteController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->validate([
+            'name' => 'required|string',
+            'location' => 'required|string',
+            'email' => 'required|email|unique:institutes,email',
+            'category' => ['required', Rule::in(['school', 'health', 'parish'])],
+        ], [
+            'name.required' => 'The institution name is required.',
+            'name.string' => 'The institution name must be a string.',
+            'location.required' => 'The location is required.',
+            'location.string' => 'The location must be a string.',
+            'email.required' => 'The email address is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.unique' => 'The email address is already taken.',
+            'category.required' => 'The institution category is required.',
+            'category.in' => 'Invalid institution category.',
+        ]);
+    
         $data = new HeadInstitute();
         $data->fname = $request->input('fname');
         $data->mname = $request->input('mname');

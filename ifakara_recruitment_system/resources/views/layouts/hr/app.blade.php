@@ -128,7 +128,7 @@
                                         <a data-bs-toggle="collapse" href="#cardCollpase5" role="button" aria-expanded="false" aria-controls="cardCollpase5"><i class="mdi mdi-minus"></i></a>
                                         <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
                                     </div>
-                                    <h4 class="header-title mb-0">Most Job Posted</h4>
+                                    <h4 class="header-title mb-0">Most vacants Posted</h4>
 
                                     <div id="cardCollpase5" class="collapse pt-3 show">
                                         <div class="table-responsive">
@@ -184,8 +184,6 @@
 
                                     <div id="cardCollpase4" class="collapse pt-3 show">
                                         <canvas id="salaryChart"></canvas>
-
-                                        <!-- end table responsive-->
                                     </div>
                                     <!-- collapsed end -->
                                 </div>

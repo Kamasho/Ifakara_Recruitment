@@ -41,6 +41,18 @@ class institutionController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->validate([
+            'name' => 'required',
+            'location' => 'required',
+            'email' => 'required|email',
+            'category' => 'required',
+        ], [
+            'name.required' => 'The institution name is required.',
+            'location.required' => 'The location is required.',
+            'email.required' => 'The email address is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'category.required' => 'The institution category is required.',
+        ]);
         $data = new institution();
         $data->name = $request->input('name');
         $data->location = $request->input('location');

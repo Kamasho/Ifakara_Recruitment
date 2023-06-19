@@ -58,7 +58,7 @@
                                                         <div class="">
                                                             <div class="row justify-content-between mb-2">
                                                                 <div class="col-sm-6"></div>
-                                                                <div class="col-sm-6"> 
+                                                                <div class="col-sm-6">
                                                                     <div class="text-sm-end">
                                                                         <button type="button"
                                                                             class="btn btn-primary waves-effect waves-light mb-2"
@@ -116,11 +116,15 @@
                                                                                                 </td>
 
                                                                                                 <td class="text-sm">
-                                                                                                    <a href="javascript:void(0);" class="action-icon"> <i
-                                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                                <a href="javascript:void(0);" class="action-icon"> <i
-                                                                                                        class="mdi mdi-delete"></i></a>
-                                                                                          
+                                                                                                    <a href="javascript:void(0);"
+                                                                                                        class="action-icon">
+                                                                                                        <i
+                                                                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                                                                    <a href="javascript:void(0);"
+                                                                                                        class="action-icon">
+                                                                                                        <i
+                                                                                                            class="mdi mdi-delete"></i></a>
+
                                                                                                 </td>
                                                                                             </tr>
                                                                                         @endforeach
@@ -181,14 +185,14 @@
 
                                                             <div class="table-responsive">
                                                                 <table id="basic-datatable"
-                                                                class="table dt-responsive nowrap w-100">
+                                                                    class="table dt-responsive nowrap w-100">
                                                                     <thead>
                                                                         <tr>
                                                                             <th>S/N</th>
                                                                             <th>First name</th>
                                                                             <th>Middle name</th>
                                                                             <th>Last name</th>
-                                                                           
+
                                                                             <th>Contact </th>
                                                                             <th>Institutions</th>
                                                                             <th>Action</th>
@@ -197,22 +201,24 @@
                                                                     <tbody>
                                                                         @foreach ($headinstitutions as $headinstitution)
                                                                             <tr>
-                                                                                <td>{{$headinstitution->id}}</td>
+                                                                                <td>{{ $headinstitution->id }}</td>
                                                                                 <td>{{ $headinstitution->fname }}
                                                                                 </td>
                                                                                 <td>{{ $headinstitution->mname }}</td>
                                                                                 <td>{{ $headinstitution->lname }}</td>
                                                                                 <td>{{ $headinstitution->contact }}</td>
-                                                                                <td>{{ $headinstitution->name}}
+                                                                                <td>{{ $headinstitution->name }}
                                                                                 </td>
 
 
                                                                                 <td class="text-sm">
-                                                                                    
-                                                                                    <a href="javascript:void(0);" class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="javascript:void(0);" class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
+
+                                                                                    <a href="javascript:void(0);"
+                                                                                        class="action-icon"> <i
+                                                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                                                    <a href="javascript:void(0);"
+                                                                                        class="action-icon"> <i
+                                                                                            class="mdi mdi-delete"></i></a>
                                                                                 </td>
                                                                             </tr>
                                                                         @endforeach
@@ -385,52 +391,65 @@
                     </div>
 
                     <h4>INSTITUTIONS INFORMATION</h4>
-                    <form action="{{ route('add_institute') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-1" class="form-label">Institutions Name</label>
-                                    <input type="text" class="form-control" id="field-1" name="name"
-                                        placeholder="Malecela Secondary School">
+                        <form action="{{ route('add_institute') }}" method="POST" enctype="multipart/form-data"
+                            class="needs-validation" novalidate id="add-institute-form">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="field-1" class="form-label">Institutions Name <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="field-1" name="name"
+                                            required placeholder="Malecela Secondary School">
+                                        <div class="invalid-feedback">
+                                            Please correct institution name.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="field-2" class="form-label">Location</label>
+                                        <input type="text" parsley-trigger="change" class="form-control"
+                                            name="location" id="field-2" required placeholder="Ifakara Morogoro">
+                                            <div class="invalid-feedback">
+                                                Please enter location.
+                                            </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-2" class="form-label">Location</label>
-                                    <input type="text" class="form-control" name="location" id="field-2"
-                                        placeholder="Ifakara Morogoro">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="field-3" class="form-label">Institution Email</label>
+                                        <input type="email" parsley-trigger="change" class="form-control"
+                                            name="email" id="field-2" required
+                                            placeholder="malecela.school@ifakaracatholic">
+                                            <div class="invalid-feedback">
+                                                Please enter email.
+                                            </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-3" class="form-label">Institution Email</label>
-                                    <input type="email" class="form-control" name="email" id="field-2"
-                                        placeholder="malecela.school@ifakaracatholic">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="example-select" class="form-label">Institutions Category</label>
-                                    <select class="form-select" id="example-select" name="category">
-                                        <option value="school">School</option>
-                                        <option value="health">Health Institions</option>
-                                        <option value="parish">Parish</option>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="example-select" class="form-label">Institutions Category</label>
+                                        <select class="form-select" parsley-trigger="change" id="example-select"
+                                            name="category">
+                                            <option value="school">School</option>
+                                            <option value="health">Health Institions</option>
+                                            <option value="parish">Parish</option>
 
-                                    </select>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-md-3">
-                                <button class="btn btn-primary btn-block" type="submit">Register</button>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary btn-block" type="submit"id="submit-btn">Register</button>
 
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
 
 
 
@@ -452,15 +471,18 @@
                 </div>
                 <div class="modal-body p-4">
                     <h4>Person Information</h4>
-                    <form action="{{ route('add_head_institute') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('add_head_institute') }}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                         @csrf
                         <div class="row">
 
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label for="field-4" class="form-label">First name</label>
+                                    <label for="field-4" class="form-label">First name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="field-4"
-                                        placeholder="first name" name="fname">
+                                       required placeholder="first name" name="fname">
+                                        <div class="invalid-feedback">
+                                            Please enter a your first name.
+                                        </div>
                                 </div>
                             </div>
 
@@ -468,14 +490,20 @@
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Middle name</label>
                                     <input type="text" class="form-control" id="field-1" name="mname"
-                                        placeholder="middle name">
+                                      required  placeholder="middle name">
+                                      <div class="invalid-feedback">
+                                        Please enter a your middle name.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Last name</label>
                                     <input type="text" class="form-control" id="field-5"
-                                        placeholder="last name" name="lname">
+                                      required  placeholder="last name" name="lname">
+                                      <div class="invalid-feedback">
+                                        Please enter a your last name.
+                                    </div>
                                 </div>
                             </div>
 
@@ -492,12 +520,15 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Contanct</label>
-                                    <input type="interger" class="form-control" id="field-1" name="contact"
-                                        placeholder="phone number">
+                                    <input type="number" class="form-control" id="field-1" name="contact"
+                                       required placeholder="phone number">
+                                       <div class="invalid-feedback">
+                                        Please enter a your phone number.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                
+
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Institutions Name</label>
                                     {{-- {{$institutions}} --}}
@@ -505,8 +536,8 @@
                                         @foreach ($institutions as $institution)
                                             <option value="{{ $institution->id }}">{{ $institution->name }}</option>
                                         @endforeach
-                                   
-                                    
+
+
 
                                     </select>
                                 </div>
@@ -515,8 +546,7 @@
 
 
 
-                        <button type="submit"
-                                        class="btn btn-primary btn-block">Assign</button>
+                        <button type="submit" class="btn btn-primary btn-block">Assign</button>
                     </form>
 
 
@@ -585,3 +615,56 @@
 
 
     @include('assets.js')
+
+    {{-- for toostaer massage --}}
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script>
+        // Handle form submission
+        document.getElementById('add-institute-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+    
+            // Disable the submit button and show loading animation
+            document.getElementById('submit-btn').disabled = true;
+            document.getElementById('submit-btn').innerHTML = 'Loading...';
+    
+            // Perform the form submission using AJAX
+            let form = event.target;
+            let formData = new FormData(form);
+    
+            fetch(form.action, {
+                method: form.method,
+                body: formData
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    // Clear form fields
+                    form.reset();
+    
+                    // Show success toast notification
+                    toastr.success('Institution registered successfully.');
+    
+                    // Enable the submit button
+                    document.getElementById('submit-btn').disabled = false;
+                    document.getElementById('submit-btn').innerHTML = 'Register';
+                } else {
+                    // Show error toast notification
+                    toastr.error('Failed to register institution.');
+    
+                    // Enable the submit button
+                    document.getElementById('submit-btn').disabled = false;
+                    document.getElementById('submit-btn').innerHTML = 'Register';
+                }
+            })
+            .catch(function (error) {
+                console.error(error);
+    
+                // Show error toast notification
+                toastr.error('An error occurred while registering institution.');
+    
+                // Enable the submit button
+                document.getElementById('submit-btn').disabled = false;
+                document.getElementById('submit-btn').innerHTML = 'Register';
+            });
+        });
+    </script> --}}

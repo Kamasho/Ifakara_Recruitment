@@ -797,32 +797,38 @@
                 <div class="modal-body p-4">
 
                     <h4>VACANTS INFORMATION</h4>
-                    <form action="{{ route('publish_vacant') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('publish_vacant') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                         @csrf
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label for="example-select" class="form-label"> Vacant Title</label>
-                                    <select class="form-select" id="example-select" name="vacant_id">
+                                    <label for="example-select" class="form-label"> Vacant Title <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="example-select" name="vacant_id" required>
                                         @foreach ($vacants as $vacant)
                                             <option value="{{ $vacant->id }}">{{ $vacant->name }}</option>
                                         @endforeach
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please select vacant title.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Vacant Category</label>
-                                    <select class="form-select" id="example-select" name="vacant_category">
+                                    <select class="form-select" id="example-select" name="vacant_category" required>
                                         <option value="IT">IT</option>
                                         <option value="economics">Economics</option>
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please select category.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Institutions</label>
-                                    <select class="form-select" id="example-select" name="institution_id">
+                                    <select class="form-select" id="example-select" name="institution_id" required>
                                         @foreach ($institutions as $institution)
                                             <option value="{{ $institution->id }}">{{ $institution->name }}</option>
                                         @endforeach
@@ -830,21 +836,30 @@
 
 
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please select institution.
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-3" class="form-label">Application Date</label>
+                                    <label for="field-3" class="form-label">Application Date <span>*</span></label>
                                     <input type="date" class="form-control" name="application_date"
-                                        id="field-2">
+                                        id="field-2" required>
+                                        <div class="invalid-feedback">
+                                            Please enter application date.
+                                        </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Enddate Application</label>
-                                    <input type="date" class="form-control" name="end_date" id="field-2">
+                                    <input type="date" class="form-control" name="end_date" id="field-2" required>
+                                    <div class="invalid-feedback">
+                                        Please enter end date applications.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -854,32 +869,38 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Education Level</label>
-                                    <select class="form-select" id="example-select" name="education_level_id">
+                                    <select class="form-select" id="example-select" name="education_level_id" required>
                                         @foreach ($education_levels as $education_level)
                                             <option value="{{ $education_level->id }}">{{ $education_level->name }}
                                             </option>
                                         @endforeach
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a education Level.
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Education Category</label>
-                                    <select class="form-select" id="example-select" name="education_category_id">
+                                    <select class="form-select" id="example-select" name="education_category_id" required>
                                         @foreach ($education_categories as $education_category)
                                             <option value="{{ $education_category->id }}">
                                                 {{ $education_category->name }}</option>
                                         @endforeach
 
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a education category.
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label">Education Program</label>
-                                    <select class="form-select" id="example-select" name="education_name_id">
+                                    <select class="form-select" id="example-select" name="education_name_id" required>
                                         @foreach ($education_names as $education_name)
                                             <option value="{{ $education_name->id }}">{{ $education_name->name }}
                                             </option>
@@ -887,6 +908,9 @@
 
 
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a education name.
+                                    </div>
                                 </div>
                             </div>
 
@@ -896,7 +920,7 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Applicant Age</label>
-                                    <select class="form-select" id="example-select" name="age_range">
+                                    <select class="form-select" id="example-select" name="age_range" required>
 
                                         <option value="18">18</option>
                                         <option value="20 - 30">20 - 30</option>
@@ -906,13 +930,16 @@
 
 
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a age range.
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Applicant Experience</label>
-                                    <select class="form-select" id="example-select" name="year_experience">
+                                    <select class="form-select" id="example-select" name="year_experience" required>
 
                                         <option value="1">None</option>
                                         <option value="1 year">1 year</option>
@@ -922,13 +949,16 @@
 
 
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a Experience.
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Applicant Gender</label>
-                                    <select class="form-select" id="example-select" name="gender">
+                                    <select class="form-select" id="example-select" name="gender" required>
 
                                         <option value="None">None</option>
                                         <option value="Male">Male</option>
@@ -937,6 +967,9 @@
 
 
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Please choose your gender.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -945,7 +978,10 @@
                             <div class="col-md-8">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Summary Over view</label>
-                                    <textarea name="summary" id="" cols="15" rows="5" class="form-control"></textarea>
+                                    <textarea name="summary" id="" cols="15" rows="5" class="form-control" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please fill the Summary.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-2"></div>
@@ -992,35 +1028,47 @@
                         postings
                     </div>
                     <h4>JOB INFORMATION</h4>
-                    <form action="{{ route('vacant_registration') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('vacant_registration') }}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-1" class="form-label">Job Title</label>
+                                    <label for="field-1" class="form-label">Job Title <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="field-1" name="name"
-                                        placeholder="job title">
+                                      required   placeholder="job title">
+                                      <div class="invalid-feedback">
+                                        Please provide a vacant title.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-2" class="form-label">Location</label>
                                     <input type="text" class="form-control" name="location" id="field-2"
-                                        placeholder="singida">
+                                      required  placeholder="singida">
+                                        <div class="invalid-feedback">
+                                            Please provide a vacant location.
+                                        </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-3" class="form-label">Job Description</label>
-                                    <textarea name="description" id="" cols="15" rows="5" class="form-control"></textarea>
+                                    <label for="field-3" class="form-label">Job Description <span class="text-danger">*</span></label>
+                                    <textarea name="description" id="" cols="15" rows="5" class="form-control" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please provide a summry description.
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="field-3" class="form-label">More Discription Document</label>
-                                    <input type="file" class="form-control" name="job_file" id="field-2">
+                                    <label for="field-3" class="form-label">More Description Document <span class="text-danger">*</span></label>
+                                    <input type="file" class="form-control" name="job_file" id="field-2" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a description file.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1032,14 +1080,20 @@
                                         <div class="mb-3">
                                             <label for="field-4" class="form-label">Position Name</label>
                                             <input type="text" class="form-control" name="position_name"
-                                                id="field-4" placeholder="first name">
+                                               required id="field-4" placeholder="first name">
+                                               <div class="invalid-feedback">
+                                                Please provide a position name.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="mb-3">
                                             <label for="field-6" class="form-label">More Description Document</label>
-                                            <input type="file" class="form-control" id="field-6"
+                                            <input type="file" class="form-control" id="field-6" required
                                                 name="position_file">
+                                                <div class="invalid-feedback">
+                                                    Please provide a positon file.
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1048,7 +1102,10 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Position Discription</label>
-                                    <textarea name="position_description" id="" cols="15" rows="5" class="form-control"></textarea>
+                                    <textarea name="position_description" id="" cols="15" rows="5" class="form-control" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please provide a positon description.
+                                    </div>
                                 </div>
                             </div>
 

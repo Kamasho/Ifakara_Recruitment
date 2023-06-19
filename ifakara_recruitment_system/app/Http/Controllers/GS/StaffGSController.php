@@ -10,6 +10,8 @@ use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Laravel\Ui\Presets\React;
+use App\Models\Vacant;
+use App\Models\Institution;
 
 class StaffGSController extends Controller
 {
@@ -21,11 +23,15 @@ class StaffGSController extends Controller
     public function index()
 
     {
-        // $jobs = Job::get();
-        // $staffs = Staff::get();
-        // dd($jobs->all());
-        // return view('secretary.pages.staffs', compact('jobs', 'staffs'));
-        return view('secretary.pages.staffs');
+        $staffs = Staff::get();
+        $vacants = Vacant::get();
+        $institutions = institution::get();
+
+        return view('secretary.pages.staffs',[
+            'staffs' => $staffs,
+            'vacants' => $vacants,
+            'institutions' => $institutions,
+        ]);
 
     }
 
