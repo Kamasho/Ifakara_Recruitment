@@ -45,32 +45,35 @@
                                             <!-- end card-->
                                         </div>
                                         <div class="col-lg-8">
-                                            <form action="#">
+                                            <form action="{{route('update_profile')}}" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                                                @csrf
                                                 <div class="row">
-                                                    <div
-                                                        class="col-md-3 d-flex align-items-center mb-3 text-center justify-content-center mt-2">
+                                                    <div class="col-md-3 d-flex align-items-center mb-3 text-center justify-content-center mt-2">
                                                         <img class="d-flex me-3 rounded-circle avatar-xl"
-                                                            src="../assets/images/users/user-8.jpg"
-                                                            alt="Generic placeholder image">
-
+                                                            src="{{ asset('/public/images/' . Auth::user()->profile_image) }}"
+                                                            alt="Profile Image">
                                                     </div>
+                                                    
                                                     <div class="col-md-9 mt-3">
                                                         <label for="image">Profile Image</label>
-                                                        <input type="file" class="form-control"
-                                                            placeholder="Select your profile picture">
+                                                        <input type="file" class="form-control" name="profile_image"
+                                                            placeholder="Select your profile picture" required>
+                                                            <div class="invalid-feedback">
+                                                                If you want to update fill this...
+                                                            </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="row mt-2">
                                                     <div class="col-md-6">
                                                         <label for="name" class="label">name</label>
-                                                        <input type="text" class="form-control" name="name"
+                                                        <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}"
                                                             value="human Resource">
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label for="name" class="label">Eamil</label>
-                                                        <input type="email" class="form-control" name="name"
-                                                            value="hr@gmail.com">
+                                                        <input type="email" class="form-control" name="email"
+                                                            value=" {{ Auth::user()->email }}">
                                                     </div>
 
 
@@ -96,24 +99,32 @@
                                             <!-- end card-->
                                         </div>
                                         <div class="col-lg-8">
-                                            <form action="#">
+                                            <form action="{{route('update_password')}}" method="POST" enctype="multipart/form-data"  class="needs-validation" novalidate>
+                                                @csrf
                                                 <div class="col-md-12 mt-3">
                                                     <label for="image">Current Password</label>
-                                                    <input type="text" class="form-control"
+                                                    <input type="password" class="form-control" name="current_password" required
                                                         placeholder="Enter your current passoword">
+                                                        <div class="invalid-feedback">
+                                                            fill the current password
+                                                        </div>
                                                 </div>
 
                                                 <div class="row mt-3">
                                                     <div class="col-md-6">
                                                         <label for="name" class="label">New Password</label>
-                                                        <input type="Password" class="form-control" name="name"
-                                                            value="general secretary">
+                                                        <input type="Password" class="form-control" name="password" required>
+                                                        <div class="invalid-feedback">
+                                                            Enter the new password
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label for="name" class="label">Confirm
                                                             Password</label>
-                                                        <input type="password" class="form-control" name="name"
-                                                            value="gs@gmail.com">
+                                                        <input type="password" class="form-control" name="password" required>
+                                                        <div class="invalid-feedback">
+                                                            Confirm password
+                                                        </div>
                                                     </div>
 
 

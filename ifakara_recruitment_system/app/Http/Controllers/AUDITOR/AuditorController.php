@@ -4,6 +4,9 @@ namespace App\Http\Controllers\AUDITOR;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Staff;
+use App\Models\Vacant;
+use App\Models\institution;
 
 class AuditorController extends Controller
 {
@@ -14,11 +17,27 @@ class AuditorController extends Controller
      */
     public function index()
     {
-        return view('auditor.home');
+        $staffs = Staff::get();
+        $vacants = Vacant::get();
+        $institutions = institution::get();
+        return view('auditor.home',[
+            'staffs' => $staffs,
+            'vacants' => $vacants,
+            'institutions' => $institutions
+        ]);
+
     }
 
     public function Staffs_details(){
-        return view('auditor.pages.Staffs');
+        $staffs = Staff::get();
+        $vacants = Vacant::get();
+        $institutions = institution::get();
+
+        return view('auditor.pages.Staffs_details',[
+            'staffs' => $staffs,
+            'vacants' => $vacants,
+            'institutions' => $institutions
+        ]);
     }
     /**
      * Show the form for creating a new resource.

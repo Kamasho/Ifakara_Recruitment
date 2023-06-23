@@ -18,6 +18,11 @@ return [
     'gs_name' => env('GS_NAME', ''),
     'gs_email' => env('GS_EMAIL', ''),
     'gs_role' => env('GS_ROLE', ''),
-    'gs_password' =>env('GS_PASSWORD', '')
+    'gs_password' =>env('GS_PASSWORD', ''),
+
+    'auditor_name' => env('AUDITOR_NAME', ''),
+    'audito_email' => env('AUDITOR_EMAIL', ''),
+    'audito_role' => env('AUDITOR_ROLE', ''),
+    'audito_password' =>env('AUDITOR_PASSWORD', '')
     ];
     ?>

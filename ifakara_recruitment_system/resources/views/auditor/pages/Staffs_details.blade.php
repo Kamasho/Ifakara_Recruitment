@@ -47,96 +47,44 @@
                                                 <th>Last Name</th>
                                                 <th>Email</th>
                                                 <th>Contact</th>
-                                                <th>Instition</th>
+                                                <th>Vacant</th>
+                                                <th>Institution</th>
                                                 <th>Basic Salary</th>
                                                 <th>Allowance Salary</th>
+                                                <th>Total</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
 
 
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>stat@gmail.com</td>
-                                                <td>Benigns Secondary School</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                                <td>
-                                                    <a href="#position-modal" class="action-icon" data-bs-toggle="modal"
-                                                        data-bs-target="#position-modal"><i class="fa fa-eye text-sm"
-                                                            aria-hidden="true"></i>
+                                            @if ($staffs->count() > 0)
+                                                @foreach ($staffs as $staff)
+                                                <tr>
+                                                    <td>{{ $staff->fname }}</td>
+                                                <td>{{ $staff->mname }}</td>
+                                                <td> {{ $staff->lname }}</td>
+                                                <td>{{ $staff->email }}</td>
+                                                <td>{{ $staff->phone }}</td>
+                                                <td>{{ $staff->vacant->name }}</td>
+                                                <td>{{ $staff->institution->name }}</td>
+                                                <td>{{ $staff->basic_salary }}</td>
+                                                <td>{{ $staff->allounce_salary }}</td>
+                                                <td><span class="text-danger"><b>Total :</b></span>
+                                                    {{ $staff->basic_salary + $staff->allounce_salary }}</td>
+                                                <td>   <a href="#"
+                                                    class="action-icon"> <i
+                                                        class="mdi mdi-delete"></i></a></td>
 
-                                                    </a>
-                                                    <a href="#position-modal" class="action-icon" data-bs-toggle="modal"
-                                                        data-bs-target="#position-modal"><i class="fa fa-pen text-sm"
-                                                            aria-hidden="true"></i>
-
-                                                    </a>
-                                                    <a href="#position-modal" class="action-icon" data-bs-toggle="modal"
-                                                    data-bs-target="#position-modal"><i class="fa fa-trash text-sm"
-                                                        aria-hidden="true"></i>
-
-                                                </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>stat@gmail.com</td>
-                                                <td>Benigns Secondary School</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                                <td>
-                                                    <a href="#position-modal" class="action-icon" data-bs-toggle="modal"
-                                                        data-bs-target="#position-modal"><i class="fa fa-eye text-sm"
-                                                            aria-hidden="true"></i>
-
-                                                    </a>
-                                                    <a href="#position-modal" class="action-icon" data-bs-toggle="modal"
-                                                        data-bs-target="#position-modal"><i class="fa fa-pen text-sm"
-                                                            aria-hidden="true"></i>
-
-                                                    </a>
-                                                    <a href="#position-modal" class="action-icon" data-bs-toggle="modal"
-                                                    data-bs-target="#position-modal"><i class="fa fa-trash text-sm"
-                                                        aria-hidden="true"></i>
-
-                                                </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>stat@gmail.com</td>
-                                                <td>Benigns Secondary School</td>
-                                                <td>66</td>
-                                                <td>2009/01/12</td>
-                                                <td>$86,000</td>
-                                                <td>
-                                                    <a href="#position-modal" class="action-icon" data-bs-toggle="modal"
-                                                        data-bs-target="#position-modal"><i class="fa fa-eye text-sm"
-                                                            aria-hidden="true"></i>
-
-                                                    </a>
-                                                    <a href="#position-modal" class="action-icon" data-bs-toggle="modal"
-                                                        data-bs-target="#position-modal"><i class="fa fa-pen text-sm"
-                                                            aria-hidden="true"></i>
-
-                                                    </a>
-                                                    <a href="#position-modal" class="action-icon" data-bs-toggle="modal"
-                                                    data-bs-target="#position-modal"><i class="fa fa-trash text-sm"
-                                                        aria-hidden="true"></i>
-
-                                                </a>
-                                                </td>
-                                            </tr>
+                                                </tr>
+                                                
+                                                @endforeach
+                                            @else
+                                                <tr>
+                                                    <td colspan="4">No Staff Registered.</td>
+                                                </tr>
+                                            @endif
+                                            
 
                                         </tbody>
                                     </table>

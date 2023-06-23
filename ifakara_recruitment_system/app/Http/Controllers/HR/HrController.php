@@ -10,6 +10,7 @@ use App\Models\Post;
 use App\Models\Staff;
 use App\Models\Vacant;
 
+
 class HrController extends Controller
 {
     /**
@@ -37,6 +38,7 @@ class HrController extends Controller
 
     public function HRprofile()
     {
+      
         return view('hr.pages.hrprofile');
     }
 

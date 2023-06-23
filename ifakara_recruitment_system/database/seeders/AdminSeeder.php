@@ -32,5 +32,15 @@ class AdminSeeder extends Seeder
                 ]
             );
         }
+
+        if(config('admin.auditor_name')) {
+            User::firstOrCreate(
+                ['email' => config('admin.auditor_email')], [
+                    'name' => config('admin.auditor_name'),
+                    'roles_as' => config('admin.auditor_role'),
+                    'password' => bcrypt(config('admin.auditor_password')),
+                ]
+            );
+        }
     }
 }

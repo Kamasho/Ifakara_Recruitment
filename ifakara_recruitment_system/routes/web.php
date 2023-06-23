@@ -28,6 +28,7 @@ use App\Http\Controllers\HR\HeadInstituteController;
 use App\Http\Controllers\HR\StaffController;
 use App\Http\Controllers\HR\JobsController;
 use App\Http\Controllers\GS\StaffGSController;
+use App\Http\Controllers\Auth\ProfileController;
 
 use GuzzleHttp\Psr7\UploadedFile;
 
@@ -55,12 +56,13 @@ Auth::routes();
 
 //HR middleware
 Route::middleware(['auth', 'isHr'])->group(function () {
+
     Route::get('/hrdashboard', [HrController::class, 'index'])->name('hrdashboard');
     Route::get('/hr/staff', [StaffController::class, 'index'])->name('staff');
     Route::post('/hr/staff', [StaffController::class, 'store'])->name('staff_registration');
     Route::delete('/hr/staff/{id}', [StaffController::class, 'delete'])->name('staff_delete');
-    Route::get('/hr/staff/{id}/edit',[StaffController::class,'edit'])->name('staff_edit');
-    Route::put('/hr/staff/{id}', [StaffController::class,'update'])->name('staff_update');
+    Route::get('/hr/staff/{id}/edit', [StaffController::class, 'edit'])->name('staff_edit');
+    Route::put('/hr/staff/{id}', [StaffController::class, 'update'])->name('staff_update');
     // jobs contrhollers
 
     Route::get('/hr/jobs', [JobsController::class, 'index'])->name('jobs');
@@ -68,13 +70,12 @@ Route::middleware(['auth', 'isHr'])->group(function () {
 
     Route::get('/hr/job/received', [JobsController::class, 'receivedquery'])->name('received');
     Route::post('/hr/jobs', [JobsController::class, 'vacant_registration'])->name('vacant_registration');
-    Route::post('/hr/jobs/vacants',[JobsController::class, 'publish_vacant'])->name('publish_vacant');
+    Route::post('/hr/jobs/vacants', [JobsController::class, 'publish_vacant'])->name('publish_vacant');
 
     Route::get('/hr/uploads', [UploadController::class, 'index'])->name('uploads');
-    Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');
-    Route::get('/hr/organinzation',[HrController::class,'Organization'])->name('organization');
-    Route::get('/hr/education_level',[EducationController::class,'index'])->name('education_level');
-    Route::get('hr/applicants',[HrController::class,'Applicants'])->name('applicants');
+    Route::get('/hr/organinzation', [HrController::class, 'Organization'])->name('organization');
+    Route::get('/hr/education_level', [EducationController::class, 'index'])->name('education_level');
+    Route::get('hr/applicants', [HrController::class, 'Applicants'])->name('applicants');
     //institute
     Route::get('/institute', [institutionController::class, 'index'])->name('institute');
     Route::post('/institute/add_institute', [institutionController::class, 'store'])->name('add_institute');
@@ -86,6 +87,11 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::post('/head_institute/add_head_institute', [HeadInstituteController::class, 'store'])->name('add_head_institute');
     Route::get('/head_institute/delete_head_institute/{id}', [HeadInstituteController::class, 'destroy'])->name('delete_head_institute');
     Route::put('/head_institute/update_head_institute/{id}', [HeadInstituteController::class, 'update'])->name('update_head_institute');
+
+    //profile upates
+    Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');
+    Route::post('/update-profile', [ProfileController::class, 'updateProfile'])->name('update_profile');
+    Route::post('/update-password', [ProfileController::class,'updatePassword'])->name('update_password');
 });
 
 
@@ -95,40 +101,27 @@ Route::middleware(['auth', 'isHr'])->group(function () {
 Route::middleware(['auth', 'isGs'])->group(function () {
 
     Route::get('/gsdashboard', [GsController::class, 'index'])->name('gsdashboard');
-
     //staffs controllers
     Route::get('/gs/staffs', [StaffGSController::class, 'index'])->name('staffs');
     Route::post('/register_job', [StaffGSController::class, 'RegisterJob'])->name('job_registrations');
     Route::put('/update_job/{id}', [StaffGSController::class, 'jobUpdates'])->name('job_update');
     Route::delete('/delete_job/{id}', [StaffGSController::class, 'JobDelete'])->name('delete_job');
-
     Route::post('/register_staffs', [StaffGSController::class, 'StaffRegistration'])->name('staff_registrations');
-
     //Uploads
-   Route::post('/file_Uploads', [StaffGSController::class, 'FileUpload'])->name('file-uploads');
-
+    Route::post('/file_Uploads', [StaffGSController::class, 'FileUpload'])->name('file-uploads');
     Route::get('/gs/profile', [GsController::class, 'GSprofile'])->name('profile_gs');
     //jobs posts routes
     Route::get('/gs/position', [PositionController::class, 'index'])->name('job_position');
     Route::post('/post_job', [PositionController::class, 'store'])->name('post_job');
-    
-
     Route::get('/gs/applications', [ApplicantsController::class, 'index'])->name('jobs_applications');
     Route::get('/gs/requitment', [ApplicantsController::class, 'Requitment'])->name('job_requitment');
 });
 
 
 //Auditor middleware
-Route::middleware(['auth','isAuditor'])->group(function(){
-
+Route::middleware(['auth', 'isAuditor'])->group(function () {
     Route::get('/auditordashboard', [AuditorController::class, 'index'])->name('auditordashboard');
-
-   Route::get('/auditors/staffs', [AuditorController::class, 'Staffs_details'])->name('auditors_staffs');
-
-
-
-
-
+    Route::get('/auditors/staffs_1', [AuditorController::class, 'Staffs_details'])->name('auditors_staffs');
 });
 
 
