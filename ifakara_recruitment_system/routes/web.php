@@ -109,7 +109,10 @@ Route::middleware(['auth', 'isGs'])->group(function () {
     Route::post('/register_staffs', [StaffGSController::class, 'StaffRegistration'])->name('staff_registrations');
     //Uploads
     Route::post('/file_Uploads', [StaffGSController::class, 'FileUpload'])->name('file-uploads');
+
     Route::get('/gs/profile', [GsController::class, 'GSprofile'])->name('profile_gs');
+    Route::post('/update-profile', [ProfileController::class, 'updateProfile'])->name('update_profile');
+    Route::post('/update-password', [ProfileController::class,'updatePassword'])->name('update_password');
     //jobs posts routes
     Route::get('/gs/position', [PositionController::class, 'index'])->name('job_position');
     Route::post('/post_job', [PositionController::class, 'store'])->name('post_job');
