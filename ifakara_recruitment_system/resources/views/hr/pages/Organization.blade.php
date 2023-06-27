@@ -213,12 +213,12 @@
 
                                                                                 <td class="text-sm">
 
-                                                                                    <a href="javascript:void(0);"
+                                                                                    {{-- <a href="javascript:void(0);"
                                                                                         class="action-icon"> <i
                                                                                             class="mdi mdi-square-edit-outline"></i></a>
                                                                                     <a href="javascript:void(0);"
                                                                                         class="action-icon"> <i
-                                                                                            class="mdi mdi-delete"></i></a>
+                                                                                            class="mdi mdi-delete"></i></a> --}}
                                                                                 </td>
                                                                             </tr>
                                                                         @endforeach
