@@ -18,6 +18,10 @@ class PersonalDetailsController extends Controller
         return view('user.personaldetails');
     }
 
+
+    public function userProfile(){
+        return view ('user.user_profile');
+    }
     /**
      * Show the form for creating a new resource.
      *

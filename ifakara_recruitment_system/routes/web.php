@@ -91,7 +91,7 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     //profile upates
     Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');
     Route::post('/update-profile', [ProfileController::class, 'updateProfile'])->name('update_profile');
-    Route::post('/update-password', [ProfileController::class,'updatePassword'])->name('update_password');
+    Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('update_password');
 });
 
 
@@ -112,7 +112,7 @@ Route::middleware(['auth', 'isGs'])->group(function () {
 
     Route::get('/gs/profile', [GsController::class, 'GSprofile'])->name('profile_gs');
     Route::post('/update-profile', [ProfileController::class, 'updateProfile'])->name('update_profile');
-    Route::post('/update-password', [ProfileController::class,'updatePassword'])->name('update_password');
+    Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('update_password');
     //jobs posts routes
     Route::get('/gs/position', [PositionController::class, 'index'])->name('job_position');
     Route::post('/post_job', [PositionController::class, 'store'])->name('post_job');
@@ -138,6 +138,12 @@ Route::middleware(['auth', 'isUser'])->group(function () {
     Route::post('/personaldetails/add_personaldetails', [PersonalDetailsController::class, 'store'])->name('add_personaldetails');
     Route::get('/personaldetails/delete_personaldetails/{id}', [PersonalDetailsController::class, 'destroy'])->name('delete_personaldetails');
     Route::put('/personaldetails/update_personaldetails/{id}', [PersonalDetailsController::class, 'update'])->name('update_personaldetails');
+
+
+    //profile
+    Route::get('/userProfile', [PersonalDetailsController::class, 'userProfile'])->name('user_profile');
+    Route::post('/update-profile', [ProfileController::class, 'updateProfile'])->name('update_profile');
+    Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('update_password');
 
     //Academic Qualifications
     Route::get('/academicqualifications', [AcademicQualificationController::class, 'index'])->name('academicqualifications');

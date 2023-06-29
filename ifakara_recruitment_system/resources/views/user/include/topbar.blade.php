@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{{ route('dashboard') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Notifications</a>
@@ -36,7 +36,7 @@
                     <a class="nav-link" href="#">My Applications</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Change Password</a>
+                    <a class="nav-link" href="{{route('user_profile')}}">My Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Feedback</a>
