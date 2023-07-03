@@ -106,10 +106,10 @@
                                                                                                 <td>{{ $vacant->created_at }}
                                                                                                 </td>
                                                                                                 <td>
-                                                                                                    <a href="javascript:void(0);"
+                                                                                                    {{-- <a href="javascript:void(0);"
                                                                                                         class="action-icon">
                                                                                                         <i
-                                                                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                                                                            class="mdi mdi-square-edit-outline"></i></a> --}}
                                                                                                     {{-- <a href="javascript:void(0);"
                                                                                                         class="action-icon">
                                                                                                         <i
@@ -642,7 +642,9 @@
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        <tr>
+
+                                                                        
+                                                                        {{-- <tr>
                                                                             <td class="table-user">
                                                                                 <img src="../assets/images/users/user-4.jpg"
                                                                                     alt="table-user"
@@ -733,7 +735,7 @@
                                                                                     class="action-icon"> <i
                                                                                         class="mdi mdi-delete"></i></a>
                                                                             </td>
-                                                                        </tr>
+                                                                        </tr> --}}
 
 
 
@@ -742,37 +744,7 @@
                                                                 </table>
                                                             </div>
 
-                                                            <ul
-                                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Previous">
-                                                                        <span aria-hidden="true">«</span>
-                                                                        <span class="visually-hidden">Previous</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="page-item active"><a class="page-link"
-                                                                        href="javascript: void(0);">1</a></li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">2</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">3</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">4</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">5</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Next">
-                                                                        <span aria-hidden="true">»</span>
-                                                                        <span class="visually-hidden">Next</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
+                                                           
 
                                                         </div>
                                                         <!-- end card-body-->

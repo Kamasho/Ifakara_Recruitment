@@ -118,8 +118,8 @@
                                                                                                 <td class="text-sm">
                                                                                                     <a href="javascript:void(0);"
                                                                                                         class="action-icon">
-                                                                                                        <i
-                                                                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                                                                        {{-- <i
+                                                                                                            class="mdi mdi-square-edit-outline"></i></a> --}}
                                                                                                     <a
                                                                                                         href="javascript:void(0);"class="action-icon">
 
@@ -224,9 +224,9 @@
 
                                                                                 <td class="text-sm">
 
-                                                                                    <a href="javascript:void(0);"
+                                                                                    {{-- <a href="javascript:void(0);"
                                                                                         class="action-icon"> <i
-                                                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                                                            class="mdi mdi-square-edit-outline"></i></a> --}}
                                                                                     {{-- <a href="javascript:void(0);"
                                                                                         class="action-icon"> <i
                                                                                             class="mdi mdi-delete"></i></a> --}}
