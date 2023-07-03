@@ -21,7 +21,7 @@ class JobsController extends Controller
         $education_levels = Education_level::get();
         $education_categories = Education_category::get();
         $education_names = Education_name::get();
-        $posts = Post::get();
+        $posts = Post::with('educationLevel','educationName')->get();
         return view(
             'hr.pages.jobs',
             [
@@ -80,7 +80,7 @@ class JobsController extends Controller
             'position_file.required' => 'Please upload a position file.',
             'position_description.required' => 'The position description field is required.',
         ];
-    
+
         $validatedData = $request->validate([
             'name' => 'required',
             'location' => 'required',
@@ -122,12 +122,12 @@ class JobsController extends Controller
             $education_names = Education_name::get();
             $posts = Post::get();
             return view('hr.pages.jobs', [
-                'vacants'=>$vacants,
-                'institutions'=>$institutions,
-                'education_levels'=>$education_levels,
-                'education_categories'=>$education_categories,
-                'education_names'=>$education_names,
-                'posts'=>$posts
+                'vacants' => $vacants,
+                'institutions' => $institutions,
+                'education_levels' => $education_levels,
+                'education_categories' => $education_categories,
+                'education_names' => $education_names,
+                 'posts' => $posts
 
             ])->with('jobs', 'successful');
         }
@@ -151,7 +151,7 @@ class JobsController extends Controller
             'gender.required' => 'Please choose the applicant gender.',
             'summary.required' => 'Please provide a summary overview.',
         ];
-    
+
         // Validate the form data with custom error messages
         $validatedData = $request->validate([
             'vacant_id' => 'required',
@@ -197,5 +197,65 @@ class JobsController extends Controller
         }
 
         return back()->with('error', 'Failed to save vacant position.');
+    }
+
+
+    public function delete_vacant($id)
+    {
+        $vacants = Vacant::find($id);
+
+        if (!$vacants) {
+            return back()->with('error', 'Staff record not found.');
+            // return redirect()->route('/hr/staff')->with('error', 'Staff record not found.');
+        }
+
+        $vacants->delete();
+         $vacants = Vacant::get();
+         $institutions = institution::get();
+        $posts = Post::get();
+        $education_levels = Education_level::get();
+        $education_categories = Education_category::get();
+        $education_names = Education_name::get();
+        return view('hr.pages.jobs', [
+            'posts' => $posts,
+            'vacants'=> $vacants,
+            'institutions'=>$institutions,
+            'education_levels' => $education_levels,
+            'education_categories' => $education_categories,
+            'education_names' => $education_names,
+
+         
+
+        ])->with('success', 'Staff record deleted successfully.');
+    }
+
+
+    public function delete_post($id)
+    {
+        $posts = Post::find($id);
+
+        if (!$posts) {
+            return back()->with('error', 'Staff record not found.');
+            // return redirect()->route('/hr/staff')->with('error', 'Staff record not found.');
+        }
+
+        $posts->delete();
+         $vacants = Vacant::get();
+         $institutions = institution::get();
+        $posts = Post::get();
+        $education_levels = Education_level::get();
+        $education_categories = Education_category::get();
+        $education_names = Education_name::get();
+        return view('hr.pages.jobs', [
+            'posts' => $posts,
+            'vacants'=> $vacants,
+            'institutions'=>$institutions,
+            'education_levels' => $education_levels,
+            'education_categories' => $education_categories,
+            'education_names' => $education_names,
+
+         
+
+        ])->with('success', 'Staff record deleted successfully.');
     }
 }

@@ -70,6 +70,9 @@ Route::middleware(['auth', 'isHr'])->group(function () {
 
     Route::get('/hr/job/received', [JobsController::class, 'receivedquery'])->name('received');
     Route::post('/hr/jobs', [JobsController::class, 'vacant_registration'])->name('vacant_registration');
+    Route::delete('/hr/jobs/vacant/{id}',[JobsController::class,'delete_vacant'])->name('delete_vacant');
+    Route::delete('/hr/jobs/post/{id}',[JobsController::class,'delete_post'])->name('delete_post');
+
     Route::post('/hr/jobs/vacants', [JobsController::class, 'publish_vacant'])->name('publish_vacant');
 
     Route::get('/hr/uploads', [UploadController::class, 'index'])->name('uploads');
@@ -79,13 +82,13 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     //institute
     Route::get('/institute', [institutionController::class, 'index'])->name('institute');
     Route::post('/institute/add_institute', [institutionController::class, 'store'])->name('add_institute');
-    Route::get('/institute/delete_institute/{id}', [institutionController::class, 'destroy'])->name('delete_institute');
+    Route::delete('/institute/delete_institute/{id}', [institutionController::class, 'destroy'])->name('delete_institute');
     Route::put('/institute/update_institute/{id}', [institutionController::class, 'update'])->name('update_institute');
 
     //head institute
     Route::get('/head_institute', [HeadInstituteController::class, 'index'])->name('head_institute');
     Route::post('/head_institute/add_head_institute', [HeadInstituteController::class, 'store'])->name('add_head_institute');
-    Route::get('/head_institute/delete_head_institute/{id}', [HeadInstituteController::class, 'destroy'])->name('delete_head_institute');
+    Route::delete('/head_institute/delete_head_institute/{id}', [HeadInstituteController::class, 'destroy'])->name('delete_head_institute');
     Route::put('/head_institute/update_head_institute/{id}', [HeadInstituteController::class, 'update'])->name('update_head_institute');
 
     //profile upates

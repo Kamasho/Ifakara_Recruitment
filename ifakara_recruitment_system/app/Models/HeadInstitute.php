@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use  App\Modes\institution;
+use  App\Models\institution;
 
 class HeadInstitute extends Model
 {
@@ -19,6 +19,6 @@ class HeadInstitute extends Model
 
     public function institution()
     {
-        return $this->belongsTo(institution::class);
+        return $this->belongsTo(institution::class,'institute_id');
     }
 }

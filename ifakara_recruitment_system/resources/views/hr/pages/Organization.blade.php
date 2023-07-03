@@ -42,10 +42,10 @@
                                                     href="#v-pills-profile" role="tab"
                                                     aria-controls="v-pills-profile" aria-selected="false">
                                                     Head of Institutions</a>
-                                                <a class="nav-link mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
+                                                {{-- <a class="nav-link mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
                                                     href="#v-pills-messages" role="tab"
                                                     aria-controls="v-pills-messages" aria-selected="false">
-                                                    Uploads</a>
+                                                    Uploads</a> --}}
 
                                             </div>
                                         </div>
@@ -120,10 +120,21 @@
                                                                                                         class="action-icon">
                                                                                                         <i
                                                                                                             class="mdi mdi-square-edit-outline"></i></a>
-                                                                                                    <a href="javascript:void(0);"
-                                                                                                        class="action-icon">
-                                                                                                        <i
-                                                                                                            class="mdi mdi-delete"></i></a>
+                                                                                                    <a
+                                                                                                        href="javascript:void(0);"class="action-icon">
+
+                                                                                                        <form
+                                                                                                            action="{{ route('delete_institute', ['id' => $institution->id]) }}"
+                                                                                                            method="POST">
+                                                                                                            @csrf
+                                                                                                            @method('DELETE')
+                                                                                                            <button
+                                                                                                                type="submit"
+                                                                                                                class="btn btn-danger btn-xs">
+                                                                                                                <i
+                                                                                                                    class="mdi mdi-delete"></i></button>
+                                                                                                        </form>
+
 
                                                                                                 </td>
                                                                                             </tr>
@@ -188,7 +199,7 @@
                                                                     class="table dt-responsive nowrap w-100">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th>S/N</th>
+                                                                            {{-- <th>S/N</th> --}}
                                                                             <th>First name</th>
                                                                             <th>Middle name</th>
                                                                             <th>Last name</th>
@@ -201,24 +212,36 @@
                                                                     <tbody>
                                                                         @foreach ($headinstitutions as $headinstitution)
                                                                             <tr>
-                                                                                <td>{{ $headinstitution->id }}</td>
+                                                                                {{-- <td>{{ $headinstitution->id }}</td> --}}
                                                                                 <td>{{ $headinstitution->fname }}
                                                                                 </td>
                                                                                 <td>{{ $headinstitution->mname }}</td>
                                                                                 <td>{{ $headinstitution->lname }}</td>
                                                                                 <td>{{ $headinstitution->contact }}</td>
-                                                                                <td>{{ $headinstitution->name }}
+                                                                                <td>{{ $headinstitution->institution->name }}
                                                                                 </td>
 
 
                                                                                 <td class="text-sm">
 
-                                                                                    {{-- <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-square-edit-outline"></i></a>
                                                                                     <a href="javascript:void(0);"
                                                                                         class="action-icon"> <i
+                                                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                                                    {{-- <a href="javascript:void(0);"
+                                                                                        class="action-icon"> <i
                                                                                             class="mdi mdi-delete"></i></a> --}}
+                                                                                            <a
+                                                                                            href="javascript:void(0);"class="action-icon">
+                                                                                    <form
+                                                                                        action="{{ route('delete_head_institute', ['id' => $headinstitution->id]) }}"
+                                                                                        method="POST">
+                                                                                        @csrf
+                                                                                        @method('DELETE')
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-danger btn-xs">
+                                                                                            <i
+                                                                                                class="mdi mdi-delete"></i></button>
+                                                                                    </form>
                                                                                 </td>
                                                                             </tr>
                                                                         @endforeach
@@ -391,65 +414,66 @@
                     </div>
 
                     <h4>INSTITUTIONS INFORMATION</h4>
-                        <form action="{{ route('add_institute') }}" method="POST" enctype="multipart/form-data"
-                            class="needs-validation" novalidate id="add-institute-form">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="field-1" class="form-label">Institutions Name <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="field-1" name="name"
-                                            required placeholder="Malecela Secondary School">
-                                        <div class="invalid-feedback">
-                                            Please correct institution name.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="field-2" class="form-label">Location</label>
-                                        <input type="text" parsley-trigger="change" class="form-control"
-                                            name="location" id="field-2" required placeholder="Ifakara Morogoro">
-                                            <div class="invalid-feedback">
-                                                Please enter location.
-                                            </div>
+                    <form action="{{ route('add_institute') }}" method="POST" enctype="multipart/form-data"
+                        class="needs-validation" novalidate id="add-institute-form">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Institutions Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="field-1" name="name"
+                                        required placeholder="Malecela Secondary School">
+                                    <div class="invalid-feedback">
+                                        Please correct institution name.
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="field-3" class="form-label">Institution Email</label>
-                                        <input type="email" parsley-trigger="change" class="form-control"
-                                            name="email" id="field-2" required
-                                            placeholder="malecela.school@ifakaracatholic">
-                                            <div class="invalid-feedback">
-                                                Please enter email.
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label">Institutions Category</label>
-                                        <select class="form-select" parsley-trigger="change" id="example-select"
-                                            name="category">
-                                            <option value="school">School</option>
-                                            <option value="health">Health Institions</option>
-                                            <option value="parish">Parish</option>
-
-                                        </select>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-2" class="form-label">Location</label>
+                                    <input type="text" parsley-trigger="change" class="form-control"
+                                        name="location" id="field-2" required placeholder="Ifakara Morogoro">
+                                    <div class="invalid-feedback">
+                                        Please enter location.
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <button class="btn btn-primary btn-block" type="submit"id="submit-btn">Register</button>
-
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Institution Email</label>
+                                    <input type="email" parsley-trigger="change" class="form-control"
+                                        name="email" id="field-2" required
+                                        placeholder="malecela.school@ifakaracatholic">
+                                    <div class="invalid-feedback">
+                                        Please enter email.
+                                    </div>
                                 </div>
                             </div>
-                        </form>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label">Institutions Category</label>
+                                    <select class="form-select" parsley-trigger="change" id="example-select"
+                                        name="category">
+                                        <option value="school">School</option>
+                                        <option value="health">Health Institions</option>
+                                        <option value="parish">Parish</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <button class="btn btn-primary btn-block"
+                                    type="submit"id="submit-btn">Register</button>
+
+                            </div>
+                        </div>
+                    </form>
 
 
 
@@ -471,18 +495,20 @@
                 </div>
                 <div class="modal-body p-4">
                     <h4>Person Information</h4>
-                    <form action="{{ route('add_head_institute') }}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <form action="{{ route('add_head_institute') }}" method="post" enctype="multipart/form-data"
+                        class="needs-validation" novalidate>
                         @csrf
                         <div class="row">
 
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label for="field-4" class="form-label">First name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="field-4"
-                                       required placeholder="first name" name="fname">
-                                        <div class="invalid-feedback">
-                                            Please enter a your first name.
-                                        </div>
+                                    <label for="field-4" class="form-label">First name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="field-4" required
+                                        placeholder="first name" name="fname">
+                                    <div class="invalid-feedback">
+                                        Please enter a your first name.
+                                    </div>
                                 </div>
                             </div>
 
@@ -490,8 +516,8 @@
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Middle name</label>
                                     <input type="text" class="form-control" id="field-1" name="mname"
-                                      required  placeholder="middle name">
-                                      <div class="invalid-feedback">
+                                        required placeholder="middle name">
+                                    <div class="invalid-feedback">
                                         Please enter a your middle name.
                                     </div>
                                 </div>
@@ -499,9 +525,9 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Last name</label>
-                                    <input type="text" class="form-control" id="field-5"
-                                      required  placeholder="last name" name="lname">
-                                      <div class="invalid-feedback">
+                                    <input type="text" class="form-control" id="field-5" required
+                                        placeholder="last name" name="lname">
+                                    <div class="invalid-feedback">
                                         Please enter a your last name.
                                     </div>
                                 </div>
@@ -521,8 +547,8 @@
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Contanct</label>
                                     <input type="number" class="form-control" id="field-1" name="contact"
-                                       required placeholder="phone number">
-                                       <div class="invalid-feedback">
+                                        required placeholder="phone number">
+                                    <div class="invalid-feedback">
                                         Please enter a your phone number.
                                     </div>
                                 </div>

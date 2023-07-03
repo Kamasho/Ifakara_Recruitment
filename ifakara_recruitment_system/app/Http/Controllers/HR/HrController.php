@@ -44,7 +44,7 @@ class HrController extends Controller
 
    public function Organization()
     {
-       $headinstitutions = HeadInstitute::get();
+       $headinstitutions = HeadInstitute::with('institution')->get();
        $institutions = institution::get();
        //dd($institutions);
        // return view('hr.pages.organization',compact('headinstitutions','institutions'));

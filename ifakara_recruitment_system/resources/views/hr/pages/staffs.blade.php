@@ -80,9 +80,9 @@
                                                         <td>
 
 
-                                                            <button class="btn btn-info btn-xs" data-bs-toggle="modal"
+                                                            {{-- <button class="btn btn-info btn-xs" data-bs-toggle="modal"
                                                                 data-bs-target="#editModal"
-                                                                data-id="{{ $staff->id }}">Edit</button>
+                                                                data-id="{{ $staff->id }}">Edit</button> --}}
                                                             <!-- ... -->
 
                                                             {{-- <a href="{{route('staff_delete')}}"
