@@ -77,8 +77,6 @@
                                                                     <div class="card">
                                                                         <div class="card-body">
 
-
-
                                                                             <table id="basic-datatable"
                                                                                 class="table dt-responsive nowrap w-100">
                                                                                 <thead>
@@ -643,7 +641,7 @@
                                                                     </thead>
                                                                     <tbody>
 
-                                                                        
+
                                                                         {{-- <tr>
                                                                             <td class="table-user">
                                                                                 <img src="../assets/images/users/user-4.jpg"
@@ -744,7 +742,7 @@
                                                                 </table>
                                                             </div>
 
-                                                           
+
 
                                                         </div>
                                                         <!-- end card-body-->

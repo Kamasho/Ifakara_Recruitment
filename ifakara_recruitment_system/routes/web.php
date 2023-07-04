@@ -75,7 +75,14 @@ Route::middleware(['auth', 'isHr'])->group(function () {
 
     Route::post('/hr/jobs/vacants', [JobsController::class, 'publish_vacant'])->name('publish_vacant');
 
+
+    //uploads uploads
     Route::get('/hr/uploads', [UploadController::class, 'index'])->name('uploads');
+    Route::post('/hr/uploads',[UploadController::class,'Upload_store'])->name('uploads_documents');
+    Route::delete('/hr/uploads/{id}',[UploadController::class,'uploads_destroy'])->name('uploads_destroy');
+    Route::put('/hr/uploads/updates/{id}',[UploadController::class,'upload_update'])->name('uploads_updates');
+
+
     Route::get('/hr/organinzation', [HrController::class, 'Organization'])->name('organization');
     Route::get('/hr/education_level', [EducationController::class, 'index'])->name('education_level');
     Route::get('hr/applicants', [HrController::class, 'Applicants'])->name('applicants');

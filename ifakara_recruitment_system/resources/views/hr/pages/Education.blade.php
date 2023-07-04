@@ -7,7 +7,7 @@
 
         @include('layouts.hr.header')
 
-       
+
         @include('layouts.hr.sidebar')
 
         <div class="content-page">
@@ -16,7 +16,7 @@
                 <!-- Start Content-->
                 <div class="container-fluid">
 
-                    
+
 
                     <div class="row mt-3">
                         <div class="col-lg-12">
@@ -33,13 +33,13 @@
                                                     aria-controls="v-pills-home" aria-selected="true">
                                                     <span> All Education level </span>
                                                 </a>
-                                                
+
                                                 <a class="nav-link mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
                                                     href="#v-pills-messages" role="tab"
                                                     aria-controls="v-pills-messages" aria-selected="false">
                                                     Categoried
                                                 </a>
-                                                
+
                                             </div>
                                         </div>
                                         <!-- end col-->
@@ -88,7 +88,7 @@
                                                                         @if (!empty($posts))
                                                                             @foreach ($posts as $post)
                                                                             <tr>
-                                                                    
+
                                                                                 <td>
                                                                                     937-330-1634
                                                                                 </td>
@@ -122,7 +122,7 @@
                                                                             </tr>
                                                                         @endif
                                                                     </tbody> --}}
-                                        
+
                                                                 </table>
                                                             </div>
 
@@ -178,7 +178,7 @@
                                                                         </div>
                                                                     </form>
                                                                 </div>
-                                                              
+
 
                                                             </div>
 
@@ -308,7 +308,8 @@
                                                                                 Boar Records
                                                                             </td>
                                                                             <td>
-                                                                                09/08/2018
+                                                                                09/08/2020
+
                                                                             </td>
                                                                             <td>
                                                                                 <a href="javascript:void(0);"
@@ -408,7 +409,7 @@
                                                                         </div>
                                                                     </form>
                                                                 </div>
-                                                                
+
 
                                                             </div>
 
@@ -578,7 +579,7 @@
                                                                         </div>
                                                                     </form>
                                                                 </div>
-                                                                
+
 
                                                             </div>
 
@@ -741,10 +742,10 @@
                             </div>
                             <!-- end card-->
                         </div>
-                       
+
                         <!-- end col -->
 
-                       
+
                     </div>
                     <!-- end row -->
 
@@ -765,7 +766,7 @@
     </div>
     <!-- END wrapper -->
 
-  
+
     <!-- Modal -->
     <div class="modal fade" id="position-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -776,7 +777,7 @@
                 </div>
                 <div class="modal-body p-4">
                     <div class="card-body">
-                        
+
                             <div id="progressbarwizard">
 
                                 <ul class="nav nav-pills bg-light nav-justified form-wizard-header mb-3">
@@ -799,13 +800,13 @@
                                         </a>
                                     </li>
                                 </ul>
-                            
+
                                 <div class="tab-content b-0 mb-0 pt-0">
-                            
+
                                     <div id="bar" class="progress mb-3" style="height: 7px;">
                                         <div class="bar progress-bar progress-bar-striped progress-bar-animated bg-success"></div>
                                     </div>
-                            
+
                                     <div class="tab-pane" id="account-2">
                                         <form action="">
                                             <div class="row">
@@ -839,9 +840,9 @@
                                                             <input type="text" id="name1" name="name1" class="form-control" placeholder="IT">
                                                         </div>
                                                     </div>
-                                                    
+
                                                 </div> <!-- end col -->
-                                            </div> 
+                                            </div>
                                         </form>
                                        <!-- end row -->
                                     </div>
@@ -855,13 +856,13 @@
                                                             <input type="text" id="name1" name="name1" placeholder="Bsc of Human Resources " class="form-control">
                                                         </div>
                                                     </div>
-                                                    
+
                                                 </div> <!-- end col -->
                                             </div>
                                         </form>
-                                     
+
                                     </div>
-                                </div> 
+                                </div>
                                 <ul class="list-inline mb-0 wizard">
                                     <li class="previous list-inline-item">
                                         <a href="javascript: void(0);" class="btn btn-secondary">Previous</a>
@@ -873,10 +874,10 @@
 
                                 <!-- tab-content -->
                             </div> <!-- end #progressbarwizard-->
-                        
 
-                        
-                    </div> 
+
+
+                    </div>
 
 
                 </div>
@@ -887,7 +888,7 @@
     </div>
     <!-- /.modal -->
 
-  
+
 
 
     @include('assets.js')

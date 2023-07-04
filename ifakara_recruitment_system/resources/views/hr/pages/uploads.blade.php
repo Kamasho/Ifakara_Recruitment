@@ -26,19 +26,19 @@
 
 
                     <div class="row mt-3">
-                       
+
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row justify-content-between mb-2">
                                         <div class="col-auto">
-                                            <form>
-                                                <div class="mb-2">
-                                                    <label for="inputPassword2" class="visually-hidden">Search</label>
-                                                    <input type="search" class="form-control" id="inputPassword2"
-                                                        placeholder="Search...">
-                                                </div>
-                                            </form>
+{{--                                            <form>--}}
+{{--                                                <div class="mb-2">--}}
+{{--                                                    <label for="inputPassword2" class="visually-hidden">Search</label>--}}
+{{--                                                    <input type="search" class="form-control" id="inputPassword2"--}}
+{{--                                                        placeholder="Search...">--}}
+{{--                                                </div>--}}
+{{--                                            </form>--}}
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="text-sm-end">
@@ -51,183 +51,66 @@
 
                                     </div>
 
-                                    <div class="table-responsive">
-                                        <table class="table table-centered table-nowrap table-hover mb-0">
-                                            <thead>
+
+                                    <table id="basic-datatable"
+                                           class="table dt-responsive nowrap w-100">
+                                        <thead>
+                                        <tr>
+{{--                                            <th>Upload ID</th>--}}
+                                            <th>Title</th>
+                                            <th>Description</th>
+{{--                                            <th>Documents</th>--}}
+                                            <th>Upload Date</th>
+                                            <th>Action</th>
+
+
+                                        </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                        @if (!empty($uploads))
+                                            @foreach ($uploads as $upload)
                                                 <tr>
-                                                    <th>Upload ID</th>
-                                                    <th>Title</th>
-                                                    <th>Upload Date</th>
-                                                    <th>Description</th>
-                                                    <th>Created Date</th>
-                                                    <th style="width: 82px;">Action</th>
+                                                    <td>{{ $upload->title }}
+                                                    </td>
+                                                    <td>{{ $upload->upload_descriptions}}
+                                                    </td>
+                                                    <td>{{ $upload->upload_date }}</td>
+
+                                                    <td>
+{{--                                                        <span>--}}
+{{--                                                           <a href="{{$upload->document}}"><i class="mdi mdi-eye"></i></a>--}}
+{{--                                                        </span>--}}
+                                                        <span>
+                                                            <form
+                                                                action="{{ route('uploads_destroy', ['id' => $upload->id]) }}"
+                                                                method="POST">
+                                                            @csrf
+                                                                @method('DELETE')
+                                                            <button
+                                                                type="submit"
+                                                                class="btn btn-danger btn-xs"><i
+                                                                    class="mdi mdi-delete"></i></button>
+                                                        </form>
+                                                        </span>
+
+                                                    </td>
+
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="table-user">
-                                                        <img src="../assets/images/users/user-4.jpg" alt="table-user"
-                                                            class="me-2 rounded-circle">
-                                                        <a href="javascript:void(0);" class="text-body fw-semibold">Paul
-                                                            J. Friend</a>
-                                                    </td>
-                                                    <td>
-                                                        937-330-1634
-                                                    </td>
-                                                    <td>
-                                                        pauljfrnd@jourrapide.com
-                                                    </td>
-                                                    <td>
-                                                        Vine Corporation
-                                                    </td>
-                                                    <td>
-                                                        07/07/2018
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-delete"></i></a>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="table-user">
-                                                        <img src="../assets/images/users/user-3.jpg" alt="table-user"
-                                                            class="me-2 rounded-circle">
-                                                        <a href="javascript:void(0);"
-                                                            class="text-body fw-semibold">Bryan J. Luellen</a>
-                                                    </td>
-                                                    <td>
-                                                        215-302-3376
-                                                    </td>
-                                                    <td>
-                                                        bryuellen@dayrep.com
-                                                    </td>
-                                                    <td>
-                                                        Blue Motors
-                                                    </td>
-                                                    <td>
-                                                        09/12/2018
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-delete"></i></a>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="table-user">
-                                                        <img src="../assets/images/users/user-3.jpg" alt="table-user"
-                                                            class="me-2 rounded-circle">
-                                                        <a href="javascript:void(0);"
-                                                            class="text-body fw-semibold">Kathryn S. Collier</a>
-                                                    </td>
-                                                    <td>
-                                                        828-216-2190
-                                                    </td>
-                                                    <td>
-                                                        collier@jourrapide.com
-                                                    </td>
-                                                    <td>
-                                                        Arcanetworks
-                                                    </td>
-                                                    <td>
-                                                        06/30/2018
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-delete"></i></a>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="table-user">
-                                                        <img src="../assets/images/users/user-1.jpg" alt="table-user"
-                                                            class="me-2 rounded-circle">
-                                                        <a href="javascript:void(0);"
-                                                            class="text-body fw-semibold">Timothy Kauper</a>
-                                                    </td>
-                                                    <td>
-                                                        (216) 75 612 706
-                                                    </td>
-                                                    <td>
-                                                        thykauper@rhyta.com
-                                                    </td>
-                                                    <td>
-                                                        Boar Records
-                                                    </td>
-                                                    <td>
-                                                        09/08/2018
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-delete"></i></a>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="table-user">
-                                                        <img src="../assets/images/users/user-5.jpg" alt="table-user"
-                                                            class="me-2 rounded-circle">
-                                                        <a href="javascript:void(0);" class="text-body fw-semibold">Zara
-                                                            Raws</a>
-                                                    </td>
-                                                    <td>
-                                                        (02) 75 150 655
-                                                    </td>
-                                                    <td>
-                                                        austin@dayrep.com
-                                                    </td>
-                                                    <td>
-                                                        Bearings
-                                                    </td>
-                                                    <td>
-                                                        07/15/2018
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-square-edit-outline"></i></a>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                                class="mdi mdi-delete"></i></a>
-                                                    </td>
-                                                </tr>
+                                            @endforeach
+                                        @else
+                                            <tr>
+                                                <td colspan="7">No posts
+                                                    found.</td>
+                                            </tr>
+                                        @endif
 
 
-                                            </tbody>
-                                        </table>
-                                    </div>
 
-                                    <ul class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                        <li class="page-item">
-                                            <a class="page-link" href="javascript: void(0);" aria-label="Previous">
-                                                <span aria-hidden="true">«</span>
-                                                <span class="visually-hidden">Previous</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item active"><a class="page-link"
-                                                href="javascript: void(0);">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">3</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="javascript: void(0);" aria-label="Next">
-                                                <span aria-hidden="true">»</span>
-                                                <span class="visually-hidden">Next</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                        </tbody>
+                                    </table>
+
 
                                 </div>
                                 <!-- end card-body-->
@@ -266,48 +149,54 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <h4>Person Details</h4>
-                    <div class="row">
+                    <form action="{{route("uploads_documents")}}" method="post"   enctype="multipart/form-data">
+                        @csrf
 
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-4" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="field-4" placeholder="document title">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-4" class="form-label">Title</label>
+                                    <input type="text"  name="title" class="form-control" id="field-4" placeholder="document title">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-5" class="form-label">Upload Date</label>
+                                    <input type="date" name="upload_date" class="form-control" id="field-5" placeholder="last name">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Document</label>
+                                    <input type="file" name="document" class="form-control" id="field-1"
+                                           placeholder="phone number">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Upload Description</label>
+                                    <textarea class="form-control" name="upload_descriptions" id="field-7" placeholder="Write something about job"></textarea>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-5" class="form-label">Upload Date</label>
-                                <input type="date" class="form-control" id="field-5" placeholder="last name">
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mb-3">
-                                <label for="field-1" class="form-label">Document</label>
-                                <input type="file" class="form-control" id="field-1"
-                                    placeholder="phone number">
-                            </div>
-                        </div>
-                        
-                    </div>
-                
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Upload Description</label>
-                                <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea>
-                            </div>
-                        </div>
-                    </div>
+
+                        <button type="submit" class="btn btn-primary">Upload </button>
+
+                    </form>
+
 
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+{{--                <div class="modal-footer">--}}
+{{--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--}}
+{{--                </div>--}}
             </div>
             <!-- /.modal-content -->
         </div>
