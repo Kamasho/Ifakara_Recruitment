@@ -64,38 +64,35 @@
                                             <tbody>
                                                 @if (is_iterable($posts) && count($posts) > 0)
                                                     @foreach ($posts as $post)
-                                                        @if (is_object($post) && property_exists($post, 'id'))
-                                                            <tr>
-                                                                <td>{{ $post->vacant->name }}</td>
-                                                                <td>{{ $post->vacant_category }}</td>
-                                                                <td>{{ $post->vacant->location }}</td>
-                                                                <td>{{ $post->end_date }}</td>
-                                                                <td>{{ $post->education_levels }}</td>
-                                                                <td>{{ $post->education_names }}</td>
-                                                                <td>
-                                                                    <span><b>Gender:</b> {{ $post->gender }}</span>
-                                                                    <span><b>Experience:</b>
-                                                                        {{ $post->year_experience }}</span>
-                                                                    <span><b>Age:</b> {{ $post->age_range }}</span>
-                                                                </td>
-                                                                <td>
-                                                                    <span
-                                                                        class="btn btn-success btn-xs text-white">Active</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button"
-                                                                        class="btn btn-success waves-effect waves-light mb-2"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#exampleUpdate{{ $post->id }}"><i
-                                                                            class="mdi mdi-pencil"></i></button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger waves-effect waves-light mb-2"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#exampleDelete{{ $post->id }}"><i
-                                                                            class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                        @endif
+                                                    <tr>
+                                                        <td>{{ $post->vacant->name }}</td>
+                                                        <td>{{ $post->vacant_category }}</td>
+                                                        <td>{{ $post->vacant->location }}</td>
+                                                        <td>{{ $post->end_date }}</td>
+                                                        <td>{{ $post->education_levels }}</td>
+                                                        <td>{{ $post->education_names }}</td>
+                                                        <td>
+                                                            <span><b>Gender:</b> {{ $post->gender }}</span>
+                                                            <span><b>Experience:</b>
+                                                                {{ $post->year_experience }}</span>
+                                                            <span><b>Age:</b> {{ $post->age_range }}</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="btn btn-{{ strtolower($post->status) }} btn-xs text-white">{{ $post->status }}</span>
+                                                        </td>
+                                                        <td>
+                                                            <button type="button"
+                                                                class="btn btn-success waves-effect waves-light mb-2"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#exampleUpdate{{ $post->id }}"><i
+                                                                    class="mdi mdi-pencil"></i></button>
+                                                            <button type="button"
+                                                                class="btn btn-danger waves-effect waves-light mb-2"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#exampleDelete{{ $post->id }}"><i
+                                                                    class="mdi mdi-delete"></i></button>
+                                                        </td>
+                                                    </tr>
                                                     @endforeach
                                                 @else
                                                     <tr>

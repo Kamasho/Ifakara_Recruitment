@@ -11,6 +11,7 @@ use App\Models\Post;
 use App\Models\Staff;
 use App\Models\Vacant;
 use App\Models\institution;
+use Carbon\Carbon; 
 
 class PostController extends Controller
 {
@@ -29,6 +30,22 @@ class PostController extends Controller
         $education_names = Education_name::get();
         $posts = Post::with('educationLevel','educationName')->get();
         $post=Post::get();
+
+
+        $currentDate = Carbon::now();
+        $posts = $posts->map(function ($post) use ($currentDate) {
+            $startDate = Carbon::parse($post->application_date);
+            $endDate = Carbon::parse($post->end_date);
+            
+            if ($currentDate->between($startDate, $endDate)) {
+                $post->status = 'Active';
+            } else {
+                $post->status = 'Inactive';
+            }
+
+            return $post;
+        });
+
         return view('hr.pages.Publication_post', [
             'vacants' => $vacants,
             'vacant'=>$vacant,

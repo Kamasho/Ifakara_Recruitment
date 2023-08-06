@@ -225,7 +225,7 @@
 
                                                                                         <button
                                                                                         type="button"
-                                                                                        class="btn btn-success waves-effect waves-light mb-2"
+                                                                                        class="btn btn-success btn-xs waves-effect waves-light mb-2"
                                                                                         data-bs-toggle="modal"
                                                                                         data-bs-target="#exampleUpdatehead{{ $headinstitution->id }}"><i
                                                                                             class="mdi mdi-pencil"></i>
@@ -233,7 +233,7 @@
                                                                                     </button>
                                                                                     <button
                                                                                         type="button"
-                                                                                        class="btn btn-danger  btn-sx waves-effect waves-light mb-2"
+                                                                                        class="btn btn-danger  btn-xs waves-effect waves-light mb-2"
                                                                                         data-bs-toggle="modal"
                                                                                         data-bs-target="#exampleDeletehead{{ $headinstitution->id }}"><i
                                                                                             class="mdi mdi-delete"></i>
@@ -390,8 +390,7 @@
     </div>
     <!-- END wrapper -->
 
-    <div class="modal fade" id="exampleDeletehead{{ $headinstitution->id }}" tabindex="-1" role="dialog"
-        aria-hidden="true">
+    <div class="modal fade" id="exampleDeletehead{{ $headinstitution->id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-top modal-md">
             <div class="modal-content">
                 <div class="modal-header">

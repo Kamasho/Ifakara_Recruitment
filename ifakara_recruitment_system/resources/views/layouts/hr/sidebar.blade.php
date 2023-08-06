@@ -132,7 +132,7 @@
                 </li>
 
                 <li>
-                    <a href="#" >
+                    <a href="{{route('performance')}}" >
                         <i data-feather="clipboard"></i>
                         <span> Performance</span>
                     </a>

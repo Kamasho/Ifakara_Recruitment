@@ -1,7 +1,12 @@
 @include('assets.css')
 
+
+
 <body class="loading"
     data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": false}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
+    <div id="loader">
+        <div class="loader"></div>
+    </div>
 
     <!-- Begin page -->
     <div id="wrapper">
@@ -32,79 +37,68 @@
                                 <div class="card-body">
                                     <div class="row justify-content-between mb-2">
                                         <div class="col-auto">
-{{--                                            <form>--}}
-{{--                                                <div class="mb-2">--}}
-{{--                                                    <label for="inputPassword2" class="visually-hidden">Search</label>--}}
-{{--                                                    <input type="search" class="form-control" id="inputPassword2"--}}
-{{--                                                        placeholder="Search...">--}}
-{{--                                                </div>--}}
-{{--                                            </form>--}}
+                                            
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="text-sm-end">
                                                 <button type="button"
                                                     class="btn btn-primary waves-effect waves-light mb-2"
-                                                    data-bs-toggle="modal" data-bs-target="#custom-modal">Add New Uploads
-                                                    </button>
+                                                    data-bs-toggle="modal" data-bs-target="#custom-modal">Add New
+                                                    Uploads
+                                                </button>
                                             </div>
                                         </div>
 
                                     </div>
 
 
-                                    <table id="basic-datatable"
-                                           class="table dt-responsive nowrap w-100">
+                                    <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                                         <thead>
-                                        <tr>
-{{--                                            <th>Upload ID</th>--}}
-                                            <th>Title</th>
-                                            <th>Description</th>
-{{--                                            <th>Documents</th>--}}
-                                            <th>Upload Date</th>
-                                            <th>Action</th>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Description</th>
+                                                <th>Upload Date</th>
+                                                <th>Action</th>
 
 
-                                        </tr>
+                                            </tr>
                                         </thead>
 
 
                                         <tbody>
-                                        @if (!empty($uploads))
-                                            @foreach ($uploads as $upload)
+                                            @if (!empty($uploads))
+                                                @foreach ($uploads as $upload)
+                                                    <tr>
+                                                        <td>{{ $upload->title }}
+                                                        </td>
+                                                        <td>{{ $upload->upload_descriptions }}
+                                                        </td>
+                                                        <td>{{ $upload->upload_date }}</td>
+
+                                                        <td>
+                                                         
+                                                            <span>
+                                                                <form
+                                                                    action="{{ route('uploads_destroy', ['id' => $upload->id]) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit"
+                                                                        class="btn btn-danger btn-xs"><i
+                                                                            class="mdi mdi-delete"></i></button>
+                                                                </form>
+                                                            </span>
+
+                                                        </td>
+
+                                                    </tr>
+                                                @endforeach
+                                            @else
                                                 <tr>
-                                                    <td>{{ $upload->title }}
-                                                    </td>
-                                                    <td>{{ $upload->upload_descriptions}}
-                                                    </td>
-                                                    <td>{{ $upload->upload_date }}</td>
-
-                                                    <td>
-{{--                                                        <span>--}}
-{{--                                                           <a href="{{$upload->document}}"><i class="mdi mdi-eye"></i></a>--}}
-{{--                                                        </span>--}}
-                                                        <span>
-                                                            <form
-                                                                action="{{ route('uploads_destroy', ['id' => $upload->id]) }}"
-                                                                method="POST">
-                                                            @csrf
-                                                                @method('DELETE')
-                                                            <button
-                                                                type="submit"
-                                                                class="btn btn-danger btn-xs"><i
-                                                                    class="mdi mdi-delete"></i></button>
-                                                        </form>
-                                                        </span>
-
-                                                    </td>
-
+                                                    <td colspan="7">No posts
+                                                        found.</td>
                                                 </tr>
-                                            @endforeach
-                                        @else
-                                            <tr>
-                                                <td colspan="7">No posts
-                                                    found.</td>
-                                            </tr>
-                                        @endif
+                                            @endif
 
 
 
@@ -149,7 +143,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4">
-                    <form action="{{route("uploads_documents")}}" method="post"   enctype="multipart/form-data">
+                    <form action="{{ route('uploads_documents') }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row">
@@ -157,13 +151,15 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-4" class="form-label">Title</label>
-                                    <input type="text"  name="title" class="form-control" id="field-4" placeholder="document title">
+                                    <input type="text" name="title" class="form-control" id="field-4"
+                                        placeholder="document title">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Upload Date</label>
-                                    <input type="date" name="upload_date" class="form-control" id="field-5" placeholder="last name">
+                                    <input type="date" name="upload_date" class="form-control" id="field-5"
+                                        placeholder="last name">
                                 </div>
                             </div>
 
@@ -173,7 +169,7 @@
                                 <div class="mb-3">
                                     <label for="field-1" class="form-label">Document</label>
                                     <input type="file" name="document" class="form-control" id="field-1"
-                                           placeholder="phone number">
+                                        placeholder="phone number">
                                 </div>
                             </div>
 
@@ -194,9 +190,9 @@
 
 
                 </div>
-{{--                <div class="modal-footer">--}}
-{{--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--}}
-{{--                </div>--}}
+                {{--                <div class="modal-footer"> --}}
+                {{--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> --}}
+                {{--                </div> --}}
             </div>
             <!-- /.modal-content -->
         </div>
@@ -204,5 +200,11 @@
     </div>
     <!-- /.modal -->
 
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            // Show the loader when the form is submitted
+            document.getElementById('loader').style.display = 'block';
+        });
+    </script>
 
     @include('assets.js')

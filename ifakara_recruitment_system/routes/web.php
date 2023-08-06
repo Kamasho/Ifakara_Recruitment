@@ -30,6 +30,7 @@ use App\Http\Controllers\HR\JobsController;
 use App\Http\Controllers\HR\PostController;
 use App\Http\Controllers\GS\StaffGSController;
 use App\Http\Controllers\Auth\ProfileController;
+use App\Http\Controllers\HR\PerformanceController;
 use App\Models\Post;
 use GuzzleHttp\Psr7\UploadedFile;
 
@@ -79,7 +80,7 @@ Route::middleware(['auth', 'isHr'])->group(function () {
 
     //post  publications
     Route::get('/hr/post/', [PostController::class, 'index'])->name('publish');
-    Route::post('/hr/post/publication', [PostController::class, 'store'])->name('publish_vacant');
+    Route::post('/hr/post/', [PostController::class, 'store'])->name('publish_vacant');
     Route::put('/hr/post/publication/{id}', [PostController::class, 'update'])->name('update_post');
     Route::delete('/hr/post/post/{id}', [PostController::class, 'destroy'])->name('delete_post');
 
@@ -112,6 +113,11 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::get('/hr/profile', [HrController::class, 'HRprofile'])->name('profile_hr');
     Route::post('/update-profile', [ProfileController::class, 'updateProfile'])->name('update_profile');
     Route::post('/update-password', [ProfileController::class, 'updatePassword'])->name('update_password');
+
+
+    //performance 
+
+    Route::get('/hr/performance',[PerformanceController::class,'index'])->name('performance');
 });
 
 
