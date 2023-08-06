@@ -34,11 +34,7 @@
                                                     aria-controls="v-pills-home" aria-selected="true">
                                                     <span> All Vacants </span>
                                                 </a>
-                                                <a class="nav-link mb-1" id="v-pills-messages-tab" data-bs-toggle="pill"
-                                                    href="#posts" role="tab" aria-controls="v-pills-messages"
-                                                    aria-selected="false">
-                                                    Posts
-                                                </a>
+                                               
 
 
                                                 <a class="nav-link mb-1" id="v-pills-settings-tab" data-bs-toggle="pill"
@@ -104,24 +100,28 @@
                                                                                                 <td>{{ $vacant->created_at }}
                                                                                                 </td>
                                                                                                 <td>
-                                                                                                    {{-- <a href="javascript:void(0);"
-                                                                                                        class="action-icon">
-                                                                                                        <i
-                                                                                                            class="mdi mdi-square-edit-outline"></i></a> --}}
-                                                                                                    {{-- <a href="javascript:void(0);"
-                                                                                                        class="action-icon">
-                                                                                                        <i
-                                                                                                            class="mdi mdi-delete"></i></a> --}}
-                                                                                                            <form
-                                                                                                            action="{{ route('delete_vacant', ['id' => $vacant->id]) }}"
-                                                                                                            method="POST">
-                                                                                                            @csrf
-                                                                                                            @method('DELETE')
-                                                                                                            <button
-                                                                                                                type="submit"
-                                                                                                                class="btn btn-danger btn-xs"><i
-                                                                                                                    class="mdi mdi-delete"></i></button>
-                                                                                                        </form>
+                                                                                                    <button
+                                                                                                        type="button"
+                                                                                                        class="btn btn-primary waves-effect waves-light mb-2"
+                                                                                                        data-bs-toggle="modal"
+                                                                                                        data-bs-target="#exampleModal{{ $vacant->id }}"><i
+                                                                                                            class="fas fa-pencil-alt"></i>
+
+                                                                                                    </button>
+
+
+
+
+                                                                                                    <button
+                                                                                                        type="button"
+                                                                                                        class="btn btn-danger waves-effect waves-light mb-2"
+                                                                                                        data-bs-toggle="modal"
+                                                                                                        data-bs-target="#exampleDelete{{ $vacant->id }}"><i
+                                                                                                            class="mdi mdi-delete"></i>
+
+                                                                                                    </button>
+
+
                                                                                                 </td>
 
                                                                                             </tr>
@@ -149,463 +149,9 @@
                                                         <!-- end card-body-->
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="posts" role="tabpanel"
-                                                    aria-labelledby="v-pills-profile-tab">
-                                                    <div class="">
-                                                        <div class="">
-                                                            <div class="row justify-content-between mb-2">
-                                                                <div class="col-auto">
-                                                                    <form>
-                                                                        <div class="mb-2">
-                                                                            <label for="inputPassword2"
-                                                                                class="visually-hidden">Search</label>
-                                                                            <input type="search" class="form-control"
-                                                                                id="inputPassword2"
-                                                                                placeholder="Search...">
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="text-sm-end">
-                                                                        <button type="button"
-                                                                            class="btn btn-primary waves-effect waves-light mb-2"
-                                                                            data-bs-toggle="modal"
-                                                                            data-bs-target="#post-vacant-modal">Publish
-                                                                            Vacants
+                                               
 
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <div class="card">
-                                                                        <div class="card-body">
-
-                                                                            <table id="basic-datatable"
-                                                                                class="table dt-responsive nowrap w-100">
-                                                                                <thead>
-                                                                                    <tr>
-                                                                                        <th>Post Name</th>
-                                                                                        <th>Post category</th>
-                                                                                        <th>Location</th>
-                                                                                        <th>Application Date</th>
-                                                                                        <th>Education Level</th>
-                                                                                        <th>Education Program</th>
-                                                                                        <th>Others</th>
-                                                                                        <th>status</th>
-                                                                                        <th>Action</th>
-                                                                                    </tr>
-                                                                                </thead>
-
-
-                                                                                <tbody>
-                                                                                    @if (!empty($posts))
-
-                                                                                    @foreach ($posts ?? [] as $post)
-                                                                                        <tr>
-                                                                                            <td>{{ $post->vacant->name }}
-                                                                                            </td>
-                                                                                            <td>{{ $post->vacant_category }}
-                                                                                            </td>
-                                                                                            <td>{{ $post->vacant->location }}
-                                                                                            </td>
-                                                                                            <td>{{ $post->end_date }}
-                                                                                            </td>
-                                                                                            <td>{{ $post->education_levels }}
-                                                                                            </td>
-                                                                                            <td>{{ $post->education_names }}
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <span><b>Gender:</b>{{ $post->gender }}</span>
-                                                                                                <span><b>Experience:</b>{{ $post->year_experience }}</span>
-                                                                                                <span><b>Age:</b>{{ $post->age_range }}</span>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <span
-                                                                                                    class="btn btn-success btn-xs text-white">Active</span>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <form
-                                                                                                    action="{{ route('delete_post', ['id' => $post->id]) }}"
-                                                                                                    method="POST">
-                                                                                                    @csrf
-                                                                                                    @method('DELETE')
-                                                                                                    <button
-                                                                                                        type="submit"
-                                                                                                        class="btn btn-danger btn-xs"><i
-                                                                                                            class="mdi mdi-delete"></i></button>
-                                                                                                </form>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    @endforeach
-
-                                                                                    @else
-                                                                                    <tr>
-                                                                                        <td colspan="7">No posts
-                                                                                            found.</td>
-                                                                                    </tr>
-                                                                                @endif
-
-
-                                                                                </tbody>
-                                                                            </table>
-
-                                                                        </div> <!-- end card body-->
-                                                                    </div> <!-- end card -->
-                                                                </div><!-- end col-->
-                                                            </div>
-                                                            <!-- end row-->
-
-
-
-
-                                                        </div>
-                                                        <!-- end card-body-->
-                                                    </div>
-                                                </div>
-
-                                                <div class="tab-pane fade" id="posts" role="tabpanel"
-                                                    aria-labelledby="v-pills-messages-tab">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="row justify-content-between mb-2">
-                                                                <div class="col-auto">
-                                                                    <form>
-                                                                        <div class="mb-2">
-                                                                            <label for="inputPassword2"
-                                                                                class="visually-hidden">Search</label>
-                                                                            <input type="search" class="form-control"
-                                                                                id="inputPassword2"
-                                                                                placeholder="Search...">
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-
-
-                                                            </div>
-
-                                                            <div class="table-responsive">
-                                                                <table
-                                                                    class="table table-centered table-nowrap table-hover mb-0">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Basic Info</th>
-                                                                            <th>Phone</th>
-                                                                            <th>Email</th>
-                                                                            <th>Company</th>
-                                                                            <th>Created Date</th>
-                                                                            <th style="width: 82px;">Action</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        {{-- <tr>
-                                                                                <td class="table-user">
-                                                                                    <img src="../assets/images/users/user-4.jpg"
-                                                                                        alt="table-user"
-                                                                                        class="me-2 rounded-circle">
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="text-body fw-semibold">Paul
-                                                                                        J. Friend</a>
-                                                                                </td>
-                                                                                <td>
-                                                                                    937-330-1634
-                                                                                </td>
-                                                                                <td>
-                                                                                    pauljfrnd@jourrapide.com
-                                                                                </td>
-                                                                                <td>
-                                                                                    Vine Corporation
-                                                                                </td>
-                                                                                <td>
-                                                                                    07/07/2018
-                                                                                </td>
-                                                                                <td>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-square-edit-outline"></i></a>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-delete"></i></a>
-                                                                                </td>
-                                                                            </tr>
-
-                                                                            <tr>
-                                                                                <td class="table-user">
-                                                                                    <img src="../assets/images/users/user-3.jpg"
-                                                                                        alt="table-user"
-                                                                                        class="me-2 rounded-circle">
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="text-body fw-semibold">Bryan
-                                                                                        J. Luellen</a>
-                                                                                </td>
-                                                                                <td>
-                                                                                    215-302-3376
-                                                                                </td>
-                                                                                <td>
-                                                                                    bryuellen@dayrep.com
-                                                                                </td>
-                                                                                <td>
-                                                                                    Blue Motors
-                                                                                </td>
-                                                                                <td>
-                                                                                    09/12/2018
-                                                                                </td>
-                                                                                <td>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-square-edit-outline"></i></a>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-delete"></i></a>
-                                                                                </td>
-                                                                            </tr>
-
-                                                                            <tr>
-                                                                                <td class="table-user">
-                                                                                    <img src="../assets/images/users/user-3.jpg"
-                                                                                        alt="table-user"
-                                                                                        class="me-2 rounded-circle">
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="text-body fw-semibold">Kathryn
-                                                                                        S. Collier</a>
-                                                                                </td>
-                                                                                <td>
-                                                                                    828-216-2190
-                                                                                </td>
-                                                                                <td>
-                                                                                    collier@jourrapide.com
-                                                                                </td>
-                                                                                <td>
-                                                                                    Arcanetworks
-                                                                                </td>
-                                                                                <td>
-                                                                                    06/30/2018
-                                                                                </td>
-                                                                                <td>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-square-edit-outline"></i></a>
-                                                                                    <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-delete"></i></a>
-                                                                                </td>
-                                                                            </tr> --}}
-
-
-
-
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-
-                                                            <ul
-                                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Previous">
-                                                                        <span aria-hidden="true">«</span>
-                                                                        <span class="visually-hidden">Previous</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="page-item active"><a class="page-link"
-                                                                        href="javascript: void(0);">1</a></li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">2</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">3</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">4</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">5</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Next">
-                                                                        <span aria-hidden="true">»</span>
-                                                                        <span class="visually-hidden">Next</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </div>
-                                                        <!-- end card-body-->
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
-                                                    aria-labelledby="v-pills-messages-tab">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="row justify-content-between mb-2">
-                                                                <div class="col-auto">
-                                                                    <form>
-                                                                        <div class="mb-2">
-                                                                            <label for="inputPassword2"
-                                                                                class="visually-hidden">Search</label>
-                                                                            <input type="search" class="form-control"
-                                                                                id="inputPassword2"
-                                                                                placeholder="Search...">
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-
-
-                                                            </div>
-
-                                                            <div class="table-responsive">
-                                                                <table
-                                                                    class="table table-centered table-nowrap table-hover mb-0">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Basic Info</th>
-                                                                            <th>Phone</th>
-                                                                            <th>Email</th>
-                                                                            <th>Company</th>
-                                                                            <th>Created Date</th>
-                                                                            <th style="width: 82px;">Action</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td class="table-user">
-                                                                                <img src="../assets/images/users/user-4.jpg"
-                                                                                    alt="table-user"
-                                                                                    class="me-2 rounded-circle">
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="text-body fw-semibold">Paul
-                                                                                    J. Friend</a>
-                                                                            </td>
-                                                                            <td>
-                                                                                937-330-1634
-                                                                            </td>
-                                                                            <td>
-                                                                                pauljfrnd@jourrapide.com
-                                                                            </td>
-                                                                            <td>
-                                                                                Vine Corporation
-                                                                            </td>
-                                                                            <td>
-                                                                                07/07/2018
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
-                                                                            </td>
-                                                                        </tr>
-
-                                                                        <tr>
-                                                                            <td class="table-user">
-                                                                                <img src="../assets/images/users/user-3.jpg"
-                                                                                    alt="table-user"
-                                                                                    class="me-2 rounded-circle">
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="text-body fw-semibold">Bryan
-                                                                                    J. Luellen</a>
-                                                                            </td>
-                                                                            <td>
-                                                                                215-302-3376
-                                                                            </td>
-                                                                            <td>
-                                                                                bryuellen@dayrep.com
-                                                                            </td>
-                                                                            <td>
-                                                                                Blue Motors
-                                                                            </td>
-                                                                            <td>
-                                                                                09/12/2018
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
-                                                                            </td>
-                                                                        </tr>
-
-                                                                        <tr>
-                                                                            <td class="table-user">
-                                                                                <img src="../assets/images/users/user-3.jpg"
-                                                                                    alt="table-user"
-                                                                                    class="me-2 rounded-circle">
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="text-body fw-semibold">Kathryn
-                                                                                    S. Collier</a>
-                                                                            </td>
-                                                                            <td>
-                                                                                828-216-2190
-                                                                            </td>
-                                                                            <td>
-                                                                                collier@jourrapide.com
-                                                                            </td>
-                                                                            <td>
-                                                                                Arcanetworks
-                                                                            </td>
-                                                                            <td>
-                                                                                06/30/2018
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-square-edit-outline"></i></a>
-                                                                                <a href="javascript:void(0);"
-                                                                                    class="action-icon"> <i
-                                                                                        class="mdi mdi-delete"></i></a>
-                                                                            </td>
-                                                                        </tr>
-
-
-
-
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-
-                                                            <ul
-                                                                class="pagination pagination-rounded justify-content-end mb-0 mt-2">
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Previous">
-                                                                        <span aria-hidden="true">«</span>
-                                                                        <span class="visually-hidden">Previous</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="page-item active"><a class="page-link"
-                                                                        href="javascript: void(0);">1</a></li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">2</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">3</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">4</a>
-                                                                </li>
-                                                                <li class="page-item"><a class="page-link"
-                                                                        href="javascript: void(0);">5</a>
-                                                                </li>
-                                                                <li class="page-item">
-                                                                    <a class="page-link" href="javascript: void(0);"
-                                                                        aria-label="Next">
-                                                                        <span aria-hidden="true">»</span>
-                                                                        <span class="visually-hidden">Next</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-
-                                                        </div>
-                                                        <!-- end card-body-->
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
                                                     aria-labelledby="v-pills-settings-tab">
                                                     <div class="card">
@@ -633,7 +179,7 @@
                                                                         <tr>
                                                                             <th>Basic Info</th>
                                                                             <th>Phone</th>
-                                                                            <th>Email</th>
+                                                                            <th>EmailBDB</th>
                                                                             <th>Company</th>
                                                                             <th>Created Date</th>
                                                                             <th style="width: 82px;">Action</th>
@@ -1012,6 +558,164 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <div class="modal fade" id="exampleDelete{{ $vacant->id }}" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>{{ $vacant->name }}</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <span class="text-larger">
+                        <h4 style="font-size:20px">Are you sure delete ?.<b>{{ $vacant->name }}</b></h4>
+                    </span>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+
+                            </div>
+                            <div class="col-md-6">
+                                <form action="{{ route('delete_vacant', $vacant->id) }}" method="POST"
+                                    enctype="multipart/form-data" class="needs-validation" novalidate>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-primary btn-block" type="submit">Delete</button>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade" id="exampleModal{{ $vacant->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Registration for Job Information </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+
+                    <h4>JOB INFORMATION</h4>
+                    <form action="{{ route('vacant_update', $vacant->id) }}" method="POST"
+                        enctype="multipart/form-data" class="needs-validation" novalidate>
+                        @csrf
+                        @method('PUT')
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Job Title <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="field-1" name="name"
+                                        value="{{ $vacant->name }}" required placeholder="job title">
+                                    <div class="invalid-feedback">
+                                        Please provide a vacant title.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-2" class="form-label">Location</label>
+                                    <input type="text" class="form-control" name="location" id="field-2"
+                                        value="{{ $vacant->location }}" required placeholder="singida">
+                                    <div class="invalid-feedback">
+                                        Please provide a vacant location.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Job Description <span
+                                            class="text-danger">*</span></label>
+                                    <textarea name="description" id="" cols="15" rows="5" value="{{ $vacant->description }}"
+                                        class="form-control" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please provide a summry description.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">More Description Document <span
+                                            class="text-danger">*</span></label>
+                                    <input type="file" class="form-control" name="job_file" id="field-2"
+                                        value="{{ $vacant->job_file }}" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a description file.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>JOB POSITION</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-12">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label for="field-4" class="form-label">Position Name</label>
+                                            <input type="text" class="form-control" name="position_name" required
+                                                id="field-4" placeholder="first name"
+                                                value="{{ $vacant->position_name }}">
+                                            <div class="invalid-feedback">
+                                                Please provide a position name.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label for="field-6" class="form-label">More Description Document</label>
+                                            <input type="file" class="form-control" id="field-6" required
+                                                name="position_file" value="{{ $vacant->position_file }}">
+                                            <div class="invalid-feedback">
+                                                Please provide a positon file.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-5" class="form-label">Position Discription</label>
+                                    <textarea name="position_description" id="" cols="15" rows="5" class="form-control" required
+                                        name="{{ $vacant->position_description }}"></textarea>
+                                    <div class="invalid-feedback">
+                                        Please provide a positon description.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 d-grid">
+                                <button class="btn btn-primary btn-block" type="submit">Update Vacant</button>
+
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 
     <div class="modal fade" id="register-vacant-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">

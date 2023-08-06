@@ -100,7 +100,7 @@
                     <img src="{{ asset('/public/images/' . Auth::user()->profile_image) }}" alt="user-image" class="rounded-circle">
                     <span class="pro-user-name ms-1">
                         {{ Auth::user()->name }} <i class="mdi mdi-chevron-down"></i> 
-               </span>
+               </span>  
                 </a>
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
                     <!-- item-->

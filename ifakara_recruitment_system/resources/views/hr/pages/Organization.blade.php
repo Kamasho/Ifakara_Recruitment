@@ -116,26 +116,22 @@
                                                                                                 </td>
 
                                                                                                 <td class="text-sm">
-                                                                                                    <a href="javascript:void(0);"
-                                                                                                        class="action-icon">
-                                                                                                        {{-- <i
-                                                                                                            class="mdi mdi-square-edit-outline"></i></a> --}}
-                                                                                                    <a
-                                                                                                        href="javascript:void(0);"class="action-icon">
+                                                                                                    <button
+                                                                                                        type="button"
+                                                                                                        class="btn btn-success waves-effect waves-light mb-2"
+                                                                                                        data-bs-toggle="modal"
+                                                                                                        data-bs-target="#exampleUpdate{{ $institution->id }}"><i
+                                                                                                            class="mdi mdi-pencil"></i>
 
-                                                                                                        <form
-                                                                                                            action="{{ route('delete_institute', ['id' => $institution->id]) }}"
-                                                                                                            method="POST">
-                                                                                                            @csrf
-                                                                                                            @method('DELETE')
-                                                                                                            <button
-                                                                                                                type="submit"
-                                                                                                                class="btn btn-danger btn-xs">
-                                                                                                                <i
-                                                                                                                    class="mdi mdi-delete"></i></button>
-                                                                                                        </form>
+                                                                                                    </button>
+                                                                                                    <button
+                                                                                                        type="button"
+                                                                                                        class="btn btn-danger  btn-sx waves-effect waves-light mb-2"
+                                                                                                        data-bs-toggle="modal"
+                                                                                                        data-bs-target="#exampleDelete{{ $institution->id }}"><i
+                                                                                                            class="mdi mdi-delete"></i>
 
-
+                                                                                                    </button>
                                                                                                 </td>
                                                                                             </tr>
                                                                                         @endforeach
@@ -217,31 +213,32 @@
                                                                                 </td>
                                                                                 <td>{{ $headinstitution->mname }}</td>
                                                                                 <td>{{ $headinstitution->lname }}</td>
-                                                                                <td>{{ $headinstitution->contact }}</td>
+                                                                                <td>{{ $headinstitution->contact }}
+                                                                                </td>
                                                                                 <td>{{ $headinstitution->institution->name }}
                                                                                 </td>
 
 
                                                                                 <td class="text-sm">
 
-                                                                                    {{-- <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-square-edit-outline"></i></a> --}}
-                                                                                    {{-- <a href="javascript:void(0);"
-                                                                                        class="action-icon"> <i
-                                                                                            class="mdi mdi-delete"></i></a> --}}
-                                                                                            <a
-                                                                                            href="javascript:void(0);"class="action-icon">
-                                                                                    <form
-                                                                                        action="{{ route('delete_head_institute', ['id' => $headinstitution->id]) }}"
-                                                                                        method="POST">
-                                                                                        @csrf
-                                                                                        @method('DELETE')
-                                                                                        <button type="submit"
-                                                                                            class="btn btn-danger btn-xs">
-                                                                                            <i
-                                                                                                class="mdi mdi-delete"></i></button>
-                                                                                    </form>
+                                                                                  
+
+                                                                                        <button
+                                                                                        type="button"
+                                                                                        class="btn btn-success waves-effect waves-light mb-2"
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#exampleUpdatehead{{ $headinstitution->id }}"><i
+                                                                                            class="mdi mdi-pencil"></i>
+
+                                                                                    </button>
+                                                                                    <button
+                                                                                        type="button"
+                                                                                        class="btn btn-danger  btn-sx waves-effect waves-light mb-2"
+                                                                                        data-bs-toggle="modal"
+                                                                                        data-bs-target="#exampleDeletehead{{ $headinstitution->id }}"><i
+                                                                                            class="mdi mdi-delete"></i>
+
+                                                                                    </button>
                                                                                 </td>
                                                                             </tr>
                                                                         @endforeach
@@ -393,6 +390,163 @@
     </div>
     <!-- END wrapper -->
 
+    <div class="modal fade" id="exampleDeletehead{{ $headinstitution->id }}" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Delete The Institution</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <span class="text-larger">
+                        <h4 style="font-size:20px">Are you sure delete ?.<b>{{ $headinstitution->fname }} {{$headinstitution->lname}}</b> .</h4>
+                    </span>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+
+                            </div>
+                            <div class="col-md-6">
+                                <form action="{{ route('delete_head_institute', ['id' => $headinstitution->id]) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-block">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <!-- /.modal -->
+    <div class="modal fade" id="exampleDelete{{ $institution->id }}" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Delete The Institution</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <span class="text-larger">
+                        <h4 style="font-size:20px">Are you sure delete ?.<b>{{ $institution->name }} </b> .</h4>
+                    </span>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+
+                            </div>
+                            <div class="col-md-6">
+                                <form action="{{ route('delete_institute', ['id' => $institution->id]) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-block">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade" id="exampleUpdate{{ $institution->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Update Information Instituions </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+
+                    <h4>INSTITUTIONS INFORMATION</h4>
+                    <form action="{{ route('update_institute', $institution->id) }}" method="POST" enctype="multipart/form-data"
+                        class="needs-validation" novalidate id="add-institute-form">
+                        @csrf
+                        @method('PUT')
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Institutions Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="field-1" name="name" value="{{$institution->name}}"
+                                        required placeholder="Malecela Secondary School">
+                                    <div class="invalid-feedback">
+                                        Please correct institution name.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-2" class="form-label">Location</label>
+                                    <input type="text" parsley-trigger="change" class="form-control"
+                                        name="location" id="field-2" required placeholder="Ifakara Morogoro" value="{{$institution->location}}">
+                                    <div class="invalid-feedback">
+                                        Please enter location.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Institution Email</label>
+                                    <input type="email" parsley-trigger="change" class="form-control"
+                                        name="email" id="field-2" required
+                                        placeholder="malecela.school@ifakaracatholic" value="{{$institution->email}}">
+                                    <div class="invalid-feedback">
+                                        Please enter email.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label">Institutions Category</label>
+                                    <select class="form-select" parsley-trigger="change" id="example-select"
+                                        name="category">
+                                        <option value="school">School</option>
+                                        <option value="health">Health Institions</option>
+                                        <option value="parish">Parish</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <button class="btn btn-primary btn-block"
+                                    type="submit"id="submit-btn">Update Information</button>
+
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="position-modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -485,6 +639,108 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+
+    <div class="modal fade" id="exampleUpdatehead{{$headinstitution->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Assign Head of Institions </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h4>Person Information</h4>
+                    <form action="{{ route('update_head_institute', $headinstitution->id) }}" method="post" enctype="multipart/form-data"
+                        class="needs-validation" novalidate>
+                        @csrf
+                        @method('PUT')
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-4" class="form-label">First name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="field-4" required
+                                        placeholder="first name" name="fname" value="{{$headinstitution->fname}}">
+                                    <div class="invalid-feedback">
+                                        Please enter a your first name.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Middle name</label>
+                                    <input type="text" class="form-control" id="field-1" name="mname"
+                                        required placeholder="middle name"value={{$headinstitution->mname}} >
+                                    <div class="invalid-feedback">
+                                        Please enter a your middle name.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-5" class="form-label">Last name</label>
+                                    <input type="text" class="form-control" id="field-5" required
+                                        placeholder="last name" name="lname" value="{{$headinstitution->lname}}">
+                                    <div class="invalid-feedback">
+                                        Please enter a your last name.
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            {{-- <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-6" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="field-6" name="email"
+                                        placeholder="email">
+                                </div>
+                            </div> --}}
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-1" class="form-label">Contanct</label>
+                                    <input type="number" class="form-control" id="field-1" name="contact"
+                                        required placeholder="phone number" name="{{$headinstitution->contact}}">
+                                    <div class="invalid-feedback">
+                                        Please enter a your phone number.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label">Institutions Name</label>
+                                    {{-- {{$institutions}} --}}
+                                    <select class="form-select" id="example-select" name="institute_id">
+                                        @foreach ($institutions as $institution)
+                                            <option value="{{ $institution->id }}">{{ $institution->name }}</option>
+                                        @endforeach
+
+
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <button type="submit" class="btn btn-primary btn-block">Assign</button>
+                    </form>
+
+
+                </div>
+                {{-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> --}}
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 
     <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -642,55 +898,4 @@
 
     @include('assets.js')
 
-    {{-- for toostaer massage --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-    <script>
-        // Handle form submission
-        document.getElementById('add-institute-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-    
-            // Disable the submit button and show loading animation
-            document.getElementById('submit-btn').disabled = true;
-            document.getElementById('submit-btn').innerHTML = 'Loading...';
-    
-            // Perform the form submission using AJAX
-            let form = event.target;
-            let formData = new FormData(form);
-    
-            fetch(form.action, {
-                method: form.method,
-                body: formData
-            })
-            .then(function (response) {
-                if (response.ok) {
-                    // Clear form fields
-                    form.reset();
-    
-                    // Show success toast notification
-                    toastr.success('Institution registered successfully.');
-    
-                    // Enable the submit button
-                    document.getElementById('submit-btn').disabled = false;
-                    document.getElementById('submit-btn').innerHTML = 'Register';
-                } else {
-                    // Show error toast notification
-                    toastr.error('Failed to register institution.');
-    
-                    // Enable the submit button
-                    document.getElementById('submit-btn').disabled = false;
-                    document.getElementById('submit-btn').innerHTML = 'Register';
-                }
-            })
-            .catch(function (error) {
-                console.error(error);
-    
-                // Show error toast notification
-                toastr.error('An error occurred while registering institution.');
-    
-                // Enable the submit button
-                document.getElementById('submit-btn').disabled = false;
-                document.getElementById('submit-btn').innerHTML = 'Register';
-            });
-        });
-    </script> --}}
+

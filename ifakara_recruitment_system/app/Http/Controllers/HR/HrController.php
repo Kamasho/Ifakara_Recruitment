@@ -8,6 +8,7 @@ use App\Models\HeadInstitute;
 use App\Models\institution;
 use App\Models\Post;
 use App\Models\Staff;
+use App\Models\Upload;
 use App\Models\Vacant;
 
 
@@ -23,6 +24,7 @@ class HrController extends Controller
         $vacants = Vacant::get();
         $totalStaffs = Staff::count();
         $totalPosts = Post::count();
+        $totalUploads = Upload::count();
         $posts = Post::latest()->take(5)->get();
         $institutions = institution::get();
         return view('hr.home',[
@@ -31,7 +33,8 @@ class HrController extends Controller
             'institutions'=>$institutions,
             'totalStaffs'=>$totalStaffs,
             'totalPosts'=>$totalPosts,
-            'posts'=>$posts
+            'posts'=>$posts,
+            'totalUploads'=>$totalUploads
         ]);
     }
 

@@ -27,9 +27,10 @@ use App\Http\Controllers\HR\institutionController;
 use App\Http\Controllers\HR\HeadInstituteController;
 use App\Http\Controllers\HR\StaffController;
 use App\Http\Controllers\HR\JobsController;
+use App\Http\Controllers\HR\PostController;
 use App\Http\Controllers\GS\StaffGSController;
 use App\Http\Controllers\Auth\ProfileController;
-
+use App\Models\Post;
 use GuzzleHttp\Psr7\UploadedFile;
 
 /*
@@ -70,17 +71,26 @@ Route::middleware(['auth', 'isHr'])->group(function () {
 
     Route::get('/hr/job/received', [JobsController::class, 'receivedquery'])->name('received');
     Route::post('/hr/jobs', [JobsController::class, 'vacant_registration'])->name('vacant_registration');
-    Route::delete('/hr/jobs/vacant/{id}',[JobsController::class,'delete_vacant'])->name('delete_vacant');
-    Route::delete('/hr/jobs/post/{id}',[JobsController::class,'delete_post'])->name('delete_post');
+    Route::put('/hr/jobs/vacant/{id}', [JobsController::class, 'vacant_update'])->name('vacant_update');
+    Route::delete('/hr/jobs/vacant/{id}', [JobsController::class, 'delete_vacant'])->name('delete_vacant');
+    // Route::delete('/hr/jobs/post/{id}', [JobsController::class, 'delete_post'])->name('delete_post');
+    // Route::post('/hr/jobs/vacants', [JobsController::class, 'publish_vacant'])->name('publish_vacant');
 
-    Route::post('/hr/jobs/vacants', [JobsController::class, 'publish_vacant'])->name('publish_vacant');
+
+    //post  publications
+    Route::get('/hr/post/', [PostController::class, 'index'])->name('publish');
+    Route::post('/hr/post/publication', [PostController::class, 'store'])->name('publish_vacant');
+    Route::put('/hr/post/publication/{id}', [PostController::class, 'update'])->name('update_post');
+    Route::delete('/hr/post/post/{id}', [PostController::class, 'destroy'])->name('delete_post');
+
+
 
 
     //uploads uploads
     Route::get('/hr/uploads', [UploadController::class, 'index'])->name('uploads');
-    Route::post('/hr/uploads',[UploadController::class,'Upload_store'])->name('uploads_documents');
-    Route::delete('/hr/uploads/{id}',[UploadController::class,'uploads_destroy'])->name('uploads_destroy');
-    Route::put('/hr/uploads/updates/{id}',[UploadController::class,'upload_update'])->name('uploads_updates');
+    Route::post('/hr/uploads', [UploadController::class, 'Upload_store'])->name('uploads_documents');
+    Route::delete('/hr/uploads/{id}', [UploadController::class, 'uploads_destroy'])->name('uploads_destroy');
+    Route::put('/hr/uploads/updates/{id}', [UploadController::class, 'upload_update'])->name('uploads_updates');
 
 
     Route::get('/hr/organinzation', [HrController::class, 'Organization'])->name('organization');

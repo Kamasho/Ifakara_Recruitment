@@ -18,6 +18,7 @@ class JobsController extends Controller
     {
         $institutions = institution::get();
         $vacants = Vacant::get();
+        $vacant = Vacant::get();
         $education_levels = Education_level::get();
         $education_categories = Education_category::get();
         $education_names = Education_name::get();
@@ -26,6 +27,7 @@ class JobsController extends Controller
             'hr.pages.jobs',
             [
                 'vacants' => $vacants,
+                'vacant'=>$vacant,
                 'institutions' => $institutions,
                 'education_levels' => $education_levels,
                 'education_categories' => $education_categories,
@@ -133,6 +135,52 @@ class JobsController extends Controller
         }
 
         return back()->with('error', 'Failed to save vacant position.');
+    }
+
+    public function vacant_update(Request $request,$id){
+        
+        $validatedData = Vacant::find($id);
+        $validatedData->name = $request->input('name');
+        $validatedData->location = $request->input('location');
+        $validatedData->description = $request->input('description');
+        $validatedData->position_name = $request->input('position_name');
+        $validatedData->position_description = $request->input('position_description');
+
+        if ($request->hasFile('position_file')) {
+            $file = $request->file('position_file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('public/documents', $filename);
+            $validatedData->position_file = $filePath;
+        }
+
+        if ($request->hasFile('job_file')) {
+            $file = $request->file('job_file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('public/documents', $filename);
+            $validatedData->job_file = $filePath;
+        } else {
+            $validatedData->job_file = ''; // Assign default value
+        }
+
+        if ($validatedData->save()) {
+            $institutions = institution::get();
+            $vacants = Vacant::get();
+            $education_levels = Education_level::get();
+            $education_categories = Education_category::get();
+            $education_names = Education_name::get();
+            $posts = Post::get();
+            return view('hr.pages.jobs', [
+                'vacants' => $vacants,
+                'institutions' => $institutions,
+                'education_levels' => $education_levels,
+                'education_categories' => $education_categories,
+                'education_names' => $education_names,
+                 'posts' => $posts
+
+            ])->with('jobs', 'successful');
+        }
+
+
     }
 
     public function publish_vacant(Request $request)

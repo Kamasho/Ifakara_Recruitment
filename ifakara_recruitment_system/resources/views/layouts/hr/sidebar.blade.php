@@ -101,6 +101,13 @@
                         <span> Staff </span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{route('publish')}}">
+                        <i data-feather="cloud"></i>
+                        <span> Posts </span>
+                    </a>
+                </li>
                
                 <li>
                     <a href="{{route('applicants')}}">
