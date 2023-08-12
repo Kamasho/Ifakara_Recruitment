@@ -64,6 +64,7 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::post('/hr/staff', [StaffController::class, 'store'])->name('staff_registration');
     Route::delete('/hr/staff/{id}', [StaffController::class, 'delete'])->name('staff_delete');
     Route::get('/hr/staff/{id}/edit', [StaffController::class, 'edit'])->name('staff_edit');
+    Route::get('/hr/staff/show/{id}',[StaffController::class,'single_staff'])->name('single_staff');
     Route::put('/hr/staff/{id}', [StaffController::class, 'update'])->name('staff_update');
     // jobs contrhollers
 
