@@ -71,7 +71,15 @@ class HeadInstituteController extends Controller
      */
     public function show($id)
     {
-        //
+        $institution = institution::get();
+        $headinstitution = HeadInstitute::get();
+        $headinstitution = HeadInstitute::find($id);
+
+        return view('hr.pages.components.single_head',[
+            'institution' => $institution,
+            'headinstitution' => $headinstitution,
+        
+        ]);
     }
 
     /**

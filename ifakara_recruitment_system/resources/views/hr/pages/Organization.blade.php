@@ -116,22 +116,9 @@
                                                                                                 </td>
 
                                                                                                 <td class="text-sm">
-                                                                                                    <button
-                                                                                                        type="button"
-                                                                                                        class="btn btn-success waves-effect waves-light mb-2"
-                                                                                                        data-bs-toggle="modal"
-                                                                                                        data-bs-target="#exampleUpdate{{ $institution->id }}"><i
-                                                                                                            class="mdi mdi-pencil"></i>
-
-                                                                                                    </button>
-                                                                                                    <button
-                                                                                                        type="button"
-                                                                                                        class="btn btn-danger  btn-sx waves-effect waves-light mb-2"
-                                                                                                        data-bs-toggle="modal"
-                                                                                                        data-bs-target="#exampleDelete{{ $institution->id }}"><i
-                                                                                                            class="mdi mdi-delete"></i>
-
-                                                                                                    </button>
+                                                                                                  
+                                                                                                    <a href="{{route('show_institute',$institution->id)}}" class="btn btn-info btn-xs"> <i class="mdi mdi-eye"></i></a>
+                                                                    
                                                                                                 </td>
                                                                                             </tr>
                                                                                         @endforeach
@@ -220,25 +207,9 @@
 
 
                                                                                 <td class="text-sm">
-
-                                                                                  
-
-                                                                                        <button
-                                                                                        type="button"
-                                                                                        class="btn btn-success btn-xs waves-effect waves-light mb-2"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleUpdatehead{{ $headinstitution->id }}"><i
-                                                                                            class="mdi mdi-pencil"></i>
-
-                                                                                    </button>
-                                                                                    <button
-                                                                                        type="button"
-                                                                                        class="btn btn-danger  btn-xs waves-effect waves-light mb-2"
-                                                                                        data-bs-toggle="modal"
-                                                                                        data-bs-target="#exampleDeletehead{{ $headinstitution->id }}"><i
-                                                                                            class="mdi mdi-delete"></i>
-
-                                                                                    </button>
+                                                                                <a href="{{route('show_head_institute',$headinstitution->id)}}" class="btn btn-info btn-xs"><i class="mdi mdi-eye"></i></a>
+                                                                                                                                              
+                                                                        
                                                                                 </td>
                                                                             </tr>
                                                                         @endforeach
@@ -639,107 +610,6 @@
     </div>
     <!-- /.modal -->
 
-    <div class="modal fade" id="exampleUpdatehead{{$headinstitution->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Assign Head of Institions </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <h4>Person Information</h4>
-                    <form action="{{ route('update_head_institute', $headinstitution->id) }}" method="post" enctype="multipart/form-data"
-                        class="needs-validation" novalidate>
-                        @csrf
-                        @method('PUT')
-                        <div class="row">
-
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="field-4" class="form-label">First name <span
-                                            class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="field-4" required
-                                        placeholder="first name" name="fname" value="{{$headinstitution->fname}}">
-                                    <div class="invalid-feedback">
-                                        Please enter a your first name.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="field-1" class="form-label">Middle name</label>
-                                    <input type="text" class="form-control" id="field-1" name="mname"
-                                        required placeholder="middle name"value={{$headinstitution->mname}} >
-                                    <div class="invalid-feedback">
-                                        Please enter a your middle name.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="field-5" class="form-label">Last name</label>
-                                    <input type="text" class="form-control" id="field-5" required
-                                        placeholder="last name" name="lname" value="{{$headinstitution->lname}}">
-                                    <div class="invalid-feedback">
-                                        Please enter a your last name.
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="row">
-                            {{-- <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="field-6" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="field-6" name="email"
-                                        placeholder="email">
-                                </div>
-                            </div> --}}
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="field-1" class="form-label">Contanct</label>
-                                    <input type="number" class="form-control" id="field-1" name="contact"
-                                        required placeholder="phone number" name="{{$headinstitution->contact}}">
-                                    <div class="invalid-feedback">
-                                        Please enter a your phone number.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-
-                                <div class="mb-3">
-                                    <label for="example-select" class="form-label">Institutions Name</label>
-                                    {{-- {{$institutions}} --}}
-                                    <select class="form-select" id="example-select" name="institute_id">
-                                        @foreach ($institutions as $institution)
-                                            <option value="{{ $institution->id }}">{{ $institution->name }}</option>
-                                        @endforeach
-
-
-
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <button type="submit" class="btn btn-primary btn-block">Assign</button>
-                    </form>
-
-
-                </div>
-                {{-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> --}}
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
 
     <div class="modal fade" id="custom-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">

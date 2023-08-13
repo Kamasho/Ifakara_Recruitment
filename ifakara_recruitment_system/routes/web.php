@@ -100,12 +100,14 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::get('hr/applicants', [HrController::class, 'Applicants'])->name('applicants');
     //institute
     Route::get('/institute', [institutionController::class, 'index'])->name('institute');
+    Route::get('/instititue/show/{id}',[institutionController::class,'show'])->name('show_institute');
     Route::post('/institute/add_institute', [institutionController::class, 'store'])->name('add_institute');
     Route::delete('/institute/delete_institute/{id}', [institutionController::class, 'destroy'])->name('delete_institute');
     Route::put('/institute/update_institute/{id}', [institutionController::class, 'update'])->name('update_institute');
 
     //head institute
     Route::get('/head_institute', [HeadInstituteController::class, 'index'])->name('head_institute');
+    Route::get('/head_institute/show/{id}',[HeadInstituteController::class,'show'])->name('show_head_institute');
     Route::post('/head_institute/add_head_institute', [HeadInstituteController::class, 'store'])->name('add_head_institute');
     Route::delete('/head_institute/delete_head_institute/{id}', [HeadInstituteController::class, 'destroy'])->name('delete_head_institute');
     Route::put('/head_institute/update_head_institute/{id}', [HeadInstituteController::class, 'update'])->name('update_head_institute');
