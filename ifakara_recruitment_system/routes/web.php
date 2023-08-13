@@ -81,6 +81,7 @@ Route::middleware(['auth', 'isHr'])->group(function () {
 
     //post  publications
     Route::get('/hr/post/', [PostController::class, 'index'])->name('publish');
+    Route::get('hr/post/show/{id}', [PostController::class, 'show'])->name('show_post');
     Route::post('/hr/post/', [PostController::class, 'store'])->name('publish_vacant');
     Route::put('/hr/post/publication/{id}', [PostController::class, 'update'])->name('update_post');
     Route::delete('/hr/post/post/{id}', [PostController::class, 'destroy'])->name('delete_post');
