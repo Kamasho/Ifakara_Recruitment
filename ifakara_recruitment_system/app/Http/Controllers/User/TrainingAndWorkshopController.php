@@ -15,7 +15,8 @@ class TrainingAndWorkshopController extends Controller
      */
     public function index()
     {
-        return view('user.trainingandworkshop');
+        $data = TrainingAndWorkshop::all();
+        return view('user.trainingandworkshop', compact('data'));
     }
 
     /**
@@ -43,7 +44,7 @@ class TrainingAndWorkshopController extends Controller
         $data->start_date = $request->input('start_date');
         $data->end_date = $request->input('end_date');
         if($data->save()){
-            return redirect('/')->with('status', 'Training And Workshop Added SuccessFully!');
+            return redirect('/trainingandworkshop')->with('status', 'Training And Workshop Added SuccessFully!');
         }
     }
 
@@ -85,7 +86,7 @@ class TrainingAndWorkshopController extends Controller
         $data->start_date = $request->input('start_date');
         $data->end_date = $request->input('end_date');
         $data->update();
-        return redirect('/')->with('status', 'Training And Workshop was Updated successfully!');
+        return redirect('/trainingandworkshop')->with('status', 'Training And Workshop was Updated successfully!');
     }
 
     /**
@@ -98,6 +99,6 @@ class TrainingAndWorkshopController extends Controller
     {
         $data = TrainingAndWorkshop::find($id);
         $data->delete();
-        return redirect('/')->with('statusDelete', 'Training And Workshop deleted Successfully');
+        return redirect('/trainingandworkshop')->with('statusDelete', 'Training And Workshop deleted Successfully');
     }
 }

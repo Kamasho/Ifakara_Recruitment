@@ -21,12 +21,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($data as $data)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $data->full_name }}</td>
+                            <td>{{ $data->place }}</td>
+                            <td>{{ $data->title }}</td>
+                            <td>
+                                <a href="{{ url('/referees/delete_referees/' . $data->id) }}"
+                                    class="btn btn-danger mr-2">Delete</a>
+                                <button class="btn btn-info">Update</button>
+                            </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

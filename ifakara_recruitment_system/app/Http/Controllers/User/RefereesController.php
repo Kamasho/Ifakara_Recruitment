@@ -15,7 +15,8 @@ class RefereesController extends Controller
      */
     public function index()
     {
-        return view('user.referees');
+        $data = Referees::all();
+        return view('user.referees', compact('data'));
     }
 
     /**
@@ -44,7 +45,7 @@ class RefereesController extends Controller
         $data->email = $request->input('email');
         $data->addres = $request->input('addres');
         if($data->save()){
-            return redirect('/')->with('status', 'Referees Added SuccessFully!');
+            return redirect('/referees')->with('status', 'Referees Added SuccessFully!');
         }
     }
 
@@ -87,7 +88,7 @@ class RefereesController extends Controller
         $data->email = $request->input('email');
         $data->addres = $request->input('addres');
         $data->update();
-        return redirect('/')->with('status', 'Referees was Updated successfully!');
+        return redirect('/referees')->with('status', 'Referees was Updated successfully!');
     }
 
     /**
@@ -100,6 +101,6 @@ class RefereesController extends Controller
     {
         $data = Referees::find($id);
         $data->delete();
-        return redirect('/')->with('statusDelete', 'Referees deleted Successfully');
+        return redirect('/referees')->with('statusDelete', 'Referees deleted Successfully');
     }
 }
