@@ -70,8 +70,17 @@ class institutionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+
     {
-        //
+        $institution = institution::get();
+        $headinstitution = HeadInstitute::get();
+        $institution = institution::find($id);
+
+        return view('hr.pages.components.single_institution',[
+            'institution' => $institution,
+            'headinstitution' => $headinstitution,
+        
+        ]);
     }
 
     /**

@@ -8,6 +8,7 @@ use App\Models\Staff;
 use App\Models\Vacant;
 use App\Models\institution;
 use Illuminate\Http\Request;
+use PDO;
 
 use function PHPUnit\Framework\returnSelf;
 
@@ -17,14 +18,27 @@ class StaffController extends Controller
     {
         // $jobs = Job::get();
         $staffs = Staff::get();
-        $staff=Staff::get();
+        $staff = Staff::get();
         $vacants = Vacant::get();
         $institutions = institution::get();
         return view('hr.pages.staffs', [
             'staffs' => $staffs,
             'vacants' => $vacants,
-            'staff'=>$staff,
+            'staff' => $staff,
             'institutions' => $institutions,
+        ]);
+    }
+
+    public function single_staff($id)
+    {
+        $staff = Staff::get();
+        $vacant = Vacant::get();
+        $institution = institution::get();
+        $staff = Staff::find($id);
+        return view('hr.pages.components.single_staff',[
+            'vacant' => $vacant,
+            'staff' => $staff,
+            'institution' => $institution,
         ]);
     }
 

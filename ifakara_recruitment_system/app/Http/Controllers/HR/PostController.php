@@ -30,8 +30,6 @@ class PostController extends Controller
         $education_names = Education_name::get();
         $posts = Post::with('educationLevel','educationName')->get();
         $post=Post::get();
-
-
         $currentDate = Carbon::now();
         $posts = $posts->map(function ($post) use ($currentDate) {
             $startDate = Carbon::parse($post->application_date);
@@ -151,7 +149,24 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $institution = institution::get();
+        $vacant = Vacant::get();
+        $education_level = Education_level::get();
+        $education_categorie = Education_category::get();
+        $education_name = Education_name::get();
+        $level = Post::with('educationLevel','educationName')->get();
+        $post=Post::get();
+        $post = Post::find($id);
+
+        return view('hr.pages.components.single_post' ,[
+            'institution' => $institution,
+            'vacant' => $vacant,
+            'education_level' => $education_level,
+            'education_categorie' => $education_categorie,
+            'education_name' => $education_name,
+            'level' => $level,
+            'post'=>$post
+        ]);
     }
 
     /**
