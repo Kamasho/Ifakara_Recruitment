@@ -52,27 +52,27 @@
                     <div class="row">
                         <div class="col-6 my-3">
                             <label for="">Referee Full Name</label>
-                            <input type="text" class="form-control" name="full_name">
+                            <input type="text" class="form-control" name="full_name" required>
                         </div>
                         <div class="col-6 my-3">
                             <label for="">Title</label>
-                            <input type="text" class="form-control" name="title">
+                            <input type="text" class="form-control" name="title" required>
                         </div>
                         <div class="col-6 my-3">
                             <label for="">Institution/Organization</label>
-                            <input type="text" class="form-control" name="place">
+                            <input type="text" class="form-control" name="place" required>
                         </div>
                         <div class="col-6 my-3">
                             <label for="">Email Address</label>
-                            <input type="text" class="form-control" name="email">
+                            <input type="text" class="form-control" name="email" required>
                         </div>
                         <div class="col-6 my-3">
                             <label for="">Telephone Number</label>
-                            <input type="text" class="form-control" name="phone">
+                            <input type="text" class="form-control" name="phone" required>
                         </div>
                         <div class="col-6 my-3">
                             <label for="">Address</label>
-                            <input type="text" class="form-control" name="addres">
+                            <input type="text" class="form-control" name="addres" required>
                         </div>
                     </div>
                     <div class="modal-footer">
