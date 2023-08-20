@@ -100,28 +100,10 @@
                                                                                                 <td>{{ $vacant->created_at }}
                                                                                                 </td>
                                                                                                 <td>
-                                                                                                    <button
-                                                                                                        type="button"
-                                                                                                        class="btn btn-primary waves-effect waves-light mb-2"
-                                                                                                        data-bs-toggle="modal"
-                                                                                                        data-bs-target="#exampleModal{{ $vacant->id }}"><i
-                                                                                                            class="fas fa-pencil-alt"></i>
-
-                                                                                                    </button>
-
-
-
-
-                                                                                                    <button
-                                                                                                        type="button"
-                                                                                                        class="btn btn-danger waves-effect waves-light mb-2"
-                                                                                                        data-bs-toggle="modal"
-                                                                                                        data-bs-target="#exampleDelete{{ $vacant->id }}"><i
-                                                                                                            class="mdi mdi-delete"></i>
-
-                                                                                                    </button>
-
-
+                                                                                                    <a href="{{route('show_vacant', $vacant->id)}}" class="btn  btn-info btn-xs">
+                                                                                                       <i class="fas fa-eye"></i>
+                                                                                                    </a>
+                                                                                                                                                                                               
                                                                                                 </td>
 
                                                                                             </tr>
@@ -557,165 +539,7 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal -->
-    <div class="modal fade" id="exampleDelete{{ $vacant->id }}" tabindex="-1" role="dialog"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-top modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>{{ $vacant->name }}</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <span class="text-larger">
-                        <h4 style="font-size:20px">Are you sure delete ?.<b>{{ $vacant->name }}</b></h4>
-                    </span>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-
-                            </div>
-                            <div class="col-md-6">
-                                <form action="{{ route('delete_vacant', $vacant->id) }}" method="POST"
-                                    enctype="multipart/form-data" class="needs-validation" novalidate>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-primary btn-block" type="submit">Delete</button>
-
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-
-    <div class="modal fade" id="exampleModal{{ $vacant->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Registration for Job Information </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-
-                    <h4>JOB INFORMATION</h4>
-                    <form action="{{ route('vacant_update', $vacant->id) }}" method="POST"
-                        enctype="multipart/form-data" class="needs-validation" novalidate>
-                        @csrf
-                        @method('PUT')
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-1" class="form-label">Job Title <span
-                                            class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="field-1" name="name"
-                                        value="{{ $vacant->name }}" required placeholder="job title">
-                                    <div class="invalid-feedback">
-                                        Please provide a vacant title.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-2" class="form-label">Location</label>
-                                    <input type="text" class="form-control" name="location" id="field-2"
-                                        value="{{ $vacant->location }}" required placeholder="singida">
-                                    <div class="invalid-feedback">
-                                        Please provide a vacant location.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-3" class="form-label">Job Description <span
-                                            class="text-danger">*</span></label>
-                                    <textarea name="description" id="" cols="15" rows="5" value="{{ $vacant->description }}"
-                                        class="form-control" required></textarea>
-                                    <div class="invalid-feedback">
-                                        Please provide a summry description.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-3" class="form-label">More Description Document <span
-                                            class="text-danger">*</span></label>
-                                    <input type="file" class="form-control" name="job_file" id="field-2"
-                                        value="{{ $vacant->job_file }}" required>
-                                    <div class="invalid-feedback">
-                                        Please provide a description file.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h4>JOB POSITION</h4>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="col-12">
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="field-4" class="form-label">Position Name</label>
-                                            <input type="text" class="form-control" name="position_name" required
-                                                id="field-4" placeholder="first name"
-                                                value="{{ $vacant->position_name }}">
-                                            <div class="invalid-feedback">
-                                                Please provide a position name.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="field-6" class="form-label">More Description Document</label>
-                                            <input type="file" class="form-control" id="field-6" required
-                                                name="position_file" value="{{ $vacant->position_file }}">
-                                            <div class="invalid-feedback">
-                                                Please provide a positon file.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="field-5" class="form-label">Position Discription</label>
-                                    <textarea name="position_description" id="" cols="15" rows="5" class="form-control" required
-                                        name="{{ $vacant->position_description }}"></textarea>
-                                    <div class="invalid-feedback">
-                                        Please provide a positon description.
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4 d-grid">
-                                <button class="btn btn-primary btn-block" type="submit">Update Vacant</button>
-
-                            </div>
-                            <div class="col-md-4"></div>
-                        </div>
-
-
-                    </form>
-                </div>
-
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
+  
 
     <div class="modal fade" id="register-vacant-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -840,58 +664,6 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="uploads-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                <div class="modal-header bg-light">
-                    <h4 class="modal-title" id="myCenterModalLabel">Uploads </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <form action="" method="post">
-                        <div class="row">
-                            <div class="mb-3">
-                                <label for="field-4" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="field-4"
-                                    placeholder="position name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="field-5" class="form-label">Document</label>
-                                <input type="file" class="form-control" id="field-5"
-                                    placeholder="positon name">
-                            </div>
-
-
-
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Description</label>
-                                <textarea class="form-control" id="field-7" placeholder="Write something about job"></textarea>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                            <div class="col-md-3"></div>
-                            <div class="col-md-3 justify-content-end">
-                                <button type="button" class="btn btn-secondary"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-
-                    </form>
-
-
-                </div>
-
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
 
 
     @include('assets.js')

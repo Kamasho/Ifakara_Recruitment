@@ -37,10 +37,21 @@ class JobsController extends Controller
         );
     }
 
+    public function single_vacant($id){
+
+        $vacant = Vacant::get();
+        $institution = institution::get();
+        $vacant = Vacant::find($id);
+        return view('hr.pages.components.single_vacant',[
+            'vacant'=>$vacant,
+            'institution'=>$institution
+        ]);
+    }
+
     // public function receivedquery(){
     //     return view('hr.pages.receivedquery');
     // }
-
+  
     public function store(Request $requste)
     {
 

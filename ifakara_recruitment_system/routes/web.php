@@ -72,6 +72,7 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::post('/publish_job', [JobsController::class, 'store'])->name('publish_job');
 
     Route::get('/hr/job/received', [JobsController::class, 'receivedquery'])->name('received');
+    Route::get('/hr/job/show_vacant/{id}',[JobsController::class,'single_vacant'])->name('show_vacant');
     Route::post('/hr/jobs', [JobsController::class, 'vacant_registration'])->name('vacant_registration');
     Route::put('/hr/jobs/vacant/{id}', [JobsController::class, 'vacant_update'])->name('vacant_update');
     Route::delete('/hr/jobs/vacant/{id}', [JobsController::class, 'delete_vacant'])->name('delete_vacant');
