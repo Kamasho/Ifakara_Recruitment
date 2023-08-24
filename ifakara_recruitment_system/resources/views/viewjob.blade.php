@@ -101,3 +101,10 @@
             </div>
 
             @include('layouts.welcome.footer')
+
+ 
+
+
+
+
+   
