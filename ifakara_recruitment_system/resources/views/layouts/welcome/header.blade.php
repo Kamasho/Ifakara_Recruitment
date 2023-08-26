@@ -1,39 +1,75 @@
-<img src="{{ asset('web/img/cover_img.png') }}" style="height: 200px; opacity: 1" class="card-img-top" alt="...">
-<div class="card-img-overlay">
-    <h2 class="card-title text-center mt-3 text-white fw-bold" style="font-family: 'Times New Roman', Times, serif">Mfumo
-        Wa
-        ICAD Employee Management System</h2>
-</div>
-<div class="card-title mb-0">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="btn btn-light d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
+<!DOCTYPE html>
+<html lang="en">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav ml-auto"
-                    style="font-family: 'Times New Roman', Times, serif; font-size: large;">
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-black" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-black" href="#">Vacancies</a>
-                    </li>
-                    <li class="nav-item">
+<head>
+    <title>ICD | PORTAL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                        <a class="nav-link fw-bold text-black" href="{{ route('login') }}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-black" href="{{ route('register') }}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-black" href="#">Feedback</a>
-                    </li>
-                </ul>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('web/fonts/icomoon/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('web/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/jquery.fancybox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
+
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
             </div>
+            <div class="site-mobile-menu-body"></div>
         </div>
-    </nav>
-</div>
+
+
+        <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner"
+            style="background-color:   #001D23; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+
+            <div class="container-fluid">
+                <div class="d-flex align-items-center">
+                    <div class="site-logo mr-auto w-25"><a href="/" style="color: #FFF">IFAKARA <b style="color: #FF6F0F">PORTAL</b></a></div>
+
+                    <div class="mx-auto text-center">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+                                <li><a href="/" class="nav-link" style="color:   #FF6F0F">Home</a></li>
+                                <li><a href="#courses-section" class="nav-link" style="color: #FF6F0F">Vacancies</a></li>
+                                <li><a href="{{route('viewjob')}}" class="nav-link" style="color: #FF6F0F">ICD
+                                        Platforms</a></li>
+                                <li><a href="#teachers-section" class="nav-link" style="color:#FF6F0F">Feedback</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="ml-auto w-25">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul
+                                class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                                <li class="cta"><a href="#contact-section" class="nav-link"><span style="color: #FFF">Contact
+                                            Us</span></a></li>
+                            </ul>
+                        </nav>
+                        <a href="#"
+                            class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span
+                                class="icon-menu h3" style="color: #FF6F0F"></span></a>
+                    </div>
+                </div>
+            </div>
+
+        </header>

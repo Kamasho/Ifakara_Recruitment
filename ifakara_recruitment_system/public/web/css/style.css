@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5,
       font-size: 3rem; } }
 
 .border-top {
-  border-top: 1px solid #edf0f5 !important; }
+  border-top: 1px solid #a4aaad !important; }
 
 .site-footer {
   padding: 4em 0;
@@ -868,7 +868,7 @@ h1, h2, h3, h4, h5,
       background-color: #7971ea; }
 
 .footer-section {
-  padding: 7em 0;
+  /* padding: 7em 0; */
   background-color: #fafafa; }
   .footer-section p {
     font-size: 1rem; }
