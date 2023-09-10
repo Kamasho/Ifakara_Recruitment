@@ -177,8 +177,15 @@
                                 <div class="mb-3">
                                     <label for="example-select" class="form-label"> Vacant Category</label>
                                     <select class="form-select" id="example-select" name="vacant_category" required>
-                                        <option value="IT">IT</option>
-                                        <option value="economics">Economics</option>
+                                        <option value="IT and Telecom">IT and  Telecom</option>
+                                        <option value="Accounting and Auditing">Accounting and Auditing</option>
+                                        <option value="Healthcare and Pharmaceutical ">Healthcare and Pharmaceutical </option>
+                                        <option value="Socials Studys and Arts"> Socials Studys and Arts</option>
+                                        <option value="HR & Administration">HR & Administration</option>
+                                        <option value="Science Studies and Technincian">Science Studies and Technincian</option>
+
+
+
                                     </select>
                                     <div class="invalid-feedback">
                                         Please select category.

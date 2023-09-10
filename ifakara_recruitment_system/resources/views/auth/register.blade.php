@@ -140,7 +140,7 @@
         <div class="row">
             <div class="col-lg-6 mb-5">
                 <div style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
-                    <form  action="{{ route('login') }}" method="post" class="form-box">
+                    <form  action="{{ route('register') }}" method="post" class="form-box">
                         @csrf
                         <h3 class="h4 text-black text-center" style="font-weight: 900;">Register Here
                         </h3>
@@ -166,10 +166,10 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="email" style="font-size: 15px;">{{ __('Email Address') }}</label>
-                                <input type="email" class="form-control  @error('email') is-invalid @enderror"
-                                    placeholder="Enter your email addresss" required name="email">
-                                    @error('email')
+                                <label for="password" style="font-size: 15px">{{ __('Password') }}</label>
+                                <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                    placeholder="Enter  your password" name="password" required>
+                                    @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -137,7 +137,6 @@
                             </div>
                         </div>
                         <div class="col-xl-8 col-lg-6">
-                            {{$post}}
                             <div class="card d-block">
                                 <div class="card-body">
                                     <div class="dropdown float-end">
@@ -147,7 +146,7 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
                                             <a href="javascript:void(0);" class="dropdown-item btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#exampleUpdate{{ $post->id }}"><i
-                                                    class="mdi mdi-pencil me-1"></i>Edit staff</a>
+                                                    class="mdi mdi-pencil me-1"></i>Edit post</a>
                                             <a href="javascript:void(0);" class="dropdown-item  btn btn-danger"data-bs-toggle="modal" data-bs-target="#exampleDelete{{ $post->id }}"><i
                                                     class="mdi mdi-delete me-1"></i>Delete</a>
                                          

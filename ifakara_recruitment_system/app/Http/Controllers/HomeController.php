@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Education_category;
+use App\Models\Education_level;
+use App\Models\Education_name;
+use App\Models\Post;
+use App\Models\Vacant;
+use App\Models\institution;
+use Carbon\Carbon; 
 
 class HomeController extends Controller
 {
@@ -21,9 +28,42 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function welcome()
     {
-        return view('home');
+
+
+        $institutions = institution::get();
+        $vacants = Vacant::get();
+        $vacant = Vacant::get();
+        $education_levels = Education_level::get();
+        $education_categories = Education_category::get();
+        $education_names = Education_name::get();
+        $posts = Post::with('educationLevel','educationName')->get();
+        $post=Post::get();
+        $currentDate = Carbon::now();
+        $posts = $posts->map(function ($post) use ($currentDate) {
+            $startDate = Carbon::parse($post->application_date);
+            $endDate = Carbon::parse($post->end_date);
+            
+            if ($currentDate->between($startDate, $endDate)) {
+                $post->status = 'Active';
+            } else {
+                $post->status = 'Inactive';
+            }
+
+            return $post;
+        });
+
+        return view('welcome',[
+            'vacants' => $vacants,
+            'vacant'=>$vacant,
+            'institutions' => $institutions,
+            'education_levels' => $education_levels,
+            'education_categories' => $education_categories,
+            'education_names' => $education_names,
+            'posts' => $posts,
+            'post'=>$post
+        ]);
     }
 
     public function generalinformation(){
@@ -41,10 +81,28 @@ class HomeController extends Controller
     {
         return view('viewjob');
     }
-    public function postdeatail()
+    public function postdeatail($id)
     {
-        return view('postdetails');
+        $institution = institution::get();
+        $vacant = Vacant::get();
+        $education_level = Education_level::get();
+        $education_categorie = Education_category::get();
+        $education_name = Education_name::get();
+        //$level = Post::with('educationLevel','educationName')->get();
+        $post=Post::get();
+        $post = Post::find($id);
+
+        return view('description',[
+            'institution' => $institution,
+            'vacant' => $vacant,
+            'education_level' => $education_level,
+            'education_categorie' => $education_categorie,
+            'education_name' => $education_name,
+           // 'level' => $level,
+            'post'=>$post
+        ]);
     }
+   
 
 
 }

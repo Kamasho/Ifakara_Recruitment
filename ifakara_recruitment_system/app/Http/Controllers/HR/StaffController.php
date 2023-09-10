@@ -14,6 +14,35 @@ use function PHPUnit\Framework\returnSelf;
 
 class StaffController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('api');
+    }
+
+
+    private function selectStaffDetails()
+{
+    return Staff::select(
+        'staff.id',
+        'staff.fname',
+        'staff.lname',
+        'staff.mname',
+        'staff.gender',
+        'staff.email',
+        'staff.phone',
+        'staff.staff_contract',
+        'staff.end_date',
+        'staff.basic_salary',
+        'staff.allounce_salary',
+        'institutions.name as institution_name',
+        'vacants.name as vacant_name'
+    )
+    ->leftJoin('institutions', 'staff.institution_id', '=', 'institutions.id')
+    ->leftJoin('vacants', 'staff.vacant_id', '=', 'vacants.id');
+}
+
+
     public function index()
     {
         // $jobs = Job::get();
@@ -29,13 +58,32 @@ class StaffController extends Controller
         ]);
     }
 
+    public function AllStaff()
+    {
+        $staffs = $this->selectStaffDetails()->get();
+    
+        return response()->json(['staffs' => $staffs]);
+    }
+    
+    public function SingleStaff($id)
+    {
+        $staff = $this->selectStaffDetails()->find($id);
+    
+        if (!$staff) {
+            return response()->json(['error' => 'Staff member not found, Please Register'], 404);
+        }
+    
+        return response()->json(['staff' => $staff]);
+    }
+    
+
     public function single_staff($id)
     {
         $staff = Staff::get();
         $vacant = Vacant::get();
         $institution = institution::get();
         $staff = Staff::find($id);
-        return view('hr.pages.components.single_staff',[
+        return view('hr.pages.components.single_staff', [
             'vacant' => $vacant,
             'staff' => $staff,
             'institution' => $institution,

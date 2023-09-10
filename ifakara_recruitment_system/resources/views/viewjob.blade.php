@@ -28,17 +28,17 @@
                 <div class="course bg-white h-100 align-self-stretch" style="">
                     
                     <figure>
-                      <a href="#" class=""><img src="{{asset('web/images/img_1.jpg')}}" alt="Image" class="img-fluid"></a>
+                      <a href="#" class=""><img src="{{asset('web/img/catholic_history.jpg')}}" alt="Image" class="img-fluid"></a>
                     </figure>
                     <div class="course-inner-text py-4 px-4">
                 
-                      <h3><a href="#">GENERAL  DIOCESE SYSTEM</a></h3>
-                      <p class="text-justify">Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Nisi suscipit perferendis asperiores, rem eaque doloribus? Fuga repellendus excepturi minima aliquid ratione.
-                          Tenetur saepe voluptas cupiditate quisquam asperiores nostrum nihil aperiam? </p>
+                      <h3><a href="https://financial.ifakaracatholicdiocese.com">GENERAL  DIOCESE SYSTEM</a></h3>
+                      <p class="text-justify">A Diocese management system is a comprehensive software platform that automates administrative, and operational tasks
+                        within the Diocese in general. It centralizes information between Secretary, Accountant,Audtior and Bishop,  manages facilitates  finances,
+                         and supports communication between them</p>
                     </div>
                     <div class="d-flex border-top stats">
-                      <div class="py-3 px-4"><span class="icon-users"></span> 2,193 schools</div>
+                      <div class="py-3 px-4"><span class="icon-users"></span> 19 schools</div>
                       <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
                     </div>
                   </div>
@@ -46,13 +46,16 @@
             <div class="col-lg-6">
                 <div class="course bg-white h-100 align-self-stretch mt-4">
                     <figure class="m-0">
-                      <a href="course-single.html"><img src="{{asset('web/images/img_2.jpg')}}" alt="Image" class="img-fluid"></a>
+                      <a href="course-single.html"><img src="{{asset('web/img/catholic_history.jpg')}}" alt="Image" class="img-fluid"></a>
                     </figure>
                     <div class="course-inner-text py-4 px-4">
 
-                      <h3><a href="#">SCHOOL MANAGEMENT SYSTEM</a></h3>
-                      <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi magni nemo quasi consequuntur a quidem.
-                         Voluptatem, assumenda ut! Dolorem cumque eum repudiandae magnam odit fugit facilis veniam minima itaque quia?</p>
+                      <h3><a href="https://schools.ifakaracatholicdiocese.com">SCHOOL MANAGEMENT SYSTEM</a></h3>
+                      <p style="text-align: justify">A school management system is a comprehensive software platform that automates administrative, academic, and operational tasks
+                         within educational institutions. It centralizes student information, manages teacher and staff records, facilitates  finances,
+                          and supports communication between educators, students, and parents.
+               
+                      </p>
                     </div>
                     <div class="d-flex border-top stats">
                       <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>

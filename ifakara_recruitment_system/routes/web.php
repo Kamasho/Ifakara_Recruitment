@@ -46,15 +46,18 @@ use GuzzleHttp\Psr7\UploadedFile;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
+
 Route::get('/general-information', [HomeController::class, 'generalinformation'])->name('generalinformation');
 Route::get('/how-to-applyjob', [HomeController::class, 'howtoapplyjob'])->name('howtoapplyjob');
 Route::get('/how-to-prepare-for-interview', [HomeController::class, 'interview'])->name('interview');
 Route::get('/view-job', [HomeController::class, 'viewjob'])->name('viewjob');
-Route::get('/post-details', [HomeController::class, 'postdeatail'])->name('postdeatail');
+Route::get('/post-details/{id}', [HomeController::class, 'postdeatail'])->name('postdeatail');
 Auth::routes();
+
+
 
 //HR middleware
 Route::middleware(['auth', 'isHr'])->group(function () {
