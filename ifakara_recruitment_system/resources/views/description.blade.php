@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div class="course bg-white h-100 align-self-stretch mt-4">
                     {{-- <figure class="m-0">
                       <a href="course-single.html"><img src="{{asset('web/img/catholic_history.jpg')}}" alt="Image" class="img-fluid"></a>
@@ -39,54 +39,69 @@
 
                         </p>
                         <h3><b>Position:</b> {{ $post->vacant->position_name }}</h3>
-                        <p> <span> Position Description: </span>{{ $post->vacant->position_description }}</p>
+                        <p style="text-align: justify"> <span> Position Description:
+                            </span>{{ $post->vacant->position_description }}</p>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <h3 class="text-center">JOB QUALIFICATION</h3>
+                            <hr>
 
-                            <p class="m-1 text-justify"> <span>Education Level</span>{{ $post->education_level }} with
+                            <p class="m-3 text-justify"> <span>Education Level</span>{{ $post->education_level }} with
                                 Education name {{ $post->education_categorie }} and Program {{ $post->education_name }}
                             </p>
                         </div>
                         <div class="col-md-6">
 
                             <h3 class="text-center">Other Requiments</h3>
+                            <hr>
+
                             <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                                <span class="custom-icon-inner mr-3"><span
-                                        class="icon icon-graduation-cap"></span></span>
+                                <span class="custom-icon-inner ml-3">
+                                    <span class="icon icon-graduation-cap"></span>
+                                </span>
                                 <div>
-                                    <h3 class="m-0"><b>Applicant Age:</b> {{ $post->age_range }}</h3>
+                                    <h3 class="m-1"><b>Applicant Age:</b> {{ $post->age_range }}</h3>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                                <span class="custom-icon-inner mr-3"><span
-                                        class="icon icon-graduation-cap"></span></span>
+                                <span class="custom-icon-inner ml-3">
+                                    <span class="icon icon-graduation-cap"></span>
+                                </span>
                                 <div>
-                                    <h3 class="m-0"><b>Experience:</b> {{ $post->year_experience }}</h3>
+                                    <h3 class="m-1"><b>Experience:</b> {{ $post->year_experience }}</h3>
                                 </div>
                             </div>
 
                             <div class="d-flex align-items-center custom-icon-wrap mb-3">
-                                <span class="custom-icon-inner mr-3"><span
-                                        class="icon icon-graduation-cap"></span></span>
+                                <span class="custom-icon-inner ml-3">
+                                    <span class="icon icon-graduation-cap"></span>
+                                </span>
                                 <div>
-                                    <h3 class="m-0"><b>Gender:</b>{{ $post->gender }}</h3>
+                                    <h3 class="m-1"><b>Gender:</b>{{ $post->gender }}</h3>
                                 </div>
                             </div>
 
-                           
-                         
+
+
                         </div>
+
+                        <div class="col-md-12">
+                            <p class="m-3"><b>Post Summay:</b> {{ $post->summary }}</p>
+
+                            <p class="m-3">Application End Date:<span
+                                    class="text-danger">{{ $post->end_date }}</span></p>
+                        </div>
+
                     </div>
+
                     <div class="d-flex border-top stats">
 
-                        <a href="#">Apply Now</a>
+                        <a href="#" class="text-center m-2 btn btn-info">Apply Now</a>
                         {{-- <h3 class="text-center"><span class="icon-users"></span>Apply Now</h3> --}}
                     </div>
                 </div>
             </div>
-
 
 
 

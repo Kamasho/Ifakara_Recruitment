@@ -108,7 +108,8 @@
                                 <div class="meta"><span class="icon-clock-o"></span><b class="text-success">
                                         {{$post->application_date}}</b> | <b class="text-success">Open</b></div>
                                 <h3><a href="" style="color: #FF6F0F">{{$post->vacant_category}}</a></h3>
-                                <p>{{$post->summary}}</p>
+                                <p style="text-align: justify">{{ Illuminate\Support\Str::limit(strip_tags($post->summary), 100) }}</p>
+
                             </div>
                             <div class="d-flex border-top stats">
                                 <div class="py-3 px-4" style="color: #FF6F0F; font-weight:600"><a href="{{route('postdeatail',$post->id)}}"><span class="icon-sign-in"></span> View More</a></div>

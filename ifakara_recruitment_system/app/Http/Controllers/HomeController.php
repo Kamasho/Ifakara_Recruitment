@@ -39,6 +39,7 @@ class HomeController extends Controller
         $education_categories = Education_category::get();
         $education_names = Education_name::get();
         $posts = Post::with('educationLevel','educationName')->get();
+        $vacantCategoriesCount = $posts->groupBy('vacant_category')->count();
         $post=Post::get();
         $currentDate = Carbon::now();
         $posts = $posts->map(function ($post) use ($currentDate) {
@@ -62,7 +63,8 @@ class HomeController extends Controller
             'education_categories' => $education_categories,
             'education_names' => $education_names,
             'posts' => $posts,
-            'post'=>$post
+            'post'=>$post,
+            'vacantCategoriesCount' => $vacantCategoriesCount,
         ]);
     }
 
