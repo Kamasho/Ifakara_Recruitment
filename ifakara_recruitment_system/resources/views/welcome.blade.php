@@ -108,9 +108,14 @@
     <div class="container">
         <div class="row">
             @if ($posts->isEmpty())
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
                 <div class="alert alert-info text-center">
                     There are no posts available at the moment.
                 </div>
+            </div>
+               
+            <div class="col-md-1"></div>
             @else
                 @foreach ($posts as $post)
                     <div class="col-lg-4">
