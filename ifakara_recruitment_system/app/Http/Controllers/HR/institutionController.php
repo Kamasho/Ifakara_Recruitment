@@ -18,7 +18,7 @@ class institutionController extends Controller
     {
         $institutions = institution::get();
         $headinstitutions = HeadInstitute::get();
-        return view('hr.pages.organization', [
+        return view('hr.pages.Organization', [
             'headinstitutions' => $headinstitutions,
             'institutions' => $institutions
         ]);
