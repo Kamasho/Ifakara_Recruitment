@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::prefix('api')->middleware('api')->group(function () {
+Route::prefix('v1')->middleware('api')->group(function () {
     Route::get('/hr/staff', [StaffController::class, 'AllStaff']);
     Route::get('/hr/staff/{id}', [StaffController::class, 'SingleStaff']);
 });
