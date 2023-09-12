@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\AUDITOR\AuditorController;
 use App\Http\Controllers\GS\GsController;
 use App\Http\Controllers\GS\PositionController;
@@ -49,6 +50,7 @@ use GuzzleHttp\Psr7\UploadedFile;
 
 
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
+Route::get('/email_verification',[VerificationController::class,'verify_email'])->name('verify_email');
 
 Route::get('/general-information', [HomeController::class, 'generalinformation'])->name('generalinformation');
 Route::get('/how-to-applyjob', [HomeController::class, 'howtoapplyjob'])->name('howtoapplyjob');
