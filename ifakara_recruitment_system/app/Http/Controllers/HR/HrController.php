@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\HR;
 
 use App\Http\Controllers\Controller;
+use App\Models\Application;
 use Illuminate\Http\Request;
 use App\Models\HeadInstitute;
 use App\Models\institution;
@@ -59,8 +60,14 @@ class HrController extends Controller
    }
 
     public function Applicants()
+
     {
-        return view('hr.pages.Applicants');
+       $applicants = Application::get();
+       $vacants = Vacant::get();
+        return view('hr.pages.Applicants',[
+            'applicants'=>$applicants,
+            'vacant'=>$vacants
+        ]);
     }
     /**
      * Show the form for creating a new resource.

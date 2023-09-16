@@ -22,6 +22,8 @@ class UsersmiddleWare
             if(Auth::user()->roles_as == '0')
             {
                 return $next($request);
+                //return redirect('/dashboard')->with('status','Access Denied!');
+
             }
             else
             {

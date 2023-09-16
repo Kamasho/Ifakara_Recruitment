@@ -32,6 +32,7 @@ use App\Http\Controllers\HR\PostController;
 use App\Http\Controllers\GS\StaffGSController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\HR\PerformanceController;
+use App\Http\Controllers\User\ApplicationController;
 use App\Models\Post;
 use GuzzleHttp\Psr7\UploadedFile;
 
@@ -51,12 +52,15 @@ use GuzzleHttp\Psr7\UploadedFile;
 
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 Route::get('/email_verification',[VerificationController::class,'verify_email'])->name('verify_email');
-
 Route::get('/general-information', [HomeController::class, 'generalinformation'])->name('generalinformation');
 Route::get('/how-to-applyjob', [HomeController::class, 'howtoapplyjob'])->name('howtoapplyjob');
 Route::get('/how-to-prepare-for-interview', [HomeController::class, 'interview'])->name('interview');
 Route::get('/view-job', [HomeController::class, 'viewjob'])->name('viewjob');
 Route::get('/post-details/{id}', [HomeController::class, 'postdeatail'])->name('postdeatail');
+
+
+Route::post('/',[ApplicationController::class,'create'])->name('post');
+
 Auth::routes();
 
 

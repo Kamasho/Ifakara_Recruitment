@@ -105,17 +105,41 @@
 </div>
 
 <div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
-    <div class="container">
-        <div class="row">
-            @if ($posts->isEmpty())
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="alert alert-info text-center">
-                    There are no posts available at the moment.
-                </div>
+
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 d-flex flex-column align-items-center">
+            <!-- Success Message -->
+            @if (session('success'))
+            <div id="success-alert" class="alert alert-success">
+                {{ session('success') }}
             </div>
-               
-            <div class="col-md-1"></div>
+            @endif
+    
+            <!-- Error Message -->
+            @if (session('error'))
+            <div id="error-alert" class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+            @endif
+    
+            <!-- Cancel Button -->
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    
+    <div class="container">
+       
+        <div class="row mt-3">
+            @if ($posts->isEmpty())
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="alert alert-info text-center">
+                        There are no posts available at the moment.
+                    </div>
+                </div>
+
+                <div class="col-md-1"></div>
             @else
                 @foreach ($posts as $post)
                     <div class="col-lg-4">

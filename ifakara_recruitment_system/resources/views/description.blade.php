@@ -95,58 +95,135 @@
 
                     </div>
 
-                    <div class="d-flex border-top stats">
+                    <div class="border-top stats">
 
-                        <a href="#" class="text-center m-2 btn btn-info">Apply Now</a>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <a href="#" class="text-center mt-3 btn btn-info btn-block px-2"
+                                    data-toggle="modal"data-target="#applyModal" style="background-color: #001D23">Apply Now</a>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div> <!-- Replace your "Apply Now" button with this code -->
+
+
                         {{-- <h3 class="text-center"><span class="icon-users"></span>Apply Now</h3> --}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Modal -->
+            <div class="modal fade" id="applyModal">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <p>
+                            <h4 class="modal-title" style="color: black; font-size:15px"><b>Job title:</b>{{ $post->vacant->name }}
+                            </h4>
+                            <h4 class="modal-title ml-5" style="color: black; font-size:15px"><b>Position:</b> {{ $post->vacant->position_name }}</h4>
+                            </p>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form action="{{route('post')}}" method="post" class="form"  enctype="multipart/form-data">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="first name" class="form-label"> First Name</label>
+                                            <input type="text" class="form-control form-control-sm"
+                                                placeholder="Your First name" required name="firstName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="first name" class="form-label"> Second Name</label>
+                                            <input type="text" class="form-control form-control-sm"
+                                                placeholder="Your second name" required name="secondName">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="first name" class="form-label">Email</label>
+                                            <input type="email" class="form-control form-control-sm"
+                                                placeholder="Your Email" required name="email">
+                                            <span class="text-warning">*Enter the valid email*</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label">Phone number</label>
+                                            <input type="Number" class="form-control form-control-sm"
+                                                placeholder="phone number" required name="phone">
+                                            <span class="text-warning">* Enter the available number *</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="cover">Cover Letter <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="file" class="form-control form-control-sm" name="coverLetter">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="cover">Your Job</label>
+                                            <input type="text" class="form-control form-control-sm" readonly disabled style="font-weight: bold; color: #333;" placeholder="{{ $post->vacant->name }}">
+                                            <input type="hidden" name="vacant_id" id="vacant_id" value="{{ $post->vacant->id }}">
+                                        </div>
+                                        
+                                        
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label for="cover">CV <span class="text-danger">*</span></label>
+                                            <input type="file" class="form-control form-control-sm" required name="cv">
+                                            <span class="text-warning">* Include with your certificate in the same
+                                                documents *</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-primary btn-block" type="submit"
+                                            style="background-color: #001D23">Send</button>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <!-- Add a submit button or other action buttons here if needed -->
+                        </div>
+                       
+                        
                     </div>
                 </div>
             </div>
 
 
 
-
-
         </div>
-        {{-- <div class="row mt-5">
-            <div class="col-lg-6">
 
-                <div class="course bg-white h-100 align-self-stretch">
-                    <figure class="m-0">
-                      <a href="course-single.html"><img src="{{asset('web/images/img_3.jpg')}}" alt="Image" class="img-fluid"></a>
-                    </figure>
-                    <div class="course-inner-text py-4 px-4">
-                    
-                      <h3><a href="#">JS Programming Language</a></h3>
-                      <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing eli. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae fugiat ea ratione cumque quisquam, fugit eveniet, 
-                        nesciunt temporibus natus, a repudiandae rerum libero aut expedita quaerat adipisci nemo velit esse. </p>
-                    </div>
-                    <div class="d-flex border-top stats">
-                      <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
-                      <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-                    </div>
-                  </div>
-            </div>
-
-            <div class="col-lg-6">
-
-                <div class="course bg-white h-100 align-self-stretch">
-                    <figure class="m-0">
-                      <a href="course-single.html"><img src="{{asset('web/images/img_3.jpg')}}" alt="Image" class="img-fluid"></a>
-                    </figure>
-                    <div class="course-inner-text py-4 px-4">
-                      
-                      <h3><a href="#">JS Programming Language</a></h3>
-                      <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis magnam molestiae consequuntur quasi ex facere exercitationem reiciendis tempore
-                        , assumenda voluptas blanditiis, quam repellat obcaecati laboriosam veniam quos culpa, aperiam nemo? </p>
-                    </div>
-                    <div class="d-flex border-top stats">
-                      <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
-                      <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-                    </div>
-                  </div>
-            </div>
-          </div> --}}
 
     </div>
 </div>

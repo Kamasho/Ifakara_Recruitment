@@ -28,56 +28,44 @@
                                             class="table table-striped dt-responsive nowrap w-100 mt-4">
                                             <thead>
                                                 <tr>
+                                                    <th>sn</th>
                                                     <th>Name</th>
-                                                    <th>Position</th>
-                                                    <th>Office</th>
-                                                    <th>Age</th>
-                                                    <th>Start date</th>
-                                                    <th>Salary</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                    <th>Job Applied</th>
+                                                    <th>Application Date</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
 
 
                                             <tbody>
+                                                @foreach ($applicants as $applicant)
+                                                    <tr>
+                                                        <td>{{$applicant->id}}</td>
+                                                        <td>{{$applicant->firstName}} {{$applicant->secondName}}</td>
+                                                        <td>{{$applicant->email}}</td>
+                                                        <td>{{$applicant->phone}}</td>
+                                                        <td>{{$applicant->vacant->name}}</td>
+                                                        <td>{{$applicant->created_at}}</td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="action-icon"> <i
+                                                                    class="mdi mdi-square-edit-outline"></i></a>
+                                                            <a href="javascript:void(0);" class="action-icon"> <i
+                                                                    class="mdi mdi-delete"></i></a>
+                                                            <a href="#position-modal" class="action-icon"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#position-modal"><i class="fa fa-eye"
+                                                                    aria-hidden="true"></i>
 
-                                                <tr>
-                                                    <td>Unity Butler</td>
-                                                    <td>Marketing Designer</td>
-                                                    <td>San Francisco</td>
-                                                    <td>47</td>
-                                                    <td>2009/12/09</td>
-                                                    <td>$85,675</td>
-                                                    <td> 
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                            class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="javascript:void(0);" class="action-icon"> <i
-                                                            class="mdi mdi-delete"></i></a>
-                                                        <a href="#position-modal" class="action-icon"
-                                                            data-bs-toggle="modal" data-bs-target="#position-modal"><i class="fa fa-eye" aria-hidden="true"></i>
-
-                                                        </a></td>
-                                                </tr>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
 
 
 
-                                                <tr>
-                                                    <td>Cara Stevens</td>
-                                                    <td>Sales Assistant</td>
-                                                    <td>New York</td>
-                                                    <td>46</td>
-                                                    <td>2011/12/06</td>
-                                                    <td>$145,600</td>
-                                                    <td>
-                                                        <a href="javascript:void(0);" class="action-icon"> <i
-                                                            class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="javascript:void(0);" class="action-icon"> <i
-                                                            class="mdi mdi-delete"></i></a>
-                                                        <a href="#position-modal" class="action-icon"
-                                                        data-bs-toggle="modal" data-bs-target="#position-modal"><i class="fa fa-eye" aria-hidden="true"></i>
 
-                                                    </a></td>
-                                                </tr>
 
                                             </tbody>
                                         </table>

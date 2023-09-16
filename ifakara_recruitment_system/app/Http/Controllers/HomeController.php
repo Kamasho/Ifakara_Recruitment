@@ -33,6 +33,7 @@ class HomeController extends Controller
 
 
         $institutions = institution::get();
+    
         $vacants = Vacant::get();
         $vacant = Vacant::get();
         $education_levels = Education_level::get();

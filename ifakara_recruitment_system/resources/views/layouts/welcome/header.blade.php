@@ -20,6 +20,12 @@
     <link rel="stylesheet" href="{{ asset('web/fonts/flaticon/font/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('web/css/style.css') }}"> --}}
+
+    <link rel="shortcut icon" href="{{asset('web/img/favicone.jpeg')}}">
+
+
+
 
 
 </head>
