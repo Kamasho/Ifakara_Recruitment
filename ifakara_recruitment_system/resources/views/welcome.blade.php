@@ -110,7 +110,7 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-8 d-flex flex-column align-items-center">
             <!-- Success Message -->
-            @if (session('success'))
+            {{-- @if (session('success'))
             <div id="success-alert" class="alert alert-success">
                 {{ session('success') }}
             </div>
@@ -121,7 +121,7 @@
             <div id="error-alert" class="alert alert-danger">
                 {{ session('error') }}
             </div>
-            @endif
+            @endif --}}
     
             <!-- Cancel Button -->
         </div>
@@ -147,7 +147,7 @@
                             style=" box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
 
                             <div class="course-inner-text py-4 px-4">
-                                <span class="course-price">1</span>
+                                <span class="course-price">{{ $post->created_at->format('Y-m-d') }}</span>
                                 <div class="meta"><span class="icon-clock-o"></span><b class="text-success">
                                         {{ $post->application_date }}</b> | <b class="text-success">Open</b></div>
                                 <h3><a href="" style="color: #FF6F0F">{{ $post->vacant_category }}</a></h3>

@@ -55,10 +55,10 @@
                         <nav class="site-navigation position-relative text-right" role="navigation">
                             <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
                                 <li><a href="/" class="nav-link" style="color:   #FF6F0F">Home</a></li>
-                                <li><a href="#courses-section" class="nav-link" style="color: #FF6F0F">Vacancies</a></li>
+                                <li><a href="/" class="nav-link" style="color: #FF6F0F">Vacancies</a></li>
                                 <li><a href="{{route('viewjob')}}" class="nav-link" style="color: #FF6F0F">ICD
                                         Platforms</a></li>
-                                <li><a href="#teachers-section" class="nav-link" style="color:#FF6F0F">Feedback</a></li>
+                                <li><a href="/" class="nav-link" style="color:#FF6F0F">Feedback</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -67,7 +67,7 @@
                         <nav class="site-navigation position-relative text-right" role="navigation">
                             <ul
                                 class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                                <li class="cta"><a href="#contact-section" class="nav-link"><span style="color: #FFF">Contact
+                                <li class="cta"><a href="/" class="nav-link"><span style="color: #FFF">Contact
                                             Us</span></a></li>
                             </ul>
                         </nav>
