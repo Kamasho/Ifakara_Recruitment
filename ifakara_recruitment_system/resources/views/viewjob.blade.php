@@ -28,7 +28,7 @@
                 <div class="course bg-white h-100 align-self-stretch" style="">
                     
                     <figure>
-                      <a href="#" class=""><img src="{{asset('web/img/catholic_history.jpg')}}" alt="Image" class="img-fluid"></a>
+                      <a href="#" class=""><img src="{{asset('web/img/catholic.jpg')}}" alt="Image" class="img-fluid"></a>
                     </figure>
                     <div class="course-inner-text py-4 px-4">
                 
@@ -46,7 +46,7 @@
             <div class="col-lg-6">
                 <div class="course bg-white h-100 align-self-stretch mt-4">
                     <figure class="m-0">
-                      <a href="course-single.html"><img src="{{asset('web/img/catholic_history.jpg')}}" alt="Image" class="img-fluid"></a>
+                      <a href="course-single.html"><img src="{{asset('web/img/catholic.jpg')}}" alt="Image" class="img-fluid"></a>
                     </figure>
                     <div class="course-inner-text py-4 px-4">
 
