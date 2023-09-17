@@ -74,10 +74,10 @@
                                                 {{ __('Forgot Your Password?') }}</a>
                                         @endif
                                     </p>
-                                    <p class="text-center" style="color: #000">Don't have an account? <a
+                                    {{-- <p class="text-center" style="color: #000">Don't have an account? <a
                                             href="{{ route('register') }}"
                                             style="font-size: 13px; font-weight:600">Register
-                                            here</a></p>
+                                            here</a></p> --}}
 
                                 </div>
 
