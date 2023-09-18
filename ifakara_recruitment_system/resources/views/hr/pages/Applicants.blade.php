@@ -49,16 +49,10 @@
                                                         <td>{{$applicant->vacant->name}}</td>
                                                         <td>{{$applicant->created_at}}</td>
                                                         <td>
-                                                            <a href="javascript:void(0);" class="action-icon"> <i
-                                                                    class="mdi mdi-square-edit-outline"></i></a>
-                                                            <a href="javascript:void(0);" class="action-icon"> <i
-                                                                    class="mdi mdi-delete"></i></a>
-                                                            <a href="#position-modal" class="action-icon"
-                                                                data-bs-toggle="modal"
-                                                                data-bs-target="#position-modal"><i class="fa fa-eye"
-                                                                    aria-hidden="true"></i>
-
-                                                            </a>
+                                                           
+                                                            <a href="{{route('single_applicant',$applicant->id)}}" class="action-icon text-primary"> <i
+                                                                    class="mdi mdi-eye"></i></a>
+                                                          
                                                         </td>
                                                     </tr>
                                                 @endforeach

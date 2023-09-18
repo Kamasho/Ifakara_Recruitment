@@ -41,15 +41,19 @@
                         <h3><b>Position:</b> {{ $post->vacant->position_name }}</h3>
                         <p style="text-align: justify"> <span> Position Description:
                             </span>{{ $post->vacant->position_description }}</p>
+
+                        <a href="{{asset('/storage/app/'. $post->vacant->job_file)}}" class="text-danger" style="font-weight: 700">Download Job Description</a>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <h3 class="text-center">JOB QUALIFICATION</h3>
                             <hr>
-
-                            <p class="m-3 text-justify"> <span>Education Level</span>{{ $post->education_level }} with
-                                Education name {{ $post->education_categorie }} and Program {{ $post->education_name }}
+                            <p class="m-3 text-justify"> <span><b>Education Level</b></span>
+                                A bachelor's degree in accounting, finance, business administration, or a related field is typically required. A master's degree or relevant professional certifications (such as  Cpa) {{ $post->education_categorie }}.
                             </p>
+                            {{-- <p class="m-3 text-justify"> <span>Education Level</span>{{ $post->education_level }} with
+                                Education name {{ $post->education_categorie }} and Program {{ $post->education_name }}
+                            </p> --}}
                         </div>
                         <div class="col-md-6">
 

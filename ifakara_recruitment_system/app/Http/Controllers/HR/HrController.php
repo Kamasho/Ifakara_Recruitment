@@ -69,6 +69,17 @@ class HrController extends Controller
             'vacant'=>$vacants
         ]);
     }
+
+    public function single_applicant($id){
+        $applicants = Application::get();
+        $vacants = Vacant::get();
+        $applicant = Application::find($id);
+        return view('hr.pages.components.single_applicants', [
+            'applicant' => $applicant,
+            'applicants' => $applicants,
+            'vacants'=>$vacants
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -35,8 +35,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="text-end">
-                                                <h3 class="text-dark mt-1"><span
-                                                        data-plugin="counterup">200</span></h3>
+                                                <h3 class="text-dark mt-1"><span data-plugin="counterup">200</span></h3>
                                                 <p class="text-muted mb-1 text-truncate">Number of Applicants</p>
                                             </div>
                                         </div>
@@ -56,8 +55,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="text-end">
-                                                <h3 class="text-dark mt-1"><span
-                                                    >{{ $post->application_date }}</span>
+                                                <h3 class="text-dark mt-1"><span>{{ $post->application_date }}</span>
                                                 </h3>
                                                 <p class="text-muted mb-1 text-truncate">Application Date</p>
                                             </div>
@@ -73,7 +71,7 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="avatar-lg rounded-circle bg-light">
-                        {{-- <i data-feather="plus-square"></i> --}}
+                                                {{-- <i data-feather="plus-square"></i> --}}
 
                                                 <i class="fe-plus-square font-26 avatar-title text-info"></i>
                                             </div>
@@ -96,25 +94,27 @@
 
                         <div class="col-lg-6 col-xl-4">
                             <div class="card">
-                                
+
                                 <div class="card-body">
-                                    <h4 class="text-center text-primary bg-light p-2">Post Information</h4>  
+                                    <h4 class="text-center text-primary bg-light p-2">Post Information</h4>
 
                                     <div class=" mb-3">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <p><span>Vacant Required: </span>
-                                                   <b> {{ $post->vacant->name }}</b> </p>
-    <p><span>Gender:</span> <b>{{$post->gender}}</b></p>
+                                                    <b> {{ $post->vacant->name }}</b>
+                                                </p>
+                                                <p><span>Gender:</span> <b>{{ $post->gender }}</b></p>
                                                 <div class="">
-                                                    <p><span>Starting Application:</span> <b>{{$post->application_date}}</b></p>
+                                                    <p><span>Starting Application:</span>
+                                                        <b>{{ $post->application_date }}</b></p>
                                                     <p>Post Status: <b class="text-success">active</b></p>
-                                                   <p>Post  Description: <b>{{$post->summary}}</b></p>
+                                                    <p>Post Description: <b>{{ $post->summary }}</b></p>
                                                 </div>
                                             </div>
                                         </div>
-                                        
-                                       
+
+
                                     </div>
 
                                     {{-- <h5 class="mb-3 mt-4 text-uppercase bg-light p-2"><i
@@ -145,44 +145,49 @@
                                             <i class="dripicons-dots-3 btn btn-primary" style="font-size:20px"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a href="javascript:void(0);" class="dropdown-item btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#exampleUpdate{{ $post->id }}"><i
+                                            <a href="javascript:void(0);" class="dropdown-item btn btn-secondary"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#exampleUpdate{{ $post->id }}"><i
                                                     class="mdi mdi-pencil me-1"></i>Edit post</a>
-                                            <a href="javascript:void(0);" class="dropdown-item  btn btn-danger"data-bs-toggle="modal" data-bs-target="#exampleDelete{{ $post->id }}"><i
+                                            <a href="javascript:void(0);"
+                                                class="dropdown-item  btn btn-danger"data-bs-toggle="modal"
+                                                data-bs-target="#exampleDelete{{ $post->id }}"><i
                                                     class="mdi mdi-delete me-1"></i>Delete</a>
-                                         
+
                                         </div>
                                     </div>
                                     <h5 class="mt-0 font-20">
-                                        Job Title: <b>{{$post->vacant->name}}</b> 
+                                        Job Title: <b>{{ $post->vacant->name }}</b>
                                     </h5>
 
                                     <h5>Job Description:</h5>
 
-                                    
+
 
                                     <p class="mb-4 text-justify">
                                         {{ $post->vacant->description }}
                                     </p>
 
                                     <div class="mb-4">
-                                        <h5>Position: <b>{{$post->vacant->position_name}}</b></h5>
+                                        <h5>Position: <b>{{ $post->vacant->position_name }}</b></h5>
                                         <div class="">
                                             <h5>Position Description</h5>
-                                            <p class="text-justify">{{$post->vacant->position_description}}</p>
+                                            <p class="text-justify">{{ $post->vacant->position_description }}</p>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="mb-4">
-                                                <h5>Staff  Contract Date</h5>
-                                                <p>{{$post->created_at}} <small class="text-muted">1:00 PM</small></p>
+                                                <h5>Staff Contract Date</h5>
+                                                <p>{{ $post->created_at }} <small class="text-muted">1:00 PM</small>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="mb-4">
                                                 <h5>End Date</h5>
-                                                <p>{{$post->end_date}}<small class="text-muted">1:00 PM</small></p>
+                                                <p>{{ $post->end_date }}<small class="text-muted">1:00 PM</small></p>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -195,7 +200,7 @@
 
 
 
-                                </div> 
+                                </div>
 
                             </div>
 
@@ -205,7 +210,7 @@
 
 
                     </div>
-                   
+
 
                 </div>
 
@@ -223,270 +228,274 @@
 
     </div>
 
-<!-- /.modal -->
-<div class="modal fade" id="exampleDelete{{ $post->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-top modal-md">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4>Delete The post</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-4">
-                <span class="text-larger">
-                    <h4 style="font-size:20px">Are you sure delete ?.<b>{{ $post->vacant->name }}
-                        </b></h4>
-                </span>
-                <div class="modal-footer">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+    <!-- /.modal -->
+    <div class="modal fade" id="exampleDelete{{ $post->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Delete The post</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <span class="text-larger">
+                        <h4 style="font-size:20px">Are you sure delete ?.<b>{{ $post->vacant->name }}
+                            </b></h4>
+                    </span>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
 
-                        </div>
-                        <div class="col-md-6">
-                            <form action="{{ route('delete_post', ['id' => $post->id]) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-block">Delete</button>
-                            </form>
+                            </div>
+                            <div class="col-md-6">
+                                <form action="{{ route('delete_post', ['id' => $post->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-block">Delete</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
+            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-content -->
+        <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal-dialog -->
-</div>
 
-<div class="modal fade" id="exampleUpdate{{ $post->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-light">
-                <h4 class="modal-title" id="myCenterModalLabel">Update the Staff Details </h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-4">
-                <h4>Person Information</h4>
-                <form action="{{ route('update_post', $post->id) }}" method="post" enctype="multipart/form-data"
-                    class="needs-validation" novalidate>
-                    @csrf
-                    @method('PUT')
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="example-select" class="form-label"> Vacant Title <span
-                                        class="text-danger">*</span></label>
-                                <select class="form-select" id="example-select" name="vacant_id" required>
-                                    @foreach ($vacant as $vacant)
-                                        <option value="{{ $vacant->id }}">{{ $vacant->name }}</option>
-                                    @endforeach
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please select vacant title.
+    <div class="modal fade" id="exampleUpdate{{ $post->id }}" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h4 class="modal-title" id="myCenterModalLabel">Update the Staff Details </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h4>Person Information</h4>
+                    <form action="{{ route('update_post', $post->id) }}" method="post"
+                        enctype="multipart/form-data" class="needs-validation" novalidate>
+                        @csrf
+                        @method('PUT')
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Vacant Title <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="example-select" name="vacant_id" required>
+                                        @foreach ($vacant as $vacant)
+                                            <option value="{{ $vacant->id }}">{{ $vacant->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select vacant title.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Vacant Category</label>
+                                    <select class="form-select" id="example-select" name="vacant_category" required>
+                                        <option value="IT and Telecom">IT and  Telecom</option>
+                                        <option value="Accounting and Auditing">Accounting and Auditing</option>
+                                        <option value="Healthcare and Pharmaceutical ">Healthcare and Pharmaceutical </option>
+                                        <option value="Socials Studys and Arts"> Socials Studys and Arts</option>
+                                        <option value="HR & Administration">HR & Administration</option>
+                                        <option value="Science Studies and Technincian">Science Studies and Technincian</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select category.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Institutions</label>
+                                    <select class="form-select" id="example-select" name="institution_id" required>
+                                        @foreach ($institution as $institution)
+                                            <option value="{{ $institution->id }}">{{ $institution->name }}</option>
+                                        @endforeach
+
+
+
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select institution.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="example-select" class="form-label"> Vacant Category</label>
-                                <select class="form-select" id="example-select" name="vacant_category" required>
-                                    <option value="IT">IT</option>
-                                    <option value="economics">Economics</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please select category.
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Application Date <span>*</span></label>
+                                    <input type="date" class="form-control" name="application_date"
+                                        id="field-2" required>
+                                    <div class="invalid-feedback">
+                                        Please enter application date.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Enddate Application</label>
+                                    <input type="date" class="form-control" name="end_date" id="field-2"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please enter end date applications.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="example-select" class="form-label"> Institutions</label>
-                                <select class="form-select" id="example-select" name="institution_id" required>
-                                    @foreach ($institution as $institution)
-                                        <option value="{{ $institution->id }}">{{ $institution->name }}</option>
-                                    @endforeach
+                        <h4>ACCADEMIC QUALIFICATION</h4>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Education Level</label>
+                                    <select class="form-select" id="example-select" name="education_level_id"
+                                        required>
+                                        @foreach ($education_level as $education_level)
+                                            <option value="{{ $education_level->id }}">{{ $education_level->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a education Level.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label"> Education Category</label>
+                                    <select class="form-select" id="example-select" name="education_category_id"
+                                        required>
+                                        @foreach ($education_categorie as $education_category)
+                                            <option value="{{ $education_category->id }}">
+                                                {{ $education_category->name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a education category.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label">Education Program</label>
+                                    <select class="form-select" id="example-select" name="education_name_id"
+                                        required>
+                                        @foreach ($education_name as $education_name)
+                                            <option value="{{ $education_name->id }}">{{ $education_name->name }}
+                                            </option>
+                                        @endforeach
 
 
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a education name.
+                                    </div>
+                                </div>
+                            </div>
 
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please select institution.
+                        </div>
+                        <div class="row">
+                            <h4>OTHER QUALIFICATION</h4>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Applicant Age</label>
+                                    <select class="form-select" id="example-select" name="age_range" required>
+
+                                        <option value="18">18</option>
+                                        <option value="20 - 30">20 - 35</option>
+                                        <option value="30 - 40">36 - 45</option>
+                                        <option value="40 - 50">46 - 50</option>
+                                        <option value="50>">50 above</option>
+
+
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a age range.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Applicant Experience</label>
+                                    <select class="form-select" id="example-select" name="year_experience" required>
+
+                                        <option value="1">None</option>
+                                        <option value="1 year">1 year</option>
+                                        <option value="2 years">2 years</option>
+                                        <option value="3 years">3 years</option>
+                                        <option value="4 years">4 years</option>
+
+
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please choose a Experience.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="field-3" class="form-label">Applicant Gender</label>
+                                    <select class="form-select" id="example-select" name="gender" required>
+
+                                        <option value="None">None</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+
+
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please choose your gender.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Application Date <span>*</span></label>
-                                <input type="date" class="form-control" name="application_date"
-                                    id="field-2" required>
-                                <div class="invalid-feedback">
-                                    Please enter application date.
+                        <div class="row">
+
+                            <div class="col-md-8">
+                                <div class="mb-3">
+                                    <label for="field-5" class="form-label">Summary Over view</label>
+                                    <textarea name="summary" id="" cols="15" rows="5" class="form-control" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please fill the Summary.
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-md-2"></div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Enddate Application</label>
-                                <input type="date" class="form-control" name="end_date" id="field-2"
-                                    required>
-                                <div class="invalid-feedback">
-                                    Please enter end date applications.
-                                </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 d-grid">
+                                <button class="btn btn-primary" type="submit">Post Vacant</button>
+
                             </div>
+                            <div class="col-md-4"></div>
                         </div>
-                    </div>
-                    <h4>ACCADEMIC QUALIFICATION</h4>
-                    <div class="row">
-
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="example-select" class="form-label"> Education Level</label>
-                                <select class="form-select" id="example-select" name="education_level_id"
-                                    required>
-                                    @foreach ($education_level as $education_level)
-                                        <option value="{{ $education_level->id }}">{{ $education_level->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please choose a education Level.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="example-select" class="form-label"> Education Category</label>
-                                <select class="form-select" id="example-select" name="education_category_id"
-                                    required>
-                                    @foreach ($education_categorie as $education_category)
-                                        <option value="{{ $education_category->id }}">
-                                            {{ $education_category->name }}</option>
-                                    @endforeach
-
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please choose a education category.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="example-select" class="form-label">Education Program</label>
-                                <select class="form-select" id="example-select" name="education_name_id"
-                                    required>
-                                    @foreach ($education_name as $education_name)
-                                        <option value="{{ $education_name->id }}">{{ $education_name->name }}
-                                        </option>
-                                    @endforeach
+                    </form>
 
 
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please choose a education name.
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <h4>OTHER QUALIFICATION</h4>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Applicant Age</label>
-                                <select class="form-select" id="example-select" name="age_range" required>
-
-                                    <option value="18">18</option>
-                                    <option value="20 - 30">20 - 30</option>
-                                    <option value="30 - 40">30 - 40</option>
-                                    <option value="40 - 50">40 - 50</option>
-                                    <option value="50>">50 above</option>
-
-
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please choose a age range.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Applicant Experience</label>
-                                <select class="form-select" id="example-select" name="year_experience" required>
-
-                                    <option value="1">None</option>
-                                    <option value="1 year">1 year</option>
-                                    <option value="2 years">2 years</option>
-                                    <option value="3 years">3 years</option>
-                                    <option value="4 years">4 years</option>
-
-
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please choose a Experience.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="field-3" class="form-label">Applicant Gender</label>
-                                <select class="form-select" id="example-select" name="gender" required>
-
-                                    <option value="None">None</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Both">Both</option>
-
-
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please choose your gender.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-
-                        <div class="col-md-8">
-                            <div class="mb-3">
-                                <label for="field-5" class="form-label">Summary Over view</label>
-                                <textarea name="summary" id="" cols="15" rows="5" class="form-control" required></textarea>
-                                <div class="invalid-feedback">
-                                    Please fill the Summary.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2"></div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4 d-grid">
-                            <button class="btn btn-primary" type="submit">Post Vacant</button>
-
-                        </div>
-                        <div class="col-md-4"></div>
-                    </div>
-                </form>
-
-
-            </div>
-            {{-- <div class="modal-footer">
+                </div>
+                {{-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
             </div> --}}
+            </div>
+            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-content -->
+        <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal-dialog -->
-</div>
 
 
 

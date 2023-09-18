@@ -59,7 +59,7 @@ Route::get('/view-job', [HomeController::class, 'viewjob'])->name('viewjob');
 Route::get('/post-details/{id}', [HomeController::class, 'postdeatail'])->name('postdeatail');
 
 
-Route::post('/',[ApplicationController::class,'create'])->name('post');
+Route::post('/post-application',[ApplicationController::class,'create'])->name('post');
 
 Auth::routes();
 
@@ -109,6 +109,7 @@ Route::middleware(['auth', 'isHr'])->group(function () {
     Route::get('/hr/organinzation', [HrController::class, 'Organization'])->name('organization');
     Route::get('/hr/education_level', [EducationController::class, 'index'])->name('education_level');
     Route::get('hr/applicants', [HrController::class, 'Applicants'])->name('applicants');
+    Route::get('/hr/applicants/{id}',[HrController::class, 'single_applicant'])->name('single_applicant');
     //institute
     Route::get('/institute', [institutionController::class, 'index'])->name('institute');
     Route::get('/instititue/show/{id}',[institutionController::class,'show'])->name('show_institute');

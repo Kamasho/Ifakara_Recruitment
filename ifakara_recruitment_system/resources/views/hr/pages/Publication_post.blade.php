@@ -294,9 +294,9 @@
                                     <select class="form-select" id="example-select" name="age_range" required>
 
                                         <option value="18">18</option>
-                                        <option value="20 - 30">20 - 30</option>
-                                        <option value="30 - 40">30 - 40</option>
-                                        <option value="40 - 50">40 - 50</option>
+                                        <option value="20 - 30">20 - 35</option>
+                                        <option value="30 - 40">36 - 45</option>
+                                        <option value="40 - 50">46 - 50</option>
                                         <option value="50>">50 above</option>
 
 
@@ -334,7 +334,7 @@
                                         <option value="None">None</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
-                                        <option value="Both">Both</option>
+                                        {{-- <option value="Both">Both</option> --}}
 
 
                                     </select>

@@ -428,7 +428,7 @@
                                         <option value="school">School</option>
                                         <option value="health">Health Institions</option>
                                         <option value="parish">Parish</option>
-
+                                        <option value="diocese">Diocese</option>
                                     </select>
                                 </div>
                             </div>
