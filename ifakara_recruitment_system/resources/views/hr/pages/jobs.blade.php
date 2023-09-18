@@ -589,7 +589,7 @@
                                 <div class="mb-3">
                                     <label for="field-3" class="form-label">Job Description <span
                                             class="text-danger">*</span></label>
-                                    <textarea name="description" id="" cols="50" rows="40" class="form-control" required></textarea>
+                                    <textarea name="description" id="" cols="15" rows="5" class="form-control" required></textarea>
                                     <div class="invalid-feedback">
                                         Please provide a summry description.
                                     </div>
@@ -637,7 +637,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Position Discription</label>
-                                    <textarea name="position_description" id="" cols="40" rows="50" class="form-control" required></textarea>
+                                    <textarea name="position_description" id="" cols="15" rows="5" class="form-control" required></textarea>
                                     <div class="invalid-feedback">
                                         Please provide a positon description.
                                     </div>
