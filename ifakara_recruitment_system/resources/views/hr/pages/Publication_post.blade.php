@@ -346,16 +346,16 @@
                         </div>
                         <div class="row">
 
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Summary Over view</label>
-                                    <textarea name="summary" id="" cols="15" rows="5" class="form-control" required></textarea>
+                                    <textarea name="summary" id="" cols="10" rows="10" class="form-control" required></textarea>
                                     <div class="invalid-feedback">
                                         Please fill the Summary.
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2"></div>
+                            {{-- <div class="col-md-2"></div> --}}
                         </div>
 
 
