@@ -64,14 +64,14 @@ class ApplicationController extends Controller
         if ($request->hasFile('coverLetter')) {
             $file = $request->file('coverLetter');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('public/applications', $filename);
+            $filePath = $file->storeAs('applications', $filename);
             $validatedData->coverLetter = $filePath;
         }
 
         if ($request->hasFile('cv')) {
             $file = $request->file('cv');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('public/applications', $filename);
+            $filePath = $file->storeAs('applications', $filename);
             $validatedData->cv = $filePath;
         } else {
             $validatedData->cv = ''; // Assign default value
