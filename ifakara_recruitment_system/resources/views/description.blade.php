@@ -42,7 +42,7 @@
                         <p style="text-align: justify"> <span> Position Description:
                             </span>{{ $post->vacant->position_description }}</p>
 
-                        <a href="{{asset('/storage/app/'. $post->vacant->job_file)}}" class="text-danger" style="font-weight: 700">Download Job Description</a>
+                        <a href="{{asset('/storage/'. $post->vacant->job_file)}}" class="text-danger" style="font-weight: 700">Download Job Description</a>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
