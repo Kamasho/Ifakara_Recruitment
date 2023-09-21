@@ -121,14 +121,14 @@
                                         <div class="col-md-6">
                                             <div class="mb-4">
                                                 <h5>Cover Letter</h5>
-                                                <a href="{{ asset('/storage/app/'. $applicant->coverLetter) }}" class="btn btn-success px-4">Cover Letter</a>
+                                                <a href="{{ asset('/storage/'. $applicant->coverLetter) }}" class="btn btn-success px-4">Cover Letter</a>
                                                 
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-4">
                                                 <h5>CV</h5>
-                                                <a href="{{asset('/storage/app/'. $applicant->cv)}}" class="btn btn-success btn-block px-4">Currum cive</a>
+                                                <a href="{{asset('/storage/'. $applicant->cv)}}" class="btn btn-success btn-block px-4">Currum cive</a>
 
                                             </div>
                                         </div>
