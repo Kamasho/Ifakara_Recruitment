@@ -44,9 +44,9 @@ class ApplicationController extends Controller
            return response()->json(['message' => 'No applicant submit applications']);
        }    
    
-       return response()->json(['applicants' => $applicants]);
+       return response()->json(['applicants' => $applicants,'message' => 'Applicants retrieved successfully' ]);
    }
-   
+
    
    public function SingleApplicant($id)
     {
@@ -56,7 +56,7 @@ class ApplicationController extends Controller
             return response()->json(['error' => 'Applicants member not found'], 404);
         }
     
-        return response()->json(['applicants' => $applicants]);
+        return response()->json(['applicants' => $applicants,'message' => 'Applicants retrieved successfully' ]);
     }
 
     /**

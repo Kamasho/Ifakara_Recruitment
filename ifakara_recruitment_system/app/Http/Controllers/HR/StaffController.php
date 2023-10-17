@@ -66,7 +66,7 @@ class StaffController extends Controller
             return response()->json(['message' => 'No staff records available']);
         }
     
-        return response()->json(['staffs' => $staffs]);
+        return response()->json(['staffs' => $staffs,'message' => 'Staff retrieved successfully' ]);
     }
     
     
@@ -78,7 +78,7 @@ class StaffController extends Controller
             return response()->json(['error' => 'Staff member not found, Please Register'], 404);
         }
     
-        return response()->json(['staff' => $staff]);
+        return response()->json(['staff' => $staff,'message' => 'Staff retrieved successfully' ]);
     }
     
 

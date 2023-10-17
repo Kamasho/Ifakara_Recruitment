@@ -78,15 +78,17 @@ class PostController extends Controller
     );
     }
 
-    public function Allposts(){
+    public function Allposts()
+    {
         $posts = $this->selectPostDetails()->get();
     
         if ($posts->isEmpty()) {
-            return response()->json(['message' => 'No posts records available']);
+            return response()->json(['message' => 'No post records available']);
         }
     
-        return response()->json(['posts' => $posts]);
+        return response()->json(['posts' => $posts, 'message' => 'Posts retrieved successfully' ]);
     }
+    
 
     public function SinglePost($id){
         $posts = $this->selectPostDetails()->find($id);
@@ -95,7 +97,7 @@ class PostController extends Controller
             return response()->json(['error' => 'not found, Please publish a post'], 404);
         }
     
-        return response()->json(['posts' => $posts]);
+        return response()->json(['posts' => $posts,'message' => 'Posts retrieved successfully' ]);
     }
     
     public function store(Request $request)
