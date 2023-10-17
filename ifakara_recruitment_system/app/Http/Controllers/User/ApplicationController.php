@@ -19,9 +19,44 @@ class ApplicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    private function selectapplicantsDetails()
     {
-        //
+    return Application::select(
+        'applications.id',
+        'applications.firstName',
+        'applications.secondName',
+        'applications.email',
+        'applications.phone',
+        'applications.email',
+        'applications.phone',
+        'applications.coverLetter',
+        'applications.cv',
+        'vacants.name as vacant_name'
+    )
+  
+    ->leftJoin('vacants', 'applications.vacant_id', '=', 'vacants.id');
+   }
+   public function Allapplicants()
+   {
+       $applicants = $this->selectapplicantsDetails()->get();
+   
+       if ($applicants->isEmpty()) {
+           return response()->json(['message' => 'No applicant submit applications']);
+       }    
+   
+       return response()->json(['applicants' => $applicants]);
+   }
+   
+   
+   public function SingleApplicant($id)
+    {
+        $applicants = $this->selectapplicantsDetails()->find($id);
+    
+        if (!$applicants) {
+            return response()->json(['error' => 'Applicants member not found'], 404);
+        }
+    
+        return response()->json(['applicants' => $applicants]);
     }
 
     /**

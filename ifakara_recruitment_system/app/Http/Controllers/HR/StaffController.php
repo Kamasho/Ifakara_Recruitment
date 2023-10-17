@@ -22,7 +22,7 @@ class StaffController extends Controller
 
 
     private function selectStaffDetails()
-{
+    {
     return Staff::select(
         'staff.id',
         'staff.fname',
@@ -40,7 +40,7 @@ class StaffController extends Controller
     )
     ->leftJoin('institutions', 'staff.institution_id', '=', 'institutions.id')
     ->leftJoin('vacants', 'staff.vacant_id', '=', 'vacants.id');
-}
+   }
 
 
     public function index()
@@ -56,14 +56,19 @@ class StaffController extends Controller
             'staff' => $staff,
             'institutions' => $institutions,
         ]);
-    }
+    } 
 
     public function AllStaff()
     {
         $staffs = $this->selectStaffDetails()->get();
     
+        if ($staffs->isEmpty()) {
+            return response()->json(['message' => 'No staff records available']);
+        }
+    
         return response()->json(['staffs' => $staffs]);
     }
+    
     
     public function SingleStaff($id)
     {

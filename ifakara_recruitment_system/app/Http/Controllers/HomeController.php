@@ -84,6 +84,7 @@ class HomeController extends Controller
     {
         return view('viewjob');
     }
+    
     public function postdeatail($id)
     {
         $institution = institution::get();

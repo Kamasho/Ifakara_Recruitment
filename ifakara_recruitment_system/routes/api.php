@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HR\StaffController;
+use App\Http\Controllers\HR\PostController;
+use App\Http\Controllers\User\ApplicationController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,5 +27,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->middleware('api')->group(function () {
     Route::get('/hr/staff', [StaffController::class, 'AllStaff']);
     Route::get('/hr/staff/{id}', [StaffController::class, 'SingleStaff']);
+});
+
+Route::prefix('v1')->middleware('api')->group(function () {
+    Route::get('/applicants', [ApplicationController::class, 'Allapplicants']);
+    Route::get('/applicant/{id}', [ApplicationController::class, 'SingleApplicant']);
+
+    Route::get('/posts', [PostController::class, 'Allposts']);
+    Route::get('/post/{id}', [PostController::class, 'SinglePost']);
+
+
+
 });
 

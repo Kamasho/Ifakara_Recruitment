@@ -517,7 +517,6 @@
                             <div class="col-md-2"></div>
                         </div>
 
-
                         <div class="row">
                             <div class="col-md-4"></div>
                             <div class="col-md-4 d-grid">
@@ -637,7 +636,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="field-5" class="form-label">Position Discription</label>
-                                    <textarea name="position_description" id="" cols="15" rows="5" class="form-control" required></textarea>
+                                    <textarea name="position_description" id="" cols="10" rows="5" class="form-control" required></textarea>
                                     <div class="invalid-feedback">
                                         Please provide a positon description.
                                     </div>

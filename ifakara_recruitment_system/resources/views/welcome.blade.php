@@ -56,8 +56,7 @@
                                             <label class="form-check-label" for="flexCheckDefault"
                                                 style="font-size: 15px">
                                                 <input class="form-check-input mt-1" name="remember" type="checkbox"
-                                                    value="" id="flexCheckDefault"
-                                                    {{ old('remember') ? 'checked' : '' }}>{{ __('Remember Me') }}
+                                                    value="" id="flexCheckDefault" {{ old('remember') ? 'checked' : '' }}>{{ __('Remember Me') }}
                                             </label>
                                         </div>
 
@@ -74,10 +73,7 @@
                                                 {{ __('Forgot Your Password?') }}</a>
                                         @endif
                                     </p>
-                                    {{-- <p class="text-center" style="color: #000">Don't have an account? <a
-                                            href="{{ route('register') }}"
-                                            style="font-size: 13px; font-weight:600">Register
-                                            here</a></p> --}}
+                                 
 
                                 </div>
 
@@ -258,8 +254,7 @@
                                 </div>
                             </div>
                         </div>
-
-                    </div>
+                        </div>
 
                 </div> --}}
 

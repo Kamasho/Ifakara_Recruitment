@@ -20,6 +20,27 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private function selectPostDetails()
+    {
+    return Post::select(
+        'posts.id',
+        'posts.application_date',
+        'posts.end_date',
+        'posts.summary',
+        'posts.age_range',
+        'posts.year_experience',
+        'posts.gender',
+        'institutions.name as institution_name',
+        'vacants.name as vacant_name',
+        'education_levels.name as education_level_id',
+        
+    )
+    ->leftJoin('institutions', 'posts.institution_id', '=', 'institutions.id')
+    ->leftJoin('vacants', 'posts.vacant_id', '=', 'vacants.id')
+    ->leftJoin('education_levels','posts.education_level_id','=','education_levels.id');
+   }
+
+
     public function index()
     {
         $institutions = institution::get();
@@ -57,22 +78,26 @@ class PostController extends Controller
     );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function Allposts(){
+        $posts = $this->selectPostDetails()->get();
+    
+        if ($posts->isEmpty()) {
+            return response()->json(['message' => 'No posts records available']);
+        }
+    
+        return response()->json(['posts' => $posts]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function SinglePost($id){
+        $posts = $this->selectPostDetails()->find($id);
+    
+        if (!$posts) {
+            return response()->json(['error' => 'not found, Please publish a post'], 404);
+        }
+    
+        return response()->json(['posts' => $posts]);
+    }
+    
     public function store(Request $request)
     {
         $messages = [
